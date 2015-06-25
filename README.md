@@ -2,7 +2,7 @@
 
 Syntax of this file is based on [MapCSS file format](http://mapcss.org), with some unique features and some limitations.
 
-There is no documentation about our branch of MapCSS (TBD), just read the comments inside the style and look for similar cases for examples.
+There is no documentation about our branch of MapCSS (TBD), just read the comments inside the style and look for similar cases as examples.
 
 ## How to use
 
