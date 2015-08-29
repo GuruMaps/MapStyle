@@ -10,7 +10,7 @@ To force application to use your map style just put Style.mapcss file [to File S
 
 ## Contribute
 
-We're open to push requests. Don't hesitate.
+We're open to pull requests. Don't hesitate.
 
 ## Links
 

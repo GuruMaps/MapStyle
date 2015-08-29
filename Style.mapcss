@@ -211,6 +211,7 @@ area|z13-[landuse=allotments],
 area|z13-[landuse=salt_pond],
 area|z13-[landuse=quarry]
 {
+    z-index: -4;
 	fill-color:#F7ECD2;
 }
 
@@ -1274,7 +1275,7 @@ area|z15-[natural=beach] {
 
 /************************** Polygon or Node icons **************************/
 
-node|z17-[_optOn=Shop][shop] {
+node|z17-[_optOn=AllShops][shop] {
 	icon-image:"circle.svgpb";
 	icon-scale:1;
 	icon-tint:#866E54;
@@ -1575,7 +1576,6 @@ node,area|z16-[_optOn=Car][amenity=car_sharing]
 }
 
 // parkings
-node,area|z16-[_optOn=Car][landuse=garages],
 node,area|z16-[_optOn=Car][amenity=parking]
 {
 	text-priority: -1;
