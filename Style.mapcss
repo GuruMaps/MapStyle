@@ -1,5 +1,5 @@
-// Default Style from Galileo Offline Maps
-// Copyright (c) 2013-2015 Evgen Bodunov. All rights reserved.
+// DefaultStyle from GLMap.framework
+// Copyright (c) 2013-2016 Evgen Bodunov. All rights reserved.
 
 // canvas color
 canvas
@@ -31,9 +31,8 @@ node|z11-[natural=volcano] {
 
 node|z13-[natural=peak],
 node|z13-[natural=saddle] {
-	text:eval(locTag('name'));
+    text: eval( cond( locTag('name'), cond( tag('ele'), locTag('name') . ' ' . tag('ele') , locTag('name') ), tag('ele') ) );
 	text-color:brown;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
@@ -42,7 +41,6 @@ node|z13-[natural=saddle] {
 node|z13-[natural=volcano] {
 	text:eval(locTag('name'));
 	text-color:red;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
@@ -51,7 +49,6 @@ node|z13-[natural=volcano] {
 node|z14-[natural=spring] {
 	text:"s";
 	text-color:#64A7DD;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
@@ -61,8 +58,7 @@ node,area|z13-[sport=skiing],
 node,area|z13-[landuse=winter_sports] {
 	text:eval(locTag('name'));
 	text-color:black;
-	font-name:"Helvetica";
-	font-size:13;	
+	font-size:13;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
 } 
@@ -79,6 +75,7 @@ area[natural=oceanwater]
 // country boundaries
 area[boundary=administrative][admin_level=2]
 {
+    z-index: 4;
     galileo-fast-draw:true;
 
     width: 1pt;
@@ -87,7 +84,7 @@ area[boundary=administrative][admin_level=2]
 
 // states boundaries 
 area|z5-[boundary=administrative][admin_level=3] {
-	z-index: 1;
+	z-index: 3;
     galileo-fast-draw:true;
     galileo-stencil-type:drop-same;
     galileo-stencil-ref:1;
@@ -99,7 +96,7 @@ area|z5-[boundary=administrative][admin_level=3] {
 
 // regions
 area|z6-[boundary=administrative][admin_level=4] {
-	z-index: 3;
+	z-index: 2;
     galileo-fast-draw:true;
     galileo-stencil-type:drop-same;
     galileo-stencil-ref:2;
@@ -112,7 +109,7 @@ area|z6-[boundary=administrative][admin_level=4] {
 // suburbs
 area|z11-13[boundary=administrative][admin_level=9] 
 {
-	z-index: 1
+    z-index: 1;
     galileo-fast-draw:true;
     galileo-stencil-type:drop-same;
     galileo-stencil-ref:3;
@@ -322,7 +319,6 @@ area|z14-[aeroway=aerodrome]
 {
 	text: eval(locTag('name'));
 	text-color:#21211F;
-	font-name:"Helvetica";
 	font-size:10;
 	font-stroke-width:1;
 	font-stroke-color:#FFFFFFEE;
@@ -818,6 +814,16 @@ line|z13-[highway=secondary]
 
 /******************** Line names *************************/
 
+// default highway name rule
+line|z16-[highway] {
+    text: eval(locTag('name'));
+    text-priority: 3;
+    text-color:#21211F;
+    font-size:10;
+    font-stroke-width:1pt;
+    font-stroke-color:#FFFFFFEE;
+}
+
 // road references
 line|z9-[highway=motorway],
 line|z9-[highway=trunk],
@@ -826,7 +832,6 @@ line|z10-[highway=secondary]
 {
 	text: eval(any(tag('int_ref'), tag('ref')));
 	text-color:#7A7C7E;
-	font-name:"Helvetica";
 	font-size:8;
 	font-stroke-width:1pt;
 	font-stroke-color:#FFFFFFEE;
@@ -850,7 +855,6 @@ line|z14-[highway=secondary]
 	text: eval(any(locTag('name'), tag('ref'), tag('int_ref')));
 	text-priority: 5;	
 	text-color:#21211F;
-	font-name:"Helvetica";
 	font-size:11;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;
@@ -858,15 +862,10 @@ line|z14-[highway=secondary]
 
 line|z15-[highway=residential],
 line|z15-[highway=living_street],
-line|z15-[highway=tertiary],
-line|z16-[highway=road],
-line|z16-[highway=unclassified],
-line|z16-[highway=service]
-{
+line|z15-[highway=tertiary] {
 	text: eval(locTag('name'));
 	text-priority: 4;
 	text-color:#21211F;
-	font-name:"Helvetica";
 	font-size:10;
 	font-stroke-width:1pt;
 	font-stroke-color:#FFFFFFEE;
@@ -886,7 +885,6 @@ line|z16-[waterway=river]
 {
 	text: eval(locTag('name'));
 	text-color:white;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#64A7DD;
@@ -895,7 +893,6 @@ line|z16-[waterway=river]
 line|z15-[piste:difficulty] {
 	text:eval(any(locTag('name'), tag('ref')));
 	text-color: black;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
@@ -947,7 +944,6 @@ line|z13-[aerialway]{ // chair_lift, cable_car, drag_lift
 line|z15-[aerialway] {
 	text:eval(any(locTag('name'), tag('ref')));
 	text-color: black;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	
@@ -964,7 +960,6 @@ node|z2-8[place=country]
 {
     text: eval(locTag('name'));
     text-color:#2E2D2B;
-    font-name:"Helvetica";
     font-size:16;
     font-stroke-width:2pt;
     font-stroke-color:#FFFFFFEE;
@@ -982,7 +977,6 @@ area|z6-8[boundary=administrative][admin_level=4]
     text: eval(locTag('name'));
     //text: eval(locTag('short_name'));
     text-color:#2E2D2B;
-    font-name:"Helvetica";
     font-size:13;
     font-stroke-width:2pt;
     font-stroke-color:#FFFFFFEE;
@@ -994,7 +988,6 @@ area|z5-8[boundary=administrative][admin_level=3]
 {
     text: eval(locTag('name'));
     text-color:#2E2D2B;
-    font-name:"Helvetica";
     font-size:15;
     font-stroke-width:2pt;
     font-stroke-color:#FFFFFFEE;
@@ -1004,11 +997,11 @@ area|z5-8[boundary=administrative][admin_level=3]
 
 node|z6-[place=city][population>250000],
 node|z7-[place=city][population>100000],
-node|z8-[place=city][population>50000]
+node|z8-[place=city][population>50000],
+node|z9-[place=city]
 {
     text: eval(locTag('name'));
     text-color:#21211F;
-    font-name:"Helvetica";
     font-size:12;
     font-stroke-color:#FFFFFFEE;
     font-stroke-width:1pt;
@@ -1025,7 +1018,7 @@ node|z12-[place=hamlet]
 
 	text-priority: 6;
 
-    font-name:"Helvetica-Light";
+    font-weight:light;
     font-size:11;
     font-stroke-width:2px;
     font-stroke-color:#FFFFFFEE;
@@ -1034,10 +1027,12 @@ node|z12-[place=hamlet]
 node|z5-12[capital=yes][admin_level=2],
 node|z5-12[capital=yes][!admin_level]
 {
-    icon-image:"city.png";
+    icon-image:"circle.svgpb";
+    icon-scale:1.2;
+    icon-tint:#3a3a3a;
+
     text: eval(locTag('name'));
     text-color:#21211F;
-    font-name:"Helvetica";
     font-size:14;
     font-stroke-width:2pt;
     font-stroke-color:#FFFFFFEE;
@@ -1050,7 +1045,6 @@ node,area|z11-[place=suburb]
 {
 	text: eval(locTag('name'));
 	text-color:#7A7C7E;
-	font-name:"Helvetica";
 	font-size:11;
 	font-stroke-width:1px;
 	font-stroke-color:#FFFFFFEE;
@@ -1061,14 +1055,13 @@ area|z15-[leisure=park],
 area|z15-[leisure=garden],
 node,area|z16-[_optOn=Entertaiment][leisure=water_park],
 node,area|z16-[_optOn=Entertaiment][tourism=theme_park],
+node,area|z16-[_optOn=Entertaiment][tourism=zoo],
 node,area|z16-[_optOn=Sport][leisure=stadium],
-area|z16-[tourism=zoo],
 area|z15-[highway=pedestrian],
 area|z15-[highway=footway]
 {
     text: eval(locTag('name'));
 	text-color:#21211F;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:1pt;
 	font-stroke-color:#FFFFFFEE;
@@ -1081,7 +1074,6 @@ node|z6-8[place=sea]
 	text: eval(locTag('name'));
 	text-color:white;
 	text-priority: 5;
-	font-name:"Helvetica";
 	font-size:16;
     font-stroke-width:2pt;
     font-stroke-color:#64A7DD;
@@ -1099,7 +1091,6 @@ area|z16-[landuse=reservoir]
 {
 	text: eval(locTag('name'));
 	text-color:white;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#64A7DD;
@@ -1110,7 +1101,6 @@ area|z16-[landuse=reservoir]
 {
 	text: eval(locTag('name'));
 	text-color:#937D65;
-	font-name:"Helvetica";
 	font-size:10;
 	font-stroke-width:1pt;
 	font-stroke-color:#A4A4A4;
@@ -1120,10 +1110,15 @@ area|z16-[landuse=reservoir]
 area|z17-[_optOn=BuildingName][building],
 area|z17-[_optOn=BuildingName][landuse=construction]
 {
-    text: eval( any( locTag('name'), tag('addr:housename'), tag('addr:housenumber') ) );
+    text: eval( any( tag('addr:housename'), tag('addr:housenumber') ) );
 	text-color:#937D65;
-	font-name:"Helvetica";
 	font-size:10;
+}
+
+area|z17-[_optOn=BuildingName][building][addr:housenumber],
+area|z17-[_optOn=BuildingName][landuse=construction][addr:housenumber]
+{
+    text: eval( tag('addr:housenumber') . cond( any( locTag('name'), tag('addr:housename') ),' (' . any( locTag('name'), tag('addr:housename') ) . ')','') );
 }
 
 area|z16-[man_made=pier],
@@ -1132,23 +1127,22 @@ area|z16-[waterway=dock] // dock бывает отмечен дополните�
 {
 	text: eval(locTag('name'));
 	text-color:#937D65;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#EAE3D3;
 }
 
 // all kinds of shops
-node,area|z17-[_optOn=Shop][shop] { 
+node,area|z17-[_optOn=AllShops][shop] {
 	text-priority: -2; // less priority for general shop names
 }
 
 // POI names
-node,area|z17-[_optOn=Shop][shop],
+node,area|z17-[_optOn=AllShops][shop],
 node|z17-[_optOn=Bar][amenity=bar],
 node|z17-[_optOn=Bar][amenity=pub],
 node|z17-[_optOn=Food][amenity=fast_food],
-node|z17-[_optOn=Food][amenity=cafe],
+node,area|z17-[_optOn=Food][amenity=cafe],
 node|z17-[_optOn=Food][amenity=restaurant],
 node|z17-[_optOn=Medical][amenity=clinic],
 node|z17-[_optOn=Medical][amenity=doctors],
@@ -1170,7 +1164,6 @@ node,area|z17-[_optOn=Hotel][tourism=camp_site],
 node,area|z17-[_optOn=Hotel][tourism=caravan_site],
 node,area|z17-[_optOn=Entertaiment][amenity=cinema],
 node,area|z17-[_optOn=Entertaiment][amenity=theatre],
-node,area|z16-[_optOn=Entertaiment][tourism=zoo],
 node,area|z17-[_optOn=Entertaiment][amenity=arts_centre],
 node,area|z17-[_optOn=Culture][tourism=museum],
 node,area|z17-[_optOn=Culture][historic=memorial],
@@ -1231,7 +1224,6 @@ area|z17-[_optOn=Sport][leisure=golf_course]
 {
     text: eval(locTag('name'));
 	text-color:#5B3A05;
-	font-name:"Helvetica";
 	font-size:11;
 	font-stroke-width:1px;
 	font-stroke-color:#FFFFFFEE;
@@ -1241,7 +1233,6 @@ area|z17-[landuse=cemetery]
 {
     text: eval(locTag('name'));
 	text-color:#21211F;
-	font-name:"Helvetica";
 	font-size:10;
 	font-stroke-width:1pt;
 	font-stroke-color:#FFFFFFEE;
@@ -1258,7 +1249,8 @@ node|z16-[_optOn=Railway][railway=halt]
 	text: eval(locTag('name'));
 	text-priority: 5;
 	text-color: #383835;
-	font-name:"HelveticaNeue-Medium";
+    //font-weight:lighter;
+    font-weight:bold;
 	font-size:11;
 	font-stroke-width:1px;
 	font-stroke-color:#FFFFFFEE;
@@ -1267,7 +1259,6 @@ node|z16-[_optOn=Railway][railway=halt]
 area|z15-[natural=beach] {
 	text: eval(locTag('name'));
 	text-color:#807459;
-	font-name:"Helvetica";
 	font-size:12;
 	font-stroke-width:1pt;
 	font-stroke-color:#F7ECD2;
@@ -1276,7 +1267,7 @@ area|z15-[natural=beach] {
 /************************** Polygon or Node icons **************************/
 
 node|z17-[_optOn=AllShops][shop] {
-	icon-image:"circle.svgpb";
+	icon-image:circle.svgpb";
 	icon-scale:1;
 	icon-tint:#866E54;
 
@@ -1284,7 +1275,7 @@ node|z17-[_optOn=AllShops][shop] {
 }
 
 node,area|z17-[amenity=toilets] {
-	icon-image:"amenity_toilets.svgpb";
+	icon-image:"WC.svgpb";
 	icon-scale:0.37;
 	icon-tint:#866E54;	
 }
@@ -1305,7 +1296,7 @@ node|z16-[_optOn=PublicTransport][amenity=bus_station],
 node|z16-[_optOn=PublicTransport][highway=bus_stop],
 node|z17-[_optOn=PublicTransport][public_transport]
 {
-	icon-image:"autobus.svgpb";
+	icon-image:"bus.svgpb";
 	icon-scale:0.37;
 	icon-tint:brown;
 }
@@ -1318,20 +1309,20 @@ node|z17-[_optOn=PublicTransport][railway=tram_stop]
 }
 
 node,area|z13-[_optOn=Railway][railway=station] {
-	icon-image:"metro2.svgpb";
+	icon-image:"railway_station.svgpb";
 	icon-scale:1.7;
 	icon-tint:brown;
 }
 
 node|z14-[_optOn=Railway][railway=halt] {
-	icon-image:"metro2.svgpb";
+	icon-image:"railway_station.svgpb";
 	icon-scale:1.4;
 	icon-tint:brown;	
 }
 
 node,area|z13-[_optOn=Railway][railway=station][transport=subway]
 {
-	icon-image:"metro.svgpb";
+	icon-image:"subway.svgpb";
 	icon-scale:2;
 	icon-tint:eval(any(tag('colour'), #866E54));
 
@@ -1347,12 +1338,12 @@ node|z15-[_optOn=Bar][amenity=pub]
 
 node|z15-[_optOn=Bar][amenity=bar]
 {
-	icon-image:"cocktail.svgpb";
+	icon-image:"bar.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
-node|z15-[_optOn=Food][amenity=cafe]
+node,area|z15-[_optOn=Food][amenity=cafe]
 {
 	icon-image:"cafe.svgpb";
 	icon-scale:0.50;
@@ -1368,7 +1359,7 @@ node|z15-[_optOn=Food][amenity=restaurant]
 
 node|z15-[_optOn=Food][amenity=fast_food]
 {
-	icon-image:"fast-food.svgpb";
+	icon-image:"fast_food.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1385,7 +1376,7 @@ node|z15-[_optOn=Medical][amenity=hospital]
 
 node|z15-[_optOn=Medical][amenity=veterinary]
 {
-	icon-image:"zoo.svgpb";
+	icon-image:"vet.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;	
 }
@@ -1393,21 +1384,21 @@ node|z15-[_optOn=Medical][amenity=veterinary]
 node|z17-[_optOn=Medical][shop=chemist],
 node|z17-[_optOn=Medical][amenity=pharmacy]
 {
-	icon-image:"apotheke.svgpb";
+	icon-image:"pharmacy.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
 node|z17-[_optOn=Medical][amenity=dentist]
 {
-	icon-image:"dental.svgpb";
+	icon-image:"dentist.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
 node|z17-[_optOn=Financial][amenity=atm] 
 {
-	icon-image:"cash_machine.svgpb";
+	icon-image:"ATM.svgpb";
 	icon-scale:0.50;
 	icon-tint:#937D65;
 }
@@ -1436,14 +1427,14 @@ node,area|z16-[_optOn=Hotel][tourism=alpine_hut]
 node,area|z16-[_optOn=Hotel][tourism=camp_site],
 node,area|z16-[_optOn=Hotel][tourism=caravan_site]
 {
-	icon-image:"camp.svgpb";
+	icon-image:"camping.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
 node,area|z15-[_optOn=Entertaiment][amenity=cinema]
 {
-	icon-image:"movie.svgpb";
+	icon-image:"cinema.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1455,11 +1446,18 @@ node,area|z15-[_optOn=Entertaiment][amenity=theatre]
 	icon-tint:#866E54;
 }
 
-node|z15-[_optOn=Entertaiment][tourism=zoo]
+node,area|z15-[_optOn=Entertaiment][tourism=zoo]
 {
 	icon-image:"zoo.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
+}
+
+node,area|z15-[_optOn=Entertaiment][tourism=theme_park]
+{
+    icon-image:"theme_park.svgpb";
+    icon-scale:0.50;
+    icon-tint:#866E54;
 }
 
 node,area|z15-[_optOn=Entertaiment][leisure=water_park],
@@ -1473,14 +1471,14 @@ node,area|z18-[_optOn=Sport][leisure=swimming_pool]
 
 node,area|z16-[_optOn=Sport][leisure=sports_centre] 
 {
-	icon-image:"fitness.svgpb";
+	icon-image:"gym.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
 area|z15-[_optOn=Sport][leisure=golf_course]
 {
-	icon-image:"golf.svgpb";
+	icon-image:"golf_course.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1531,17 +1529,17 @@ node|z16-[_optOn=Tourism][tourism=viewpoint] {
 	icon-tint:#866E54;
 }
 
-node,area|z15-[_optOn=Car][amenity=charging_station] 
+node,area|z15-[_optOn=Car][amenity=charging_station]
 {
 	icon-image:"charging_station.svgpb";
-	icon-scale:0.50;
+    icon-scale:0.5;
 	icon-tint:#866E54;
 }
 
 node,area|z15-[_optOn=Car][amenity=fuel]
 {
-	icon-image:"gasstation.svgpb";
-	icon-scale:0.50;
+	icon-image:"gas_station.svgpb";
+    icon-scale:0.5;
 	icon-tint:#866E54;
 }
 
@@ -1553,7 +1551,7 @@ node,area|z16-[_optOn=Car][shop=car][service=tyres],
 node,area|z16-[_optOn=Car][shop=car][service=parts],
 node,area|z16-[_optOn=Car][shop=car][service=repair]
 {
-	icon-image:"carservice.svgpb";
+	icon-image:"car_service.svgpb";
 	icon-scale:0.50;
 	icon-tint:#937D65;
 }
@@ -1601,14 +1599,14 @@ node,area|z16-[_optOn=CityService][office=government]
 
 node,area|z17-[_optOn=CityService][amenity=post_office]
 {
-	icon-image:"post-office.svgpb";
+	icon-image:"post_office.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
 
 node,area|z17-[_optOn=CityService][amenity=police]
 {
-	icon-image:"police.svgpb";
+	icon-image:"police_station.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1627,7 +1625,7 @@ node|z17-[_optOn=Education][amenity=university]
 // Shops
 node,area|z17-[_optOn=Shop][shop=supermarket]
 {
-	icon-image:"shop.svgpb";
+	icon-image:"supermarket.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1639,14 +1637,14 @@ node,area|z17-[_optOn=Shop][shop=beverages],
 node,area|z17-[_optOn=Shop][shop=alcohol],
 node,area|z17-[_optOn=Shop][shop=butcher]
 {
-	icon-image:"small-shop.svgpb";
+	icon-image:"store.svgpb";
 	icon-scale:0.50;
 	icon-tint:#937D65;
 }
 
 node,area|z16-[_optOn=Shop][amenity=marketplace]
 {
-	icon-image:"marketplace.svgpb";
+	icon-image:"market.svgpb";
 	icon-scale:0.50;
 	icon-tint:#937D65;	
 }
@@ -1663,7 +1661,7 @@ node,area|z17-[_optOn=Shop][shop=boutique]
 
 node,area|z17-[_optOn=Shop][shop=clothes]
 {
-	icon-image:"cloth-shop.svgpb";
+	icon-image:"clothing_store.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1706,7 +1704,7 @@ node,area|z17-[leisure=playground]
 // water transport
 node|z16-[amenity=ferry_terminal]
 {
-	icon-image:"boat.svgpb";
+	icon-image:"ferry.svgpb";
 	icon-scale:0.50;
 	icon-tint:#866E54;
 }
@@ -1731,7 +1729,7 @@ node|z17-[_optOn=Beauty][shop=hairdresser],
 node|z17-[_optOn=Beauty][shop=beauty],
 node|z17-[_optOn=Beauty][shop=tattoo]
 { 
-	icon-image:"beauty-salon.svgpb"; 
+	icon-image:"beauty_salon.svgpb"; 
 	icon-scale:0.50; 
 	icon-tint:#866E54; 
 }
@@ -1740,7 +1738,7 @@ node|z17-[_optOn=Beauty][shop=massage],
 node|z17-[_optOn=Beauty][leisure=sauna],
 node|z17-[_optOn=Beauty][amenity=sauna]
 { 
-	icon-image:"yoga.svgpb"; 
+	icon-image:"spa.svgpb";
 	icon-scale:0.50; 
 	icon-tint:#866E54; 
 }
