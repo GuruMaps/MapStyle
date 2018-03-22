@@ -6,7 +6,7 @@ There is no documentation about our branch of MapCSS (TBD), just read the commen
 
 ## How to use
 
-To force application to use your map style just put Style.mapcss file [to File Sharing folder](https://support.apple.com/en-us/HT201301) of the Galileo and relaunch the app. Only map style is loaded and custom resources is not supported yet.
+To force application to use your map style just put *.mapcss files [to File Sharing folder](https://support.apple.com/en-us/HT201301) of the Galileo and relaunch the app. Only map style is loaded and custom resources is not supported yet.
 
 ## Contribute
 
