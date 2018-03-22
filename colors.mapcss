@@ -1,0 +1,16 @@
+// DefaultStyle from GLMap.framework
+// Copyright (c) 2013-2018 Evgen Bodunov. All rights reserved.
+
+@color_ground: #EAE3D3;
+@color_building: #D7C9BA;
+@color_icon_tint: #866E54;
+
+// pink #FF5588ee
+@color_road_base: #e85;
+
+@color_motorway: @color_road_base;
+@color_trunk: eval(@color_road_base + #011);
+@color_primary: eval(@color_road_base + #022);
+@color_secondary: eval(@color_road_base + #033);
+@color_tertiary: eval(@color_road_base + #044);
+@color_small_road: #FEFEFE;
