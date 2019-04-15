@@ -22,7 +22,6 @@ node|z2-4[place=country]
 area|z6-8[boundary=administrative][admin_level=4]
 {
     text: eval(locTag('name'));
-    //text: eval(locTag('short_name'));
     text-color:#2E2D2B;
     font-size:13;
     font-stroke-width:2pt;
@@ -93,7 +92,8 @@ node,area|z11-[place=suburb]
 	text: eval(locTag('name'));
 	text-color:#7A7C7E;
 	font-size:11;
-	font-stroke-width:1px;
+
+	font-stroke-width:1pt;
 	font-stroke-color:#FFFFFFEE;
 }
 
@@ -123,7 +123,7 @@ node|z6-8[place=sea]
 	text-priority: 5;
 	font-size:16;
     font-stroke-width:2pt;
-    font-stroke-color:#64A7DD;
+    font-stroke-color:@color_water;
 }
 
 node|z5-8[place=ocean] {
@@ -140,32 +140,94 @@ area|z16-[landuse=reservoir]
 	text-color:white;
 	font-size:12;
 	font-stroke-width:2pt;
-	font-stroke-color:#64A7DD;
+	font-stroke-color:@color_water;
+
+    text-priority: 2;
 }
 
-// There should be filter based on area of island. todo
-/*area|z7-[place=island] 
+area|z11-[place=island],
+area|z13-[place=islet]
 {
 	text: eval(locTag('name'));
-	text-color:#937D65;
-	font-size:10;
-	font-stroke-width:1pt;
-	font-stroke-color:#A4A4A4;
-} */
+    text-color: #567634;
+    font-size: 8;
+//    font-stroke-width: 0.5pt;
+//    font-stroke-color: #FFFFFF80;
+    text-priority: 1;
+}
+
+area|z9-[natural=water],
+area|z9-[landuse=reservoir],
+area|z9-[waterway=riverbank],
+area|z9-[natural=bay],
+area|z9-[landuse=basin] {
+    text: eval(locTag('name'));
+    text-color:white;
+    font-size:9;
+    font-stroke-width:2pt;
+    font-stroke-color:@color_water;
+}
+
+area|z10-[leisure=nature_reserve],
+area|z9-[boundary=national_park]
+{
+    text: eval(locTag('name'));
+    text-color: #567634;
+    font-size: 8;
+
+    width: 3pt;
+    color: #ACCB8A;
+
+    text-priority: 4;
+}
+
+area|z9-[boundary=national_park] {
+    width: 2pt;
+}
 
 // Building names and numbers
 area|z17-[_optOn=BuildingName][building],
-area|z17-[_optOn=BuildingName][landuse=construction]
+area,node|z17-[_optOn=BuildingName][landuse=construction],
+node|z18-[_optOn=BuildingName][addr:housenumber],
+node|z18-[_optOn=BuildingName][addr:housename]
 {
-    text: eval( any( locTag('name'), tag('addr:housename') ) );
-	text-color:#937D65;
-	font-size:10;
+    text: eval( cond( tag('addr:housenumber'),
+                    tag('addr:housenumber') . cond( any( locTag('name'), tag('addr:housename') ),' (' . any( locTag('name'), tag('addr:housename') ) . ')',''),
+                    any( locTag('name'), tag('addr:housename') ) ) );
+
+	text-color: #937D65;
+	font-size: 10;
+    font-stroke-width: 0.8pt;
+    font-stroke-color: #FFFFFFEE;
+    text-priority: 1;
+}
+// для точек номер дома не так важен. Если есть имя - пишем имя.
+node|z18-[_optOn=BuildingName][addr:housenumber],
+node|z18-[_optOn=BuildingName][addr:housename]
+{
+    text: eval( cond( locTag('name'), // write name if we have one
+                    locTag('name'),
+                    cond( tag('addr:housenumber'), // if we have housenumber, use it
+                        tag('addr:housenumber') . cond( tag('addr:housename'),' (' . tag('addr:housename') . ')',''),
+                        tag('addr:housename') ) ) );
+
+    font-size: 9;
+    text-priority: 0;
 }
 
-area|z17-[_optOn=BuildingName][building][addr:housenumber],
-area|z17-[_optOn=BuildingName][landuse=construction][addr:housenumber]
+node|z17-[entrance]
 {
-    text: eval( tag('addr:housenumber') . cond( any( locTag('name'), tag('addr:housename') ),' (' . any( locTag('name'), tag('addr:housename') ) . ')','') );
+    icon-image: "circle.svgpb";
+    icon-scale: 0.8;
+    icon-tint: #977f65;
+}
+node|z17-[entrance=main] {
+    icon-scale: 1;
+}
+node|z18-[entrance] {
+    text: eval( tag('ref') );
+    text-color: #977f65;
+    font-size: 8;
 }
 
 area|z16-[man_made=pier],
@@ -196,8 +258,7 @@ node|z17-[_optOn=Medical][amenity=doctors],
 node,area|z17-[_optOn=Medical][amenity=hospital],
 area|z17-[_optOn=Medical][building=hospital],
 node|z17-[_optOn=Medical][amenity=veterinary],
-node|z20-[_optOn=Medical][shop=chemist],
-node|z20-[_optOn=Medical][amenity=pharmacy],
+node|z18-[_optOn=Medical][amenity=pharmacy],
 node|z17-[_optOn=Medical][amenity=dentist],
 node|z17-[_optOn=Financial][amenity=bank],
 node,area|z17-[_optOn=Hotel][amenity=hotel],
@@ -238,6 +299,8 @@ node,area|z18-[_optOn=Car][amenity=car_rental],
 node,area|z17-[_optOn=CityService][amenity=townhall],
 node,area|z17-[_optOn=CityService][amenity=embassy],
 node,area|z17-[_optOn=CityService][office=government],
+node,area|z18-[_optOn=CityService][amenity=post_office],
+node,area|z18-[_optOn=CityService][amenity=police]
 node|z17-[_optOn=Education][amenity=college],
 node|z17-[_optOn=Education][amenity=university],
 node,area|z17-[_optOn=Education][amenity=school],
@@ -251,6 +314,7 @@ node,area|z17-[_optOn=Shop][shop=baby_goods],
 node,area|z17-[_optOn=Shop][shop=clothes],
 node,area|z17-[_optOn=Shop][shop=jewelry],
 node,area|z17-[_optOn=Shop][shop=jewelry],
+node,area|z18-[_optOn=Shop][shop=chemist],
 node,area|z16-[_optOn=Shop][amenity=marketplace],
 // node,area|z17-[_optOn=Shop][shop=kiosk],
 node,area|z17-[_optOn=Shop][shop=beverages],
@@ -273,7 +337,7 @@ area|z17-[_optOn=Sport][leisure=golf_course]
     text: eval(locTag('name'));
 	text-color:#5B3A05;
 	font-size:11;
-	font-stroke-width:1px;
+	font-stroke-width:0.8pt;
 	font-stroke-color:#FFFFFFEE;
 }
 
@@ -288,7 +352,7 @@ area|z17-[landuse=cemetery]
 
 // public transport stops
 node|z16-[_optOn=PublicTransport][highway=bus_stop],
-node|z17-[_optOn=PublicTransport][public_transport],
+node,area|z17-[_optOn=PublicTransport][public_transport=platform],
 node|z17-[_optOn=PublicTransport][railway=tram_stop],
 node,area|z14-[_optOn=Railway][railway=station][transport=subway],
 node,area|z15-[_optOn=Railway][railway=station],
@@ -298,9 +362,9 @@ node|z16-[_optOn=Railway][railway=halt]
 	text-priority: 5;
 	text-color: #383835;
     //font-weight:lighter;
-    font-weight:bold;
+    //font-weight:bold;
 	font-size:11;
-	font-stroke-width:1px;
+	font-stroke-width:0.8pt;
 	font-stroke-color:#FFFFFFEE;
 }
 
@@ -328,10 +392,11 @@ node,area|z17-[amenity=toilets] {
 	icon-tint:#866E54;	
 }
 
-node|z17-[amenity=drinking_water] {
+node|z17-[amenity=drinking_water],
+node|z17-[amenity=water_point]{
 	icon-image:"drinking_water.svgpb";
 	icon-scale:0.37;
-	icon-tint:#866E54;	
+	icon-tint:#866E54;
 }
 
 node,area|z17-[_optOn=Culture][amenity=library] {
@@ -342,7 +407,7 @@ node,area|z17-[_optOn=Culture][amenity=library] {
 
 node,area|z16-[_optOn=PublicTransport][amenity=bus_station],
 node|z16-[_optOn=PublicTransport][highway=bus_stop],
-node|z17-[_optOn=PublicTransport][public_transport]
+node,area|z17-[_optOn=PublicTransport][public_transport=platform]
 {
 	icon-image:"bus.svgpb";
 	icon-scale:0.37;
@@ -377,6 +442,15 @@ node,area|z13-[_optOn=Railway][railway=station][transport=subway]
 	text-priority: 6; // выше чем у названий дорог
 }
 
+node|z15-[_optOn=Railway][railway=subway_entrance]
+{
+    icon-image:"circle.svgpb";
+    icon-scale:1;
+    icon-tint:eval(any(tag('colour'), #866E54));
+
+    text-priority: 7; // выше чем у названий дорог
+}
+
 node|z15-[_optOn=Bar][amenity=pub]
 {
 	icon-image:"pub.svgpb";
@@ -405,6 +479,28 @@ node|z15-[_optOn=Food][amenity=restaurant]
 	icon-tint:#866E54;
 }
 
+node|z15-[amenity=shelter]
+{
+    icon-image:"shelter.svgpb";
+    icon-scale:0.50;
+    icon-tint:#866E54;
+}
+
+node|z18-[amenity=bench]
+{
+    icon-image:"bench.svgpb";
+    icon-scale:0.50;
+    icon-tint:#866E54;
+}
+
+node|z16-[tourism=picnic_site],
+node|z16-[leisure=picnic_table],
+{
+    icon-image:"picnic_table.svgpb";
+    icon-scale:0.50;
+    icon-tint:#866E54;
+}
+
 node|z15-[_optOn=Food][amenity=fast_food]
 {
 	icon-image:"fast_food.svgpb";
@@ -429,7 +525,6 @@ node|z15-[_optOn=Medical][amenity=veterinary]
 	icon-tint:#866E54;	
 }
 
-node|z17-[_optOn=Medical][shop=chemist],
 node|z17-[_optOn=Medical][amenity=pharmacy]
 {
 	icon-image:"pharmacy.svgpb";
@@ -821,7 +916,7 @@ node|z13-[natural=volcano] {
 
 node|z14-[natural=spring] {
 	text:"s";
-	text-color:#64A7DD;
+	text-color:@color_water;
 	font-size:12;
 	font-stroke-width:2pt;
 	font-stroke-color:#FFFFFFEE;	

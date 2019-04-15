@@ -3,144 +3,88 @@
 
 /******************************* Polygons *******************************/
 
-// oceans
-area[natural=oceanwater]
-{
-	z-index: -2;
-	fill-color:#64A7DD;
-}
-
 // country boundaries
 area[boundary=administrative][admin_level=2]
 {
     z-index: 4;
-    galileo-fast-draw:true;
-
     width: 1pt;
-    color:#596570;
+    color: #596570;
 }
 
 // states boundaries 
-area|z5-[boundary=administrative][admin_level=3] {
+area|z5-[boundary=administrative][admin_level=3]
+{
 	z-index: 3;
-    galileo-fast-draw:true;
-    galileo-stencil-type:drop-same;
-    galileo-stencil-ref:1;
+    galileo-stencil-type: drop-same;
+    galileo-stencil-ref: 1;
 
     dashes-width: 1pt;
-    dashes-color:#59657099;
-    dashes:4,4,4,4;
+    dashes-color: #59657099;
+    dashes: 4,4,4,4;
 }
 
 // regions
-area|z6-[boundary=administrative][admin_level=4] {
+area|z6-[boundary=administrative][admin_level=4]
+{
 	z-index: 2;
-    galileo-fast-draw:true;
-    galileo-stencil-type:drop-same;
-    galileo-stencil-ref:2;
+    galileo-stencil-type: drop-same;
+    galileo-stencil-ref: 2;
 
     dashes-width: 1pt;
-    dashes-color:#A4A8AB99;
-    dashes:4,4,4,4;
+    dashes-color: #A4A8AB99;
+    dashes: 4,4,4,4;
 }
 
 // suburbs
 area|z11-13[boundary=administrative][admin_level=9] 
 {
     z-index: 1;
-    galileo-fast-draw:true;
-    galileo-stencil-type:drop-same;
-    galileo-stencil-ref:3;
+    galileo-stencil-type: drop-same;
+    galileo-stencil-ref: 3;
 
     dashes-width: 1pt;
-    dashes-color:#A4A8AB99;
+    dashes-color: #A4A8AB99;
     dashes:4,4,4,4;
 }
 
-// all kinds of water
-area|z5-[natural=water],
-area|z5-[landuse=reservoir],
-area|z5-[waterway=riverbank],
-area|z9-[natural=bay],
-area|z9-[landuse=basin]
+// Other types of polygons. Less importnant is on top.
+
+// -5
+
+area|z13-[place=islet],
+area|z11-[place=island]
 {
-	z-index: -1;
-	fill-color:#64A7DD;
+    z-index: -5;
+    fill-color: @color_ground;
 }
 
-// all kinds of woods
-area|z10-[natural=wood],
-area|z10-[landuse=forest],
-area|z10-[leisure=nature_reserve],
-area|z13-[leisure=park],
-area|z13-[leisure=garden],
-area|z13-[tourism=zoo],
-area|z13-[natural=scrub],
-area|z13-[landuse=orchard] {
-	z-index: -3;
-	fill-color:#BCDB9A;
+// mud of all kinds
+area|z13-[landuse=construction],
+area|z13-[landuse=brownfield],
+area|z13-[natural=mud]
+{
+    z-index: -5;
+    fill-color: #E9DFBF;
 }
 
-area|z16-[leisure=sports_centre] {
-    z-index: -3;
-    fill-color: #dffce2;
-}
-
-// grass of all kinds
-area|z13-[landuse=pasture],
-area|z13-[landuse=meadow],
-area|z13-[landuse=grass],
-area|z13-[natural=grassland],
-area|z13-[landuse=greenfield],
-area|z13-[natural=heath] {
-	z-index: -2;
-	fill-color:#C8DF9F;
-}
+// -4
 
 // green color again
-area|z11-[natural=fell],
 area|z11-[landuse=farm],
 area|z11-[landuse=village_green],
 area|z11-[landuse=recreation_ground],
 area|z11-[landuse=vineyard],
 area|z11-[leisure=common],
 area|z11-[leisure=golf_course] {
-	z-index: -4;
-	fill-color:#CFDEC6;
+    z-index: -4;
+    fill-color: #CFDEC6;
 }
 
+// yellow farms
 area|z11-[landuse=farmland],
 area|z11-[landuse=farmyard] {
-	z-index: -4;
-	fill-color:#EDDDCA;
-}
-
-area|z13-[landuse=plant_nursery],
-area|z13-[landuse=greenhouse_horticulture]
-{
-	fill-color:#CFDEC6;
-}
-
-area|z13-[landuse=retail],
-area|z13-[amenity=marketplace] 
-{
-	fill-color:#D9E5B3;
-}
-
-area|z13-[natural=wetland]
-{
-	fill-color:#61AE95;
-}
-
-area|z9-[natural=glacier]
-{
-	fill-color:#E0F8F7;
-}
-
-area|z13-[place=islet],
-area|z11-[place=island] {
-	fill-color:@color_ground;
-	z-index:-5;
+    z-index: -4;
+    fill-color: #EDDDCA;
 }
 
 // all kinds of sands
@@ -151,30 +95,203 @@ area|z13-[landuse=salt_pond],
 area|z13-[landuse=quarry]
 {
     z-index: -4;
-	fill-color:#F7ECD2;
+    fill-color: #F7ECD2;
 }
+
+// -3
+
+// all kinds of woods
+area|z10-[natural=wood],
+area|z10-[landuse=forest],
+area|z13-[leisure=park],
+area|z13-[leisure=garden],
+area|z13-[tourism=zoo],
+area|z13-[natural=scrub],
+area|z13-[landuse=orchard]
+{
+    z-index: -3;
+    fill-color: @color_wood;
+}
+
+area|z10-[leisure=nature_reserve] {
+    z-index: -3;
+    fill-color: #BCDB9A30; // @color_wood + alpha 0x30;
+}
+
+area|z16-[leisure=sports_centre]
+{
+    z-index: -3;
+    fill-color: #DFFCE2;
+}
+
+// -2
+
+area[natural=oceanwater]
+{
+    z-index: -2;
+    fill-color: @color_water;
+}
+
+// grass of all kinds
+area|z11-[natural=fell],
+area|z13-[landuse=pasture],
+area|z13-[landuse=meadow],
+area|z13-[landuse=grass],
+area|z13-[landuse=greenfield],
+area|z13-[natural=grassland],
+area|z13-[natural=heath]
+{
+	z-index: -2;
+	fill-color: #C8DF9F;
+}
+
+area|z15-[highway=pedestrian],
+area|z15-[highway=footway]
+{
+    z-index: -2;
+    fill-color: #F8F1EA;
+}
+
+// -1
 
 // generalized buildings
 area|z11-12[landuse=residential]
 {
-	z-index: -1;
-    fill-color:#D9CCBE;
+    z-index: -1;
+    fill-color: #D9CCBE;
 }
 
 area|z11-[landuse=commercial],
 area|z11-[landuse=industrial],
 area|z15-[man_made=works]
 {
-	z-index: -1;
-	fill-color:#F3E3D9;
+    z-index: -1;
+    fill-color: #F3E3D9;
 }
 
-area|z15-[highway=pedestrian],
-area|z15-[highway=footway]
+// for hospital territory, not buildings
+area|z15-[amenity=hospital][!building]
 {
-	z-index: -2;
-	fill-color:#F8F1EA;
+    z-index: -1;
+    fill-color: #FCFCDC;
 }
+
+area|z13-[landuse=cemetery]
+{
+    z-index: -1;
+    fill-color: #D5DCC3;
+}
+
+area|z15-[landuse=railway]
+{
+    z-index: -1;
+    fill-color: #E6F8E0;
+}
+
+// parkings
+area|z16-[landuse=garages],
+area|z16-[amenity=parking]
+{
+    z-index: -1;
+    fill-color: #EDE7E1;
+}
+
+// 0
+
+area|z5-[natural=water],
+area|z5-[landuse=reservoir],
+area|z5-[waterway=riverbank],
+// area|z9-[natural=bay], - часто из заливов не вырезают острова. И они в результате тонут под водой.
+area|z9-[landuse=basin]
+{
+    fill-color: @color_water;
+}
+
+area|z9-[natural=glacier]
+{
+    fill-color: #E0F8F7;
+}
+
+area|z13-[landuse=plant_nursery],
+area|z13-[landuse=greenhouse_horticulture]
+{
+	fill-color: #CFDEC6;
+}
+
+area|z13-[landuse=retail],
+area|z13-[amenity=marketplace] 
+{
+	fill-color: #D9E5B3;
+}
+
+area|z9-[natural=wetland]
+{
+	fill-color: #61AE95;
+}
+
+// pier and groyne displayed on top of the water
+area|z13-[man_made=pier],
+area|z13-[man_made=groyne]
+{
+    fill-color: @color_ground;
+}
+
+area|z13-[waterway=dock]
+{ // dock над домом. т.к. может быть домом
+    fill-color: @color_water;
+}
+
+// Aeroway
+area|z11-[aeroway=aerodrome]
+{
+    fill-color: #F8E6E0;
+}
+
+area|z14-[aeroway=aerodrome]
+{
+    text: eval(locTag('name'));
+    text-color: #21211F;
+    font-size:10;
+    font-stroke-width:1;
+    font-stroke-color: #FFFFFFEE;
+}
+
+area|z13-[leisure=playground]
+{
+    fill-color: #B9E6C0;
+}
+
+// 1
+
+area|z13-[leisure=stadium]
+{
+    z-index: 1;
+    fill-color: #9EC7BC;
+}
+
+area|z13-[aeroway=runway]
+{
+    z-index: 1;
+    fill-color: #F1F8FC;
+}
+
+area|z14-[aeroway=hangar],
+area|z14-[aeroway=terminal],
+area|z14-[aeroway=gate]
+{
+    z-index: 1;
+    fill-color: #D9CCBE;
+    width: 1pt;
+    color: #B39B7C;
+}
+
+area|z14-[aeroway=apron]
+{
+    z-index: 1;
+    fill-color: #DED0D5;
+}
+
+// 2
 
 // fill image of military area desplayed on top of the other objects
 area|z11-[landuse=military],
@@ -184,152 +301,75 @@ area|z11-[military=danger_area]
 	fill-image:"forbiddenArea.png";
 }
 
-// for hospital territory, not buildings
-area|z15-[amenity=hospital][!building]
+area|z13-[leisure=track]
 {
-	z-index: -1;
-	fill-color:#FCFCDC;
+    z-index: 2;
+    fill-color: #CFDEC6;
 }
 
-area|z13-[landuse=construction],
-area|z13-[landuse=brownfield],
-area|z13-[natural=mud]
-{
-	z-index: -5;	
-	fill-color:#E9DFBF;
-}
-
-area|z13-[landuse=cemetery]
-{
-	z-index: -1;
-	fill-color:#D5DCC3;
-}
-
-area|z13-[leisure=track] 
-{
-	z-index: 3;
-	fill-color:#CFDEC6;
-}
-
-area|z13-[leisure=stadium]
-{
-	fill-color:#9EC7BC;
-	z-index:1;
-}
-
-area|z16-[amenity=swimming_pool],
-area|z17-[leisure=swimming_pool]
-{
-	fill-color:#6FB8E3;
-	z-index:1;
-}
-
-// pier and groyne displayed on top of the water
-area|z13-[man_made=pier],
-area|z13-[man_made=groyne],
-area|z13-[waterway=dock] // dock над домом. т.к. может быть домом
-{
-	fill-color:@color_ground;
-}
-
-area|z13-[leisure=pitch]
-{
-	fill-color:#BCDFCD;
-	z-index: 0;
-}
+// 3
 
 // all buildings
 area|z13-[building]
 {
-	z-index:3;
-	fill-color:@color_building;
+	z-index: 3;
+	fill-color: @color_building;
+}
+
+// building stroke
+area|z15-[building]
+{
+    z-index: 3;
+    width: 1px;
+    color: #B39B7C;
 }
 
 area|z15-[building=planned],
+{
+    z-index: 3;
+    fill-color: #E1D4C6;
+}
+
 area|z15-[building=construction]
 {
-	fill-color:#E1D4C6;
+    z-index: 3;
+    fill-color: #E1D4C6;
+
+    dashes-width: 1pt;
+    dashes-color: #B39B7C;
+    dashes: 4,4,4,4;
+
+    width: none;
 }
 
-// Aeroway
-area|z11-[aeroway=aerodrome]
+area|z13-[leisure=pitch]
 {
-	z-index: 0;	
-	fill-color:#F8E6E0;	
+    z-index: 3;
+    fill-color: #BCDFCD;
 }
 
-area|z14-[aeroway=aerodrome]
+// 4
+
+area|z16-[amenity=swimming_pool],
+area|z17-[leisure=swimming_pool]
 {
-	text: eval(locTag('name'));
-	text-color:#21211F;
-	font-size:10;
-	font-stroke-width:1;
-	font-stroke-color:#FFFFFFEE;
+    z-index: 4;
+	fill-color: #6FB8E3;
 }
 
-area|z13-[aeroway=runway]
-{
-	fill-color:#F1F8FC;
-	z-index: 1;
-}
+// 10
 
-area|z14-[aeroway=hangar],
-area|z14-[aeroway=terminal],
-area|z14-[aeroway=gate]
+area|z13-[man_made=bridge]
 {
-	fill-color:#D9CCBE;
-	z-index: 1;
-}
-
-area|z14-[aeroway=apron]
-{
-	fill-color:#DED0D5;
-	z-index: 1;
-}
-
-area|z15-[landuse=railway]
-{
-	fill-color:#E6F8E0;
-	z-index: -1;
-}
-
-// parkings
-area|z16-[landuse=garages],
-area|z16-[amenity=parking][!building]
-{
-	fill-color:#EDE7E1;
-	z-index: -1;
-}
-
-area|z13-[leisure=playground] 
-{
-	fill-color:#B9E6C0;
+    z-index: 10;
+    fill-color: #CCC;
 }
 
 /******************************* Polygon strokes *******************************/
-// building
-area|z15-[building],
-area|z14-[aeroway=hangar]
-{
-	galileo-fast-draw:true; 
-	width:1px; 
-	color:#B39B7C;
-}
-
-area|z15-[building=construction]
-{
-	galileo-fast-draw:true; 
-	dashes-width:1px;
-	dashes-color:#B39B7C;
-	dashes:4,4,4,4;
-
-	width: none;
-}
 
 // all barriers displayed as thin red line
 *|z16-[barrier]
 {
-	galileo-fast-draw:true; 
-	width:1pt; 
-	color:#E6A176;
+	width: 1pt;
+	color: #E6A176;
 }
