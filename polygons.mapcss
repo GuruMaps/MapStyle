@@ -1,5 +1,5 @@
 // DefaultStyle from GLMap.framework
-// Copyright (c) 2013-2018 Evgen Bodunov. All rights reserved.
+// Copyright (c) 2013-2019 Evgen Bodunov. All rights reserved.
 
 /******************************* Polygons *******************************/
 
@@ -8,7 +8,7 @@ area[boundary=administrative][admin_level=2]
 {
     z-index: 4;
     width: 1pt;
-    color: #596570;
+    color: @color_boudaray_country;
 }
 
 // states boundaries 
@@ -19,7 +19,7 @@ area|z5-[boundary=administrative][admin_level=3]
     galileo-stencil-ref: 1;
 
     dashes-width: 1pt;
-    dashes-color: #59657099;
+    dashes-color: @color_boudaray_state;
     dashes: 4,4,4,4;
 }
 
@@ -31,7 +31,7 @@ area|z6-[boundary=administrative][admin_level=4]
     galileo-stencil-ref: 2;
 
     dashes-width: 1pt;
-    dashes-color: #A4A8AB99;
+    dashes-color: @color_boudaray_other;
     dashes: 4,4,4,4;
 }
 
@@ -43,7 +43,7 @@ area|z11-13[boundary=administrative][admin_level=9]
     galileo-stencil-ref: 3;
 
     dashes-width: 1pt;
-    dashes-color: #A4A8AB99;
+    dashes-color: @color_boudaray_other;
     dashes:4,4,4,4;
 }
 
@@ -64,7 +64,7 @@ area|z13-[landuse=brownfield],
 area|z13-[natural=mud]
 {
     z-index: -5;
-    fill-color: #E9DFBF;
+    fill-color: @color_mud;
 }
 
 // -4
@@ -77,14 +77,14 @@ area|z11-[landuse=vineyard],
 area|z11-[leisure=common],
 area|z11-[leisure=golf_course] {
     z-index: -4;
-    fill-color: #CFDEC6;
+    fill-color: @color_farm;
 }
 
 // yellow farms
 area|z11-[landuse=farmland],
 area|z11-[landuse=farmyard] {
     z-index: -4;
-    fill-color: #EDDDCA;
+    fill-color: @color_farmyard;
 }
 
 // all kinds of sands
@@ -95,7 +95,7 @@ area|z13-[landuse=salt_pond],
 area|z13-[landuse=quarry]
 {
     z-index: -4;
-    fill-color: #F7ECD2;
+    fill-color: @color_sand;
 }
 
 // -3
@@ -115,13 +115,13 @@ area|z13-[landuse=orchard]
 
 area|z10-[leisure=nature_reserve] {
     z-index: -3;
-    fill-color: #BCDB9A30; // @color_wood + alpha 0x30;
+    fill-color: @color_nature_reserve;
 }
 
 area|z16-[leisure=sports_centre]
 {
     z-index: -3;
-    fill-color: #DFFCE2;
+    fill-color: @color_sports_centre;
 }
 
 // -2
@@ -142,14 +142,14 @@ area|z13-[natural=grassland],
 area|z13-[natural=heath]
 {
 	z-index: -2;
-	fill-color: #C8DF9F;
+	fill-color: @color_grass;
 }
 
 area|z15-[highway=pedestrian],
 area|z15-[highway=footway]
 {
     z-index: -2;
-    fill-color: #F8F1EA;
+    fill-color: @color_footway;
 }
 
 // -1
@@ -158,7 +158,7 @@ area|z15-[highway=footway]
 area|z11-12[landuse=residential]
 {
     z-index: -1;
-    fill-color: #D9CCBE;
+    fill-color: @color_landuse_residential_fill;
 }
 
 area|z11-[landuse=commercial],
@@ -166,26 +166,26 @@ area|z11-[landuse=industrial],
 area|z15-[man_made=works]
 {
     z-index: -1;
-    fill-color: #F3E3D9;
+    fill-color: @color_landuse_commercial;
 }
 
 // for hospital territory, not buildings
 area|z15-[amenity=hospital][!building]
 {
     z-index: -1;
-    fill-color: #FCFCDC;
+    fill-color: @color_hospital;
 }
 
 area|z13-[landuse=cemetery]
 {
     z-index: -1;
-    fill-color: #D5DCC3;
+    fill-color: @color_landuse_cemetery;
 }
 
 area|z15-[landuse=railway]
 {
     z-index: -1;
-    fill-color: #E6F8E0;
+    fill-color: @color_railway;
 }
 
 // parkings
@@ -193,7 +193,7 @@ area|z16-[landuse=garages],
 area|z16-[amenity=parking]
 {
     z-index: -1;
-    fill-color: #EDE7E1;
+    fill-color: @color_landuse_parking;
 }
 
 // 0
@@ -209,24 +209,24 @@ area|z9-[landuse=basin]
 
 area|z9-[natural=glacier]
 {
-    fill-color: #E0F8F7;
+    fill-color: @color_glacier;
 }
 
 area|z13-[landuse=plant_nursery],
 area|z13-[landuse=greenhouse_horticulture]
 {
-	fill-color: #CFDEC6;
+	fill-color: @color_farm;
 }
 
 area|z13-[landuse=retail],
 area|z13-[amenity=marketplace] 
 {
-	fill-color: #D9E5B3;
+	fill-color: @color_market;
 }
 
 area|z9-[natural=wetland]
 {
-	fill-color: #61AE95;
+	fill-color: @color_wetland;
 }
 
 // pier and groyne displayed on top of the water
@@ -244,21 +244,21 @@ area|z13-[waterway=dock]
 // Aeroway
 area|z11-[aeroway=aerodrome]
 {
-    fill-color: #F8E6E0;
+    fill-color: @color_aeroway_aerodrome;
 }
 
 area|z14-[aeroway=aerodrome]
 {
     text: eval(locTag('name'));
-    text-color: #21211F;
+    text-color: @color_label_text;
     font-size:10;
     font-stroke-width:1;
-    font-stroke-color: #FFFFFFEE;
+    font-stroke-color: @color_label_stroke;
 }
 
 area|z13-[leisure=playground]
 {
-    fill-color: #B9E6C0;
+    fill-color: @color_playground;
 }
 
 // 1
@@ -266,13 +266,13 @@ area|z13-[leisure=playground]
 area|z13-[leisure=stadium]
 {
     z-index: 1;
-    fill-color: #9EC7BC;
+    fill-color: @color_stadium;
 }
 
 area|z13-[aeroway=runway]
 {
     z-index: 1;
-    fill-color: #F1F8FC;
+    fill-color: @color_aeroway_runway;
 }
 
 area|z14-[aeroway=hangar],
@@ -280,15 +280,15 @@ area|z14-[aeroway=terminal],
 area|z14-[aeroway=gate]
 {
     z-index: 1;
-    fill-color: #D9CCBE;
+    fill-color: @color_landuse_residential_fill;
     width: 1pt;
-    color: #B39B7C;
+    color: @color_landuse_residential_stroke;
 }
 
 area|z14-[aeroway=apron]
 {
     z-index: 1;
-    fill-color: #DED0D5;
+    fill-color: @color_aeroway_apron;
 }
 
 // 2
@@ -304,7 +304,7 @@ area|z11-[military=danger_area]
 area|z13-[leisure=track]
 {
     z-index: 2;
-    fill-color: #CFDEC6;
+    fill-color: @color_farm;
 }
 
 // 3
@@ -321,22 +321,22 @@ area|z15-[building]
 {
     z-index: 3;
     width: 1px;
-    color: #B39B7C;
+    color: @color_landuse_residential_stroke;
 }
 
 area|z15-[building=planned],
 {
     z-index: 3;
-    fill-color: #E1D4C6;
+    fill-color: @color_building_planned;
 }
 
 area|z15-[building=construction]
 {
     z-index: 3;
-    fill-color: #E1D4C6;
+    fill-color: @color_building_planned;
 
     dashes-width: 1pt;
-    dashes-color: #B39B7C;
+    dashes-color: @color_landuse_residential_stroke;
     dashes: 4,4,4,4;
 
     width: none;
@@ -345,7 +345,7 @@ area|z15-[building=construction]
 area|z13-[leisure=pitch]
 {
     z-index: 3;
-    fill-color: #BCDFCD;
+    fill-color: @color_pitch;
 }
 
 // 4
@@ -354,7 +354,7 @@ area|z16-[amenity=swimming_pool],
 area|z17-[leisure=swimming_pool]
 {
     z-index: 4;
-	fill-color: #6FB8E3;
+	fill-color: @color_swimming_pool;
 }
 
 // 10
@@ -362,7 +362,7 @@ area|z17-[leisure=swimming_pool]
 area|z13-[man_made=bridge]
 {
     z-index: 10;
-    fill-color: #CCC;
+    fill-color: @color_bridge;
 }
 
 /******************************* Polygon strokes *******************************/
@@ -371,5 +371,5 @@ area|z13-[man_made=bridge]
 *|z16-[barrier]
 {
 	width: 1pt;
-	color: #E6A176;
+	color: @color_barrier;
 }

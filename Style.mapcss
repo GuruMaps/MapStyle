@@ -1,12 +1,12 @@
 // DefaultStyle from GLMap.framework
-// Copyright (c) 2013-2018 Evgen Bodunov. All rights reserved.
+// Copyright (c) 2013-2019 Evgen Bodunov. All rights reserved.
 
 @import "colors.mapcss";
 
 // canvas color
 canvas
 {
-	fill-color:@color_ground;
+	fill-color: @color_ground;
 }
 
 // for any object with tag 'layer', set it's property 'layer', to value of 'layer' tag
