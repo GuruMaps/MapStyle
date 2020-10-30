@@ -1,28 +1,25 @@
 // DefaultStyle from GLMap.framework
 // Copyright (c) 2013-2019 Evgen Bodunov. All rights reserved.
 
-@import "colors.mapcss";
+@if Theme == Dark
+    @noDataImageName: "noData_dark.png";
+    @import "colors_dark.mapcss";
+@else // Default colors
+    @noDataImageName: "noData.png";
+    @import "colors.mapcss";
+@endif
 
 // canvas color
 canvas
 {
-	fill-color: @color_ground;
+    fill-color: @color_ground;
+    fill-image: @noDataImageName;
 }
 
 // for any object with tag 'layer', set it's property 'layer', to value of 'layer' tag
 *|z9-[layer]
 {
-	layer: eval(tag(layer));	
-}
-
-// highways is displayed on top of any other stuff
-line|z9-[highway] {
-    layer: 5;
-}
-line|z13-[highway],
-line|z13-[railway]
-{
-	layer: eval(any(tag(layer), 0) + 5);	
+    layer: eval(tag(layer));
 }
 
 @import "polygons.mapcss";

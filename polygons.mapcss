@@ -118,11 +118,13 @@ area|z10-[leisure=nature_reserve] {
     fill-color: @color_nature_reserve;
 }
 
-area|z16-[leisure=sports_centre]
-{
-    z-index: -3;
-    fill-color: @color_sports_centre;
-}
+@if Style != Car
+    area|z16-[leisure=sports_centre]
+    {
+        z-index: -3;
+        fill-color: @color_sports_centre;
+    }
+@endif
 
 // -2
 
@@ -310,11 +312,19 @@ area|z13-[leisure=track]
 // 3
 
 // all buildings
-area|z13-[building]
-{
-	z-index: 3;
-	fill-color: @color_building;
-}
+@if Style == Car
+    area|z15-[building]
+    {
+        z-index: 3;
+        fill-color: @color_landuse_residential_fill;
+    }
+@else
+    area|z13-[building]
+    {
+        z-index: 3;
+        fill-color: @color_building;
+    }
+@endif
 
 // building stroke
 area|z15-[building]
