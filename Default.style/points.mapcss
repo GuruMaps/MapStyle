@@ -770,7 +770,7 @@ node,area {
     |z14-[aeroway=aerodrome],
     |z15-(
         [highway=pedestrian],
-        [amenity=university]
+        [amenity=university],
         [amenity=hospital]),
     |z16-[amenity=kindergarten]{
         text: eval(locTag('name'));
