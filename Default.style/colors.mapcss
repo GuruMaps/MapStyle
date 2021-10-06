@@ -3,26 +3,31 @@
 
 @color_ground: #EAE3D3; // s: -0.35
 @color_water: #64A7DD;
+@color_water_icon: #135386;
 @color_water_underground: #64A7DD66;
-@color_wood: #ABDA95; // l: -0.07
+@color_wood: #A0D788; // l: -0.07
+@color_wood_icon: #3E7326;
 @color_nature_reserve: #BCDB9A30;
 @color_building_planned: #E1D4C6;
 @color_building: #D7C9BA; // l: 0.07
-@color_landuse_residential_fill: #D9CCBE; // s: -0.15
-@color_landuse_residential_stroke: #B39B7C;
+@color_landuse_residential: #D9CCBE; // s: -0.15
+@color_building_stroke: #B39B7C;
 @color_landuse_commercial: #F3E3D9; // s: -0.15
 @color_landuse_cemetery: #D5DCC3; // s: -0.15
 @color_landuse_parking: #EDE7E1;
 @color_glacier: #E0F8F7;
-@color_boudaray_country: #596570;
-@color_boudaray_state: #59657099;
-@color_boudaray_other: #A4A8AB99;
+@color_boundary_country: #596570;
+@color_boundary_state: #59657099;
+@color_boundary_other: #A4A8AB99;
 @color_mud: #E9DFBF;
 @color_farm: #CFDEC6;
 @color_farmyard: #EDDDCA; // s: -0.15
 @color_sand: #F7ECD2; // l: -0.07
 @color_market: #D9E5B3;
 @color_wetland: #95E0B899;
+@color_scrub: #C8D7AB;
+@color_orchard: #C6D876; // l: -0.095
+@color_allotments: #C8E0BE;
 @color_playground: #B9E6C0;
 @color_stadium: #9EC7BC;
 @color_sports_centre: #DFFCE2;
@@ -34,7 +39,9 @@
 @color_swimming_pool: #6FB8E3;
 @color_bridge: #CCC;
 @color_barrier: #E6A176;
+@color_hedge: #749933;
 @color_grass: #C8DF9F; // l: -0.07
+@color_quarry: #C4C2C2;
 @color_hospital: #FCFCDC;
 @color_private: #F7AEAD;
 @color_tunnel: #D0D0D0;
@@ -66,23 +73,51 @@
 @color_icon_capital_tint: #3A3A3A;
 
 // roads of all kinds
-@color_road_construction: #F7BE81; // l: 0.1
-@color_motorway_casing: #E85; // l: 0.1
-@color_motorway: #F96; // l: 0.1
-@color_trunk_casing: #E96; // l: 0.1
-@color_trunk: #FA7; // l: 0.1
-@color_primary_casing: #EA7; // l: 0.1
-@color_primary: #FB8; // l: 0.1
-@color_secondary_casing: #EB8; // l: 0.1
-@color_secondary: #FC9; // l: 0.1
-@color_tertiary_casing: #EC9; // l: 0.1
-@color_tertiary: #FDA; // l: 0.1
 @color_small_road: #FEFEFE; // l: 0.4
+@color_small_road_casing: #CCC; // l: 0.1
 @color_bridge: #A4A8AB; // l: 0.1
 @color_railroad_tunnel: #A4A8ABAA; // l: 0.1
 @color_cycleway_dashes: #6876e1; // l: 0.1
-@color_footway: #F8F1EA; // l: 0.1
-@color_footway_dashes: #BD9692; // l: 0.1
+@color_footway_area: #F8F1EA; // l: 0.1
+@color_footway_casing: #fefefe30;
+@color_road_construction: #F7BE81; // l: 0.1
+@color_dashes_casing: #FEFEFE30;
+@if Style == Outdoor
+    @color_footway_dashes: #AF756A; // l: 0.1
+    @color_track_dashes: #977868; // l: 0.1
+    @if SubStyle == Hike
+        @color_path_dashes: @color_track_dashes;
+    @else
+        @color_path_dashes: #474E85; // l: 0.1
+    @endif
+    @color_motorway_casing: @color_small_road_casing;
+    @color_motorway: @color_small_road;
+    @color_trunk_casing: @color_small_road_casing;
+    @color_trunk: @color_small_road;
+    @color_primary_casing: @color_small_road_casing;
+    @color_primary: @color_small_road;
+    @color_secondary_casing: @color_small_road_casing;
+    @color_secondary: @color_small_road;
+    @color_tertiary_casing: @color_small_road_casing;
+    @color_tertiary: @color_small_road;
+    @color_pedestrian: #CCC;
+    @color_pedestrian_casing: #AAA;
+@else
+    @color_footway_dashes: #BD9692; // l: 0.1
+    @color_path_dashes: @color_footway_dashes;
+    @color_track_dashes: @color_small_road; // l: 0.4
+    @color_motorway_casing: #E85; // l: 0.1
+    @color_motorway: #F96; // l: 0.1
+    @color_trunk_casing: #E96; // l: 0.1
+    @color_trunk: #FA7; // l: 0.1
+    @color_primary_casing: #EA7; // l: 0.1
+    @color_primary: #FB8; // l: 0.1
+    @color_secondary_casing: #EB8; // l: 0.1
+    @color_secondary: #FC9; // l: 0.1
+    @color_tertiary_casing: #EC9; // l: 0.1
+    @color_tertiary: #FDA; // l: 0.1
+    @color_pedestrian: @color_small_road;
+@endif
 
 @color_railway: #E6F8E0; // l: 0.1
 @color_railway_dashes: #999; // l: 0.1
