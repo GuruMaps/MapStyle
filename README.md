@@ -1,12 +1,10 @@
-# Default Map Style of [Galileo](https://galileo-app.com)
+# Map Style of [Guru Maps](https://gurumaps.app)
 
-Syntax of this file is based on [MapCSS file format](http://mapcss.org), with some unique features and some limitations.
-
-There is no documentation about our branch of MapCSS (TBD), just read the comments inside the style and look for similar cases as examples.
+Syntax of this file is based on MapCSS inspired [file format](https://gurumaps.app/manuals/ios/06-mapcss.html), with some unique features and some limitations.
 
 ## How to use
 
-To force application to use your map style just put *.mapcss files [to File Sharing folder](https://support.apple.com/en-us/HT201301) of the Galileo and relaunch the app. Only map style is loaded and custom resources is not supported yet.
+To add this style into the app. Copy `Default.style` folder into the app Documents folder. It will be added into the offline maps list as `Default`. Feel free to change icons, colors and change the name to anything you want. It won't break map style included into the app. You can make multiple map styles for different tasks.
 
 ## Contribute
 
@@ -14,5 +12,5 @@ We're open to pull requests. Don't hesitate.
 
 ## Links
 
-* Main site: https://galileo-app.com
-* AppStore: https://itunes.apple.com/us/app/galileo-offline-maps/id321745474?mt=8
+* OS: https://apps.apple.com/us/app/guru-maps/id321745474
+* Android: https://play.google.com/store/apps/details?id=com.bodunov.galileo
