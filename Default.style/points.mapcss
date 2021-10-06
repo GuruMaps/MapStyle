@@ -72,7 +72,7 @@ node,area {
 
     |z5-12[capital=yes] {
         [admin_level=2],[!admin_level] {
-            icon-image:"circle.svgpb";
+            icon-image:"circle.svg";
             icon-scale:1.2;
             icon-tint: @color_icon_capital_tint;
 
@@ -254,7 +254,7 @@ node,area {
         }
 
         node|z17-[entrance][!indoor] {
-            icon-image: "circle.svgpb";
+            icon-image: "circle.svg";
             icon-tint: @color_entrance_text;
             icon-scale: 0.8;
             [entrance=main] {
@@ -443,7 +443,7 @@ node,area {
 
     @if AllShops
         node|z17-[shop] {
-            icon-image:"circle.svgpb";
+            icon-image:"circle.svg";
             icon-scale:1;
             icon-tint: @color_icon_tint;
 
@@ -454,13 +454,13 @@ node,area {
     @if SubStyle != Car
         |z17-{
             [amenity=toilets] {
-                icon-image:"WC.svgpb";
+                icon-image:"WC.svg";
                 icon-scale:0.37;
                 icon-tint: @color_icon_tint;
             }
             node[amenity=drinking_water],
             node[amenity=water_point]{
-                icon-image:"drinking_water.svgpb";
+                icon-image:"drinking_water.svg";
                 icon-scale:0.37;
                 icon-tint: @color_icon_tint;
             }
@@ -469,7 +469,7 @@ node,area {
 
     @if Culture
         |z17-[amenity=library] {
-            icon-image:"library.svgpb";
+            icon-image:"library.svg";
             icon-scale:0.37;
             icon-tint: @color_icon_tint;
         }
@@ -480,14 +480,14 @@ node,area {
         node|z16-[highway=bus_stop],
         |z17-[public_transport=platform]
         {
-            icon-image:"bus.svgpb";
+            icon-image:"bus.svg";
             icon-scale:0.37;
             icon-tint:brown;
         }
 
         node|z17-[railway=tram_stop]
         {
-            icon-image:"tram.svgpb";
+            icon-image:"tram.svg";
             icon-scale:0.37;
             icon-tint:brown;
         }
@@ -495,19 +495,19 @@ node,area {
 
     @if Railway
         |z13-[railway=station] {
-            icon-image:"railway_station.svgpb";
+            icon-image:"railway_station.svg";
             icon-scale:1.7;
             icon-tint:brown;
         }
 
         node|z14-[railway=halt] {
-            icon-image:"railway_station.svgpb";
+            icon-image:"railway_station.svg";
             icon-scale:1.4;
             icon-tint:brown;
         }
 
         |z13-[railway=station][transport=subway] {
-            icon-image:"subway.svgpb";
+            icon-image:"subway.svg";
             icon-scale:2;
             icon-tint:eval(any(tag('colour'), @color_icon_tint));
 
@@ -515,7 +515,7 @@ node,area {
         }
 
         node|z15-[railway=subway_entrance] {
-            icon-image:"circle.svgpb";
+            icon-image:"circle.svg";
             icon-scale:1;
             icon-tint:eval(any(tag('colour'), @color_icon_tint));
 
@@ -526,12 +526,12 @@ node,area {
     @if Bar
         |z15-{
             [amenity=bar] {
-                icon-image:"bar.svgpb";
+                icon-image:"bar.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [amenity=pub] {
-                icon-image:"pub.svgpb";
+                icon-image:"pub.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -541,19 +541,19 @@ node,area {
     @if Food
         |z15-{
             [amenity=fast_food] {
-                icon-image:"fast_food.svgpb";
+                icon-image:"fast_food.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [amenity=cafe] {
-                icon-image:"cafe.svgpb";
+                icon-image:"cafe.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [amenity=restaurant] {
-                icon-image:"restaurant.svgpb";
+                icon-image:"restaurant.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -561,7 +561,7 @@ node,area {
     @endif
 
     node|z15-[amenity=shelter] {
-        icon-image:"shelter.svgpb";
+        icon-image:"shelter.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -569,58 +569,58 @@ node,area {
     node|z16-{
         [tourism=picnic_site],
         [leisure=picnic_table] {
-            icon-image:"picnic_table.svgpb";
+            icon-image:"picnic_table.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
         
         [leisure=firepit] {
-            icon-image:"firepit.svgpb";
+            icon-image:"firepit.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
         
         [leisure=bbq],
         [amenity=bbq] {
-            icon-image:"BBQ.svgpb";
+            icon-image:"BBQ.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
         
         [leisure=fishing] {
-            icon-image:"fishing.svgpb";
+            icon-image:"fishing.svg";
             icon-scale:0.50;
             icon-tint: @color_water_icon;
         }
 
         [waterway=waterfall] {
-            icon-image:"waterfall.svgpb";
+            icon-image:"waterfall.svg";
             icon-scale:0.50;
             icon-tint: @color_water_icon;
         }
 
         [natural=tree] {
-            icon-image: "circle.svgpb";
+            icon-image: "circle.svg";
             icon-scale: 1;
             icon-tint: @color_wood;
             text-priority: -10;
         }
         
         [natural=rock] {
-            icon-image: "rock.svgpb";
+            icon-image: "rock.svg";
             icon-scale: 0.5;
             icon-tint: @color_icon_tint;
         }
         
         [natural=stone] {
-            icon-image: "stone.svgpb";
+            icon-image: "stone.svg";
             icon-scale: 0.5;
             icon-tint: @color_icon_tint;
         }
     }
     
     node|z18-[amenity=bench] {
-        icon-image:"bench.svgpb";
+        icon-image:"bench.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -630,24 +630,24 @@ node,area {
             node[amenity=hospital],
             area[building=hospital],
             [amenity=clinic],[amenity=doctors] {
-                icon-image:"health.svgpb";
+                icon-image:"health.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [amenity=veterinary] {
-                icon-image:"vet.svgpb";
+                icon-image:"vet.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
         }
         |z17-{
             [amenity=pharmacy] {
-                icon-image:"pharmacy.svgpb";
+                icon-image:"pharmacy.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [amenity=dentist] {
-                icon-image:"dentist.svgpb";
+                icon-image:"dentist.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -657,7 +657,7 @@ node,area {
     @if Financial
         node|z17-[amenity=atm]
         {
-            icon-image:"ATM.svgpb";
+            icon-image:"ATM.svg";
             icon-scale:0.50;
             icon-tint: @color_building_text;
         }
@@ -665,7 +665,7 @@ node,area {
         |z17-[amenity=bank],
         node|z17-[amenity=bureau_de_change]
         {
-            icon-image:"bank.svgpb";
+            icon-image:"bank.svg";
             icon-scale:0.50;
             icon-tint: @color_building_text;
         }
@@ -674,12 +674,12 @@ node,area {
     @if Hotel
         |z16-{
             [amenity=hotel], [tourism=hotel], [tourism=hostel], [tourism=motel], [tourism=guest_house], [tourism=chalet], [tourism=alpine_hut] {
-                icon-image:"hotel.svgpb";
+                icon-image:"hotel.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [tourism=camp_site], [tourism=caravan_site] {
-                icon-image:"camping.svgpb";
+                icon-image:"camping.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -689,25 +689,25 @@ node,area {
     @if Entertaiment
         |z15-{
             [amenity=cinema] {
-                icon-image:"cinema.svgpb";
+                icon-image:"cinema.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [amenity=theatre] {
-                icon-image:"theater.svgpb";
+                icon-image:"theater.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [tourism=zoo] {
-                icon-image:"zoo.svgpb";
+                icon-image:"zoo.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [tourism=theme_park] {
-                icon-image:"theme_park.svgpb";
+                icon-image:"theme_park.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -722,7 +722,7 @@ node,area {
         |z18-[leisure=swimming_pool],
     @endif
         {
-            icon-image:"pool.svgpb";
+            icon-image:"pool.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
@@ -730,14 +730,14 @@ node,area {
     @if Sport
         |z16-[leisure=sports_centre]
         {
-            icon-image:"gym.svgpb";
+            icon-image:"gym.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
 
         |z15-[leisure=golf_course]
         {
-            icon-image:"golf_course.svgpb";
+            icon-image:"golf_course.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
@@ -753,7 +753,7 @@ node,area {
         |z15-[amenity=townhall],
     @endif
     {
-        icon-image:"museum.svgpb";
+        icon-image:"museum.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -761,7 +761,7 @@ node,area {
     @if Entertaiment
         |z16-[amenity=nightclub],
         {
-            icon-image:"disco.svgpb";
+            icon-image:"disco.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
@@ -800,7 +800,7 @@ node,area {
     @if Culture
         |z16-{
             [historic=memorial], [historic=monument], [artwork_type=sculpture], [artwork_type=statue], [artwork_type=installation], [amenity=place_of_worship] {
-                icon-image:"monument.svgpb";
+                icon-image:"monument.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -810,7 +810,7 @@ node,area {
         /*
         node|z16-{
             [artwork_type=fountain], [amenity=fountain] {
-                icon-image:"fountain.svgpb";
+                icon-image:"fountain.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
@@ -823,31 +823,31 @@ node,area {
         // node|z16-[tourism=attraction],
         |z16-{
             [tourism=information], [shop=ticket] {
-                icon-image:"info.svgpb";
+                icon-image:"info.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             
             [tourism=information][information=guidepost] {
-                icon-image:"guidepost.svgpb";
+                icon-image:"guidepost.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [tourism=information][information=map] {
-                icon-image:"info_map.svgpb";
+                icon-image:"info_map.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             
             [tourism=information][information=board] {
-                icon-image:"info_board.svgpb";
+                icon-image:"info_board.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
 
             [tourism=viewpoint] {
-                icon-image:"viewpoint.svgpb";
+                icon-image:"viewpoint.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -857,12 +857,12 @@ node,area {
     @if Car
         |z15-{
             [amenity=charging_station] {
-                icon-image:"charging_station.svgpb";
+                icon-image:"charging_station.svg";
                 icon-scale:0.5;
                 icon-tint: @color_icon_tint;
             }
             [amenity=fuel] {
-                icon-image:"gas_station.svgpb";
+                icon-image:"gas_station.svg";
                 icon-scale:0.5;
                 icon-tint: @color_icon_tint;
             }
@@ -875,7 +875,7 @@ node,area {
             [shop=car][service=tyres],
             [shop=car][service=parts],
             [shop=car][service=repair] {
-                icon-image:"car_service.svgpb";
+                icon-image:"car_service.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
@@ -883,19 +883,19 @@ node,area {
             [shop=car][service=dealer],
             [shop=car][!service],
             [shop=motorcycle] {
-                icon-image:"car_rental.svgpb";
+                icon-image:"car_rental.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
             [amenity=car_sharing] {
-                icon-image:"car_sharing.svgpb";
+                icon-image:"car_sharing.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
             // parkings
             [amenity=parking] {
                 text-priority: -1;
-                icon-image:"parking.svgpb";
+                icon-image:"parking.svg";
                 icon-scale:0.50;
                 icon-tint:#B0A18B;
             }
@@ -908,24 +908,24 @@ node,area {
             [diplomatic=embassy],
             [diplomatic=consulate],
             [amenity=embassy] {
-                icon-image:"embassy.svgpb";
+                icon-image:"embassy.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [office=government] {
-                icon-image:"circle.svgpb";
+                icon-image:"circle.svg";
                 icon-tint: @color_icon_tint;
             }
         }
 
         |z17-{
             [amenity=post_office] {
-                icon-image:"post_office.svgpb";
+                icon-image:"post_office.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [amenity=police] {
-                icon-image:"police_station.svgpb";
+                icon-image:"police_station.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -938,7 +938,7 @@ node,area {
             [amenity=school],
             [amenity=university],
             area[building=school] {
-                icon-image:"education.svgpb";
+                icon-image:"education.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -948,39 +948,39 @@ node,area {
     @if Shop
         |z17-{
             [shop=supermarket] {
-                icon-image:"supermarket.svgpb";
+                icon-image:"supermarket.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             // small shops
             //[shop=kiosk],
             [shop=convenience], [shop=beverages], [shop=alcohol], [shop=butcher] {
-                icon-image:"store.svgpb";
+                icon-image:"store.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
             [amenity=marketplace] {
-                icon-image:"market.svgpb";
+                icon-image:"market.svg";
                 icon-scale:0.50;
                 icon-tint: @color_building_text;
             }
             [shop=mall], [shop=shoes], [shop=department_store], [shop=boutique] {
-                icon-image:"mall.svgpb";
+                icon-image:"mall.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [shop=clothes] {
-                icon-image:"clothing_store.svgpb";
+                icon-image:"clothing_store.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [shop=baby_goods] {
-                icon-image:"baby_goods.svgpb";
+                icon-image:"baby_goods.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [shop=jewellery] {
-                icon-image:"jewellery.svgpb";
+                icon-image:"jewellery.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -993,7 +993,7 @@ node,area {
     node|z16-[amenity=bicycle_rental],
     node|z16-[shop=bicycle]
     {
-        icon-image:"bike.svgpb";
+        icon-image:"bike.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -1003,7 +1003,7 @@ node,area {
     @if SubStyle != Car
         |z17-[leisure=playground]
         {
-            icon-image:"playground.svgpb";
+            icon-image:"playground.svg";
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
         }
@@ -1012,7 +1012,7 @@ node,area {
     // water transport
     node|z16-[amenity=ferry_terminal]
     {
-        icon-image:"ferry.svgpb";
+        icon-image:"ferry.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -1020,26 +1020,26 @@ node,area {
     // train stations
     |z16-[building=train_station]
     {
-        icon-image:"railway.svgpb";
+        icon-image:"railway.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
 
     node|z12-[aeroway=aerodrome]
     {
-        icon-image:"airport.svgpb";
+        icon-image:"airport.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
 
     node|z17-[barrier=gate] {
-        icon-image:"gate.svgpb";
+        icon-image:"gate.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
 
     node|z17-[barrier=lift_gate] {
-        icon-image:"lift_gate.svgpb";
+        icon-image:"lift_gate.svg";
         icon-scale:0.50;
         icon-tint: @color_icon_tint;
     }
@@ -1047,12 +1047,12 @@ node,area {
     @if Beauty
         |z17-{
             [shop=hairdresser], [shop=beauty],[shop=tattoo] {
-                icon-image:"beauty_salon.svgpb";
+                icon-image:"beauty_salon.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
             [shop=massage],[leisure=sauna], [amenity=sauna] {
-                icon-image:"spa.svgpb";
+                icon-image:"spa.svg";
                 icon-scale:0.50;
                 icon-tint: @color_icon_tint;
             }
@@ -1062,11 +1062,11 @@ node,area {
     node{
         |z11-{
             [natural=peak] {
-                icon-image:"triangle.svgpb";
+                icon-image:"triangle.svg";
                 icon-tint:brown;
             }
             [natural=volcano] {
-                icon-image:"triangle.svgpb";
+                icon-image:"triangle.svg";
                 icon-tint:red;
             }
         }
@@ -1099,13 +1099,13 @@ node,area {
             icon-scale:0.50;
             icon-tint: @color_icon_tint;
             [amenity=bicycle_parking] {
-                icon-image: "bike_parking.svgpb";
+                icon-image: "bike_parking.svg";
             }
             [amenity=bicycle_rental] {
-                icon-image: "bike_rental.svgpb";
+                icon-image: "bike_rental.svg";
             }
             [amenity=bicycle_repair_station] {
-                icon-image: "bike_service.svgpb";
+                icon-image: "bike_service.svg";
             }
         }
 @endif

@@ -186,10 +186,10 @@ line {
 
     |z16-{
         [highway][oneway=yes] {
-            fill-image:"arrow.svgpb";
+            fill-image:"arrow.svg";
         }
         [highway][oneway=-1] {
-            fill-image:"arrow-back.svgpb";
+            fill-image:"arrow-back.svg";
         }
     }
     /****************************** Detailed highways ************************/
