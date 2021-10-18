@@ -379,21 +379,23 @@ line {
             [highway=path][bicycle=no] {
                 dashes-color: @color_track_dashes;
             }
-        }
-        @if SubStyle == Bike
-            [highway] {
-                [bicycle=designated],
-                [bicycle=yes],
-                [cycleway],
-                [cycleway:both],
-                [cycleway:left],
-                [cycleway:right] {
-                    dashes-width: eval( zlinear(16, 1pt,1.5pt ));
-                    dashes-color: @color_cycleway_dashes;
-                    dashes:8,4;
+            // пунктир для дорог, где есть выделенная вело-полоса.
+            @if SubStyle == Bike
+                [highway] {
+                    [bicycle=designated],
+                    [bicycle=yes],
+                    [cycleway],
+                    [cycleway:both],
+                    [cycleway:left],
+                    [cycleway:right] {
+                        dashes-width: eval( zlinear(16, 1pt,1.5pt ));
+                        dashes-color: @color_cycleway_dashes;
+                        dashes:8,4;
+                    }
                 }
-            }
-        @endif
+            @endif
+        }
+        
         @if SubStyle == Hike
             |z14-[highway=track],
             |z15-[highway=footway],
