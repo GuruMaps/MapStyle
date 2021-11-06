@@ -738,5 +738,9 @@ line {
         dashes-width: 1pt;
         dashes-color: #808080;
     }
+    |z12-[natural=ridge] {
+        width: 2pt;
+        color: brown;
+    }
 @endif
 }
