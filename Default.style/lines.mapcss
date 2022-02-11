@@ -146,11 +146,13 @@ line {
 
             z-index: -4;
         }
+        
         [highway=secondary], [highway=secondary_link], [highway=raceway] {
             color: @color_secondary;
             casing-color: @color_secondary_casing;
             casing-width: 0.5pt;
         }
+        
         [highway=tertiary], line|z12-[highway=tertiary_link] {
         //                           с   с13 c14 c15
             @if SubStyle == Car
@@ -441,9 +443,26 @@ line {
 
     // Bridges
     |z13-[highway]{
-        [access=private] {
+@if Style == Outdoor
+    @if SubStyle == Hike
+        [access=private],
+        [foot=no] {
+    @else // SubStyle == Bike
+        [access=private],
+        [bicycle=no],
+        [vehicle=no] {
+    @endif
+@else
+        [access=private],
+        [motor_vehicle=no],
+        [motorcar=no],
+        [motorcycle=no],
+        [vehicle=no],
+        [foot=no] {
+@endif
             dashes-color: @color_private;
         }
+
         [bridge] {
             casing-color: @color_bridge;
             casing-width:1pt;

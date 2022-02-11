@@ -331,9 +331,9 @@ node,area {
             // node[amenity=fountain],
         ),
     @endif
-    @if Tourism
+    @if Style == Outdoor
         |z18-(
-            [tourism=information], [tourism=attraction], [tourism=viewpoint],[shop=ticket]
+            [shop=ticket], [tourism=information], [tourism=attraction], [tourism=viewpoint]
         ),
     @endif
     @if Car
@@ -818,9 +818,9 @@ node,area {
         */
     @endif
 
-    // TODO: make it @if Style == Outdoor || Tourism
     @if Style == Outdoor
-        // node|z16-[tourism=attraction],
+        // node|z16-[tourism=attraction], не применяем, потому что это просто маркер для туристических объектов с другими тегами.
+        // Можно давать буст в поиске или иконку больше делать - но менять иконку не надо.
         |z16-{
             [tourism=information], [shop=ticket] {
                 icon-image:"info.svg";
