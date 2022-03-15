@@ -276,10 +276,12 @@ area {
 
     @if SubStyle != Car
         |z10-[leisure=nature_reserve] {
+            z-index: 2;
             color: @color_national_park;
             width: 3pt;
         }
         |z9-[boundary=national_park] {
+            z-index: 2;
             color: @color_national_park;
             width: 2pt;
         }
