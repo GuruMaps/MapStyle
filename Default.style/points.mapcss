@@ -458,6 +458,7 @@ node,area {
                 icon-scale:0.37;
                 icon-tint: @color_icon_tint;
             }
+            [man_made=water_well],
             node[amenity=drinking_water],
             node[amenity=water_point]{
                 icon-image:"drinking_water.svg";

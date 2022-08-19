@@ -535,7 +535,7 @@ line {
         |z15-[railway=funicular],
         |z14-[railway=narrow_gauge] {
             dashes-width: 1pt;
-            dashes-color: @color_bridge;
+            dashes-color: @color_railway_dashes;
             dashes:2,2;
             z-index: 1;
         }
