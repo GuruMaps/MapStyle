@@ -277,7 +277,9 @@ area {
         }
 
         // pier and groyne displayed on top of the water
-        [man_made=pier],[man_made=groyne] {
+        [man_made=pier],
+        [man_made=groyne],
+        [man_made=breakwater] {
             fill-color: @color_ground;
         }
         // dock над домом. т.к. может быть домом

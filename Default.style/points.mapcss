@@ -234,8 +234,20 @@ node,area {
             font-size: 10;
             font-stroke-width: 0.8pt;
             font-stroke-color: @color_label_stroke;
-            text-priority: 1;
+            text-priority: 2;
         }
+        
+        // имена кварталов
+        // пример: https://www.openstreetmap.org/way/175502200
+        |z17-[place=city_block] {
+            text: eval(locTag('name'));
+            text-color: @color_building_text;
+            font-size: 10;
+            font-stroke-width: 0.8pt;
+            font-stroke-color: @color_label_stroke;
+            text-priority: 0;
+        }
+        
         // для точек номер дома не так важен. Если есть имя - пишем имя.
         node|z18-(
             [addr:housenumber],
@@ -250,7 +262,7 @@ node,area {
             font-size: 9;
             font-stroke-width: 0.8pt;
             font-stroke-color: @color_label_stroke;
-            text-priority: 0;
+            text-priority: 1;
         }
 
         node|z17-[entrance][!indoor] {
@@ -459,6 +471,7 @@ node,area {
                 icon-tint: @color_icon_tint;
             }
             [man_made=water_well],
+            node[man_made=water_tap],
             node[amenity=drinking_water],
             node[amenity=water_point]{
                 icon-image:"drinking_water.svg";
