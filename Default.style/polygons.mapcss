@@ -3,6 +3,13 @@
 
 /******************************* Polygons *******************************/
 area {
+
+@if DownloadedMaps
+    |z5-7(@DownloadedMaps) {
+        fill-color: @color_downloaded_map;
+    }
+@endif
+
     [boundary=administrative] {
         // country boundaries
         [admin_level=2] {

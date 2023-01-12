@@ -2,6 +2,7 @@
 // Copyright (c) 2013-2019 Evgen Bodunov. All rights reserved.
 
 @color_ground: #EAE3D3; // s: -0.35
+@color_downloaded_map: #32D74B80;
 @color_water: #64A7DD;
 @color_water_icon: #135386;
 @color_water_underground: #64A7DD66;
@@ -60,8 +61,6 @@
 @color_aerialway_text: #000;
 @color_shop_text: #5B3A05;
 @color_beach_text: #807459;
-@color_peak_text: #A52A2A;
-@color_volcano_text: #FF0000;
 
 @color_difficulty_novice: #008000;
 @color_difficulty_easy: #0000FF;
@@ -69,8 +68,32 @@
 @color_difficulty_expert: #000;
 @color_difficulty_freeride: #FFA500;
 
-@color_icon_tint: #866E54;
-@color_icon_capital_tint: #3A3A3A;
+@color_icon_offices: #81C784; // same
+@color_text_offices: #55913c; // @color_icon_offices
+@color_icon_stores: #64B5F6; // same
+@color_text_stores: #2286C3; // @color_icon_stores
+@color_icon_tourism: #4DB6AC; // same
+@color_text_tourism: #009688; // @color_icon_tourism
+@color_icon_food: #FFA726; // same
+@color_text_food: #EF6C00; // @color_icon_food
+@color_icon_activity: #FF8A65; // same
+@color_text_activity: #C75B39; // @color_icon_activity
+@color_icon_health: #E57373; // same
+@color_text_health: #af4448; // @color_icon_health
+@color_icon_transport: #90A4AE; // same
+@color_text_transport: #62757f; // @color_icon_transport
+
+@color_icon_hotels: #9575CD; // same
+@color_text_hotels: #65499c; // @color_icon_hotels
+@color_icon_beauty: #F48FB1; // same
+@color_text_beauty: #BF5F82; // @color_icon_beauty
+
+@color_icon_tint: #866E54; // same
+@color_icon_capital_tint: #3A3A3A; // same
+@color_icon_peak: #800000; // same
+@color_text_peak: #A52A2A; // @color_icon_peak
+@color_icon_volcano: @color_icon_health;
+@color_text_volcano: @color_text_health;
 
 // roads of all kinds
 @color_small_road: #FEFEFE; // l: 0.4
