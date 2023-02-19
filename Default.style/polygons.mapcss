@@ -145,6 +145,7 @@ area {
             color: @color_national_park;
             width: 3pt;
         }
+        |z9-[boundary=protected_area],
         |z9-[boundary=national_park] {
             color: @color_national_park;
             width: 2pt;

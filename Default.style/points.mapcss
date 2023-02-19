@@ -175,6 +175,7 @@ node,area {
 
     @if SubStyle != Car
         area{
+            |z9-[boundary=protected_area],
             |z9-[boundary=national_park],
             |z10-[leisure=nature_reserve] {
                 text: eval(locTag('name'));
