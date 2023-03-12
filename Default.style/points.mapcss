@@ -1162,21 +1162,22 @@ node,area {
         }
     }
 
-    node|z17-[barrier=gate] {
-        icon-image:"poi_gate.svg";
-        icon-scale: 0.75;
-        icon-tint: @color_icon_tint;
-        
-        details-enabled: 0;
-        text-priority: -1;
-    }
+    node{
+        |z17-[barrier][barrier!=kerb] {
+            icon-image:"poi_barrier.svg";
+            icon-scale: 0.75;
+            icon-tint: @color_icon_tint;
+            details-enabled: 0;
+            text-priority: -1;
 
-    node|z17-[barrier=lift_gate] {
-        icon-image:"poi_lift_gate.svg";
-        icon-tint: @color_icon_tint;
-        
-        details-enabled: 0;
-        text-priority: -1;
+            [barrier=gate] {
+                icon-image:"poi_gate.svg";
+            }
+
+            [barrier=lift_gate] {
+                icon-image:"poi_lift_gate.svg";
+            }
+        }
     }
 
     node{
