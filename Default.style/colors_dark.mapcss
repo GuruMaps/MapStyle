@@ -95,6 +95,7 @@
 @color_text_peak: @color_icon_peak;
 @color_icon_volcano: @color_icon_health;
 @color_text_volcano: @color_text_health;
+@color_icon_cave_entrance: #808080;
 
 // roads of all kinds
 @color_small_road: #666666;

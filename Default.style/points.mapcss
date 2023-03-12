@@ -1219,6 +1219,16 @@ node,area {
             text:"s";
             text-color: @color_water;
         }
+
+        |z14- [natural=cave_entrance] {
+            icon-image: "poi_cave_entrance.svg";
+            icon-tint: @color_icon_cave_entrance;
+
+            |z16- {
+                text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
+                text-color: @color_text_peak;
+            }
+        }
 @if SubStyle == Bike
         |z16-(
             [amenity=bicycle_parking],
