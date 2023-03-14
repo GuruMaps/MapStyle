@@ -144,3 +144,6 @@
 
 @color_railway: #E6F8E0; // l: 0.1
 @color_railway_dashes: #999; // l: 0.1
+
+@color_icon_ford: #0f7cd4;
+@color_text_ford: #0f7cd4;

@@ -603,6 +603,16 @@ node,area {
                 }
             }
         }
+
+        |z14-[ford]{
+            icon-image: "poi_ford.svg";
+            icon-tint: @color_icon_ford;
+
+            |z16-{
+                text: eval(cond(locTag('name'), cond(tag('depth'), locTag('name').' '.formatElevation(tag('depth')), locTag('name')), formatElevation(tag('depth'))));
+                text-color: @color_text_ford;
+            }
+        }
     @endif
 
     @if Car
