@@ -148,3 +148,5 @@
 
 @color_icon_ford: #0f7cd4;
 @color_text_ford: #0f7cd4;
+
+@color_rock: #a8a8a8;

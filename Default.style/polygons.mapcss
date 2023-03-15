@@ -142,7 +142,17 @@ area {
             fill-color: @color_nature_reserve;
         }
     }
-    
+
+    |z13-[natural=bare_rock] {
+        z-index: -12;
+        fill-color: @color_rock;
+    }
+
+    |z16-[natural=rock] {
+        z-index: -12;
+        fill-color: @color_rock;
+    }
+
     @if SubStyle != Car
         |z10-[leisure=nature_reserve] {
             color: @color_national_park;
