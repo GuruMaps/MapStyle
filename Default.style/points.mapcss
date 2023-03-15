@@ -1213,6 +1213,13 @@ node,area {
                 text-color: @color_water;
             }
         }
+        |z16-[natural=hot_spring] {
+            text: eval(locTag('name'));
+            text-color: @color_water;
+            icon-image: "poi_hot_spring.svg";
+            icon-tint: @color_water;
+            details-enabled: 1;
+        }
 @if SubStyle == Bike
         |z16-(
             [amenity=bicycle_parking],
