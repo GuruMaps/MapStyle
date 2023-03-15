@@ -299,6 +299,11 @@ area {
         }
     }
 
+    |z14-[natural=reef] {
+        fill-image: @image_reef;
+        z-index: 1;
+    }
+
     |z9-[natural=wetland] {
         z-index: 1;
         |z9-12 {
