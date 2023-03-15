@@ -143,6 +143,11 @@
     @color_pedestrian: @color_small_road;
 @endif
 
+@color_gully: #756207;
+@color_earth_bank_scarp: #d6ab2b;
+@color_earth_bank_cut_bank: @color_earth_bank_scarp;
+@color_earth_bank_grassy_steep_slope: #077324;
+
 @color_railway: #E6F8E0; // l: 0.1
 @color_railway_dashes: #999; // l: 0.1
 
