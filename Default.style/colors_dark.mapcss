@@ -150,3 +150,5 @@
 @color_text_ford: #0f7cd4;
 
 @color_rock: #4d4d4d;
+@color_ridge: #964b00;
+@color_arete: #6e451b;

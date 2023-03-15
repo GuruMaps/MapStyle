@@ -760,7 +760,15 @@ line {
     }
     |z12-[natural=ridge] {
         width: 2pt;
-        color: brown;
+        color: @color_ridge;
+        text: eval(locTag('name'));
+        text-color: @color_ridge;
+    }
+    |z12-[natural=arete] {
+      width: 3pt;
+      color: @color_arete;
+      text: eval(locTag('name'));
+      text-color: @color_arete;
     }
 @endif
 }
