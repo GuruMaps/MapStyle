@@ -219,6 +219,11 @@ area {
         fill-color: @color_water;
     }
 
+    [natural=hot_spring] {
+      z-index: -12;
+      fill-color: @color_water;
+    }
+
     // grass of all kinds
     |z11-[natural=fell] {
         z-index: -12;
