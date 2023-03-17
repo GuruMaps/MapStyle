@@ -1321,4 +1321,22 @@ node,area {
             text-priority: -1;
         }
     }
+
+@if Style == Outdoor
+    |z15-[power=tower] {
+        details-enabled: 0;
+        icon-image: "poi_power_tower.svg";
+        icon-tint: @color_power_tower;
+        icon-scale: 0.7;
+        |z17- {
+            icon-scale: 0.9;
+        }
+    }
+    |z17-[power=pole] {
+        details-enabled: 0;
+        icon-image: "poi_power_pole.svg";
+        icon-tint: @color_power_tower;
+        icon-scale: 0.9;
+    }
+@endif // Style == Outdoor
 }

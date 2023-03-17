@@ -143,6 +143,9 @@
     @color_pedestrian: @color_small_road;
 @endif
 
+@color_power_tower: #404040;
+@color_power_line: #5e5e5e;
+
 @color_railway: #E6F8E0; // l: 0.1
 @color_railway_dashes: #999; // l: 0.1
 

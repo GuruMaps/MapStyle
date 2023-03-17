@@ -751,6 +751,19 @@ line {
     }
 
 @if Style == Outdoor
+    |z15-[power=line], |z17-[power=minor_line] {
+        color: @color_power_line;
+        z-index: 10;
+        [power=line] {
+            width: 0.5pt;
+        }
+        [power=minor_line] {
+            width: 0.3pt;
+        }
+    }
+@endif // Style == Outdoor
+
+@if Style == Outdoor
     |z14-[natural=cliff] {
         width: 8pt;
         fill-image: 'cliff.png';
