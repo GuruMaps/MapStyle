@@ -14,6 +14,7 @@ node,area {
         |z1-2 {
             text: eval(locTag('name'));
             text-color: @color_name_text;
+            details-enabled: 0;
         }
     }
 
@@ -34,9 +35,11 @@ node,area {
         }
         |z2-3 {
             font-size:10;
+            details-enabled: 1;
         }
         |z1-2 {
             font-size:0;
+            details-enabled: 0;
         }
     }
 
