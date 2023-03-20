@@ -1,6 +1,6 @@
 # Map Style of [Guru Maps](https://gurumaps.app)
 
-Syntax of this file is based on MapCSS inspired [file format](https://gurumaps.app/manuals/ios/06-mapcss.html), with some unique features and some limitations.
+Syntax of this file is based on MapCSS inspired [file format](https://gurumaps.app/docs/mapcss/), with some unique features and some limitations.
 
 ## How to use
 
