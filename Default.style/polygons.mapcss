@@ -12,7 +12,7 @@ area {
 
     [boundary=administrative] {
         // country boundaries
-        [admin_level=2] {
+        |z3-[admin_level=2] {
             z-index: 4;
             width: eval( zlinear(13, 1pt,2pt,3pt ));
             color: @color_boundary_country;
@@ -90,7 +90,7 @@ area {
             fill-color: @color_landuse_commercial;
         }
     }
-    
+
     // generalized buildings
     |z11-12[landuse=residential]{
         z-index: -14;
@@ -119,7 +119,7 @@ area {
             z-index: -14;
             fill-color: @color_sand;
         }
-        
+
         [landuse=quarry] {
             z-index: -14;
             fill-color: @color_quarry;
@@ -139,7 +139,7 @@ area {
             fill-color: @color_nature_reserve;
         }
     }
-    
+
     @if SubStyle != Car
         |z10-[leisure=nature_reserve] {
             color: @color_national_park;
@@ -150,7 +150,7 @@ area {
             width: 2pt;
         }
     @endif
-    
+
     |z13-{
         // заросли кустов
         [natural=scrub] {
@@ -251,9 +251,9 @@ area {
             fill-color: @color_landuse_parking;
         }
     }
-    
+
     // -10
-    
+
     |z9-[natural=glacier] {
         fill-color: @color_glacier;
         z-index:-10;
@@ -268,7 +268,7 @@ area {
             fill-color: @color_water;
         }
     }
-    
+
     [natural=wetland] {
         |z9-12 {
             fill-color: @color_wetland;

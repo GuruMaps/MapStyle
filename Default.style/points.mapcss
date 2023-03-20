@@ -10,6 +10,13 @@ node,area {
     font-stroke-width: 1pt;
     font-stroke-color: @color_label_stroke;
 
+    [place=continent] {
+        |z1-2 {
+            text: eval(locTag('name'));
+            text-color: @color_name_text;
+        }
+    }
+
     [place=country] {
         |z2-8 {
             text: eval(locTag('name'));
@@ -24,6 +31,12 @@ node,area {
             font-size:12;
             font-weight: normal;
             text-big-padding: false;
+        }
+        |z2-3 {
+            font-size:10;
+        }
+        |z1-2 {
+            font-size:0;
         }
     }
 
@@ -258,7 +271,7 @@ node,area {
         node|z17-[entrance][!indoor] {
             icon-image: "poi_circle_small.svg";
             icon-tint: @color_entrance_text;
-            
+
             text-priority: -5;
             details-enabled: 0;
 
@@ -266,7 +279,7 @@ node,area {
             [entrance=main] {
                 icon-scale: 0.85;
             }
-            
+
             |z18-{
                 icon-image: "poi_entrance.svg";
                 icon-scale: 0.8;
@@ -280,7 +293,7 @@ node,area {
                     font-size: 9;
                     details-enabled: 1;
                 }
-                
+
                 [ref] {
                     text: eval( tag('ref') );
                     text-color: @color_entrance_text;
@@ -734,7 +747,7 @@ node,area {
                 text-color: @color_text_offices;
             }
         }
-        
+
         |z16-(
             [amenity=college],
             [amenity=school],
@@ -1055,7 +1068,7 @@ node,area {
         node|z16-[highway=bus_stop] {
             icon-image:"poi_bus.svg";
             icon-tint: @color_icon_transport;
-            
+
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1063,7 +1076,7 @@ node,area {
         node|z17-[railway=tram_stop] {
             icon-image:"poi_tram.svg";
             icon-tint: @color_icon_transport;
-            
+
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1085,7 +1098,7 @@ node,area {
                     text-priority: 7;
                 }
             }
-        
+
             |z14-[railway=station][transport=subway],
             |z14-[railway=station][station=subway],
             |z15-[railway=station],
@@ -1121,10 +1134,10 @@ node,area {
         font-size: 8;
         text-color: @color_label_text;
         font-stroke-color: @color_footway_area;
-        
+
         details-enabled: 0;
         text-priority: 1;
-        
+
         |z16-{
             font-size: 9;
         }
@@ -1156,7 +1169,7 @@ node,area {
         icon-image:"poi_gate.svg";
         icon-scale: 0.75;
         icon-tint: @color_icon_tint;
-        
+
         details-enabled: 0;
         text-priority: -1;
     }
@@ -1164,7 +1177,7 @@ node,area {
     node|z17-[barrier=lift_gate] {
         icon-image:"poi_lift_gate.svg";
         icon-tint: @color_icon_tint;
-        
+
         details-enabled: 0;
         text-priority: -1;
     }
