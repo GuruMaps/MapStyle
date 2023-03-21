@@ -10,7 +10,7 @@ node,area {
     font-stroke-width: 1pt;
     font-stroke-color: @color_label_stroke;
 
-    [place=continent] {
+    node[place=continent] {
         |z1-2 {
             text: eval(locTag('name'));
             text-color: @color_name_text;
@@ -19,7 +19,7 @@ node,area {
     }
 
     [place=country] {
-        |z2-8 {
+        |z3-8 {
             text: eval(locTag('name'));
             text-color: @color_name_text;
             font-size: 16;
@@ -28,18 +28,13 @@ node,area {
             text-priority: 10;
             text-big-padding: true;
         }
-        |z2-4 {
+        |z3-4 {
             font-size:12;
             font-weight: normal;
             text-big-padding: false;
         }
         |z2-3 {
             font-size:10;
-            details-enabled: 1;
-        }
-        |z1-2 {
-            font-size:0;
-            details-enabled: 0;
         }
     }
 
