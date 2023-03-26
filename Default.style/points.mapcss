@@ -116,6 +116,9 @@ node,area {
         @if Sport
             [leisure=stadium],
         @endif
+        @if Style == Outdoor
+          [place=locality],
+        @endif
         {
             text: eval(locTag('name'));
             text-color: @color_label_text;
