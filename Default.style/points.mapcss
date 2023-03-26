@@ -163,6 +163,14 @@ node,area {
             }
         }
 
+        |z14-[natural=wetland] {
+            text: eval(locTag('name'));
+            text-color: @color_water_text;
+            font-stroke-color: @color_wetland;
+            font-size: 12;
+            font-stroke-width: 2pt;
+        }
+
         |z11-[place=island],
         |z13-[place=islet]
         {
