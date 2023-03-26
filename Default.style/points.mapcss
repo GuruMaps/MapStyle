@@ -531,10 +531,39 @@ node,area {
             [artwork_type=sculpture],
             [artwork_type=statue],
             [artwork_type=installation],
-            [amenity=place_of_worship]
         ) {
             icon-image:"poi_monument.svg";
             icon-tint: @color_icon_tourism;
+            |z17- {
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+            }
+        }
+
+        |z16-[amenity=place_of_worship] {
+            icon-image:"poi_worship.svg";
+            icon-tint: @color_icon_tourism;
+
+            [religion=christian] {
+              icon-image:"poi_worship_christian.svg";
+            }
+
+            [religion=muslim] {
+              icon-image:"poi_worship_muslim.svg";
+            }
+
+            [religion=buddhist] {
+              icon-image:"poi_worship_buddhist.svg";
+            }
+
+            [religion=shinto] {
+              icon-image:"poi_worship_shinto.svg";
+            }
+
+            [religion=jewish] {
+              icon-image:"poi_worship_jewish.svg";
+            }
+
             |z17- {
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;

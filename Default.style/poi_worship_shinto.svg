@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+ <circle cx="9.0078" cy="8.9688" r="8.5" fill="#808080" stroke="#ffffff"/>
+ <path d="m12.507 13.987c-1.0168-2.45-0.98136-5.4743-1.0165-7.8887" fill="none" stroke="#ffffff" stroke-linecap="round" style="paint-order:markers stroke fill"/>
+ <path d="m5.4801 13.965c1.0168-2.45 0.98135-5.4743 1.0165-7.8887" fill="none" stroke="#ffffff" stroke-linecap="round" style="paint-order:markers stroke fill"/>
+ <path d="m3.5024 4.9939 10.507 0.011049" fill="none" stroke="#ffffff" stroke-linecap="round" style="paint-order:markers stroke fill"/>
+ <path d="m5.1208 7.8494 7.9881-1e-7" fill="none" stroke="#ffffff" stroke-linecap="round" style="paint-order:markers stroke fill"/>
+ <path d="m9.0085 5.5112-0.00848 1.9633" fill="none" stroke="#ffffff" stroke-linecap="round" style="paint-order:markers stroke fill"/>
+</svg>
