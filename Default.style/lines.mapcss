@@ -782,6 +782,14 @@ line {
         }
     }
 
+    |z14-[natural=gully][!waterway] {
+        width: eval( zlinear( 14,    1pt,2pt,2pt,3pt,4pt,6pt ) );
+        color: @color_gully;
+        text: eval(locTag('name'));
+        text-color: @color_gully;
+        fill-image: "gully.png";
+    }
+
     |z12-[natural=ridge] {
         width: 2pt;
         color: brown;
