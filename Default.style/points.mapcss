@@ -775,12 +775,22 @@ node,area {
     @endif
 
     @if Shop
-        |z16-[shop=supermarket] {
-            icon-image:"poi_supermarket.svg";
-            icon-tint: @color_icon_stores;
-            |z17-{
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
+        |z16-{
+            [shop=supermarket] {
+                icon-image:"poi_supermarket.svg";
+                icon-tint: @color_icon_stores;
+                |z17-{
+                    text: eval(locTag('name'));
+                    text-color: @color_text_stores;
+                }
+            }
+            [shop=doityourself]{
+                icon-image:"poi_doityourself.svg";
+                icon-tint: @color_icon_stores;
+                |z17-{
+                    text: eval(locTag('name'));
+                    text-color: @color_text_stores;
+                }
             }
         }
 
@@ -795,12 +805,6 @@ node,area {
             }
             [shop=convenience] {
                 icon-image:"poi_store.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=doityourself]{
-                icon-image:"poi_doityourself.svg";
                 icon-tint: @color_icon_stores;
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
