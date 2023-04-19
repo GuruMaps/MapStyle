@@ -790,6 +790,16 @@ line {
         fill-image: "gully.png";
     }
 
+    |z16-[natural=gully][waterway] {
+        fill-image: "gully_8.svg";
+        |z19- {
+        fill-image: "gully_16.svg";
+            |z20- {
+                fill-image: "gully_32.svg";
+            }
+        }
+    }
+
     |z12-[natural=ridge] {
         width: 2pt;
         color: brown;
