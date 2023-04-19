@@ -3,13 +3,6 @@
 
 /******************************* Polygons *******************************/
 area {
-
-@if DownloadedMaps
-    |z5-7(@DownloadedMaps) {
-        fill-color: @color_downloaded_map;
-    }
-@endif
-
     [boundary=administrative] {
         // country boundaries
         [admin_level=2] {
@@ -51,6 +44,16 @@ area {
             dashes:4,4,4,4;
         }
     }
+    
+@if DownloadedMaps
+    |z5-7(@DownloadedMaps) {
+        fill-color: @color_downloaded_map;
+        color: @color_downloaded_map_stroke;
+        width: eval( zlinear(13, 1pt,2pt,3pt ));
+        
+        galileo-stencil-type: none;
+    }
+@endif
 
     // Other types of polygons. Less importnant is on top.
 

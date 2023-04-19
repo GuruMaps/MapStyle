@@ -1013,28 +1013,26 @@ node,area {
         }
     }
 
-    node|z18-[natural=tree] {
-        icon-image: "poi_tree.svg";
-        icon-tint: @color_icon_offices;
-        text-priority: -10;
-        details-enabled: 0;
-    }
-
-    node|z18-[amenity=bench] {
-        icon-image:"poi_bench.svg";
-        icon-tint: @color_icon_tint;
-        text-priority: -9;
-        details-enabled: 0;
-    }
-
     @if SubStyle != Car
+        node|z18-[natural=tree] {
+            icon-image: "poi_tree.svg";
+            icon-tint: @color_icon_offices;
+            text-priority: -10;
+            details-enabled: 0;
+        }
+
+        node|z18-[amenity=bench] {
+            icon-image:"poi_bench.svg";
+            icon-tint: @color_icon_tint;
+            text-priority: -9;
+            details-enabled: 0;
+        }
+        
         area|z17-[landuse=cemetery] {
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
-    @endif
-
-    @if SubStyle != Car
+    
         area|z15-[natural=beach] {
             text: eval(locTag('name'));
             text-color: @color_beach_text;
@@ -1042,9 +1040,7 @@ node,area {
             font-stroke-width: 1pt;
             font-stroke-color: @color_sand;
         }
-    @endif
-
-    @if SubStyle != Car
+    
         |z17-{
             [amenity=toilets] {
                 icon-image:"poi_WC.svg";

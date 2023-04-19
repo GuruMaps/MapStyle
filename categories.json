@@ -1,0 +1,457 @@
+ [
+  // объекты по географической важности
+  {
+  "names":{"ru":["область"], "en":["state"], "it":["stato"], "es":["estado"], "fr":["état"], "de":["bundesland"], "nl":["staat"], "pl":["stan"], "ko":["연방주"], "ja":["州"], "zh":["行政區劃"], "hu":["állam"], "cs":["stát"], "be":["вобласць"]},
+  "sc":60,
+  "kv":{"place":["state"]}
+  },
+  {
+  "names":{"ru":["город"], "en":["city"], "it":["città"], "es":["ciudad"], "fr":["ville"], "de":["stadt"], "nl":["stad"], "pl":["miasto"], "ko":["도시"], "ja":["市町村名"], "zh":["城市"], "hu":["város"], "cs":["město"], "be":["горад"]},
+  "sc":40,
+  "kv":{"place":["city"]},
+  "icon":"search_city"
+  },
+  {
+  "names":{"ru":["город"], "en":["town"], "it":["paese"], "es":["ciudad"], "fr":["ville"], "de":["kleinstadt"], "nl":["plaats"], "pl":["miasteczko"], "ko":["마을"], "ja":["町"], "zh":["城镇"], "hu":["város"], "cs":["město"], "be":["горад"]},
+  "sc":30,
+  "kv":{"place":["town"]},
+  "icon":"search_city"
+  },
+  {
+  "names":{"ru":["посёлок"], "en":["village"], "it":["villaggio"], "es":["pueblo"], "fr":["village"], "de":["dorf"], "nl":["dorp"], "pl":["wioska"], "ko":["마을"], "ja":["村"], "zh":["村庄"], "hu":["falu"], "cs":["vesnice"], "be":["пасёлак"]},
+  "sc":20,
+  "kv":{"place":["village"]},
+  "icon": "search_city"
+  },
+  {
+  "names":{"ru":["деревня"], "en":["hamlet"], "it":["paese"], "es":["aldea"], "fr":["hameau"], "de":["siedlung"], "nl":["gehucht"], "pl":["przysiółek"], "ko":["작은 마을"], "ja":["集落"], "zh":["村庄"], "hu":["falucska"], "cs":["osada"], "be":["вёска"]},
+  "sc":10,
+  "kv":{"place":["hamlet"]},
+  "icon": "search_city"
+  },
+  {
+  "names":{"ru":["район"], "en":["suburb"], "it":["sobborgo"], "es":["suburbio"], "fr":["banlieue"], "de":["bezirk"], "nl":["buitenwijk"], "pl":["przedmieście"], "ko":["교외"], "ja":["自治区"], "zh":["郊區"], "hu":["külváros"], "cs":["předměstí"], "be":["раён"]},
+  "sc":25,
+  "kv":{"place":["suburb"]},
+  "icon": "search_city"
+  },
+  {
+  "names":{"ru":["страна"], "en":["country"]," it":["stato"], "es":["país"], "fr":["pays"], "de":["land"], "nl":["land"], "pl":["kraj"], "ko":["국가"], "ja":["国"], "zh":["国家"], "hu":["ország"], "cs":["země"],"be":["краіна"]},
+  "sc":70,
+  "kv":{"place":["country"], "admin_level":["2"]}
+  },
+// категории которые показываем в меню быстрого поиска
+  {
+  "items":[{
+           "names":{"ru":["ресторан"], "en":["restaurant"], "it":["ristorante"], "es":["restaurante"], "fr":["restaurant"], "de":["Restaurant"], "nl":["restaurant"], "pl":["restauracja"], "ko":["음식점"], "ja":["レストラン"], "zh":["餐馆"], "hu":["étterem"], "cs":["restaurace"], "be":["рэстаран"]},
+           "kv":{"amenity":["restaurant"]},
+           "icon":"restaurant"
+           },
+           {
+           "names":{"ru":["кафе"], "en":["cafe"], "it":["caffè"], "es":["cafetería"], "fr":["café"], "de":["Café"], "nl":["café"], "pl":["kawiarnia"], "ko":["카페"], "ja":["喫茶店"], "zh":["咖啡馆"], "hu":["kávézó"], "cs":["kavárna"], "be":["кафэ"]},
+           "kv":{"amenity":["cafe"]},
+           "icon":"cafe"
+           },
+           {
+           "names":{"ru":["фастфуд"], "en":["fast food"], "it":["fast food"], "es":["comida rápida"], "fr":["restauration rapide"], "de":["Fast Food"], "nl":["fastfoodrestaurant"], "pl":["fast food"], "ko":["패스트 푸드"], "ja":["ファストフード"], "zh":["快餐店"], "hu":["gyorsétterem"], "cs":["rychlé občerstvení"], "be":["фастфуд"]},
+           "kv":{"amenity":["fast_food"]},
+           "icon":"fast_food"
+           }],
+  "names":{"ru":["еда"], "en":["food"], "it":["alimento"], "es":["alimento"], "fr":["nourriture"], "de":["Lebensmittel"], "nl":["voedsel"], "pl":["jedzenie"], "ko":["음식"], "ja":["食品"], "zh":["食物"], "hu":["élelmiszer"], "cs":["jídlo"], "be":["ежа"]},
+  "icon":"restaurant",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["бар"], "en":["bar"], "it":["bar"], "es":["bar"], "fr":["bar"], "de":["Bar"], "nl":["bar"], "pl":["bar"], "ko":["주점"], "ja":["バー"], "zh":["酒吧"], "hu":["bár"], "cs":["bar"], "be":["бар"]},
+           "kv":{"amenity":["bar"]},
+           "icon":"bar"
+           },
+           {
+           "names":{"ru":["паб", "пиво"], "en":["pub", "beer"], "it":["pub", "birra"], "es":["pub", "õlu"], "fr":["pub", "bière"], "de":["Pub", "Bier"], "nl":["pub", "bier"], "pl":["pub", "piwo"], "ko":["술집", "맥주"], "ja":["居酒屋", "ビール"], "zh":["酒馆", "啤酒"], "hu":["kocsma"], "cs":["hospoda"], "be":["паб"]},
+           "kv":{"amenity":["pub"]},
+           "icon":"pub"
+           }],
+  "names":{"ru":["бары и пабы"], "en":["bars and pubs"], "it":["bar e pub"], "es":["bares y pubs"], "fr":["bars et pubs"], "de":["Bars und Pubs"], "nl":["bars en pubs"], "pl":["bary i puby"], "ko":["바, 펍"], "ja":["バーやパブ"], "zh":["酒吧和酒馆"], "hu":["bárok és pubok"], "cs":["barů a hospůdek"], "be":["бары і пабы"]},
+  "icon":"pub",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["отель"], "en":["hotel"], "it":["albergo"], "es":["hotel"], "fr":["hôtel"], "de":["Hotel"], "nl":["hotel"], "pl":["hotel"], "ko":["호텔"], "ja":["ホテル"], "zh":["酒店"], "hu":["szállodaépület"], "cs":["hotel"], "be":["атэль"]},
+           "kv":{"amenity":["hotel"], "tourism":["hotel"]},
+           "icon":"hotel"
+           },
+           {
+           "names":{"ru":["мотель"], "en":["motel"], "it":["motel"], "es":["motel"], "fr":["motel"], "de":["Motel"], "nl":["motel"], "pl":["motel"], "ko":["모텔"], "ja":["モーテル"], "zh":["汽车旅馆"], "hu":["motel"], "cs":["motel"], "be":["матэль"]},
+           "kv":{"tourism":["motel"]},
+           "icon":"hotel"
+           },
+           {
+           "names":{"ru":["хостел"], "en":["hostel"], "it":["ostello"], "es":["hostal"], "fr":["auberge de jeunesse"], "de":["Herberge"], "nl":["jeugdherberg"], "pl":["schronisko"], "ko":["호스텔"], "ja":["ホステル"], "zh":["招待所"], "hu":["turistaszálló"], "cs":["hostel"], "be":["хостэл"]},
+           "kv":{"tourism":["hostel"]},
+           "icon":"hotel"
+           },
+           {
+           "names":{"ru":["кемпинг"], "en":["camp site"], "it":["campeggio"], "es":["acampada"], "fr":["camping"], "de":["Campingplatz"], "nl":["camping"], "pl":["kemping"], "ko":["캠프장"], "ja":["キャンプ場"], "zh":["宿营地"], "hu":["kemping"], "cs":["tábořiště"], "be":["кемпінг"]},
+           "kv":{"tourism":["camp_site", "caravan_site"]},
+           "icon":"camping"
+           }],
+  "names":{"ru":["жилье"], "en":["accommodation"], "it":["alloggio"], "es":["alojamiento"], "fr":["accommodation"], "de":["Unterkunft"], "nl":["overnachten"], "pl":["akomodacja"], "ko":["호텔"], "ja":["ホテル"], "zh":["酒店"], "hu":["vendégház"], "cs":["ubytování"],  "be":["размяшчэнне"]},
+  "kv":{"tourism":["guest_house", "chalet", "alpine_hut"]},
+  "icon":"hotel",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["бассейн"], "en":["swimming pool"], "it":["piscina"], "es":["piscina"], "fr":["piscine"], "de":["Schwimmbecken"], "nl":["zwembad"], "pl":["basen"], "ko":["수영장"], "ja":["遊泳プール"], "zh":["游泳池"], "hu":["úszómedence"], "cs":["plavecký bazén"], "be":["басейн"]},
+           "kv":{"leisure":["swimming_pool"], "amenity":["swimming_pool"]},
+           "icon":"pool"
+           },
+           {
+           "names": {"ru":["стадион"], "en":["stadium"], "it":["stadio"], "es":["estadio"], "fr":["stade"], "de":["Stadion"], "nl":["stadion"], "pl":["stadion"], "ko":["경기장"], "ja":["スタジアム"], "zh":["体育场"], "hu":["stadion"], "cs":["stadión"], "be":["стадыён"]},
+           "kv":{"leisure":["stadium"]},
+           "icon":"sport"
+           },
+           {
+           "names":{"ru":["спортплощадка"], "en":["pitch"], "it":["campo da gioco"], "es":["cancha deportiva"], "fr":["terrain de sport"], "de":["Sportplatz"], "nl":["sportveld"], "pl":["boisko"], "ko":["운동장"], "ja":["スポーツ競技場"], "zh":["体育场"], "hu":["sportpálya"], "cs":["hřiště"], "be":["спортпляцоўка"]},
+           "kv":{"leisure":["pitch"]},
+           "icon":"sport"
+           },
+           {
+           "names":{"ru":["спортивный центр"], "en":["sports centre"], "it":["centro sportivo"], "es":["centro deportivo"], "fr":["centre sportif"], "de":["Sportzentrum"], "nl":["sportcentrum"], "pl":["centrum sportowe"], "ko":["스포츠 센터"], "ja":["スポーツセンター"], "zh":["体育中心"], "hu":["sportközpont"], "cs":["sportovní centrum"], "be":["спартыўны цэнтр"]},
+           "kv":{"leisure":["sports_centre"]}
+           },
+           {
+           "names":{"ru":["гольф"], "en":["golf"], "it":["campo da golf"], "es":["campo de golf"], "fr":["parcours de golf"], "de":["Golfplatz"], "nl":["golfbaan"], "pl":["pole golfowe"], "ko":["골프장"], "ja":["ゴルフコース"], "zh":["高尔夫球场"], "hu":["golfpálya"], "cs":["golfové hřiště"], "be":["гольф"]},
+           "kv":{"leisure":["golf_course"]},
+           "icon":"golf_course"
+           }],
+  "names":{"ru":["спорт"], "en":["sport"], "it":["sport"], "es":["deporte"], "fr":["sport"], "de":["Sport"], "nl":["sport"], "pl":["sport"], "ko":["스포츠"], "ja":["スポーツ"], "zh":["运动"], "hu":["sport"], "cs":["sport"], "be":["спорт"]},
+  "kv":{"leisure":["track"]},
+  "icon":"gym",
+  "show":1
+  },
+  // ----------
+  {
+      "items":[{
+          "names":{"ru":["театр"], "en":["theatre"], "it":["teatro"], "es":["teatro"], "fr":["théâtre"], "de":["The­a­ter"], "nl":["theater"], "pl":["teatr"], "ko":["극장"], "ja":["劇場"], "zh":["剧院"], "hu":["színház"], "cs":["divadlo"], "be":["тэатр"]},
+          "kv":{"amenity":["theatre"]},
+          "icon":"theater"
+      },
+      {
+          "names":{"ru":["кинотеатр"], "en":["cinema"], "it":["cinema"], "es":["cine"], "fr":["cinéma"], "de":["Kino"], "nl":["bioscoop"], "pl":["kino"], "ko":["영화관"], "ja":["映画館"], "zh":["电影院"], "hu":["mozi"], "cs":["kino"], "be":["кінатэатр"]},
+          "kv":{"amenity":["cinema"]},
+          "icon":"cinema"
+      },
+      {
+          "names":{"ru":["ночной клуб"], "en":["nightclub"], "it":["night club"], "es":["discoteca"], "fr":["discothèque"], "de":["Nachtclub"], "nl":["nachtclub"], "pl":["klub"], "ko":["나이트클럽"], "ja":["ナイトクラブ"], "zh":["夜總會"], "hu":["diszkó"], "cs":["noční klub"], "be":["начны клуб"]},
+          "kv":{"amenity":["nightclub"]},
+          "icon":"disco"
+      },
+      {
+          "names":{"ru":["музей"], "en":["museum"], "it":["museo"], "es":["museo"], "fr":["musée"], "de":["Museum"], "nl":["museum"], "pl":["muzeum"], "ko":["박물관"], "ja":["博物館"], "zh":["博物馆"], "hu":["múzeum"], "cs":["muzeum"], "be":["музей"]},
+          "kv":{"tourism":["museum"]},
+          "icon":"museum"
+      },
+      {
+          "names":{"ru":["зоопарк"], "en":["zoo"], "it":["zoo"], "es":["zoológico"], "fr":["zoo"], "de":["Zoo"], "nl":["dierentuin"], "pl":["zoo"], "ko":["동물원"], "ja":["動物園"], "zh":["动物园"], "hu":["állatkert"], "cs":["zoo"], "be":["заапарк"]},
+          "kv":{"tourism":["zoo"]},
+          "icon":"zoo"
+      }],
+      "names":{"ru":["досуг"], "en":["entertainment"], "it":["intrattenimento"], "es":["entretenimiento"], "fr":["divertissement"], "de":["Entertainment"], "nl":["amusement"], "pl":["rozrywka"], "ko":["엔터테인먼트"], "ja":["エンターテイメント"], "zh":["娛樂"], "hu":["szórakozás"], "cs":["zábava"], "be":["забавы"]},
+      "icon":"cinema",
+      "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["памятник"], "en":["memorial"], "it":["memoriale"], "es":["monumento"], "fr":["mémorial"], "de":["Denkmal"], "nl":["gedenkplaats"], "pl":["memoriał"], "ko":["기념관"], "ja":["記念碑"], "zh":["纪念碑"], "hu":["emlékmű"], "cs":["památník"]},
+           "kv":{"historic":["memorial"]},
+           "icon":"monument"
+           },
+           {
+           "names":{"ru":["монумент"], "en":["monument"], "it":["monumento"], "es":["monumento"], "fr":["monument"], "de":["Monument"], "nl":["monument"], "pl":["pomnik"], "ko":["기념물"], "ja":["記念堂"], "zh":["纪念碑"], "hu":["emlékmű"], "cs":["monument"], "be":["помнік"]},
+           "kv":{"historic":["monument"]},
+           "icon":"monument"
+           },
+           {
+           "names":{"ru":["храм"], "en":["place of worship"], "it":["luogo di culto"], "es":["lugar de culto"], "fr":["lieu de culte"], "de":["Gebetsort"], "nl":["gebedshuis"], "pl":["miejsce kultu religijnego"], "ko":["예배당"], "ja":["宗教施設"], "zh":["礼拜场所"], "hu":["istentiszteleti hely"], "cs":["chrám"], "be":["храм"]},
+           "kv":{"amenity":["place_of_worship"]}
+           },
+           {
+           "names":{"ru":["скульптура"], "en":["sculpture"], "it":["scultura"], "es":["escultura"], "fr":["sculpture"], "de":["Bildhauerei"], "nl":["beeldhouwkunst"], "pl":["rzeźba"], "ko":["조각"], "ja":["彫刻"], "zh":["雕塑"], "hu":["szobor"], "cs":["sochařství"], "be":["скульптура"]},
+           "kv":{"artwork_type":["sculpture"]}
+           },
+           {
+           "names":{"ru":["статуя"], "en":["statue"], "it":["statua"], "es":["statuo"], "fr":["statue"], "de":["Statue"], "nl":["standbeeld"], "pl":["posąg"], "ko":["동상"], "ja":["塑像"], "zh":["塑像"], "hu":["szobor"], "cs":["socha"], "be":["статуя"]},
+           "kv":{"artwork_type":["statue"]}
+           },
+           {
+           "names":{"ru":["обзорная точка"], "en":["viewpoint"], "it":["punto panoramico"], "es":["mirador"], "fr":["point de vue"], "de":["Aussichtspunkt"], "nl":["uitzichtpunt"], "pl":["punkt widokowy"], "ko":["경승지"], "ja":["展望台"], "zh":["景点"], "hu":["kilátóhely"], "cs":["výhled"], "be":["аглядная пляцоўка"]},
+           "kv":{"tourism":["viewpoint"]},
+           "icon":"viewpoint"
+           }],
+  "names":{"ru":["достопримечательность"], "en":["sight"], "it":["turismo"], "es":["turismo"], "fr":["tourisme"], "de":["Tourismus"], "nl":["toerisme"], "pl":["turystyka"], "ko":["관광"], "ja":["観光"], "zh":["旅行"], "hu":["látnival"], "cs":["bod zájmu"], "be":["выбітнасці"]},
+  "icon":"monument",
+  "show":1
+  },
+  // ----------
+  {
+  "names":{"ru":["туалет", "wc"],"en":["restroom", "wc"],"it":["bagni pubblici"],"es":["baño público"],"fr":["toilette publique"],"de":["Toilette"],"nl":["openbare toiletten"],"pl":["publiczny klozet"],"ko":["화장실"],"ja":["公衆便所"],"zh":["公廁"], "hu":["WC"], "cs":["WC"], "be":["туалет"]},
+  "kv":{"amenity":["toilets"]},
+  "icon":"WC",
+  "show":1
+  },
+  // ----------
+  {
+      "items":[
+          {"names":{"ru":["банкомат"], "en":["ATM"], "it":["bankomat"], "es":["cajeros"], "fr":["distributeur de billets"], "de":["Geldautomat"], "nl":["pinautomaat"], "pl":["bankomat"], "ko":["ATM"], "ja":["ATM"], "zh":["自动提款机"], "hu":["bankautomata"], "cs":["bankomat"], "be":["банкамат"]},
+              "kv":{"amenity":["atm"]},
+              "icon":"ATM"
+          },
+          {"names":{"ru":["обменник"], "en":["сurrency exchange"], "it":["сambio valuta"], "es":["сasa de cambio"], "fr":["bureaux de change"], "de":["Wechselstube"], "nl":["geldwisselkantoor"], "pl":["kantor"], "ko":["환전소"], "ja":["外貨両替所"], "zh":["钱币兑换店"], "hu":["valutaváltó"], "cs":["směnárna"], "be":["абмен валюты"]},
+              "kv":{"amenity":["bureau_de_change"]}
+          },
+          {"names":{"ru":["отделение"], "en":["branch"], "it":["bancario"], "es":["filial"], "fr":["agence"], "de":["Bankfiliale"], "nl":["bankkantoor"], "pl":["oddział"], "ko":["은행 지점"], "ja":["銀行支店"], "zh":["银行支行"], "hu":["bankfiók"], "cs":["pobočka"], "be":["аддзяленне банка"]},
+              "kv":{"amenity":["bank"]}
+          }],
+      "names":{"ru":["банк"], "en":["bank"], "it":["banca"], "es":["banco"], "fr":["banque"], "de":["Bank"], "nl":["bank"], "pl":["bank"], "ko":["은행"], "ja":["銀行"], "zh":["银行"], "hu":["bank"], "cs":["banka"], "be":["банк"]},
+      "icon":"bank",
+      "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["спа-центр"], "en":["spa"], "it":["spa"], "es":["spa"], "fr":["spa"], "de":["Spa"], "nl":["spa"], "pl":["spa"], "ko":["스파"], "ja":["スパ"], "zh":["水療"], "hu":["gyógyfürdő"], "cs":["lázně"], "be":["спа-цэнтр"]},
+           "kv":{"leisure":["sauna"], "amenity":["sauna"], "shop":["massage"]},
+           "icon":"spa"
+           }],
+  "names":{"ru":["салон красоты"], "en":["beauty"], "it":["salone di bellezza"], "es":["salón de belleza"], "fr":["salon de beauté"], "de":["Schönheits-Salon"], "nl":["schoonheidssalon"], "pl":["salon piękności"], "ko":["미용실"], "ja":["美容サービス"], "zh":["美容店"], "hu":["szépségszalon"], "cs":["kosmetický salon"], "be":["салон прыгажосці"]},
+  "kv":{"shop":["hairdresser", "beauty"]},
+  "icon":"beauty_salon",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["супермаркет"], "en":["supermarket"], "it":["supermercato"], "es":["supermercado"], "fr":["supermarché"], "de":["Supermarkt"], "nl":["supermarkt"], "pl":["supermarket"], "ko":["수퍼마켓"], "ja":["スーパーマーケット"], "zh":["超市"], "hu":["szupermarket"], "cs":["supermarket"], "be":["супермаркет"]},
+           "kv":{"shop":["supermarket"]},
+           "icon":"supermarket"
+           },
+           {
+           "names":{"ru":["одежда"], "en":["clothes"], "it":["vestiti"], "es":["ropa"], "fr":["vêtement"], "de":["Bekleidungsgeschäft"], "nl":["kledingwinkel"], "pl":["odzież"], "ko":["옷 가게"], "ja":["衣料品店"], "zh":["服装店"], "hu":["ruhák"], "cs":["oblečení"], "be":["адзенне"]},
+           "kv":{"shop":["clothes"]},
+           "icon":"clothing_store"
+           },
+           {
+           "names":{"ru":["ювелирный"], "en":["jewellery"], "it":["gioielleria"], "es":["joyería"], "fr":["joaillerie"], "de":["Schmuck"], "nl":["sieraad"], "pl":["biżuteria"], "ko":["보석류"], "ja":["ジュエリー"], "zh":["珠寶"], "hu":["ékszerbolt"], "cs":["klenotnictví"], "be":["ювелірны"]},
+           "kv":{"shop":["jewelry"]},
+           "icon":"jewellery"
+           },
+           {
+           "names":{"ru":["детский магазин"], "en":["baby goods"], "it":["articoli per bambini"], "es":["artículos para bebés"], "fr":["articles pour bébé"], "de":["Babyartikel"], "nl":["babywinkel"], "pl":["sklep dla niemowląt"], "ko":["용품 전문점 베이비"], "ja":["ベビー用品店"], "zh":["婴儿用品店"], "hu":["bababolt"], "cs":["potřeby pro děti"], "be":["дзіцячыя тавары"]},
+           "kv":{"shop":["baby_goods"]},
+           "icon":"baby_goods"
+           },
+           {
+             "names": {
+               "ru": ["строительный магазин"], "en": ["do-it-yourself shop"], "it": ["negozio fai-da-te"], "es": ["tienda de bricolaje"], "fr": ["magasin de bricolage"], "de": ["Baumarkt"], "nl": ["doe-het-zelfwinkel"], "pl": ["sklep budowlany"], "ko": ["DIY 상점"], "ja": ["DIYショップ"], "zh": ["自助商店"], "hu": ["háztartási cikk bolt"], "cs": ["stavební obchod"], "be": ["стройматэрыялы"]
+             },
+             "kv": { "shop": ["doityourself"] },
+             "icon": "doityourself"
+           },
+           {
+           "names":{"ru":["рынок"], "en":["marketplace"], "it":["mercato"], "es":["mercado"], "fr":["place de marché"], "de":["Marktplatz"], "nl":["Markt"], "pl":["targowisko"], "ko":["시장"], "ja":["市場"], "zh":["市场"], "hu":["piac"], "cs":["tržiště"], "be":["рынак"]},
+           "kv":{"amenity":["marketplace"]},
+           "icon":"market"
+           },
+           {
+           "names":{"ru":["продуктовый"], "en":["grocery"], "it":["minimarket"], "es":["tienda de alimentación"], "fr":["dépanneur"], "de":["Gemischtwarenhandel"], "nl":["Buurtsuper"], "pl":["sklep ogólnospożywczy"], "ko":["편의점"], "ja":["コンビニエンスストア"], "zh":["便利店"], "hu":["kis élelmiszerbolt"], "cs":["obchod"], "be":["прадукты"]},
+           "kv":{"shop":["convenience"]},
+           "icon":"store"
+           }],
+  "names":{"ru":["магазин"], "en":["shopping"], "it":["negozio"], "es":["tienda"], "fr":["magasin"], "de":["Laden"], "nl":["winkel"], "pl":["sklep"], "ko":["가게"], "ja":["店"], "zh":["商店"], "hu":["bolt"], "cs":["obchod"], "be":["крама"]},
+  "kv":{"shop":[]},
+  "icon":"mall",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["аптека"], "en":["pharmacy"], "it":["farmacia"], "es":["farmacia"], "fr":["pharmacie"], "de":["Apotheke"], "nl":["apotheek"], "pl":["apteka"], "ko":["약국"], "ja":["薬局"], "zh":["药店"], "hu":["gyógyszertár"], "cs":["lékárna"], "be":["аптэка"]},
+           "kv":{"amenity":["pharmacy"]},
+           "icon":"pharmacy"
+           },
+           {
+           "names":{"ru":["больница"], "en":["hospital"], "it":["ospedale"], "es":["hospital"], "fr":["hôpital"], "de":["Krankenhausgelände"], "nl":["ziekenhuis"], "pl":["szpital"], "ko":["병원"], "ja":["病院"], "zh":["医院"], "hu":["kórház"], "cs":["nemocnice"], "be":["бальніца"]},
+           "kv":{"building":["hospital"], "amenity":["hospital"]}
+           },
+           {
+           "names":{"ru":["клиника"], "en":["clinic"], "it":["clinica medica"], "es":["clínica"], "fr":["clinique"], "de":["Klinik"], "nl":["dokter"], "pl":["klinika"], "ko":["진료소"], "ja":["クリニック"], "zh":["诊所"], "hu":["rendelőintézet"], "cs":["poliklinika"], "be":["мед. цэнтр"]},
+           "kv":{"amenity":["clinic", "doctors"]}
+           },
+           {
+           "names":{"ru":["стоматология"], "en":["dentist"], "it":["dentista"], "es":["dentista"], "fr":["dentiste"], "de":["Zahnarzt"], "nl":["tandarts"], "pl":["dentysta"], "ko":["치과의"], "ja":["歯医者"], "zh":["牙科"], "hu":["fogorvos"], "cs":["zubař"], "be":["стаматалогія"]},
+           "kv":{"amenity":["dentist"]},
+           "icon":"dentist"
+           },
+           {
+           "names":{"ru":["ветеринар"], "en":["veterinary"], "it":["veterinario"], "es":["veterinario"], "fr":["vétérinaire"], "de":["Tierarzt"], "nl":["dierenarts"], "pl":["weterynarz"], "ko":["수의학"], "ja":["獣医"], "zh":["兽医"], "hu":["állatorvos"], "cs":["veterina"], "be":["ветэрынарыя"]},
+           "kv":{"amenity":["veterinary"]},
+           "icon":"vet"
+           }
+  ],
+  "names":{"ru":["медпомощь"], "en":["healthcare"], "it":["sanitaria"], "es":["médica"], "fr":["santé"], "de":["Medizin"], "nl":["gezondheidszorg"], "pl":["medycyna"], "ko":["의학"], "ja":["医学"], "zh":["医学"], "hu":["egészségügyi"], "cs":["zdravotní péče"], "be":["медыцына"]},
+  "icon":"health",
+  "show":1
+  },
+  {
+  "items": [{
+            "names":{"ru":["остановка"], "en":["stop"], "it":["fermata"], "es":["parada"], "fr":["arrêt"], "de":["Halteplatz"], "nl":["spoorweg"], "pl":["miejsce zatrzymania"], "ko":["정지 위치"], "ja":["停車位置"], "zh":["公交车站"], "hu":["megálló"], "cs":["zastávka autobusu"], "be":["прыпынак"]},
+            "icon":"bus",
+            "kv":{"public_transport":["platform", "stop_position"], "highway":["bus_stop"]}
+            },
+            {
+            "names":{"ru":["трамвайная остановка"], "en":["tram stop"], "it":["fermata"], "es":["parada"], "fr":["tramway"], "de":["Halteplatz"], "nl":["tramhalte"], "pl":["przystanek tramwajowy"], "ko":["정지 위치"], "ja":["路面電車停留場"], "zh":["電車站"], "hu":["villamos megálló"], "cs":["zastávka tramvaje"], "be":["трамвайны прыпынак"]},
+            "icon":"tram",
+            "kv":{"railway":["tram_stop"]}
+            },
+            {
+            "names":{"ru":["Ж/Д станция"], "en":["railway station"], "it":["stazione ferroviaria"], "es":["estación de ferrocarril"], "fr":["gare"], "de":["Bahnhof"], "nl":["treinstation"], "pl":["stacja kolejowa"], "ko":["철도역"], "ja":["鉄道駅"], "zh":["火车站"], "hu":["vasútállomás"], "cs":["vlakové nádraží"], "be":["чыгуначная станцыя"]},
+            "icon":"railway",
+            "kv":{"railway":["station"]}
+            }],
+  "names":{"ru":["общественный транспорт"], "en":["public transport"], "it":["trasporto pubblico"], "es":["transporte público"], "fr":["transport en commun"], "de":["Öffentlicher verkehr"], "nl":["openbaar vervoer"], "pl":["publiczny transport"], "ko":["대중교통"], "ja":["公共交通機関"], "zh":["公共交通"], "hu":["tömegközlekedés"], "cs":["veřejná doprava"], "be":["грамадскі транспарт"]},
+  "icon":"bus",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["автомойка"], "en":["car wash"], "it":["autolavaggio"], "es":["lavado de coches"], "fr":["lave auto"], "de":["Autowäsche"], "nl":["autowasstraat"], "pl":["myjnia"], "ko":["세차장"], "ja":["車の洗浄"], "zh":["洗车"], "hu":["autómosó"], "cs":["automyčka"], "be":["аўтамыйня"]},
+           "kv":{"amenity":["car_wash"]}
+           },
+           {
+           "names":{"ru":["автосервис", "СТО"], "en":["car repair"], "it":["autofficina"], "es":["reparación"], "fr":["garage"], "de":["Autowerkstatt"], "nl":["autogarage"], "pl":["serwis"], "ko":["자동차 수리점"], "ja":["自動車修理工場"], "zh":["汽车修理店"], "hu":["autó szervíz"], "cs":["autoservis"], "be":["рамонт і сэрвіс"]},
+           "kv":{"shop":["car_repair", "car_parts"]},
+           "icon":"car_service"
+           },
+           {
+           "names":{"ru":["автосалон"], "en":["car shop"], "it":["auto concessionario"], "es":["concesionarios de automóviles"], "fr":["concessionnaire automobile"], "de":["Autohändler"], "nl":["autoshowroom"], "pl":["dealer samochodowy"], "ko":["자동차 대리점"], "ja":["自動車販売店"], "zh":["汽车店"], "hu":["autóbolt"], "cs":["auto shop"], "be":["аўтасалон"]},
+           "kv":{"shop":["car"]},
+           "icon":"car_sharing"
+           },
+           {
+           "names":{"ru":["мотосалон"], "en":["motorcycle shop"], "it":["moto concessionaria"], "es":["concesionario de motocicletas"], "fr":["vendeur de motos"], "de":["Motorradhändler"], "nl":["motorwinkel"], "pl":["dealer motocykli"], "ko":["모터사이클 대리점"], "ja":["バイク店"], "zh":["摩托车店"], "hu":["motorkerékpár bolt"], "cs":["motocykly"], "be":["мотасалон"]},
+           "kv":{"shop":["motorcycle"]}
+           },
+           {
+           "names":{"ru":["аренда авто"], "en":["car rental"], "it":["noleggio auto"], "es":["alquiler de automóviles"], "fr":["location de voiture"], "de":["Autovermietung"], "nl":["autoverhuur"], "pl":["wypożyczalnia samochodów"], "ko":["자동차 대여"], "ja":["レンタカー"], "zh":["汽车租赁"], "hu":["autókölcsönző"], "cs":["půjčovna aut"], "be":["аўтапракат"]},
+           "kv":{"amenity":["car_sharing","car_rental"]},
+           "icon":"car_rental"
+           }],
+  "names":{"ru":["авто"], "en":["auto"], "it":["auto"], "es":["auto"], "fr":["auto"], "de":["Auto"], "nl":["auto"], "pl":["auto"], "ko":["자동차"], "ja":["車"], "zh":["汽车"], "hu":["kocsi"], "cs":["auto"], "be":["аўто"]},
+  "icon":"car",
+  "show":1
+  },
+  // ----------
+  {
+  "items":[{
+           "names":{"ru":["заправка", "бензин"], "en":["filling station"], "it":["carburante"], "es":["gasolinera"], "fr":["station service"], "de":["tankstelle"], "nl":["tankstation"], "pl":["stacja benzynowa"], "ko":["주유소"], "ja":["ガソリンスタンド"], "zh":["加油站"], "hu":["benzinkút"], "cs":["benzínka"], "be":["аўтазапраўка"]},
+           "kv":{"amenity":["fuel"]},
+           "icon":"gas_station"
+           },
+           {
+           "names":{"ru":["зарядная станция"], "en":["charging point"], "it":["punto di ricarica"], "es":["punto de recarga"], "fr":["borne de recharge"], "de":["Stromtankstelle"], "nl":["oplaadpunt"], "pl":["stacja ładowania"], "ko":[" 전기 자동차 충전"], "ja":["充電スタンド"], "zh":["充電站"], "hu":["elektromos töltőállomás"], "cs":["nabíjecí stanice"], "be":["зарадная станцыя"]},
+           "kv":{"amenity":["charging_station"]},
+           "icon":"charging_station"
+           }],
+  "names":{"ru":["АЗС"], "en":["fuel"], "it":["carburante"], "es":["combustible"], "fr":["station essence"], "de":["Treibstoff"], "nl":["tankstation"], "pl":["paliwo"], "ko":["주유소"], "ja":["ガソリンスタンド"], "zh":["加油站"], "hu":["benzinkút"], "cs":["benzínka"], "be":["паліва"]},
+  "icon":"gas_station",
+  "show":1
+  },
+  // универсальные матчеры.
+  // надо будет добавить матчеры для всех тегов, для которых мы показываем имя, чтобы невозможно было получить Unknown category
+  {
+  "names":{"ru":["питьевая вода"], "en":["drinking water"], "it":["acqua potabile"], "es":["agua potable"], "fr":["eau potable"], "de":["Trinkwasserstelle"], "nl":["drinkwaterkraantje"], "pl":["woda pitna"], "ko":["식수"], "ja":["水飲み場"], "zh":["饮水处"], "hu":["ivóvíz"], "cs":["pití vody"], "be":["пітная вада"]},
+  "kv":{"amenity":["drinking_water", "water_point"], "man_made":["water_well", "water_tap"], "natural":["spring"]},
+  "icon":"drinking_water"
+  },
+  {
+  "names":{"ru":["водоем"], "en":["water"], "it":["acqua"], "es":["agua"], "fr":["eau"], "de":["Wasser"], "nl":["water"], "pl":["woda"], "ko":["물"], "ja":["水域"], "zh":["水"], "hu":["tavacska"], "cs":["rybník"], "be":["вадаём"]},
+  "kv":{"natural":["water"], "waterway":[], "landuse":["basin", "reservoir"]}
+  },
+  {
+  "names":{"ru":["дорога"], "en":["road"], "it":["strada"], "es":["carretera"], "fr":["route"], "de":["Route"], "nl":["weg"], "pl":["droga"], "ko":["도로"], "ja":["道路"], "zh":["公路"], "hu":["út"], "cs":["silnice"], "be":["дарога"]},
+  "sc":20,
+  "kv":{"highway":[]},
+  "icon": "search_road"
+  },
+  // названия географических объектов
+  {
+      "names":{"ru":["остров"], "en":["island"], "it":["isola"], "es":["isla"], "fr":["île"], "de":["Insel"], "nl":["eiland"], "pl":["wyspa"], "ko":["섬"], "ja":["島"], "zh":["岛屿"], "hu":["sziget"], "cs":["ostrov"], "be":["выспа"]},
+      "kv":{"place":["island"]}
+  },
+  {
+      "names":{"ru":["залив"], "en":["bay"], "it":["baia"], "es":["bahía"], "fr":["baie"], "de":["Bucht"], "nl":["baai"], "pl":["zatoka"], "ko":["만"], "ja":["湾"], "zh":["海湾"], "hu":["öböl"], "cs":["záliv"], "be":["заліў"]},
+      "kv":{"natural":["bay"]}
+  },
+  {
+      "names":{"ru":["река"], "en":["river"], "it":["fiume"], "es":["río"], "fr":["rivière"], "de":["Fluss"], "nl":["rivier"], "pl":["rzeka"], "ko":["강"], "ja":["河川"], "zh":["河流"], "hu":["folyó"], "cs":["řeka"], "be":["рака"]},
+      "kv":{"waterway":["river", "riverbank"]}
+  },
+  // названия зданий
+  {
+      "names":{"ru":["школа"], "en":["school"], "it":["scuola"], "es":["escuela"], "fr":["école"], "de":["Schulgelände"], "nl":["school"], "pl":["budynek szkolny"], "ko":["학교 운동장"], "ja":["学校の敷地"], "zh":["学校"], "hu":["iskola"], "cs":["škola"]},
+      "kv":{"building":["school"], "amenity":["school"], "be":["школа"]}
+  },
+  {
+      "names":{"ru":["колледж"], "en":["college"], "it":["college"], "es":["instituto"], "fr":["enseignement supérieur"], "de":["Hochschule"], "nl":["hogeschool"], "pl":["uczelnia"], "ko":["전문대학"], "ja":["単科大学"], "zh":["学院"], "hu":["főiskola"], "cs":["vysoká škola"], "be":["каледж"]},
+      "kv":{"amenity":["college"]},
+      "icon": "education"
+  },
+  {
+      "names":{"ru":["университет"], "en":["university"], "it":["università"], "es":["universidad"], "fr":["université"], "de":["Universität"], "nl":["universiteit"], "pl":["uniwersytet"], "ko":["대학교"], "ja":["大学"], "zh":["大学"], "hu":["egyetem"], "cs":["univerzita"], "be":["универсітэт"]},
+      "kv":{"amenity":["university"]},
+      "icon": "education"
+  },
+  {
+      "names":{"ru":["Ж/Д вокзал"], "en":["train station"], "it":["stazione ferroviaria"], "es":["estación de ferrocarril"], "fr":["gare ferroviaire"], "de":["Bahnhof"], "nl":["treinstation"], "pl":["dworzec kolejowy"], "ko":["駅舎"], "ja":["駅舎"], "zh":["火车站"], "hu":["vasútállomás-épület"], "cs":["vlakové nádraží"], "be":["чыгуначная станцыя"]},
+      "kv":{"building":["train_station"]},
+      "icon":"railway"
+  },
+  {
+      "names":{"ru":["сад"], "en":["garden"], "it":["giardino"], "es":["jardín"], "fr":["jardin"], "de":["Garten"], "nl":["tuin"], "pl":["ogród"], "ko":["정원"], "ja":["庭園"], "zh":["花园"], "hu":["kert"], "cs":["zahrada"], "be":["сад"]},
+      "kv":{"leisure":["garden"]}
+  },
+  {
+      "names":{"ru":["парк"], "en":["park"], "it":["parco"], "es":["parque"], "fr":["parc"], "de":["Park"], "nl":["park"], "pl":["park"], "ko":["공원"], "ja":["公園"], "zh":["公园"], "hu":["park"], "cs":["park"], "be":["парк"]},
+      "kv":{"leisure":["park"]}
+  },
+  {
+      "names":{"ru":["заповедник"], "en":["nature reserve"], "it":["area naturale protetta"], "es":["reserva natural"], "fr":["réserve naturelle"], "de":["Nationalpark"], "nl":["natuurreservaat"], "pl":["rezerwat przyrody"], "ko":["국립공원"], "ja":["自然保護区"], "zh":["自然保护区"], "hu":["természetvédelmi terület"], "cs":["přírodní rezervace"], "be":["запаведнік"]},
+      "kv":{"leisure":["nature_reserve"]}
+  },
+  {
+      "names":{"ru":["касса"], "en":["ticket shop"], "it":["biglietteria"], "es":["despacho de billetes"], "fr":["billetterie"], "de":["Kasse"], "nl":["ticketshop"], "pl":["kasa"], "ko":["티켓 숍"], "ja":["チケットショップ"], "zh":["票"], "hu":["jegyárus"], "cs":["prodejna vstupenek"], "be":["білетная каса"]},
+      "kv":{"shop":["ticket"]}
+  },
+  {
+      "names":{"ru":["муниципалитет"], "en":["townhall"], "it":["municipio"], "es":["ayuntamiento"], "fr":["mairie"], "de":["Rathaus"], "nl":["gemeentehuis"], "pl":["ratusz"], "ko":["마을 회관"], "ja":["役場"], "zh":["市政府"], "hu":["városháza"], "cs":["radnice"], "be":["адміністрацыя"]},
+      "kv":{"amenity":["townhall"]}
+  },
+  {
+      "names":{"ru":["посольство"], "en":["embassy"], "it":["ambasciata"], "es":["embajada"], "fr":["embassade"], "de":["Botschaft"], "nl":["ambassade"], "pl":["ambasada"], "ko":["대사관"], "ja":["大使館"], "zh":["使馆"], "hu":["nagykövetség"], "cs":["velvyslanectví"], "be":["амбасада"]},
+      "kv":{"amenity":["embassy"]}
+  },
+  {
+  "names":{"ru":["здание"], "en":["building"], "it":["edifici"], "es":["edificio"], "fr":["bâtiment"], "de":["Gebäude"], "nl":["gebouw"], "pl":["budynek"], "ko":["건물"], "ja":["建物"], "zh":["建筑物"], "hu":["épület"], "cs":["budova"], "be":["будынак"]},
+  "kv":{"building":[], "addr:housenumber":[]},
+  "sc":10,
+  "icon": "search_building"
+  }
+]

@@ -2,7 +2,8 @@
 // Copyright (c) 2013-2019 Evgen Bodunov. All rights reserved.
 
 @color_ground: #202020;
-@color_downloaded_map: #27CC4080;
+@color_downloaded_map: #6F00FF33;
+@color_downloaded_map_stroke: #6F00FF;
 @color_water: #21659A;
 @color_water_icon: #78B9EB;
 @color_water_underground: #21659A66;
