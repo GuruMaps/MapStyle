@@ -184,6 +184,15 @@ node,area {
         }
     }
 
+    @if Style == Outdoor
+        node|z14-[natural=cape] {
+            text: eval(locTag('name'));
+            text-color: @color_label_text;
+            font-size: 7pt;
+            font-stroke-width: 1pt;
+        }
+    @endif
+
     @if SubStyle != Car
         area{
             |z9-[boundary=protected_area] {
