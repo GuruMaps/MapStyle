@@ -181,7 +181,7 @@ node,area {
                 [protected_class=3],
                 [protected_class=4],
                 [protected_class=5],
-                [protected_class=6] {
+                |z11-[protected_class=6] {
                     text: eval(locTag('name'));
                     text-color: @color_national_park_text;
                     text-priority: 4;
