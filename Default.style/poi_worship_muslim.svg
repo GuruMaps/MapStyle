@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+ <circle cx="9" cy="9" r="8.5" fill="#808080" stroke="white"/>
+ <ellipse cx="8.7422" cy="8.875" rx="5.5143" ry="5.6628" fill="#ffffff" style="paint-order:markers stroke fill"/>
+ <ellipse cx="10.938" cy="8.875" rx="4.6094" ry="4.9375" fill="#808080" style="paint-order:markers stroke fill"/>
+ <path transform="translate(2.0156 -.45312)" d="m9.5 8.3281 0.38114 0.77228 0.85226 0.12384-0.6167 0.60113 0.14558 0.84882-0.76228-0.40076-0.76228 0.40076 0.14558-0.84882-0.6167-0.60113 0.85226-0.12384z" fill="#ffffff" stroke="#ffffff" stroke-linecap="square" stroke-width="1.4" style="paint-order:markers stroke fill"/>
+</svg>
