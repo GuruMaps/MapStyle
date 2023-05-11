@@ -273,7 +273,7 @@ node,area {
         node|z17-[entrance][!indoor] {
             icon-image: "poi_circle_small.svg";
             icon-tint: @color_entrance_text;
-            
+
             text-priority: -5;
             details-enabled: 0;
 
@@ -281,7 +281,7 @@ node,area {
             [entrance=main] {
                 icon-scale: 0.85;
             }
-            
+
             |z18-{
                 icon-image: "poi_entrance.svg";
                 icon-scale: 0.8;
@@ -295,7 +295,7 @@ node,area {
                     font-size: 9;
                     details-enabled: 1;
                 }
-                
+
                 [ref] {
                     text: eval( tag('ref') );
                     text-color: @color_entrance_text;
@@ -759,7 +759,7 @@ node,area {
                 text-color: @color_text_offices;
             }
         }
-        
+
         |z16-(
             [amenity=college],
             [amenity=school],
@@ -1046,12 +1046,12 @@ node,area {
             text-priority: -9;
             details-enabled: 0;
         }
-        
+
         area|z17-[landuse=cemetery] {
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
-    
+
         area|z15-[natural=beach] {
             text: eval(locTag('name'));
             text-color: @color_beach_text;
@@ -1059,7 +1059,7 @@ node,area {
             font-stroke-width: 1pt;
             font-stroke-color: @color_sand;
         }
-    
+
         |z17-{
             [amenity=toilets] {
                 icon-image:"poi_WC.svg";
@@ -1080,7 +1080,7 @@ node,area {
         node|z16-[highway=bus_stop] {
             icon-image:"poi_bus.svg";
             icon-tint: @color_icon_transport;
-            
+
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1088,7 +1088,7 @@ node,area {
         node|z17-[railway=tram_stop] {
             icon-image:"poi_tram.svg";
             icon-tint: @color_icon_transport;
-            
+
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1110,7 +1110,7 @@ node,area {
                     text-priority: 7;
                 }
             }
-        
+
             |z14-[railway=station][transport=subway],
             |z14-[railway=station][station=subway],
             |z15-[railway=station],
@@ -1146,10 +1146,10 @@ node,area {
         font-size: 8;
         text-color: @color_label_text;
         font-stroke-color: @color_footway_area;
-        
+
         details-enabled: 0;
         text-priority: 1;
-        
+
         |z16-{
             font-size: 9;
         }
@@ -1237,7 +1237,7 @@ node,area {
 
         |z14- [natural=cave_entrance] {
             icon-image: "poi_cave_entrance.svg";
-            icon-tint: @color_icon_cave_entrance;
+            icon-tint: @color_icon_peak;
 
             |z16- {
                 text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
