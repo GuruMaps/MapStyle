@@ -117,7 +117,7 @@ node,area {
             [leisure=stadium],
         @endif
         @if Style == Outdoor
-          [place=locality],
+            [place=locality],
         @endif
         {
             text: eval(locTag('name'));
