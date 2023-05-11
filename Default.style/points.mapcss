@@ -699,6 +699,9 @@ node,area {
             [shop=car][service=repair] {
                 icon-image:"poi_car_service.svg";
                 icon-tint: @color_icon_transport;
+                [amenity=car_wash] {
+                  icon-image: "poi_car_wash.svg";
+                }
                 |z18-{
                     text: eval(locTag('name'));
                     text-color: @color_text_transport;
