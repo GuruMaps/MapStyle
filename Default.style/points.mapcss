@@ -175,6 +175,21 @@ node,area {
 
     @if SubStyle != Car
         area{
+            |z9-[boundary=protected_area] {
+                [protected_class=1], [protected_class=1a], [protected_class=1b],
+                [protected_class=2],
+                [protected_class=3],
+                [protected_class=4],
+                [protected_class=5],
+                |z11-[protected_class=6] {
+                    text: eval(locTag('name'));
+                    text-color: @color_national_park_text;
+                    text-priority: 4;
+                    font-size: 8;
+                    font-stroke-width:2pt;
+                    font-stroke-color: @color_wood;
+                }
+            }
             |z9-[boundary=national_park],
             |z10-[leisure=nature_reserve] {
                 text: eval(locTag('name'));

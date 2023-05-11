@@ -148,6 +148,17 @@ area {
             color: @color_national_park;
             width: 3pt;
         }
+        |z9-[boundary=protected_area] {
+            [protected_class=1], [protected_class=1a], [protected_class=1b],
+            [protected_class=2],
+            [protected_class=3],
+            [protected_class=4],
+            [protected_class=5],
+            |z11-[protected_class=6] {
+                color: @color_national_park;
+                width: 2pt;
+            }
+        }
         |z9-[boundary=national_park] {
             color: @color_national_park;
             width: 2pt;
