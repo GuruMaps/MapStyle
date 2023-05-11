@@ -44,13 +44,13 @@ area {
             dashes:4,4,4,4;
         }
     }
-    
+
 @if DownloadedMaps
     |z5-7(@DownloadedMaps) {
         fill-color: @color_downloaded_map;
         color: @color_downloaded_map_stroke;
         width: eval( zlinear(13, 1pt,2pt,3pt ));
-        
+
         galileo-stencil-type: none;
     }
 @endif
@@ -93,7 +93,7 @@ area {
             fill-color: @color_landuse_commercial;
         }
     }
-    
+
     // generalized buildings
     |z11-12[landuse=residential]{
         z-index: -14;
@@ -122,7 +122,7 @@ area {
             z-index: -14;
             fill-color: @color_sand;
         }
-        
+
         [landuse=quarry] {
             z-index: -14;
             fill-color: @color_quarry;
@@ -133,7 +133,8 @@ area {
 
     // all kinds of woods
     |z10-{
-        [natural=wood], [landuse=forest]{
+        [natural=wood],
+        [landuse=forest] {
             z-index: -13;
             fill-color: @color_wood;
         }
@@ -143,11 +144,7 @@ area {
         }
     }
 
-    |z13-[natural=bare_rock] {
-        z-index: -12;
-        fill-color: @color_rock;
-    }
-
+    |z13-[natural=bare_rock],
     |z16-[natural=rock] {
         z-index: -12;
         fill-color: @color_rock;
@@ -174,7 +171,7 @@ area {
             width: 2pt;
         }
     @endif
-    
+
     |z13-{
         // заросли кустов
         [natural=scrub] {
@@ -275,9 +272,9 @@ area {
             fill-color: @color_landuse_parking;
         }
     }
-    
+
     // -10
-    
+
     |z9-[natural=glacier] {
         fill-color: @color_glacier;
         z-index:-10;
@@ -292,7 +289,7 @@ area {
             fill-color: @color_water;
         }
     }
-    
+
     [natural=wetland] {
         |z9-12 {
             fill-color: @color_wetland;
