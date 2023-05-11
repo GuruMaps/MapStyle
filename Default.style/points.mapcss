@@ -116,6 +116,9 @@ node,area {
         @if Sport
             [leisure=stadium],
         @endif
+        @if Style == Outdoor
+            [place=locality],
+        @endif
         {
             text: eval(locTag('name'));
             text-color: @color_label_text;
@@ -161,6 +164,14 @@ node,area {
                     text-priority: 2;
                 }
             }
+        }
+
+        |z14-[natural=wetland] {
+            text: eval(locTag('name'));
+            text-color: @color_water_text;
+            font-stroke-color: @color_wetland;
+            font-size: 12;
+            font-stroke-width: 2pt;
         }
 
         |z11-[place=island],
