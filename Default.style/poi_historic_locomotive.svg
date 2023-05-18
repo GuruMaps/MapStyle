@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+ <circle cx="9" cy="9" r="8.5" fill="#808080" stroke="white"/>
+ <path d="m11.708 4.6666-0.47718-0.00781" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+ <path d="m12.469 5.8688h-0.2975" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+ <ellipse cx="4.569" cy="11.382" rx=".58661" ry=".59197" fill="#ffffff" stroke="#7f7f7f" stroke-linecap="square" stroke-linejoin="round" stroke-width=".8" style="paint-order:markers stroke fill"/>
+ <ellipse cx="8.0603" cy="11.349" rx=".58661" ry=".59197" fill="#ffffff" stroke="#7f7f7f" stroke-linecap="square" stroke-linejoin="round" stroke-width=".8" style="paint-order:markers stroke fill"/>
+ <path d="m9.3074 11.226c0.00396-0.64952 0.0024-2.109 0.00636-2.0038l4.5089-0.00653 0.01272 1.9897" fill="#ffffff" style="paint-order:markers stroke fill"/>
+ <ellipse cx="13.09" cy="10.969" rx="1.0554" ry="1.0334" fill="#ffffff" stroke="#7f7f7f" stroke-linecap="square" stroke-linejoin="round" stroke-width=".8" style="paint-order:markers stroke fill"/>
+ <ellipse cx="9.7749" cy="11.357" rx=".58661" ry=".59197" fill="#ffffff" stroke="#7f7f7f" stroke-linecap="square" stroke-linejoin="round" stroke-width=".8" style="paint-order:markers stroke fill"/>
+ <path d="m13.422 8.1789-0.0078 0.80169" fill="none" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round" stroke-width=".8" style="paint-order:markers stroke fill"/>
+ <path d="m7.8173 10.206h-3.0715" fill="none" stroke="#ffffff" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" style="paint-order:markers stroke fill"/>
+ <path d="m13.062 7.0044h-0.19594" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" style="paint-order:markers stroke fill"/>
+</svg>

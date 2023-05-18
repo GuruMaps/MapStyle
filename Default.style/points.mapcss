@@ -551,9 +551,53 @@ node,area {
     }
 
     @if Culture
-        |z16-(
+        |z16-[historic] {
+            icon-image: "poi_historic.svg";
+            icon-tint: @color_icon_tourism;
+
+            [historic=ruins] {
+                icon-image: "poi_historic_ruins.svg";
+            }
+
+            [historic=aircraft] {
+                icon-image: "poi_historic_aricarft.svg";
+            }
+
+            [historic=canon] {
+                icon-image: "poi_historic_canon.svg";
+            }
+
+            [historic=tank],
+            [historic=vehicle] {
+                icon-image: "poi_historic_tank.svg";
+            }
+
+            [historic=ship],
+            [historic=wreck] {
+                icon-image: "poi_historic_ship.svg";
+            }
+
+            [historic=locomotive],
+            [historic=railway_car] {
+                icon-image: "poi_historic_ship.svg";
+            }
+
             [historic=memorial],
-            [historic=monument],
+            [historic=monument], {
+                icon-image: "poi_monument.svg";
+            }
+
+            [historic=wayside_cross] {
+                icon-image: "poi_worship_christian.svg";
+            }
+
+            |z17- {
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+            }
+        }
+
+        |z16-(
             [artwork_type=sculpture],
             [artwork_type=statue],
             [artwork_type=installation],
