@@ -1239,6 +1239,11 @@ node,area {
             [barrier=lift_gate] {
                 icon-image:"poi_lift_gate.svg";
             }
+
+            [barrier=entrance] {
+                icon-scale: 1;
+                icon-image:"poi_barrier_entrance.svg";
+            }
         }
     }
 
