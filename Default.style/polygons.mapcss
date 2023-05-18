@@ -290,7 +290,8 @@ area {
         }
     }
 
-    [natural=wetland] {
+    |z9-[natural=wetland] {
+        z-index: 1;
         |z9-12 {
             fill-color: @color_wetland;
         }
