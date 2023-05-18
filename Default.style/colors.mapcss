@@ -150,3 +150,6 @@
 @color_text_ford: #0f7cd4;
 
 @color_rock: #a8a8a8;
+
+@color_waterway_dam_fill: #34445e;
+@color_waterway_dam_outline: #141a24;

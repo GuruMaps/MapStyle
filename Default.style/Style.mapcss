@@ -14,6 +14,7 @@
     @image_allotments: "allotments_dark.png";
     @image_quarry: "quarry_dark.png";
     @image_dog_park: "dog_park_dark.png";
+    @image_reef: "reef_dark.svg";
 @else // Default colors
     @import "colors.mapcss";
     @image_noData: "noData.png";
@@ -27,6 +28,7 @@
     @image_allotments: "allotments.png";
     @image_quarry: "quarry.png";
     @image_dog_park: "dog_park.png";
+    @image_reef: "reef.svg";
 @endif
 @image_wetland: "wetland.png";
 

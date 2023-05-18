@@ -173,6 +173,15 @@ area {
     @endif
 
     |z13-{
+      [waterway=dam],
+      [waterway=weir] {
+          width: 1pt;
+          color: @color_waterway_dam_outline;
+          fill-color: @color_waterway_dam_fill;
+      }
+    }
+
+    |z13-{
         // заросли кустов
         [natural=scrub] {
             z-index: -13;
@@ -288,6 +297,11 @@ area {
         [natural=water], [landuse=reservoir], [waterway=riverbank] {
             fill-color: @color_water;
         }
+    }
+
+    |z14-[natural=reef] {
+        fill-image: @image_reef;
+        z-index: 1;
     }
 
     |z9-[natural=wetland] {

@@ -184,6 +184,15 @@ node,area {
         }
     }
 
+    @if Style == Outdoor
+        node|z14-[natural=cape] {
+            text: eval(locTag('name'));
+            text-color: @color_label_text;
+            font-size: 7pt;
+            font-stroke-width: 1pt;
+        }
+    @endif
+
     @if SubStyle != Car
         area{
             |z9-[boundary=protected_area] {
@@ -1007,6 +1016,33 @@ node,area {
         ) {
             text: eval(locTag('name'));
             text-color: @color_text_activity;
+        }
+
+        |z16-{
+            [waterway=dam] {
+                icon-image: "poi_circle_small.svg";
+                icon-scale: 1.50;
+                icon-tint: @color_waterway_dam_fill;
+                text: eval(locTag("name"));
+            }
+
+            [waterway=lock_gate],[waterway=sluice_gate] {
+                icon-image: "poi_dam.svg";
+                icon-tint: @color_waterway_dam_fill;
+                text: eval(locTag("name"));
+            }
+
+            [waterway=weir] {
+                icon-image: "poi_weir.svg";
+                icon-tint: @color_waterway_dam_fill;
+                text: eval(locTag("name"));
+            }
+
+            [waterway=rapids] {
+                icon-image: "poi_rapids.svg";
+                icon-tint: @color_icon_tourism;
+                text: eval(locTag("name"));
+            }
         }
     @endif
 

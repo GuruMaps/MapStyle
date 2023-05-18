@@ -608,6 +608,23 @@ line {
         }
     }
 
+    @if Sport
+    |z10-{
+        [waterway=dam],[waterway=weir] {
+            color: @color_waterway_dam_outline;
+            width: 2pt;
+
+            |z16- {
+                width: 3pt;
+                |z20- {
+                     text: eval(locTag("name"));
+                     text-color: @color_waterway_dam_outline;
+                }
+            }
+        }
+    }
+    @endif // Sport
+
     /******************** Line names *************************/
 
     // road references
