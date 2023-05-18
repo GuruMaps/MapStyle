@@ -1244,6 +1244,11 @@ node,area {
                 icon-scale: 1;
                 icon-image:"poi_barrier_entrance.svg";
             }
+
+            [barrier=toll_booth] {
+                icon-scale: 1;
+                icon-image:"poi_barrier_toll_booth.svg";
+            }
         }
     }
 
