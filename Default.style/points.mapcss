@@ -284,9 +284,7 @@ node,area {
         node|z17-[entrance][!indoor] {
             icon-image: "poi_circle_small.svg";
             icon-tint: @color_entrance_text;
-
             text-priority: -5;
-            details-enabled: 0;
 
             icon-scale: 0.7;
             [entrance=main] {
@@ -304,14 +302,12 @@ node,area {
                     text: eval( tag('addr:housenumber') );
                     text-color: @color_building_text;
                     font-size: 9;
-                    details-enabled: 1;
                 }
 
                 [ref] {
                     text: eval( tag('ref') );
                     text-color: @color_entrance_text;
                     font-size: 8;
-                    details-enabled: 1;
                 }
             }
         }
@@ -939,6 +935,12 @@ node,area {
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
             }
+            [shop=mobile_phone] {
+                icon-image:"poi_mobile_phone.svg";
+                icon-tint: @color_icon_stores;
+                text: eval(locTag('name'));
+                text-color: @color_text_stores;
+            }
         }
 
         |z18-[shop=kiosk]{
@@ -1146,7 +1148,7 @@ node,area {
         |z14-[railway=halt],
         |z16-[building=train_station] {
             icon-image:"poi_circle_small.svg";
-            icon-tint:eval(any(tag('colour'), @color_icon_transport));
+            icon-tint: eval(any(colorTransform(tag('colour')), @color_icon_transport));
             text-priority: 6; // выше чем у названий дорог
 
             |z14-{
@@ -1170,7 +1172,7 @@ node,area {
 
         node|z15-[railway=subway_entrance] {
             icon-image:"poi_circle_small.svg";
-            icon-tint:eval(any(tag('colour'), @color_icon_transport));
+            icon-tint:eval(any(colorTransform(tag('colour')), @color_icon_transport));
 
             details-enabled: 0;
             text-priority: 5; // выше чем у названий дорог
