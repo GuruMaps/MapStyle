@@ -285,15 +285,16 @@ area {
     }
 
     // 0
-    |z5-(
-        [natural=water],
-        [landuse=reservoir]
-    ),
-    |z9-(
-        [natural=bay], // - часто из заливов не вырезают острова. И они в результате тонут под водой.
-        [landuse=basin]
-    ){
-        fill-color: @color_water;
+    |z5-{
+        |z9-[natural=bay], // - часто из заливов не вырезают острова. И они в результате тонут под водой.
+        |z9-[landuse=basin],
+        [natural=water], [landuse=reservoir], [waterway=riverbank] {
+            fill-color: @color_water;
+            [intermittent=yes] {
+                z-index: 1;
+                fill-image: @intermittent_water;
+            }
+        }
     }
 
     |z9-[natural=wetland] {

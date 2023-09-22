@@ -1,0 +1,8 @@
+<svg width="32mm" height="32mm" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+ <rect x="0" y="0" width="32" height="32" fill="#21659a" fill-opacity=".50" style="paint-order:stroke markers fill"/>
+ <g fill="#fff" fill-opacity=".50" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m29.9 0-29.902 29.898-0.0086902 2.0921 2.1181-0.005214 29.882-29.88 0.0083-2.1043z" color="#000000" style="paint-order:stroke markers fill"/>
+  <path d="m-0.0012082 0.0014516 0.0029233 2.1156 2.1156-2.117z" color="#000000" style="paint-order:stroke markers fill"/>
+  <path d="m32.001 29.896-2.1049 2.1012h2.1042z" color="#000000" style="paint-order:stroke markers fill"/>
+ </g>
+</svg>
