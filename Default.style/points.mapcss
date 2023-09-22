@@ -1093,7 +1093,8 @@ node,area {
             details-enabled: 0;
         }
 
-        area|z17-[landuse=cemetery] {
+        area|z17-[landuse=cemetery],
+        area|z17-[amenity=grave_yard] {
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }

@@ -106,7 +106,8 @@ area {
         fill-color: @color_hospital;
     }
 
-    |z13-[landuse=cemetery]{
+    |z13-[landuse=cemetery],
+    |z13-[amenity=grave_yard] {
         z-index: -14;
         fill-color: @color_landuse_cemetery;
     }
