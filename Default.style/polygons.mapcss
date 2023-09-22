@@ -106,7 +106,8 @@ area {
         fill-color: @color_hospital;
     }
 
-    |z13-[landuse=cemetery]{
+    |z13-[landuse=cemetery],
+    |z13-[amenity=grave_yard] {
         z-index: -14;
         fill-color: @color_landuse_cemetery;
     }
@@ -252,7 +253,10 @@ area {
         }
     }
     |z15-{
-        [highway=pedestrian],[highway=footway] {
+        [area:highway=footway],
+        [area:highway=pedestrian],
+        [highway=pedestrian],
+        [highway=footway] {
             z-index: -12;
             fill-color: @color_footway_area;
         }
@@ -281,7 +285,6 @@ area {
     }
 
     // 0
-
     |z5-{
         |z9-[natural=bay], // - часто из заливов не вырезают острова. И они в результате тонут под водой.
         |z9-[landuse=basin],
@@ -305,7 +308,8 @@ area {
     }
 
     |z13-{
-        [landuse=retail], [amenity=marketplace] {
+        [landuse=retail],
+        [amenity=marketplace] {
             fill-color: @color_market;
         }
 

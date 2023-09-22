@@ -143,45 +143,42 @@ node,area {
         }
     }
 
-    area{
-        |z9-{
-            [natural=bay],
-            [waterway=riverbank],
-            [natural=water],
-            [landuse=basin],
-            [landuse=reservoir] {
-                text: eval(locTag('name'));
-                text-color: @color_water_text;
-                font-stroke-color: @color_water;
-
-                |z14-[natural=bay],
-                |z14-[waterway=riverbank],
-                |z15-[natural=water],
-                |z16-[landuse=basin],
-                |z16-[landuse=reservoir] {
-                    font-size: 12;
-                    font-stroke-width: 2pt;
-                    text-priority: 2;
-                }
-            }
-        }
-
-        |z14-[natural=wetland] {
+    |z9-{
+        [natural=bay],
+        area[natural=water],
+        area[landuse=basin],
+        [landuse=reservoir] {
             text: eval(locTag('name'));
             text-color: @color_water_text;
-            font-stroke-color: @color_wetland;
-            font-size: 12;
-            font-stroke-width: 2pt;
-        }
+            font-stroke-color: @color_water;
 
-        |z11-[place=island],
-        |z13-[place=islet]
-        {
-            text: eval(locTag('name'));
-            text-color: @color_national_park_text;
-            font-size: 8;
-            text-priority: 1;
+            |z14-[natural=bay],
+            |z14-[waterway=riverbank],
+            |z15-[natural=water],
+            |z16-[landuse=basin],
+            |z16-[landuse=reservoir] {
+                font-size: 12;
+                font-stroke-width: 2pt;
+                text-priority: 2;
+            }
         }
+    }
+
+    area|z14-[natural=wetland] {
+        text: eval(locTag('name'));
+        text-color: @color_water_text;
+        font-stroke-color: @color_wetland;
+        font-size: 12;
+        font-stroke-width: 2pt;
+    }
+
+    |z11-[place=island],
+    |z13-[place=islet]
+    {
+        text: eval(locTag('name'));
+        text-color: @color_national_park_text;
+        font-size: 8;
+        text-priority: 1;
     }
 
     @if SubStyle != Car
@@ -284,9 +281,7 @@ node,area {
         node|z17-[entrance][!indoor] {
             icon-image: "poi_circle_small.svg";
             icon-tint: @color_entrance_text;
-
             text-priority: -5;
-            details-enabled: 0;
 
             icon-scale: 0.7;
             [entrance=main] {
@@ -304,14 +299,12 @@ node,area {
                     text: eval( tag('addr:housenumber') );
                     text-color: @color_building_text;
                     font-size: 9;
-                    details-enabled: 1;
                 }
 
                 [ref] {
                     text: eval( tag('ref') );
                     text-color: @color_entrance_text;
                     font-size: 8;
-                    details-enabled: 1;
                 }
             }
         }
@@ -939,6 +932,12 @@ node,area {
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
             }
+            [shop=mobile_phone] {
+                icon-image:"poi_mobile_phone.svg";
+                icon-tint: @color_icon_stores;
+                text: eval(locTag('name'));
+                text-color: @color_text_stores;
+            }
         }
 
         |z18-[shop=kiosk]{
@@ -1094,7 +1093,8 @@ node,area {
             details-enabled: 0;
         }
 
-        area|z17-[landuse=cemetery] {
+        area|z17-[landuse=cemetery],
+        area|z17-[amenity=grave_yard] {
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1146,7 +1146,7 @@ node,area {
         |z14-[railway=halt],
         |z16-[building=train_station] {
             icon-image:"poi_circle_small.svg";
-            icon-tint:eval(any(tag('colour'), @color_icon_transport));
+            icon-tint: eval(any(colorTransform(tag('colour')), @color_icon_transport));
             text-priority: 6; // выше чем у названий дорог
 
             |z14-{
@@ -1170,7 +1170,7 @@ node,area {
 
         node|z15-[railway=subway_entrance] {
             icon-image:"poi_circle_small.svg";
-            icon-tint:eval(any(tag('colour'), @color_icon_transport));
+            icon-tint:eval(any(colorTransform(tag('colour')), @color_icon_transport));
 
             details-enabled: 0;
             text-priority: 5; // выше чем у названий дорог

@@ -23,13 +23,32 @@ relation[type=route] {
             relation[network=iwn],
             relation[network=nwn] {
                 width: eval( zlinear(9, 2pt,3pt,3pt,4pt ));
-                color: #ff0000aa; // red
+                color: #df0000aa; // red
                 z-index: 3;
                 details-enabled: true;
             }
+            
+            relation[colour=yellow] {
+                color: #FFB233;
+            }
+            relation[colour=green] {
+                color: #228B22;
+            }
+            relation[colour=black] {
+                color: #3F5F5F;
+            }
+            relation[colour=brown] {
+                color: #8B4513;
+            }
+            relation[colour=blue] {
+                color: #2050FF;
+            }
+            relation[colour=red] {
+                color: #df0000;
+            }
         }
         line|z13-16 {
-            outline-width: eval( zlinear(13, 6pt,8pt,10pt,12pt ));
+            outline-width: eval( zlinear(13, 5pt,7pt,9pt,11pt ));
             outline-color: #00000000; // if there is no valid network tag, outline is sensless
             relation[network=lwn] {
                 outline-color: #0000ff50;
@@ -41,8 +60,26 @@ relation[type=route] {
             }
             relation[network=iwn],
             relation[network=nwn] {
-                outline-color: #ff000050;
+                outline-color: #df000050;
                 details-enabled: true;
+            }
+            relation[colour=yellow] {
+                outline-color: #FFB233A0;
+            }
+            relation[colour=green] {
+                outline-color: #228B2280;
+            }
+            relation[colour=black] {
+                outline-color: #3F5F5F90;
+            }
+            relation[colour=brown] {
+                outline-color: #8B451390;
+            }
+            relation[colour=blue] {
+                outline-color: #2050FF60;
+            }
+            relation[colour=red] {
+                outline-color: #df000050;
             }
         }
     }
@@ -66,13 +103,31 @@ relation[type=route] {
             relation[network=icn],
             relation[network=ncn] {
                 width: eval( zlinear(9, 2pt,3pt,3pt,4pt ));
-                color: #ff0000aa; // red
+                color: #df0000aa; // red
                 z-index: 3;
                 details-enabled: true;
             }
+            relation[colour=yellow] {
+                color: #FFB233;
+            }
+            relation[colour=green] {
+                color: #228B22;
+            }
+            relation[colour=black] {
+                color: #3F5F5F;
+            }
+            relation[colour=brown] {
+                color: #8B4513;
+            }
+            relation[colour=blue] {
+                color: #2050FF;
+            }
+            relation[colour=red] {
+                color: #df0000;
+            }
         }
         line|z13-16 {
-            outline-width: eval( zlinear(13, 6pt,8pt,10pt,12pt ));
+            outline-width: eval( zlinear(13, 5pt,7pt,9pt,11pt ));
             outline-color: #00000000; // if there is no valid network tag, outline is sensless
             relation[network=lcn] {
                 outline-color: #0000ff50;
@@ -84,8 +139,26 @@ relation[type=route] {
             }
             relation[network=icn],
             relation[network=ncn] {
-                outline-color: #ff000050;
+                outline-color: #df000050;
                 details-enabled: true;
+            }
+            relation[colour=yellow] {
+                outline-color: #FFB233A0;
+            }
+            relation[colour=green] {
+                outline-color: #228B2280;
+            }
+            relation[colour=black] {
+                outline-color: #3F5F5F90;
+            }
+            relation[colour=brown] {
+                outline-color: #8B451390;
+            }
+            relation[colour=blue] {
+                outline-color: #2050FF60;
+            }
+            relation[colour=red] {
+                outline-color: #df000050;
             }
         }
     }
