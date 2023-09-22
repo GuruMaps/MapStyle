@@ -573,6 +573,9 @@ line {
                     width: eval( zlinear( 10,     1px,1pt,2pt,3pt,4pt,5pt,6pt ) );
                     color: @color_water;
                     z-index: -20;
+                    [intermittent=yes] {
+                        fill-image: "intermittent.svg";
+                    }
                 }
         }
     }
@@ -582,6 +585,9 @@ line {
             width: eval( zlinear( 14, 1pt,    3pt, 3m ) );
             color: @color_water;
             z-index: -20;
+            [intermittent=yes] {
+                fill-image: "intermittent.svg";
+            }
         }
         [layer<0] {
             width: eval( zlinear( 14, 1pt, 2pt, 3m ) );

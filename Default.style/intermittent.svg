@@ -1,0 +1,13 @@
+<svg width="32mm" height="8mm" version="1.1" viewBox="0 0 32 8" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(0 -.019664)" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m18.037 0.027932-6.4844 8.0005h3.8613l6.4838-8.0005h-3.8607z" color="#000000" fill="#fff" fill-opacity=".50147" style="paint-order:stroke markers fill"/>
+  <path d="m21.196-1.4898-8.8846 10.963" color="#000000" fill-opacity=".80059" stroke-width="3" style="paint-order:stroke markers fill"/>
+ </g>
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="m28.651-0.0098185-6.521 8.0465h3.8607l6.0022-7.4063v-0.64027h-3.3419z" color="#000000" fill="#fff" fill-opacity=".50147" style="paint-order:stroke markers fill"/>
+  <path d="m31.894-1.54-8.8847 10.963 8.8847-10.963z" color="#000000" fill-opacity=".80059" stroke-width="3" style="-inkscape-stroke:none;paint-order:stroke markers fill"/>
+ </g>
+ <g transform="translate(0 -.019664)">
+  <path d="m7.2352 0.027932-6.4776 7.9949h3.8607l6.4792-7.9949h-3.8623z" color="#000000" fill="#fff" fill-opacity=".50147" stroke-linecap="round" stroke-linejoin="round" style="paint-order:stroke markers fill"/>
+ </g>
+</svg>
