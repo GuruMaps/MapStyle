@@ -228,7 +228,10 @@ area {
     @endif
 
     @if SubStyle != Car
-        |z16-[leisure=sports_centre]{
+        |z16-(
+            [leisure=sports_centre],
+            [leisure=fitness_centre]
+        ) {
             z-index: -13;
             fill-color: @color_sports_centre;
         }

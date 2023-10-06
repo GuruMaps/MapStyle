@@ -980,7 +980,10 @@ node,area {
             }
         }
 
-        |z16-[leisure=sports_centre] {
+        |z16-(
+            [leisure=sports_centre],
+            [leisure=fitness_centre]
+        ) {
             icon-image:"poi_gym.svg";
             icon-tint: @color_icon_activity;
             |z17-{
