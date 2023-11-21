@@ -157,12 +157,12 @@ area {
             width: 3pt;
         }
         |z9-[boundary=protected_area] {
-            [protected_class=1], [protected_class=1a], [protected_class=1b],
-            [protected_class=2],
-            [protected_class=3],
-            [protected_class=4],
-            [protected_class=5],
-            |z11-[protected_class=6] {
+            [protect_class=1], [protect_class=1a], [protect_class=1b],
+            [protect_class=2],
+            [protect_class=3],
+            [protect_class=4],
+            [protect_class=5],
+            |z11-[protect_class=6] {
                 color: @color_national_park;
                 width: 2pt;
             }
@@ -250,7 +250,7 @@ area {
         fill-color: @color_grass;
     }
     |z13-{
-        [landuse=pasture], [landuse=meadow], [landuse=grass], [landuse=greenfield], [natural=grassland], [natural=heath] {
+        [landuse=meadow], [landuse=grass], [landuse=greenfield], [natural=grassland], [natural=heath] {
             z-index: -12;
             fill-color: @color_grass;
         }

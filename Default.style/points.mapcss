@@ -184,12 +184,12 @@ node,area {
     @if SubStyle != Car
         area{
             |z9-[boundary=protected_area] {
-                [protected_class=1], [protected_class=1a], [protected_class=1b],
-                [protected_class=2],
-                [protected_class=3],
-                [protected_class=4],
-                [protected_class=5],
-                |z11-[protected_class=6] {
+                [protect_class=1], [protect_class=1a], [protect_class=1b],
+                [protect_class=2],
+                [protect_class=3],
+                [protect_class=4],
+                [protect_class=5],
+                |z11-[protect_class=6] {
                     text: eval(locTag('name'));
                     text-color: @color_national_park_text;
                     text-priority: 4;
@@ -457,7 +457,6 @@ node,area {
 
     @if Hotel
         |z16-(
-            [amenity=hotel],
             [tourism=hotel],
             [tourism=hostel],
             [tourism=motel],
@@ -686,9 +685,11 @@ node,area {
         |z16-{
             [shop=car_repair],
             [shop=car_parts],
-            [shop=car][service=tyres],
-            [shop=car][service=parts],
-            [shop=car][service=repair] {
+            [shop=car] (
+                [service=tyres],
+                [service=parts],
+                [service=repair]
+            ) {
                 icon-image:"poi_car_service.svg";
                 icon-tint: @color_icon_transport;
                 |z18-{
@@ -696,9 +697,12 @@ node,area {
                     text-color: @color_text_transport;
                 }
             }
+            
             [amenity=car_rental],
-            [shop=car][service=dealer],
-            [shop=car][!service],
+            [shop=car] (
+                [service=dealer],
+                [!service]
+            ),
             [shop=motorcycle] {
                 icon-image:"poi_car_rental.svg";
                 icon-tint: @color_icon_transport;
@@ -707,6 +711,7 @@ node,area {
                     text-color: @color_text_transport;
                 }
             }
+            
             [amenity=car_sharing] {
                 icon-image:"poi_car_sharing.svg";
                 icon-tint: @color_icon_transport;
@@ -715,6 +720,7 @@ node,area {
                     text-color: @color_text_transport;
                 }
             }
+            
             [amenity=car_wash] {
                 icon-image:"poi_car_wash.svg";
                 icon-tint: @color_icon_transport;
@@ -738,7 +744,6 @@ node,area {
     @endif
 
     @if CityService
-        // embassy
         |z16-{
             [office=government] {
                 icon-image:"poi_government.svg";
@@ -751,9 +756,10 @@ node,area {
         }
 
         |z17-{
-            [diplomatic=embassy],
-            [diplomatic=consulate],
-            [amenity=embassy] {
+            [office=diplomatic] (
+                [diplomatic=embassy],
+                [diplomatic=consulate]
+            ) {
                 icon-image:"poi_embassy.svg";
                 icon-tint: @color_icon_offices;
                 |z18-{
@@ -903,9 +909,8 @@ node,area {
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
             }
-            [shop=jewellery],
             [shop=jewelry] {
-                icon-image:"poi_jewellery.svg";
+                icon-image:"poi_jewelry.svg";
                 icon-tint: @color_icon_stores;
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
@@ -958,9 +963,9 @@ node,area {
                 text: eval(locTag('name'));
                 text-color: @color_text_beauty;
             }
+            [amenity=public_bath],
             [shop=massage],
-            [leisure=sauna],
-            [amenity=sauna] {
+            [leisure=sauna] {
                 icon-image:"poi_spa.svg";
                 icon-tint: @color_icon_beauty;
                 text: eval(locTag('name'));
@@ -1041,7 +1046,6 @@ node,area {
             }
         }
 
-        [leisure=bbq],
         [amenity=bbq] {
             icon-image:"poi_BBQ.svg";
             icon-tint: @color_icon_activity;
