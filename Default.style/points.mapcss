@@ -1158,14 +1158,12 @@ node,area {
 
             |z14-{
                 icon-image:"poi_railway.svg";
-                [transport=subway],
                 [station=subway] {
                     icon-image:"poi_subway.svg";
                     text-priority: 7;
                 }
             }
 
-            |z14-[railway=station][transport=subway],
             |z14-[railway=station][station=subway],
             |z15-[railway=station],
             |z16-[railway=halt],

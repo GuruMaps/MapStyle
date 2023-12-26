@@ -1,7 +1,7 @@
 {
     "data_format": 1,
     "data_url": "https://raw.githubusercontent.com/GuruMaps/MapStyle/master/taginfo.json",
-    "data_updated": "20231121T174316Z",
+    "data_updated": "20231226T141918Z",
     "project": {
         "name": "Guru Maps",
         "description": "Fast and easy-to-use vector maps with offline search & navigation",
@@ -11,6 +11,7 @@
         "contact_email": "info@gurumaps.app"
     },
     "tags": [
+        { "key": "access", "value": "no", "object_types": ["way"] },
         { "key": "access", "value": "private", "object_types": ["way"] },
         { "key": "addr:housename", "object_types": ["node"] },
         { "key": "addr:housenumber", "object_types": ["node"] },
@@ -151,6 +152,7 @@
         { "key": "information", "value": "guidepost", "object_types": ["node", "area"] },
         { "key": "information", "value": "map", "object_types": ["node", "area"] },
         { "key": "intermittent", "value": "yes", "object_types": ["way", "area"] },
+        { "key": "landuse", "object_types": ["area"] },
         { "key": "landuse", "value": "allotments", "object_types": ["area"] },
         { "key": "landuse", "value": "basin", "object_types": ["node", "area"] },
         { "key": "landuse", "value": "brownfield", "object_types": ["area"] },
@@ -182,6 +184,7 @@
         { "key": "landuse", "value": "winter_sports", "object_types": ["node", "area"] },
         { "key": "layer", "value": "0", "object_types": ["way"] },
         { "key": "layer", "object_types": ["node", "way", "area"] },
+        { "key": "leaf_type", "object_types": ["area"] },
         { "key": "leisure", "value": "common", "object_types": ["area"] },
         { "key": "leisure", "value": "dog_park", "object_types": ["area"] },
         { "key": "leisure", "value": "firepit", "object_types": ["node", "area"] },
@@ -213,6 +216,7 @@
         { "key": "motorcar", "value": "no", "object_types": ["way"] },
         { "key": "motorcycle", "value": "no", "object_types": ["way"] },
         { "key": "mountain_pass", "value": "yes", "object_types": ["node"] },
+        { "key": "natural", "object_types": ["area"] },
         { "key": "natural", "value": "bare_rock", "object_types": ["area"] },
         { "key": "natural", "value": "bay", "object_types": ["node", "area"] },
         { "key": "natural", "value": "beach", "object_types": ["area"] },
@@ -348,6 +352,7 @@
         { "key": "shop", "value": "tattoo", "object_types": ["node", "area"] },
         { "key": "shop", "value": "ticket", "object_types": ["node", "area"] },
         { "key": "station", "value": "subway", "object_types": ["node", "area"] },
+        { "key": "surface", "object_types": ["way"] },
         { "key": "surface", "value": "asphalt", "object_types": ["way"] },
         { "key": "surface", "value": "chipseal", "object_types": ["way"] },
         { "key": "surface", "value": "cobblestone", "object_types": ["way"] },
@@ -395,7 +400,6 @@
         { "key": "tracktype", "value": "grade3", "object_types": ["way"] },
         { "key": "tracktype", "value": "grade4", "object_types": ["way"] },
         { "key": "tracktype", "value": "grade5", "object_types": ["way"] },
-        { "key": "transport", "value": "subway", "object_types": ["node", "area"] },
         { "key": "tunnel", "object_types": ["way"] },
         { "key": "type", "value": "route", "object_types": ["relation"] },
         { "key": "vehicle", "value": "no", "object_types": ["way"] },

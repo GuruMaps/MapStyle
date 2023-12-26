@@ -1,0 +1,19 @@
+@if ExtraData // always false
+
+// we need to set fake style to make sure those objects won't be optimized during generation
+
+line|z13-[highway][surface] {
+    width: 1px;
+    color: black;
+}
+
+area|z13-{
+    [natural],
+    [landuse] {
+        [leaf_type] {
+            fill-color: green;
+        }
+    }
+}
+
+@endif

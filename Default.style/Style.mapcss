@@ -49,3 +49,6 @@ canvas
 @import "lines.mapcss";
 @import "points.mapcss";
 @import "relations.mapcss";
+
+// requested data invisible in the default style
+@import "extra.mapcss";

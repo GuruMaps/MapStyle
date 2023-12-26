@@ -269,7 +269,9 @@ line {
 
     |z13-{
         //[highway=proposed], proposed roads is not displayed because they are not there yet. no construction started.
-        [highway=construction], [highway][access=private] {
+        [highway=construction],
+        [highway][access=private],
+        [highway][access=no] {
         //                                  13  14  15  16
         @if SubStyle == Car
             dashes-width: eval( zlinear(13, 2pt,3pt,3pt,4pt ));
