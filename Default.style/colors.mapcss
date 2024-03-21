@@ -91,8 +91,8 @@
 
 @color_icon_tint: #866E54; // same
 @color_icon_capital_tint: #3A3A3A; // same
-@color_icon_peak: #800000; // same
-@color_text_peak: #A52A2A; // @color_icon_peak
+@color_icon_peak: #800000;
+@color_text_peak: #A52A2A;
 @color_icon_volcano: @color_icon_health;
 @color_text_volcano: @color_text_health;
 

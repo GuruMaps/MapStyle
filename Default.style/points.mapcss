@@ -1114,6 +1114,20 @@ node,area {
             font-stroke-color: @color_sand;
         }
 
+        node|z17-[amenity=parcel_locker] {
+            text: eval(any(tag('brand'), tag('operator')));
+            [operator][ref] {
+                text: eval(tag('operator') . ' ' . tag('ref'));
+            }
+            [brand][ref] {
+                text: eval(tag('brand') . ' ' . tag('ref'));
+            }
+            text-color: @color_beach_text;
+            font-size: 12;
+            icon-image:"poi_parcel_locker.svg";
+            icon-tint: @color_icon_tourism;
+        }
+
         |z17-{
             [amenity=toilets] {
                 icon-image:"poi_WC.svg";
@@ -1287,7 +1301,7 @@ node,area {
             text-color: @color_water;
         }
 
-        |z14- [natural=cave_entrance] {
+        |z14-[natural=cave_entrance] {
             icon-image: "poi_cave_entrance.svg";
             icon-tint: @color_icon_peak;
 
@@ -1303,6 +1317,9 @@ node,area {
             [amenity=bicycle_repair_station]
         ) {
             icon-tint: @color_icon_transport;
+            text: eval(cond(locTag('name'), cond(tag('ref'), locTag('name') . ' ' . tag('ref'), locTag('name')), tag('ref')));
+            text-color: @color_text_transport;
+
             [amenity=bicycle_parking] {
                 icon-image: "poi_bike_parking.svg";
             }
