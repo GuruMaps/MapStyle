@@ -2,11 +2,9 @@
 
 // we need to set fake style to make sure those objects won't be optimized during generation
 
-line|z11-[highway][surface] {
-    |z13-{
-        width: 1px;
-        color: black;
-    }
+line|z13-[highway][surface] {
+    width: 1px;
+    color: black;
 }
 
 area|z9-{
