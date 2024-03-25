@@ -7,9 +7,10 @@ line|z13-[highway][surface] {
     color: black;
 }
 
-area|z13-{
+area|z9-{
     [natural],
     [water][salt],
+    [wetland],
     [landuse] {
         [leaf_type] {
             fill-color: green;
