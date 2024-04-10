@@ -75,6 +75,7 @@
 @color_text_stores: @color_icon_stores;
 @color_icon_tourism: #4DB6AC;
 @color_text_tourism: @color_icon_tourism;
+@color_border_tourism: #4DB6AC66;
 @color_icon_food: #FFA726;
 @color_text_food: @color_icon_food;
 @color_icon_activity: #FF8A65;
