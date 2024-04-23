@@ -524,9 +524,24 @@ node,area {
         }
     @endif
 
-    @if Entertaiment
-        |z17-[amenity=arts_centre],
+    @if Culture
+        |z16-[amenity=arts_centre] {
+            icon-image:"poi_arts_centre.svg";
+            icon-tint: @color_icon_tourism;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+            }
+        }
+        
+        |z17-[amenity=community_centre] {
+            icon-image:"poi_community_centre.svg";
+            icon-tint: @color_icon_tourism;
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+        }
     @endif
+    
     @if Culture
         |z15-[tourism=museum],
     @endif
@@ -662,7 +677,7 @@ node,area {
         }
     @endif
 
-    @if Car
+    @if Style == Car
         |z15-{
             [amenity=charging_station] {
                 icon-image:"poi_charging_station.svg";
@@ -740,6 +755,18 @@ node,area {
                     text-color: @color_text_transport;
                 }
             }
+            
+            node[amenity=parking_entrance] {
+                // parking entrance is often used without parking=underground
+                // todo add more icons for different kinds of parkings
+                icon-image:"poi_garage_parking.svg";
+                icon-tint: @color_icon_transport;
+                text-priority: -3;
+                |z18-{
+                    text: eval(locTag('name'));
+                    text-color: @color_text_transport;
+                }
+            }
         }
     @endif
 
@@ -767,6 +794,19 @@ node,area {
                     text-color: @color_text_offices;
                 }
             }
+            [amenity=police] {
+                icon-image:"poi_police_station.svg";
+                icon-tint: @color_icon_offices;
+                |z18-{
+                    text: eval(locTag('name'));
+                    text-color: @color_text_offices;
+                }
+            }
+        }
+    @endif
+    
+    @if Postal
+        |z17-{
             [amenity=post_office] {
                 icon-image:"poi_post_office.svg";
                 icon-tint: @color_icon_offices;
@@ -775,11 +815,18 @@ node,area {
                     text-color: @color_text_offices;
                 }
             }
-            [amenity=police] {
-                icon-image:"poi_police_station.svg";
+            
+            node[amenity=parcel_locker] {
+                icon-image:"poi_parcel_locker.svg";
                 icon-tint: @color_icon_offices;
                 |z18-{
-                    text: eval(locTag('name'));
+                    text: eval(any(tag('brand'), tag('operator')));
+                    [operator][ref] {
+                        text: eval(tag('operator') . ' ' . tag('ref'));
+                    }
+                    [brand][ref] {
+                        text: eval(tag('brand') . ' ' . tag('ref'));
+                    }
                     text-color: @color_text_offices;
                 }
             }
@@ -1114,20 +1161,6 @@ node,area {
             font-stroke-color: @color_sand;
         }
 
-        node|z17-[amenity=parcel_locker] {
-            text: eval(any(tag('brand'), tag('operator')));
-            [operator][ref] {
-                text: eval(tag('operator') . ' ' . tag('ref'));
-            }
-            [brand][ref] {
-                text: eval(tag('brand') . ' ' . tag('ref'));
-            }
-            text-color: @color_beach_text;
-            font-size: 12;
-            icon-image:"poi_parcel_locker.svg";
-            icon-tint: @color_icon_tourism;
-        }
-
         |z17-{
             [amenity=toilets] {
                 icon-image:"poi_WC.svg";
@@ -1253,6 +1286,14 @@ node,area {
 
             [barrier=gate] {
                 icon-image:"poi_gate.svg";
+            }
+            
+            [barrier=entrance] {
+                icon-image:"poi_barrier_entrance.svg";
+            }
+
+            [barrier=toll_booth] {
+                icon-image:"poi_barrier_toll_booth.svg";
             }
 
             [barrier=lift_gate] {

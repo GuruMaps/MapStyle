@@ -1368,7 +1368,7 @@
         "kv": {
           "shop": ["jewelry"]
         },
-        "icon": "icon_jewellery"
+        "icon": "icon_jewelry"
       },
       {
         "names": {
@@ -2564,6 +2564,202 @@
     },
     "sc": 10,
     "icon": "icon_search_building",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["موقف للدراجات"],
+      "be": ["веласіпеднaя стаянка"],
+      "cs": ["parkování pro kola"],
+      "de": ["Fahrradparkplatz"],
+      "en": ["bike parking"],
+      "es": ["estacionamiento para bicicletas"],
+      "fi": ["pyöräpysäköinti"],
+      "fr": ["parking à vélos"],
+      "hu": ["kerékpártároló"],
+      "it": ["parcheggio per biciclette"],
+      "ja": ["自転車置き場"],
+      "ko": ["자전거 주차장"],
+      "nl": ["fietsenstalling"],
+      "pl": ["parking rowerowy"],
+      "pt-BR": ["estacionamento para bicicletas"],
+      "pt-PT": ["estacionamento para bicicletas"],
+      "ru": ["парковка для велосипедов"],
+      "th": ["ที่จอดจักรยาน"],
+      "uk": ["велосипедна стоянка"],
+      "zh": ["自行车停车场"]
+    },
+    "kv": {
+      "amenity": ["bicycle_parking"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["محطة إصلاح الدراجات"],
+      "be": ["станцыя па рамонце веласіпедаў"],
+      "cs": ["stanice pro opravu kol"],
+      "de": ["Fahrradreparaturstation"],
+      "en": ["bike repair station"],
+      "es": ["estación de reparación de bicicletas"],
+      "fi": ["pyöränkorjausasema"],
+      "fr": ["station de réparation de vélos"],
+      "hu": ["kerékpárjavító állomás"],
+      "it": ["stazione di riparazione biciclette"],
+      "ja": ["自転車修理ステーション"],
+      "ko": ["자전거 수리 스테이션"],
+      "nl": ["fietsreparatiestation"],
+      "pl": ["stacja naprawy rowerów"],
+      "pt-BR": ["estação de reparo de bicicletas"],
+      "pt-PT": ["estação de reparação de bicicletas"],
+      "ru": ["станция по ремонту велосипедов"],
+      "th": ["สถานีซ่อมจักรยาน"],
+      "uk": ["станція по ремонту велосипедів"],
+      "zh": ["自行车维修站"]
+    },
+    "kv": {
+      "amenity": ["bicycle_repair_station"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["تأجير الدراجات"],
+      "be": ["пракат веласіпедаў"],
+      "cs": ["půjčovna kol"],
+      "de": ["Fahrradverleih"],
+      "en": ["bike rental"],
+      "es": ["alquiler de bicicletas"],
+      "fi": ["pyörävuokraus"],
+      "fr": ["location de vélos"],
+      "hu": ["kerékpárkölcsönző"],
+      "it": ["noleggio biciclette"],
+      "ja": ["自転車レンタル"],
+      "ko": ["자전거 대여"],
+      "nl": ["fietsverhuur"],
+      "pl": ["wypożyczalnia rowerów"],
+      "pt-BR": ["aluguel de bicicletas"],
+      "pt-PT": ["aluguer de bicicletas"],
+      "ru": ["прокат велосипедов"],
+      "th": ["สถานีเช่าจักรยาน"],
+      "uk": ["прокат велосипедів"],
+      "zh": ["自行车租赁"]
+    },
+    "kv": {
+      "amenity": ["bicycle_rental"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["صندوق الطرود"],
+      "be": ["пачкамат"],
+      "cs": ["výdejní box"],
+      "de": ["Paketautomat"],
+      "en": ["parcel locker"],
+      "es": ["casillero para paquetes"],
+      "fi": ["pakettikaappi"],
+      "fr": ["consigne à colis"],
+      "hu": ["csomagmegőrző szekrény"],
+      "it": ["paccomat"],
+      "ja": ["能快件箱"],
+      "ko": ["택배 보관함"],
+      "nl": ["pakketkluis"],
+      "pl": ["paczkomat"],
+      "pt-BR": ["armário de encomendas"],
+      "pt-PT": ["packstation"],
+      "ru": ["почтомат"],
+      "th": ["ตู้ล็อกเกอร์พัสดุ"],
+      "uk": ["поштомат"],
+      "zh": ["快递柜"]
+    },
+    "kv": {
+      "amenity": ["parcel_locker"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["مركز الفنون"],
+      "be": ["арт-цэнтр"],
+      "cs": ["kulturní centrum"],
+      "de": ["Kunstzentrum"],
+      "en": ["arts centre"],
+      "es": ["centro de artes"],
+      "fi": ["taidekeskus"],
+      "fr": ["centre d'art"],
+      "hu": ["művészeti központ"],
+      "it": ["centro artistico"],
+      "ja": ["アーツセンター"],
+      "ko": ["예술 센터"],
+      "nl": ["kunstcentrum"],
+      "pl": ["centrum sztuki"],
+      "pt-BR": ["centro de artes"],
+      "pt-PT": ["centro de artes"],
+      "ru": ["арт-центр"],
+      "th": ["ศูนย์ศิลปะ"],
+      "uk": ["арт-центр"],
+      "zh": ["艺术中心"]
+    },
+    "kv": {
+      "amenity": ["arts_centre"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["مركز المجتمع"],
+      "be": ["камунітарны цэнтр"],
+      "cs": ["komunitní centrum"],
+      "de": ["Gemeindezentrum"],
+      "en": ["community centre"],
+      "es": ["centro comunitario"],
+      "fi": ["yhteisökeskus"],
+      "fr": ["centre communautaire"],
+      "hu": ["közösségi központ"],
+      "it": ["centro comunitario"],
+      "ja": ["コミュニティ・センター"],
+      "ko": ["커뮤니티 센터"],
+      "nl": ["gemeenschapscentrum"],
+      "pl": ["centrum społecznościowe"],
+      "pt-BR": ["centro comunitário"],
+      "pt-PT": ["centro comunitário"],
+      "ru": ["коммунальный центр"],
+      "th": ["ศูนย์ชุมชน"],
+      "uk": ["громадський центр"],
+      "zh": ["社区中心"]
+    },
+    "kv": {
+      "amenity": ["community_centre"]
+    },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["مدخل موقف السيارات"],
+      "be": ["уезд на паркоўку"],
+      "cs": ["vjezd do parkoviště"],
+      "de": ["Parkhauseinfahrt"],
+      "en": ["parking entrance"],
+      "es": ["entrada de parking"],
+      "fi": ["pysäköintihallin sisäänkäynti"],
+      "fr": ["entrée de parking"],
+      "hu": ["parkolóbejárat"],
+      "it": ["ingresso del parcheggio"],
+      "ja": ["駐車場入口"],
+      "ko": ["주차장 입구"],
+      "nl": ["parkeerplaatsingang"],
+      "pl": ["wjazd na parking"],
+      "pt-BR": ["entrada de estacionamento"],
+      "pt-PT": ["entrada de estacionamento"],
+      "ru": ["въезд на парковку"],
+      "th": ["ทางเข้าที่จอดรถ"],
+      "uk": ["в'їзд на парковку"],
+      "zh": ["停车场入口"]
+    },
+    "kv": {
+      "amenity": ["parking_entrance"]
+    },
     "index": false
   }
 ]
