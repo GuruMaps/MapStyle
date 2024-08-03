@@ -101,7 +101,6 @@ node,area {
         text: eval(locTag('name'));
         text-color: @color_suburb_text;
         font-size: 11;
-        font-weight: regular;
         font-stroke-width: 1pt;
     }
 
@@ -133,13 +132,14 @@ node,area {
             text: eval(locTag('name'));
             text-color: @color_water_text;
             text-priority: 5;
-            font-size:16;
-            font-stroke-width:2pt;
-            font-stroke-color: @color_water;
+            font-size: 16;
+            font-stroke-color: @color_water_stroke;
+            font-stroke-width: 3pt;
+            font-weight: lighter;
         }
 
         |z5-8[place=ocean] {
-            font-size:18;
+            font-size: 18;
         }
     }
 
@@ -150,7 +150,9 @@ node,area {
         [landuse=reservoir] {
             text: eval(locTag('name'));
             text-color: @color_water_text;
-            font-stroke-color: @color_water;
+            font-stroke-color: @color_water_stroke;
+            font-stroke-width: 2pt;
+            font-weight: lighter;
 
             |z14-[natural=bay],
             |z14-[waterway=riverbank],
@@ -158,7 +160,6 @@ node,area {
             |z16-[landuse=basin],
             |z16-[landuse=reservoir] {
                 font-size: 12;
-                font-stroke-width: 2pt;
                 text-priority: 2;
             }
         }
@@ -170,6 +171,7 @@ node,area {
         font-stroke-color: @color_wetland;
         font-size: 12;
         font-stroke-width: 2pt;
+        font-weight: light;
     }
 
     |z11-[place=island],
@@ -557,6 +559,15 @@ node,area {
         }
     }
 
+    |z15-[historic=archaeological_site] {
+        icon-image:"poi_archaeological_site.svg";
+        icon-tint: @color_icon_tourism;
+        |z16- {
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+        }
+    }
+
     @if Culture
         |z16-(
             [historic=memorial],
@@ -677,7 +688,7 @@ node,area {
         }
     @endif
 
-    @if Style == Car
+    @if Style == City
         |z15-{
             [amenity=charging_station] {
                 icon-image:"poi_charging_station.svg";
@@ -1335,6 +1346,9 @@ node,area {
                 [mountain_pass=yes] {
                     text: eval( cond( locTag('name'), cond( tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')) , locTag('name') ), formatElevation(tag('ele')) ) . cond( tag('rtsa_scale'), ' (' . tag('rtsa_scale') . ')', '') );
                 }
+            }
+            |z15- {
+                font-size: 12pt;
             }
         }
         |z14-[natural=spring] {

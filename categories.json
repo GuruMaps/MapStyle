@@ -2365,7 +2365,35 @@
     },
     "kv": {
       "amenity": ["parking"]
-    }
+    },
+    "icon": "icon_parking"
+  },
+  {
+      "names": {
+          "ar": ["ملجأ"],
+          "be": ["прытулак"],
+          "cs": ["přístřešek"],
+          "de": ["Unterstand"],
+          "en": ["shelter"],
+          "es": ["refugio"],
+          "fi": ["suoja"],
+          "fr": ["abri"],
+          "hu": ["menedék"],
+          "it": ["rifugio"],
+          "ja": ["避難所"],
+          "ko": ["대피소"],
+          "nl": ["schuilplaats"],
+          "pl": ["schronisko"],
+          "pt-BR": ["abrigo"],
+          "pt-PT": ["abrigo"],
+          "ru": ["укрытие"],
+          "th": ["ที่พักพิง"],
+          "uk": ["притулок"],
+          "zh": ["避难所"]
+      },
+      "kv": {
+          "amenity": ["shelter"]
+      }
   },
   {
     "names": {

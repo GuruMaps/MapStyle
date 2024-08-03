@@ -51,14 +51,15 @@
 
 @color_label_text: #E0DFDD;
 @color_name_text: #D3D2D0;
-@color_suburb_text: #808384;
+@color_suburb_text: #9A9C9E;
 @color_national_park_text: #ABCA88;
 @color_building_text: #99836B;
 @color_entrance_text: #998167;
 @color_public_transport_text: #C9C9C6;
 @color_private_access_text: #F07573;
 @color_label_stroke: #000000EE;
-@color_water_text: #000000;
+@color_water_text: #CCCCCC;
+@color_water_stroke: #2A80C4BB;
 @color_aerialway_text: #FFFFFF;
 @color_shop_text: #F9D8A3;
 @color_beach_text: #A5997E;

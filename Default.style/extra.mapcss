@@ -2,7 +2,7 @@
 
 // We need set fake style to keep objects or extra tags in those objects.
 // By default all unused data is optimized from objects, to keep map files thin.
-line{
+line {
     |z13-{
         [highway][surface] {
             width: 1px;
@@ -13,11 +13,11 @@ line{
 
 // Below we use construction like [natural=wetland][wetland] 
 // to keep wetland tag value, while it's unused in Default.style. Same for other tag pairs.
-area{
+area {
     |z9-{
         [natural=wetland][wetland],
         [water][salt] {
-            fill-color: red;
+            fill-color: green;
         }
     }
 
@@ -28,6 +28,41 @@ area{
                 fill-color: green;
             }
         }
+    }
+}
+
+// To keep this text in 9th zoom level tiles
+node {
+    |z11-(
+        [natural=peak],
+        [natural=saddle],
+        [natural=volcano],
+        [mountain_pass=yes]
+    ) {
+            text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
+            text-color: @color_text_peak;
+    }
+    |z13-(
+        [emergency=defibrillator]
+    ) {
+        text: eval(locTag('name'));
+        text-color: red;
+    }
+}
+
+node,area {
+    |z13-(
+        [healthcare=laboratory],
+        // everything in historic tag
+        [historic],
+        [historic=castle][castle_type],
+        [man_made=beacon],
+        [man_made=lighthouse],
+        [man_made=tower],
+        [man_made=tower][tower:type]
+    ) {
+        text: eval(locTag('name'));
+        text-color: blue;
     }
 }
 
