@@ -806,6 +806,48 @@ line {
         dashes-width: 1pt;
         dashes-color: #808080;
     }
+
+    |z14-[natural=earth_bank] {
+        width: 8pt;
+        fill-image: 'cliff.png';
+        dashes: 8,0;
+        dashes-width: 1pt;
+
+        [earth_bank=gully] {
+            dashes-color: @color_gully;
+        }
+
+        [earth_bank=scarp] {
+            dashes-color: @color_earth_bank_scarp;
+        }
+
+        [earth_bank=cut_bank] {
+            dashes-color: @color_earth_bank_cut_bank;
+        }
+
+        [earth_bank=grassy_steep_slope] {
+            dashes-color: @color_earth_bank_grassy_steep_slope;
+        }
+    }
+
+    |z14-[natural=gully][!waterway] {
+        width: eval( zlinear( 14,    1pt,2pt,2pt,3pt,4pt,6pt ) );
+        color: @color_gully;
+        text: eval(locTag('name'));
+        text-color: @color_gully;
+        fill-image: "gully.png";
+    }
+
+    |z16-[natural=gully][waterway] {
+        fill-image: "gully_8.svg";
+        |z19- {
+        fill-image: "gully_16.svg";
+            |z20- {
+                fill-image: "gully_32.svg";
+            }
+        }
+    }
+
     |z12-[natural=ridge] {
         width: 2pt;
         color: brown;
