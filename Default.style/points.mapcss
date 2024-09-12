@@ -10,6 +10,17 @@ node,area {
     font-stroke-width: 1pt;
     font-stroke-color: @color_label_stroke;
 
+    @if Style == Outdoor
+        // tourism=attraction можно встретить на любых объектах,
+        // потому его лучше держать в самом начале списка отображаемых объектов
+        // и, при случае, заменить неопределённую иконку на подходящую.
+        |z18-[tourism=attraction][name] {
+            details-enabled: 1;
+            text: eval(locTag('name'));
+            text-color: @color_text_tourism;
+        }
+    @endif
+
     [place=country] {
         |z2-8 {
             text: eval(locTag('name'));
@@ -627,8 +638,6 @@ node,area {
     @endif
 
     @if Style == Outdoor
-        // node|z16-[tourism=attraction], не применяем, потому что это просто маркер для туристических объектов с другими тегами.
-        // Можно давать буст в поиске или иконку больше делать - но менять иконку не надо.
         |z16-{
             [tourism=information],
             [shop=ticket] {
