@@ -799,6 +799,33 @@ line {
     }
 
 @if Style == Outdoor
+    |z15-[power=line], |z17-[power=minor_line] {
+        color: @color_power_line;
+        z-index: 10;
+        [power=line] {
+            width: 0.5pt;
+        }
+        [power=minor_line] {
+            width: 0.3pt;
+        }
+    }
+@endif // Style == Outdoor
+
+    |z15-[man_made=pipeline] {
+        z-index: 8;
+        width: eval( zlinear(14, 2pt,4pt) );
+        fill-image: "pipe.svg";
+        [location=underground],
+        [location=underwater] {
+            @if Style == Outdoor
+                fill-image: "pipe_hidden.svg";
+            @else
+                fill-image: none;
+            @endif
+        }
+    }
+
+@if Style == Outdoor
     |z14-[natural=cliff] {
         width: 8pt;
         fill-image: 'cliff.png';
