@@ -377,6 +377,13 @@ area {
 
     // 3
 
+    @if Culture
+        |z16-[historic] {
+            width: 2pt;
+            color: @color_border_tourism;
+        }
+    @endif
+
     // all buildings
     [building] {
         @if SubStyle != Car
