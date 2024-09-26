@@ -1352,8 +1352,20 @@ node,area {
             }
         }
         |z14-[natural=spring] {
-            text:"s";
+            icon-image: "poi_spring.svg";
+            icon-tint: @color_water;
+            details-enabled: 1;
+            |z18- {
+                text: eval(locTag('name'));
+                text-color: @color_water;
+            }
+        }
+        |z16-[natural=hot_spring] {
+            text: eval(locTag('name'));
             text-color: @color_water;
+            icon-image: "poi_hot_spring.svg";
+            icon-tint: @color_water;
+            details-enabled: 1;
         }
 
         |z14-[natural=cave_entrance] {
