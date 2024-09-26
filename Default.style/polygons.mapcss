@@ -427,6 +427,16 @@ area {
         z-index: 10;
         fill-color: @color_bridge;
     }
+
+
+    |z14-[railway=turntable] {
+        width: eval( zlinear(16, 2pt, 4pt) );
+        color: @color_railway_turntable;
+        |z16- {
+            icon-image: "poi_railway_turntable.svg";
+            icon-tint: @color_railway_turntable;
+        }
+    }
 }
 
 /******************************* Polygon strokes *******************************/

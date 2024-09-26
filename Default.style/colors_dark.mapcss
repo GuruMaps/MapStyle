@@ -146,6 +146,7 @@
 
 @color_railway: #1E4810;
 @color_railway_dashes: #7F7F7F;
+@color_railway_turntable: #9e9e9e;
 
 @color_icon_ford: #2A98EF;
 @color_text_ford: #2A98EF;
