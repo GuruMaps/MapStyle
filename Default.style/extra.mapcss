@@ -42,6 +42,7 @@ node {
             text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
             text-color: @color_text_peak;
     }
+    // save names
     |z13-(
         [emergency=defibrillator]
     ) {
@@ -52,7 +53,6 @@ node {
 
 node,area {
     |z13-(
-        [healthcare=laboratory],
         // everything in historic tag
         [historic],
         [historic=castle][castle_type],

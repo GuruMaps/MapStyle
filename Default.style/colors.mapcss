@@ -30,6 +30,7 @@
 @color_scrub: #C8D7AB;
 @color_orchard: #C6D876; // l: -0.095
 @color_allotments: #C8E0BE;
+@color_allotments_text: #649F4C;
 @color_playground: #B9E6C0;
 @color_stadium: #9EC7BC;
 @color_sports_centre: #DFFCE2;
@@ -70,12 +71,12 @@
 @color_difficulty_expert: #000;
 @color_difficulty_freeride: #FFA500;
 
-@color_icon_offices: #81C784; // same
-@color_text_offices: #55913c; // @color_icon_offices
+@color_icon_offices: #80C880; // same
+@color_text_offices: #3E8F3E; // @color_icon_offices
 @color_icon_stores: #64B5F6; // same
 @color_text_stores: #2286C3; // @color_icon_stores
 @color_icon_tourism: #4DB6AC; // same
-@color_text_tourism: #009688; // @color_icon_tourism
+@color_text_tourism: #2C6D67; // @color_icon_tourism
 @color_icon_food: #FFA726; // same
 @color_text_food: #EF6C00; // @color_icon_food
 @color_icon_activity: #FF8A65; // same
@@ -83,6 +84,7 @@
 @color_icon_health: #E57373; // same
 @color_text_health: #af4448; // @color_icon_health
 @color_icon_transport: #90A4AE; // same
+@color_icon_transport_private: #90A4AEA0; // same
 @color_text_transport: #62757f; // @color_icon_transport
 
 @color_icon_hotels: #9575CD; // same

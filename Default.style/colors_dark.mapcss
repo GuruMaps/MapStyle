@@ -30,6 +30,7 @@
 @color_scrub: #445327;
 @color_orchard: #56631C;
 @color_allotments: #28401E;
+@color_allotments_text: #77B25F;
 @color_playground: #18451F;
 @color_stadium: #376055;
 @color_sports_centre: #021F05;
@@ -70,7 +71,7 @@
 @color_difficulty_expert: #FFFFFF;
 @color_difficulty_freeride: #FFA500;
 
-@color_icon_offices: #81C784;
+@color_icon_offices: #80C880;
 @color_text_offices: @color_icon_offices;
 @color_icon_stores: #64B5F6;
 @color_text_stores: @color_icon_stores;
@@ -83,6 +84,7 @@
 @color_icon_health: #E57373;
 @color_text_health: @color_icon_health;
 @color_icon_transport: #90A4AE;
+@color_icon_transport_private: #90A4AEA0;
 @color_text_transport: @color_icon_transport;
 
 @color_icon_hotels: #9575CD;

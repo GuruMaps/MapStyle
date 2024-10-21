@@ -151,6 +151,34 @@
   },
   {
     "names": {
+      "ar": ["مستوطنة"],
+      "be": ["паселішча"],
+      "cs": ["osada"],
+      "de": ["Siedlung"],
+      "en": ["settlement"],
+      "es": ["asentamiento"],
+      "fi": ["asutus"],
+      "fr": ["hameau", "petit village"],
+      "hu": ["település"],
+      "it": ["insediamento"],
+      "ja": ["集落"],
+      "ko": ["취락"],
+      "nl": ["nederzetting"],
+      "pl": ["osada"],
+      "pt-BR": ["assentamento"],
+      "pt-PT": ["assentamento"],
+      "ru": ["поселение"],
+      "th": ["ชุมชน"],
+      "uk": ["поселення"],
+      "zh": ["村落"]
+    },
+    "kv": {
+      "place": ["isolated_dwelling"]
+    },
+    "index": false
+  },
+  {
+    "names": {
       "ar": ["ضاحية"],
       "be": ["прадмесце"],
       "cs": ["předměstí"],
@@ -175,6 +203,35 @@
     "sc": 25,
     "kv": {
       "place": ["suburb"]
+    },
+    "icon": "icon_search_city",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حي", "منطقة"],
+      "be": ["квартал"],
+      "cs": ["čtvrť", "městská část"],
+      "de": ["Stadtteil", "Viertel"],
+      "en": ["quarter", "neighborhood"],
+      "es": ["barrio"],
+      "fi": ["kaupunginosa", "kortteli"],
+      "fr": ["quartier"],
+      "hu": ["városnegyed"],
+      "it": ["quartiere"],
+      "ja": ["地区"],
+      "ko": ["동네", "구역"],
+      "nl": ["wijk", "buurt"],
+      "pl": ["dzielnica"],
+      "pt-BR": ["bairro"],
+      "pt-PT": ["bairro"],
+      "ru": ["квартал"],
+      "th": ["ย่าน"],
+      "uk": ["квартал"],
+      "zh": ["街区"]
+    },
+    "kv": {
+      "place": ["quarter"]
     },
     "icon": "icon_search_city",
     "index": false
@@ -894,22 +951,22 @@
         "names": {
           "ar": ["نصب تذكاري"],
           "be": ["мемарыял"],
-          "cs": ["památník"],
+          "cs": ["pamětní místo"],
           "de": ["Denkmal"],
           "en": ["memorial"],
-          "es": ["monumento"],
+          "es": ["memorial"],
           "fi": ["muistomerkki"],
           "fr": ["mémorial"],
           "hu": ["emlékmű"],
           "it": ["memoriale"],
           "ja": ["記念碑"],
-          "ko": ["기념관"],
-          "nl": ["gedenkplaats"],
-          "pl": ["memoriał"],
+          "ko": ["기념물"],
+          "nl": ["gedenkteken"],
+          "pl": ["pomnik"],
           "pt-BR": ["memorial"],
           "pt-PT": ["memorial"],
-          "ru": ["памятник"],
-          "th": ["อนุสาวรีย์"],
+          "ru": ["мемориал"],
+          "th": ["อนุสรณ์สถาน"],
           "uk": ["меморіал"],
           "zh": ["纪念碑"]
         },
@@ -919,18 +976,18 @@
       },
       {
         "names": {
-          "ar": ["نصب"],
-          "be": ["памятник"],
+          "ar": ["معلم أثري"],
+          "be": ["помнік"],
           "cs": ["monument"],
           "de": ["Monument"],
           "en": ["monument"],
           "es": ["monumento"],
-          "fi": ["monumentti"],
+          "fi": ["muistomerkki"],
           "fr": ["monument"],
           "hu": ["emlékmű"],
           "it": ["monumento"],
-          "ja": ["記念堂"],
-          "ko": ["기념물"],
+          "ja": ["記念碑"],
+          "ko": ["기념비"],
           "nl": ["monument"],
           "pl": ["pomnik"],
           "pt-BR": ["monumento"],
@@ -938,11 +995,12 @@
           "ru": ["монумент"],
           "th": ["อนุสาวรีย์"],
           "uk": ["монумент"],
-          "zh": ["纪念碑"]
+          "zh": ["纪念性建筑"]
         },
         "kv": {
           "historic": ["monument"]
-        }
+        },
+        "icon": "icon_monument"
       },
       {
         "names": {
@@ -974,7 +1032,7 @@
       },
       {
         "names": {
-          "ar": ["تمثال"],
+          "ar": ["منحوتة"],
           "be": ["скульптура"],
           "cs": ["socha"],
           "de": ["Skulptur"],
@@ -986,7 +1044,7 @@
           "it": ["scultura"],
           "ja": ["彫刻"],
           "ko": ["조각"],
-          "nl": ["beeldhouwkunst"],
+          "nl": ["sculptuur"],
           "pl": ["rzeźba"],
           "pt-BR": ["escultura"],
           "pt-PT": ["escultura"],
@@ -1024,6 +1082,34 @@
         },
         "kv": {
           "artwork_type": ["statue"]
+        },
+        "icon": "icon_statue"
+      },
+      {
+        "names": {
+          "ar": ["تركيب فني"],
+          "be": ["інсталяцыя"],
+          "cs": ["instalace"],
+          "de": ["Installation"],
+          "en": ["installation"],
+          "es": ["instalación"],
+          "fi": ["installaatio"],
+          "fr": ["installation"],
+          "hu": ["installáció"],
+          "it": ["installazione"],
+          "ja": ["インスタレーション"],
+          "ko": ["설치미술"],
+          "nl": ["installatie"],
+          "pl": ["instalacja"],
+          "pt-BR": ["instalação"],
+          "pt-PT": ["instalação"],
+          "ru": ["инсталляция"],
+          "th": ["งานจัดวาง"],
+          "uk": ["інсталяція"],
+          "zh": ["装置艺术"]
+        },
+        "kv": {
+          "artwork_type": ["installation"]
         }
       },
       {
@@ -1544,6 +1630,34 @@
       },
       {
         "names": {
+          "ar": ["مختبر"],
+          "be": ["лабараторыя"],
+          "cs": ["laboratoř"],
+          "de": ["Labor"],
+          "en": ["laboratory"],
+          "es": ["laboratorio"],
+          "fi": ["laboratorio"],
+          "fr": ["laboratoire"],
+          "hu": ["laboratórium"],
+          "it": ["laboratorio"],
+          "ja": ["検査室"],
+          "ko": ["검사실"],
+          "nl": ["laboratorium"],
+          "pl": ["laboratorium"],
+          "pt-BR": ["laboratório"],
+          "pt-PT": ["laboratório"],
+          "ru": ["лаборатория"],
+          "th": ["ห้องปฏิบัติการ"],
+          "uk": ["лабораторія"],
+          "zh": ["检验室"]
+        },
+        "kv": {
+          "healthcare": ["laboratory"]
+        },
+        "icon": "icon_laboratory"
+      },
+      {
+        "names": {
           "ar": ["مستشفى"],
           "be": ["бальніца"],
           "cs": ["nemocnice"],
@@ -1652,6 +1766,34 @@
           "amenity": ["veterinary"]
         },
         "icon": "icon_vet"
+      },
+      {
+        "names": {
+          "ar": ["مزيل الرجفان", "جهاز صدمات القلب", "AED"],
+          "be": ["дэфібрылятар", "AED"],
+          "cs": ["defibrilátor", "AED"],
+          "de": ["Defibrillator", "AED"],
+          "en": ["defibrillator", "AED", "Automated External Defibrillator"],
+          "es": ["desfibrilador", "DEA"],
+          "fi": ["defibrillaattori", "AED"],
+          "fr": ["défibrillateur", "DAE"],
+          "hu": ["defibrillátor", "AED"],
+          "it": ["defibrillatore", "DAE"],
+          "ja": ["除細動器", "AED"],
+          "ko": ["제세동기", "AED"],
+          "nl": ["defibrillator", "AED"],
+          "pl": ["defibrylator", "AED"],
+          "pt-BR": ["desfibrilador", "DEA"],
+          "pt-PT": ["desfibrilhador", "DAE"],
+          "ru": ["дефибриллятор", "АВД"],
+          "th": ["เครื่องกระตุกหัวใจไฟฟ้า", "AED"],
+          "uk": ["дефібрилятор", "AED"],
+          "zh": ["除颤器", "AED"]
+        },
+        "kv": {
+          "emergency": ["defibrillator"]
+        },
+        "icon": "icon_defibrillator"
       }
     ],
     "names": {
@@ -2397,90 +2539,6 @@
   },
   {
     "names": {
-      "ar": ["حديقة"],
-      "be": ["сад"],
-      "cs": ["zahrada"],
-      "de": ["Garten"],
-      "en": ["garden"],
-      "es": ["jardín"],
-      "fi": ["puutarha"],
-      "fr": ["jardin"],
-      "hu": ["kert"],
-      "it": ["giardino"],
-      "ja": ["庭園"],
-      "ko": ["정원"],
-      "nl": ["tuin"],
-      "pl": ["ogród"],
-      "pt-BR": ["jardim"],
-      "pt-PT": ["jardim"],
-      "ru": ["сад"],
-      "th": ["สวน"],
-      "uk": ["сад"],
-      "zh": ["花园"]
-    },
-    "kv": {
-      "leisure": ["garden"]
-    },
-    "index": false
-  },
-  {
-    "names": {
-      "ar": ["منتزه"],
-      "be": ["парк"],
-      "cs": ["park"],
-      "de": ["Park"],
-      "en": ["park"],
-      "es": ["parque"],
-      "fi": ["puisto"],
-      "fr": ["parc"],
-      "hu": ["park"],
-      "it": ["parco"],
-      "ja": ["公園"],
-      "ko": ["공원"],
-      "nl": ["park"],
-      "pl": ["park"],
-      "pt-BR": ["parque"],
-      "pt-PT": ["parque"],
-      "ru": ["парк"],
-      "th": ["สวนสาธารณะ"],
-      "uk": ["парк"],
-      "zh": ["公园"]
-    },
-    "kv": {
-      "leisure": ["park"]
-    },
-    "index": false
-  },
-  {
-    "names": {
-      "ar": ["محمية طبيعية"],
-      "be": ["запаведнік"],
-      "cs": ["přírodní rezervace"],
-      "de": ["Naturschutzgebiet"],
-      "en": ["nature reserve"],
-      "es": ["reserva natural"],
-      "fi": ["luonnonsuojelualue"],
-      "fr": ["réserve naturelle"],
-      "hu": ["természetvédelmi terület"],
-      "it": ["riserva naturale"],
-      "ja": ["自然保護区"],
-      "ko": ["자연 보호 구역"],
-      "nl": ["natuurreservaat"],
-      "pl": ["rezerwat przyrody"],
-      "pt-BR": ["reserva natural"],
-      "pt-PT": ["reserva natural"],
-      "ru": ["заповедник"],
-      "th": ["เขตห้ามล่าสัตว์ป่า"],
-      "uk": ["заповідник"],
-      "zh": ["自然保护区"]
-    },
-    "kv": {
-      "leisure": ["nature_reserve"]
-    },
-    "index": false
-  },
-  {
-    "names": {
       "ar": ["محل بيع تذاكر"],
       "be": ["билетная каса"],
       "cs": ["prodejna vstupenek"],
@@ -2561,37 +2619,6 @@
     "kv": {
       "amenity": ["embassy"]
     },
-    "index": false
-  },
-  {
-    "names": {
-      "ar": ["مبنى"],
-      "be": ["будынак"],
-      "cs": ["budova"],
-      "de": ["Gebäude"],
-      "en": ["building"],
-      "es": ["edificio"],
-      "fi": ["rakennus"],
-      "fr": ["bâtiment"],
-      "hu": ["épület"],
-      "it": ["edificio"],
-      "ja": ["建物"],
-      "ko": ["건물"],
-      "nl": ["gebouw"],
-      "pl": ["budynek"],
-      "pt-BR": ["prédio"],
-      "pt-PT": ["edifício"],
-      "ru": ["здание"],
-      "th": ["อาคาร"],
-      "uk": ["будівля"],
-      "zh": ["建筑物"]
-    },
-    "kv": {
-      "building": [],
-      "addr:housenumber": []
-    },
-    "sc": 10,
-    "icon": "icon_search_building",
     "index": false
   },
   {
@@ -2788,6 +2815,385 @@
     "kv": {
       "amenity": ["parking_entrance"]
     },
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حصن"],
+      "be": ["форт"],
+      "cs": ["pevnost"],
+      "de": ["Festung"],
+      "en": ["fort"],
+      "es": ["fuerte"],
+      "fi": ["linnoitus"],
+      "fr": ["fort"],
+      "hu": ["erőd"],
+      "it": ["forte"],
+      "ja": ["要塞"],
+      "ko": ["요새"],
+      "nl": ["fort"],
+      "pl": ["fort"],
+      "pt-BR": ["forte"],
+      "pt-PT": ["forte"],
+      "ru": ["форт"],
+      "th": ["ป้อมปราการ"],
+      "uk": ["форт"],
+      "zh": ["堡垒"]
+    },
+    "kv": {
+      "historic": ["fort"]
+    },
+    "icon": "icon_fort",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["قلعة"],
+      "be": ["замак"],
+      "cs": ["hrad", "zámek"],
+      "de": ["Burg", "Schloss"],
+      "en": ["castle"],
+      "es": ["castillo"],
+      "fi": ["linna"],
+      "fr": ["château"],
+      "hu": ["kastély", "vár"],
+      "it": ["castello"],
+      "ja": ["城"],
+      "ko": ["성"],
+      "nl": ["kasteel"],
+      "pl": ["zamek"],
+      "pt-BR": ["castelo"],
+      "pt-PT": ["castelo"],
+      "ru": ["замок"],
+      "th": ["ปราสาท"],
+      "uk": ["замок"],
+      "zh": ["城堡"]
+    },
+    "kv": {
+      "historic": ["castle"]
+    },
+    "icon": "icon_castle",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["برج اتصالات"],
+      "be": ["сувязная вежа"],
+      "cs": ["komunikační věž"],
+      "de": ["Kommunikationsturm"],
+      "en": ["communication tower"],
+      "es": ["torre de comunicación"],
+      "fi": ["viestintätorni"],
+      "fr": ["tour de communication"],
+      "hu": ["távközlési torony"],
+      "it": ["torre di comunicazione"],
+      "ja": ["通信塔"],
+      "ko": ["통신탑"],
+      "nl": ["communicatietoren"],
+      "pl": ["wieża telekomunikacyjna"],
+      "pt-BR": ["torre de comunicação"],
+      "pt-PT": ["torre de comunicação"],
+      "ru": ["телекоммуникационная башня"],
+      "th": ["หอคอยสื่อสาร"],
+      "uk": ["комунікаційна вежа"],
+      "zh": ["通信塔"]
+    },
+    "kv": {
+      "tower:type": ["communication"]
+    },
+    "icon": "icon_beacon",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["منارة", "علامة ملاحية"],
+      "be": ["маяк", "сігнальны знак"],
+      "cs": ["maják", "námořní značka"],
+      "de": ["Bake", "Seezeichen"],
+      "en": ["beacon", "navigational aid"],
+      "es": ["baliza", "señal náutica"],
+      "fi": ["majakka", "merimerkki"],
+      "fr": ["balise", "amer"],
+      "hu": ["jelző", "navigációs jel"],
+      "it": ["segnale", "beacon"],
+      "ja": ["ビーコン", "航路標識"],
+      "ko": ["비콘", "항로표지"],
+      "nl": ["baken", "navigatiehulpmiddel"],
+      "pl": ["boja", "znak nawigacyjny"],
+      "pt-BR": ["baliza", "auxílio à navegação"],
+      "pt-PT": ["baliza", "auxílio à navegação"],
+      "ru": ["маяк", "навигационный знак"],
+      "th": ["ทุ่นสัญญาณ", "เครื่องหมายเดินเรือ"],
+      "uk": ["маяк", "навігаційний знак"],
+      "zh": ["信标", "航标"]
+    },
+    "kv": {
+      "man_made": ["beacon"]
+    },
+    "icon": "icon_beacon",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["برج إضاءة"],
+      "be": ["асвятляльная вежа"],
+      "cs": ["osvětlovací věž"],
+      "de": ["Beleuchtungsturm"],
+      "en": ["lighting tower"],
+      "es": ["torre de iluminación"],
+      "fi": ["valotorni"],
+      "fr": ["tour d'éclairage"],
+      "hu": ["világítótorony"],
+      "it": ["torre di illuminazione"],
+      "ja": ["照明塔"],
+      "ko": ["조명탑"],
+      "nl": ["verlichtingstoren"],
+      "pl": ["wieża oświetleniowa"],
+      "pt-BR": ["torre de iluminação"],
+      "pt-PT": ["torre de iluminação"],
+      "ru": ["осветительная башня"],
+      "th": ["หอไฟ"],
+      "uk": ["освітлювальна вежа"],
+      "zh": ["照明塔"]
+    },
+    "kv": {
+      "tower:type": ["lighting"]
+    },
+    "icon": "icon_lighthouse",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["منارة"],
+      "be": ["маяк"],
+      "cs": ["maják"],
+      "de": ["Leuchtturm"],
+      "en": ["lighthouse"],
+      "es": ["faro"],
+      "fi": ["majakka"],
+      "fr": ["phare"],
+      "hu": ["világítótorony"],
+      "it": ["faro"],
+      "ja": ["灯台"],
+      "ko": ["등대"],
+      "nl": ["vuurtoren"],
+      "pl": ["latarnia morska"],
+      "pt-BR": ["farol"],
+      "pt-PT": ["farol"],
+      "ru": ["маяк"],
+      "th": ["ประภาคาร"],
+      "uk": ["маяк"],
+      "zh": ["灯塔"]
+    },
+    "kv": {
+      "man_made": ["lighthouse"]
+    },
+    "icon": "icon_lighthouse",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["برج"],
+      "be": ["вежа"],
+      "cs": ["věž"],
+      "de": ["Turm"],
+      "en": ["tower"],
+      "es": ["torre"],
+      "fi": ["torni"],
+      "fr": ["tour"],
+      "hu": ["torony"],
+      "it": ["torre"],
+      "ja": ["塔"],
+      "ko": ["탑"],
+      "nl": ["toren"],
+      "pl": ["wieża"],
+      "pt-BR": ["torre"],
+      "pt-PT": ["torre"],
+      "ru": ["башня"],
+      "th": ["หอคอย"],
+      "uk": ["вежа"],
+      "zh": ["塔"]
+    },
+    "kv": {
+      "man_made": ["tower"]
+    },
+    "icon": "icon_tower",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حدائق مخصصة"],
+      "be": ["садовыя ўчасткі"],
+      "cs": ["zahrádkářská kolonie"],
+      "de": ["Kleingartenanlage", "Schrebergärten"],
+      "en": ["allotments"],
+      "es": ["huertos urbanos"],
+      "fi": ["siirtolapuutarha"],
+      "fr": ["jardins familiaux"],
+      "hu": ["hobbi kertek", "kiskertek"],
+      "it": ["orti urbani"],
+      "ja": ["市民農園"],
+      "ko": ["주말농장"],
+      "nl": ["volkstuinen"],
+      "pl": ["ogródki działkowe"],
+      "pt-BR": ["hortas comunitárias"],
+      "pt-PT": ["hortas comunitárias"],
+      "ru": ["садовые участки", "огородные участки"],
+      "th": ["สวนผักแบ่งสรร"],
+      "uk": ["садові ділянки"],
+      "zh": ["市民花园"]
+    },
+    "kv": {
+      "landuse": ["allotments"]
+    },
+    "icon": "icon_florist",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حديقة"],
+      "be": ["парк"],
+      "cs": ["park"],
+      "de": ["Park"],
+      "en": ["park"],
+      "es": ["parque"],
+      "fi": ["puisto"],
+      "fr": ["parc"],
+      "hu": ["park"],
+      "it": ["parco"],
+      "ja": ["公園"],
+      "ko": ["공원"],
+      "nl": ["park"],
+      "pl": ["park"],
+      "pt-BR": ["parque"],
+      "pt-PT": ["parque"],
+      "ru": ["парк"],
+      "th": ["สวนสาธารณะ"],
+      "uk": ["парк"],
+      "zh": ["公园"]
+    },
+    "kv": {
+      "leisure": ["park"]
+    },
+    "icon": "icon_tree",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حديقة"],
+      "be": ["сад"],
+      "cs": ["zahrada"],
+      "de": ["Garten"],
+      "en": ["garden"],
+      "es": ["jardín"],
+      "fi": ["puutarha"],
+      "fr": ["jardin"],
+      "hu": ["kert"],
+      "it": ["giardino"],
+      "ja": ["庭園"],
+      "ko": ["정원"],
+      "nl": ["tuin"],
+      "pl": ["ogród"],
+      "pt-BR": ["jardim"],
+      "pt-PT": ["jardim"],
+      "ru": ["сад"],
+      "th": ["สวน"],
+      "uk": ["сад"],
+      "zh": ["花园"]
+    },
+    "kv": {
+      "leisure": ["garden"]
+    },
+    "icon": "icon_tree",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["محمية طبيعية"],
+      "be": ["заказнік", "запаведнік"],
+      "cs": ["přírodní rezervace"],
+      "de": ["Naturschutzgebiet"],
+      "en": ["nature reserve"],
+      "es": ["reserva natural"],
+      "fi": ["luonnonsuojelualue"],
+      "fr": ["réserve naturelle"],
+      "hu": ["természetvédelmi terület"],
+      "it": ["riserva naturale"],
+      "ja": ["自然保護区"],
+      "ko": ["자연 보호구역"],
+      "nl": ["natuurreservaat"],
+      "pl": ["rezerwat przyrody"],
+      "pt-BR": ["reserva natural"],
+      "pt-PT": ["reserva natural"],
+      "ru": ["природный заповедник"],
+      "th": ["เขตสงวนธรรมชาติ"],
+      "uk": ["природний заповідник"],
+      "zh": ["自然保护区"]
+    },
+    "kv": {
+      "leisure": ["nature_reserve"]
+    },
+    "icon": "icon_tree",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["حديقة وطنية"],
+      "be": ["нацыянальны парк"],
+      "cs": ["národní park"],
+      "de": ["Nationalpark"],
+      "en": ["national park"],
+      "es": ["parque nacional"],
+      "fi": ["kansallispuisto"],
+      "fr": ["parc national"],
+      "hu": ["nemzeti park"],
+      "it": ["parco nazionale"],
+      "ja": ["国立公園"],
+      "ko": ["국립공원"],
+      "nl": ["nationaal park"],
+      "pl": ["park narodowy"],
+      "pt-BR": ["parque nacional"],
+      "pt-PT": ["parque nacional"],
+      "ru": ["национальный парк"],
+      "th": ["อุทยานแห่งชาติ"],
+      "uk": ["національний парк"],
+      "zh": ["国家公园"]
+    },
+    "kv": {
+      "boundary": ["national_park"]
+    },
+    "icon": "icon_tree",
+    "index": false
+  },
+  {
+    "names": {
+      "ar": ["مبنى"],
+      "be": ["будынак"],
+      "cs": ["budova"],
+      "de": ["Gebäude"],
+      "en": ["building"],
+      "es": ["edificio"],
+      "fi": ["rakennus"],
+      "fr": ["bâtiment"],
+      "hu": ["épület"],
+      "it": ["edificio"],
+      "ja": ["建物"],
+      "ko": ["건물"],
+      "nl": ["gebouw"],
+      "pl": ["budynek"],
+      "pt-BR": ["prédio"],
+      "pt-PT": ["edifício"],
+      "ru": ["здание"],
+      "th": ["อาคาร"],
+      "uk": ["будівля"],
+      "zh": ["建筑物"]
+    },
+    "kv": {
+      "building": [],
+      "addr:housenumber": []
+    },
+    "sc": 10,
+    "icon": "icon_search_building",
     "index": false
   }
 ]

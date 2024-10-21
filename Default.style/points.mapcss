@@ -57,7 +57,6 @@ node,area {
             text-color: @color_label_text;
             font-size: 12;
             font-weight: normal;
-            font-stroke-width: 1pt;
             text-priority: 7;
             text-big-padding: true;
         }
@@ -65,8 +64,7 @@ node,area {
 
     |z9-[place=town],
     |z11-[place=village],
-    |z12-[place=hamlet],
-    |z13-[place=isolated_dwelling] {
+    |z12-[place=hamlet] {
         text: eval(locTag('name'));
         text-color: @color_label_text;
         font-size: 11;
@@ -74,6 +72,15 @@ node,area {
         font-weight: light;
         text-priority: 6;
         text-big-padding: true;
+    }
+    
+    |z14-[place=isolated_dwelling],
+    |z14-[place=farm] {
+        text: eval(locTag('name'));
+        text-color: @color_label_text;
+        font-stroke-width: 2px;
+        font-weight: light;
+        text-priority: 4;
     }
 
     |z5-12[capital=yes] {
@@ -93,15 +100,27 @@ node,area {
         }
     }
 
-    // Названия микрорайонов
+    // Названия районов
     |z11-[place=suburb] {
         |z11-13 {
             text-big-padding: true;
         }
         text: eval(locTag('name'));
         text-color: @color_suburb_text;
+        text-priority: 3;
         font-size: 11;
-        font-stroke-width: 1pt;
+    }
+    
+    // Названия микрорайонов
+    |z14-[place=quarter] {
+        text: eval(locTag('name'));
+        text-color: @color_suburb_text;
+        text-priority: 2;
+    }
+
+    // Снимаем приоритет имен населенных пунктов, когда мы уже хорошо видим дома
+    |z16-[place]{
+        text-priority: -10;
     }
 
     // Названия больших объектов
@@ -112,17 +131,22 @@ node,area {
                 [highway=footway]
             ),
         @endif
-        @if Sport
-            [leisure=stadium],
-        @endif
         @if Style == Outdoor
             [place=locality],
         @endif
+        [place=square],
         {
+            text: eval(locTag('name'));
+            text-color: @color_suburb_text;
+            text-priority: 1;
+        }
+    }
+    @if Sport
+        |z16-[leisure=stadium] {
             text: eval(locTag('name'));
             text-color: @color_label_text;
         }
-    }
+    @endif
 
     // Название воды
     node{
@@ -144,24 +168,13 @@ node,area {
     }
 
     |z9-{
-        [natural=bay],
         area[natural=water],
+        [natural=bay],
         area[landuse=basin],
         [landuse=reservoir] {
-            text: eval(locTag('name'));
             text-color: @color_water_text;
             font-stroke-color: @color_water_stroke;
             font-stroke-width: 2pt;
-            font-weight: lighter;
-
-            |z14-[natural=bay],
-            |z14-[waterway=riverbank],
-            |z15-[natural=water],
-            |z16-[landuse=basin],
-            |z16-[landuse=reservoir] {
-                font-size: 12;
-                text-priority: 2;
-            }
         }
     }
 
@@ -174,67 +187,148 @@ node,area {
         font-weight: light;
     }
 
-    |z11-[place=island],
-    |z13-[place=islet]
-    {
-        text: eval(locTag('name'));
+    |z9-[place=island],
+    |z13-[place=islet] {
         text-color: @color_national_park_text;
-        font-size: 8;
-        text-priority: 1;
     }
 
-    @if SubStyle != Car
-        area{
-            |z9-[boundary=protected_area] {
-                [protect_class=1], [protect_class=1a], [protect_class=1b],
-                [protect_class=2],
-                [protect_class=3],
-                [protect_class=4],
-                [protect_class=5],
-                |z11-[protect_class=6] {
-                    text: eval(locTag('name'));
-                    text-color: @color_national_park_text;
-                    text-priority: 4;
-                    font-size: 8;
-                    font-stroke-width:2pt;
-                    font-stroke-color: @color_wood;
+    area|z9-{
+        [boundary=protected_area],
+        [boundary=national_park],
+        [leisure=nature_reserve],
+        |z13-(
+            [leisure=park],
+            [leisure=garden]
+        ) {
+            text-color: @color_national_park_text;
+            font-stroke-width:2pt;
+            font-stroke-color: @color_wood;
+        }
+    }
+
+    |z13-[landuse=allotments] {
+        text-color: @color_allotments_text;
+        font-stroke-width:2pt;
+        font-stroke-color: @color_allotments;
+    }
+
+    area|z9-{
+        [boundary=protected_area],
+        [boundary=national_park],
+        [leisure=nature_reserve],
+        |z13-(
+            [leisure=park],
+            [leisure=garden],
+            [landuse=allotments]
+        ),
+        [place=island],
+        [natural=bay],
+        [natural=water],
+        [landuse=basin],
+        [landuse=reservoir],
+        |z13-(
+            [place=islet]
+        ) {
+            // текст пишем для объекта на масштабе polyZoom + 5
+            
+            // тут надо еще подумать. крупные объекты - можно было бы показывать на карте мира.
+            // но это замедлит ее генерацию
+            |z9-[polyZoom<=3] {
+                text: eval(locTag('name'));
+                text-priority: 11;
+                font-size: 9;
+                |z10-{
+                    font-size: 10;
                 }
             }
-            |z9-[boundary=national_park],
-            |z10-[leisure=nature_reserve] {
+            |z9-[polyZoom=4] {
                 text: eval(locTag('name'));
-                text-color: @color_national_park_text;
+                text-priority: 10;
+                font-size: 8;
+                |z10-{
+                    font-size: 9;
+                }
+                |z11-{
+                    font-size: 10;
+                }
+            }
+            |z10-[polyZoom=5] {
+                text: eval(locTag('name'));
+                text-priority: 9;
+                font-size: 8;
+                |z11-{
+                    font-size: 9;
+                }
+                |z12-{
+                    font-size: 10;
+                }
+            }
+            |z11-[polyZoom=6] {
+                text: eval(locTag('name'));
+                text-priority: 8;
+                font-size: 8;
+                |z12-{
+                    font-size: 9;
+                }
+                |z13-{
+                    font-size: 10;
+                }
+            }
+            |z12-[polyZoom=7] {
+                text: eval(locTag('name'));
+                text-priority: 7;
+                font-size: 8;
+                |z13-{
+                    font-size: 9;
+                }
+                |z14-{
+                    font-size: 10;
+                }
+            }
+            |z13-[polyZoom=8] {
+                text: eval(locTag('name'));
+                text-priority: 6;
+                font-size: 8;
+                |z14-{
+                    font-size: 9;
+                }
+                |z15-{
+                    font-size: 10;
+                }
+            }
+            |z14-[polyZoom=9] {
+                text: eval(locTag('name'));
+                text-priority: 5;
+                font-size: 8;
+                |z15-{
+                    font-size: 9;
+                }
+                |z16-{
+                    font-size: 10;
+                }
+            }
+            |z15-[polyZoom=10] {
+                text: eval(locTag('name'));
                 text-priority: 4;
                 font-size: 8;
-                font-stroke-width:2pt;
-                font-stroke-color: @color_wood;
+                |z16-{
+                    font-size: 9;
+                }
+                |z17-{
+                    font-size: 10;
+                }
             }
-            |z15-(
-                [leisure=park],
-                [leisure=garden]
-            ) {
+            |z16-[polyZoom=11] {
                 text: eval(locTag('name'));
-                text-color: @color_national_park_text;
-                text-priority: -1; // если хватает места - покажем
+                text-priority: 3;
                 font-size: 8;
-                font-stroke-width:2pt;
-                font-stroke-color: @color_wood;
+                |z17-{
+                    font-size: 9;
+                }
             }
-        }
-    @endif
-
-    |z14-[ref] {
-        [boundary=forest_compartment],
-        [boundary=forestry_compartment] {
-            text: eval(tag('ref'));
-            text-color: @color_national_park_text;
-            text-priority: -2; // если хватает места - покажем
-            font-size: 6;
-            font-stroke-width:1pt;
-            font-stroke-color: @color_wood;
-            |z15-{
+            |z17-[polyZoom=12] {
+                text: eval(locTag('name'));
                 font-size: 8;
-                font-stroke-width:2pt;
             }
         }
     }
@@ -243,9 +337,23 @@ node,area {
         area|z17-[building],
         |z17-[landuse=construction]
         {
-            text: eval( cond( tag('addr:housenumber'),
-                            tag('addr:housenumber') . cond( any( locTag('name'), tag('addr:housename') ),' (' . any( locTag('name'), tag('addr:housename') ) . ')',''),
-                            any( locTag('name'), tag('addr:housename') ) ) );
+            text: eval(
+                cond(
+                    tag('addr:housenumber'),
+                    tag('addr:housenumber') .
+                    cond(
+                        tag('addr:unit'),
+                        ' ' . tag('addr:unit'),
+                        ''
+                    ) .
+                    cond(
+                        any(locTag('name'), tag('addr:housename')),
+                        ' (' . any(locTag('name'), tag('addr:housename')) . ')',
+                        ''
+                    ),
+                    any(locTag('name'), tag('addr:housename'))
+                )
+            );
 
             text-color: @color_building_text;
             font-size: 10;
@@ -424,6 +532,16 @@ node,area {
             }
         }
         |z17-{
+            [emergency=defibrillator]{
+                icon-image:"poi_defibrillator.svg";
+                icon-tint: @color_icon_health;
+            }
+            [healthcare=laboratory] {
+                icon-image:"poi_laboratory.svg";
+                icon-tint: @color_icon_health;
+                text: eval(locTag('name'));
+                text-color: @color_text_health;
+            }
             [amenity=pharmacy] {
                 icon-image:"poi_pharmacy.svg";
                 icon-tint: @color_icon_health;
@@ -570,15 +688,23 @@ node,area {
 
     @if Culture
         |z16-(
-            [historic=memorial],
             [historic=monument],
             [artwork_type=sculpture],
-            [artwork_type=statue],
             [artwork_type=installation],
-        ) {
+        ),
+        |z17-[historic=memorial] {
             icon-image:"poi_monument.svg";
             icon-tint: @color_icon_tourism;
             |z17- {
+                text: eval(locTag('name'));
+                text-color: @color_text_tourism;
+            }
+        }
+
+        |z17-[artwork_type=statue] {
+            icon-image:"poi_statue.svg";
+            icon-tint: @color_icon_tourism;
+            |z18- {
                 text: eval(locTag('name'));
                 text-color: @color_text_tourism;
             }
@@ -766,17 +892,25 @@ node,area {
                     text-color: @color_text_transport;
                 }
             }
+            [amenity=parking][access=private] {
+                icon-tint: @color_icon_transport_private;
+                text-priority: -10;
+            }
             
             node[amenity=parking_entrance] {
                 // parking entrance is often used without parking=underground
                 // todo add more icons for different kinds of parkings
-                icon-image:"poi_garage_parking.svg";
+                icon-image:"poi_parking_entrance.svg";
                 icon-tint: @color_icon_transport;
                 text-priority: -3;
                 |z18-{
                     text: eval(locTag('name'));
                     text-color: @color_text_transport;
                 }
+            }
+            node[amenity=parking_entrance][access=private] {
+                icon-tint: @color_icon_transport_private;
+                text-priority: -10;
             }
         }
     @endif
@@ -1141,6 +1275,55 @@ node,area {
             icon-tint: @color_icon_transport;
             details-enabled: 0;
         }
+        
+        [man_made=tower] {
+            icon-image: "poi_tower.svg";
+            icon-tint: @color_icon_transport;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+            }
+        }
+        
+        [man_made=tower][tower:type=communication],
+        [man_made=beacon] {
+            icon-image: "poi_beacon.svg";
+            icon-tint: @color_icon_transport;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+            }
+        }
+
+        [man_made=tower][tower:type=lighting],
+        [man_made=lighthouse] {
+            icon-image: "poi_lighthouse.svg";
+            icon-tint: @color_icon_transport;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+            }
+        }
+        
+        [historic=castle] {
+            icon-image: "poi_castle.svg";
+            icon-tint: @color_icon_transport;
+            text-priority: 5;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+            }
+        }
+        
+        [historic=fort] {
+            icon-image: "poi_fort.svg";
+            icon-tint: @color_icon_transport;
+            text-priority: 5;
+            |z17-{
+                text: eval(locTag('name'));
+                text-color: @color_text_transport;
+            }
+        }
     }
 
     @if SubStyle != Car
@@ -1167,8 +1350,6 @@ node,area {
         area|z15-[natural=beach] {
             text: eval(locTag('name'));
             text-color: @color_beach_text;
-            font-size: 12;
-            font-stroke-width: 1pt;
             font-stroke-color: @color_sand;
         }
 
@@ -1250,23 +1431,6 @@ node,area {
             }
         }
     @endif
-
-    |z15-[highway=pedestrian] {
-        text: eval(locTag('name'));
-        font-size: 8;
-        text-color: @color_label_text;
-        font-stroke-color: @color_footway_area;
-
-        details-enabled: 0;
-        text-priority: 1;
-
-        |z16-{
-            font-size: 9;
-        }
-        |z17-{
-            font-size: 10;
-        }
-    }
 
     // water transport
     |z16-[amenity=ferry_terminal] {
