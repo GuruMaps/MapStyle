@@ -1482,7 +1482,7 @@ node,area {
             [natural=peak],
             [natural=saddle],
             [natural=volcano],
-            [mountain_pass=yes]
+            [mountain_pass]
         ) {
             [natural=peak] {
                 icon-image: "poi_triangle.svg";
@@ -1496,7 +1496,7 @@ node,area {
                 icon-image: "poi_saddle.svg";
                 icon-tint: @color_icon_peak;
             }
-            [mountain_pass=yes] {
+            [mountain_pass] {
                 icon-image: "poi_cross.svg";
                 icon-tint: @color_icon_peak;
             }
@@ -1507,7 +1507,7 @@ node,area {
                 [natural=volcano] {
                     text-color: @color_text_volcano;
                 }
-                [mountain_pass=yes] {
+                [mountain_pass] {
                     text: eval( cond( locTag('name'), cond( tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')) , locTag('name') ), formatElevation(tag('ele')) ) . cond( tag('rtsa_scale'), ' (' . tag('rtsa_scale') . ')', '') );
                 }
             }
