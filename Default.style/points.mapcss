@@ -356,10 +356,10 @@ node,area {
             );
 
             text-color: @color_building_text;
-            font-size: 10;
+            font-size: 9;
             font-stroke-width: 0.8pt;
             font-stroke-color: @color_label_stroke;
-            text-priority: 2;
+            text-priority: 1;
         }
 
         // имена кварталов
@@ -369,7 +369,7 @@ node,area {
             text-color: @color_building_text;
             font-size: 10;
             font-stroke-width: 0.8pt;
-            text-priority: 0;
+            text-priority: 2;
         }
 
         // для точек номер дома не так важен. Если есть имя - пишем имя.

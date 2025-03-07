@@ -1,4 +1,4 @@
-@if ExtraData // always false
+@if !HideExtraData // always false
 
 // We need set fake style to keep objects or extra tags in those objects.
 // By default all unused data is optimized from objects, to keep map files thin.
@@ -45,7 +45,7 @@ node {
         [mountain_pass=yes]
     ) {
         text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' '.formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
-        text-color: @color_text_peak;
+        text-color: red;
     }
     // save names
     |z13-(

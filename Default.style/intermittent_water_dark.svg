@@ -1,8 +1,6 @@
-<svg width="32mm" height="32mm" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
- <rect x="0" y="0" width="32" height="32" fill="#21659a" fill-opacity=".50" style="paint-order:stroke markers fill"/>
- <g fill="#fff" fill-opacity=".50" stroke-linecap="round" stroke-linejoin="round">
-  <path d="m29.9 0-29.902 29.898-0.0086902 2.0921 2.1181-0.005214 29.882-29.88 0.0083-2.1043z" color="#000000" style="paint-order:stroke markers fill"/>
-  <path d="m-0.0012082 0.0014516 0.0029233 2.1156 2.1156-2.117z" color="#000000" style="paint-order:stroke markers fill"/>
-  <path d="m32.001 29.896-2.1049 2.1012h2.1042z" color="#000000" style="paint-order:stroke markers fill"/>
- </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 0H0V16H16V0Z" fill="#21659A" fill-opacity="0.5"/>
+<path d="M14.95 0L-0.00102599 14.949L-0.00537109 15.9951L1.05368 15.9924L15.9947 1.05244L15.9988 0.000293L14.95 0Z" fill="white" fill-opacity="0.5"/>
+<path d="M-0.000488281 0.000730518L0.000973369 1.05853L1.05877 3.05176e-05L-0.000488281 0.000730518Z" fill="white" fill-opacity="0.5"/>
+<path d="M16.0004 14.948L14.948 15.9986H16.0001L16.0004 14.948Z" fill="white" fill-opacity="0.5"/>
 </svg>
