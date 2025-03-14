@@ -93,11 +93,14 @@
 @color_text_beauty: #BF5F82; // @color_icon_beauty
 
 @color_icon_tint: #866E54; // same
+@color_text_tint: #6D5640;
 @color_icon_capital_tint: #3A3A3A; // same
 @color_icon_peak: #800000;
 @color_text_peak: #A52A2A;
 @color_icon_volcano: @color_icon_health;
 @color_text_volcano: @color_text_health;
+@color_icon_mine: @color_icon_tint;
+@color_text_mine: @color_text_tint;
 
 // roads of all kinds
 @color_small_road: #FEFEFE; // l: 0.4

@@ -333,6 +333,21 @@ node,area {
         }
     }
 
+    // for nodes similar to polyZoom 9. TODO: use macros to avoid copy-paste?
+    node|z14- {
+        [natural=bay] {
+            text: eval(locTag('name'));
+            text-priority: 5;
+            font-size: 8;
+            |z15-{
+                font-size: 9;
+            }
+            |z16-{
+                font-size: 10;
+            }
+        }
+    }
+
     @if BuildingName
         area|z17-[building],
         |z17-[landuse=construction]
@@ -1218,17 +1233,17 @@ node,area {
         }
     }
 
-    |z16-{
-        [tourism=picnic_site],
-        node[leisure=picnic_table] {
-            icon-image:"poi_picnic_table.svg";
-            icon-tint: @color_icon_activity;
-            |z17-{
-                text: eval(locTag('name'));
-                text-color: @color_text_activity;
-            }
+    |z15-[tourism=picnic_site],
+    node|z16-[leisure=picnic_table] {
+        icon-image:"poi_picnic_table.svg";
+        icon-tint: @color_icon_activity;
+        |z17-{
+            text: eval(locTag('name'));
+            text-color: @color_text_activity;
         }
-
+    }
+        
+    |z16-{
         [leisure=firepit] {
             icon-image:"poi_firepit.svg";
             icon-tint: @color_icon_activity;
@@ -1522,11 +1537,21 @@ node,area {
 
         |z14-[natural=cave_entrance] {
             icon-image: "poi_cave_entrance.svg";
-            icon-tint: @color_icon_peak;
+            icon-tint: @color_icon_mine;
 
-            |z16- {
+            |z15- {
                 text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
-                text-color: @color_text_peak;
+                text-color: @color_text_mine;
+            }
+        }
+        
+        |z14-[man_made=adit] {
+            icon-image: "poi_cave_entrance.svg";
+            icon-tint: @color_icon_mine;
+
+            |z15- {
+                text: eval(locTag('name'));
+                text-color: @color_text_mine;
             }
         }
 @if SubStyle == Bike
