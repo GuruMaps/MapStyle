@@ -584,6 +584,11 @@ line {
                 [intermittent=yes] {
                     fill-image: "intermittent.svg";
                 }
+@if Style == Outdoor
+                |z14- {
+                    fill-image: "arrow.svg";
+                }
+@endif
             }
         }
     }
