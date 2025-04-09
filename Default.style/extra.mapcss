@@ -3,6 +3,12 @@
 // We need set fake style to keep objects or extra tags in those objects.
 // By default all unused data is optimized from objects, to keep map files thin.
 line {
+    |z9-{
+        [piste:difficulty] {
+            width: 1px;
+            color: black;
+        }
+    }
     |z13-{
         [highway][surface] {
             width: 1px;
