@@ -796,6 +796,15 @@ node,area {
                 text-color: @color_text_tourism;
             }
         }
+        
+        |z15-[amenity=shelter] {
+            icon-image:"poi_shelter.svg";
+            icon-tint: @color_icon_activity;
+            |z16-{
+                text: eval(locTag('name'));
+                text-color: @color_text_activity;
+            }
+        }
 
         // node|z16-[tourism=attraction], не применяем, потому что это просто маркер для туристических объектов с другими тегами.
         // Можно давать буст в поиске или иконку больше делать - но менять иконку не надо.
@@ -1253,15 +1262,6 @@ node,area {
         }
     @endif
 
-    |z15-[amenity=shelter] {
-        icon-image:"poi_shelter.svg";
-        icon-tint: @color_icon_activity;
-        |z16-{
-            text: eval(locTag('name'));
-            text-color: @color_text_activity;
-        }
-    }
-
     |z15-[tourism=picnic_site],
     node|z16-[leisure=picnic_table] {
         icon-image:"poi_picnic_table.svg";
@@ -1501,10 +1501,10 @@ node,area {
     @endif
 
     // water transport
-    |z16-[amenity=ferry_terminal] {
+    |z15-[amenity=ferry_terminal] {
         icon-image:"poi_ferry.svg";
         icon-tint: @color_icon_transport;
-        |z17-{
+        |z16-{
             text: eval(locTag('name'));
             text-color: @color_text_transport;
         }
@@ -1520,7 +1520,7 @@ node,area {
     }
 
     node{
-        |z17-[barrier][barrier!=kerb] {
+        |z17-[barrier] {
             icon-image:"poi_barrier.svg";
             icon-scale: 0.75;
             icon-tint: @color_icon_tint;
@@ -1530,17 +1530,21 @@ node,area {
             [barrier=gate] {
                 icon-image:"poi_gate.svg";
             }
-            
             [barrier=entrance] {
                 icon-image:"poi_barrier_entrance.svg";
             }
-
             [barrier=toll_booth] {
                 icon-image:"poi_barrier_toll_booth.svg";
             }
-
             [barrier=lift_gate] {
                 icon-image:"poi_lift_gate.svg";
+            }
+            [barrier=bollard] {
+                icon-image: "poi_circle_small.svg";
+                icon-scale: 0.65;
+            }
+            [barrier=kerb] {
+                icon-image: none;
             }
         }
     }

@@ -1,3 +1,24 @@
+
+line|z9-[route=ferry] {
+    dashes: 6, 6;
+    dashes-width: eval( zlinear(9, 1px,1pt,2pt ));
+    dashes-color: @color_ferry_route;
+    z-index: 2;
+    details-enabled: true;
+}
+
+relation[type=route] {
+    relation[route=ferry] {
+        line|z9- {
+            dashes: 6, 6;
+            dashes-width: eval( zlinear(9, 1px,1pt,2pt ));
+            dashes-color: @color_ferry_route;
+            z-index: 2;
+            details-enabled: true;
+        }
+    }
+}
+
 @if Style == Outdoor
 relation[type=route] {
 //    outline-width: 5pt;

@@ -4,9 +4,9 @@
 @color_ground: #202020;
 @color_downloaded_map: #6F00FF33;
 @color_downloaded_map_stroke: #6F00FF;
-@color_water: #21659A;
-@color_water_icon: #78B9EB;
-@color_water_underground: #21659A66;
+@color_water: #11527B;
+@color_water_icon: #84B6E0;
+@color_water_underground: #0E456566;
 @color_wood: #315C1F;
 @color_wood_icon: #A4D88B;
 @color_nature_reserve: #45642330;
@@ -51,6 +51,7 @@
 @color_national_park: #557433;
 @color_power_line: #727272;
 @color_hunting_stand: #B5A083;
+@color_ferry_route: #2A80C4;
 
 @color_label_text: #E0DFDD;
 @color_name_text: #D3D2D0;
@@ -61,8 +62,9 @@
 @color_public_transport_text: #C9C9C6;
 @color_private_access_text: #F07573;
 @color_label_stroke: #000000EE;
-@color_water_text: #CCCCCC;
-@color_water_stroke: #2A80C4BB;
+
+@color_water_text: #72AFE0;
+@color_water_stroke: #000000B3;
 @color_aerialway_text: #FFFFFF;
 @color_shop_text: #F9D8A3;
 @color_sand_text: #B3A78C;
