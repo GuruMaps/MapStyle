@@ -213,29 +213,32 @@ line {
 
     /****************************** Small roads, or roads with different colors ************************/
 
+    @unknown_dashes: 7, 4, 4, 4;
+
     // tracks
     |z13-{
         [highway=track] {
             dashes-color: @color_track_dashes;
-            dashes: 8, 6;
+            dashes: @unknown_dashes;
             dashes-width: eval( zlinear(13, 1pt, 1.5pt, 2pt, 2.5pt ));
             width:        eval( zlinear(13, 1pt, 1.5pt, 2pt, 2.5pt ));
             
-            [tracktype=grade5] {
-                dashes: 8, 4,2, 4,2, 4,2, 4;
-            }
-            [tracktype=grade4] {
-                dashes: 8, 3,2, 3,2, 3;
-            }
-            [tracktype=grade3] {
-                dashes: 8, 2,2, 2;
+            [tracktype=grade1] {
+                dashes: 11, 2;
             }
             [tracktype=grade2] {
-                dashes: 8, 2,4, 2;
+                dashes: 11, 4;
             }
-            [tracktype=grade1] {
-                dashes: 8, 1;
+            [tracktype=grade3] {
+                dashes: 7, 5;
             }
+            [tracktype=grade4] {
+                dashes: 5, 6;
+            }
+            [tracktype=grade5] {
+                dashes: 3, 7;
+            }
+
             |z15-{
                 casing-color: @color_track_casing;
                 casing-width: 1.5pt;
@@ -279,7 +282,6 @@ line {
         }
     }
 
-
     @if Style == Outdoor
         |z15-{
             [highway=footway],
@@ -289,13 +291,13 @@ line {
                 //                              15   16     17
                 width:        eval( zlinear(15, 2pt, 2.5pt, 3pt ));
                 dashes-width: eval( zlinear(15, 1pt, 1.5pt, 2pt ));
-                dashes: 6, 6; // - -
+                dashes: @unknown_dashes;
                 // grade1
                 [surface=paved],
                 [surface=asphalt],
                 [surface=concrete],
                 [surface=paving_stones] {
-                    dashes: 6, 2; // --
+                    dashes: 11, 2;
                 }
                 // grade2
                 [surface=chipseal],
@@ -303,7 +305,7 @@ line {
                 [surface=compacted],
                 [surface=fine_gravel],
                 [surface=salt] {
-                    dashes: 6, 4; // - -
+                    dashes: 11, 4;
                 }
                 // grade3
                 [surface=concrete:lanes],
@@ -313,7 +315,7 @@ line {
                 [surface=grass_paver],
                 [surface=snow],
                 [surface=ice] {
-                    dashes: 6, 6; // - .
+                    dashes: 7, 5;
                 }
                 // grade4
                 [surface=unhewn_cobblestone],
@@ -324,14 +326,14 @@ line {
                 [surface=earth],
                 [surface=sand],
                 [surface=woodchips] {
-                    dashes: 6, 8; // - . .
+                    dashes: 5, 6;
                 }
                 // grade5
                 [surface=stepping_stones],
                 [surface=rock],
                 [surface=grass],
                 [surface=mud] {
-                    dashes: 4, 8; // - . . .
+                    dashes: 3, 7;
                 }
                 |z16- {
                     casing-color: @color_dashes_casing;
@@ -396,6 +398,53 @@ line {
                 }
             @endif
         }
+
+        @if SubStyle == Ski
+            |z9-{
+                [piste:difficulty] {
+                    color: white;
+                    width: 2pt;
+                    dashes-width: none;
+                    
+                    |z15-{
+                        text: eval(any(locTag('name'), tag('ref')));
+                        text-color: @color_label_text;
+                        font-size: 12;
+                        font-stroke-width: 2pt;
+                        font-stroke-color: @color_label_stroke;
+                    }
+                }
+                [piste:difficulty=novice] {
+                    color: @color_difficulty_novice;
+                    text-color: @color_difficulty_novice;
+                }
+                [piste:difficulty=easy] {
+                    color: @color_difficulty_easy;
+                    text-color: @color_difficulty_easy;
+                }
+                [piste:difficulty=intermediate] {
+                    color: @color_difficulty_intermediate;
+                    text-color: @color_difficulty_intermediate;
+                }
+                [piste:difficulty=advanced],
+                [piste:difficulty=expert],
+                [piste:difficulty=extreme] {
+                    color: @color_difficulty_expert;
+                    text-color: @color_difficulty_expert;
+                }
+
+                [piste:difficulty=extreme] {
+                    dashes: 4, 4;
+                    dashes-width: 2pt;
+                }
+                [piste:difficulty=freeride] {
+                    text-color: @color_difficulty_freeride;
+                    dashes-color: @color_difficulty_freeride;
+                    dashes: 4, 4;
+                    dashes-width: 2pt;
+                }
+            }
+        @endif
 
         @if SubStyle == Hike
             |z14-[highway=track],
@@ -742,68 +791,20 @@ line {
         text-priority: -5;
     }
 
-    @if PistesAndLifts
-        |z15-[piste:difficulty] {
-            text: eval(any(locTag('name'), tag('ref')));
-            text-color: @color_label_text;
-            font-size: 12;
-            font-stroke-width: 2pt;
-            font-stroke-color: @color_label_stroke;
-        }
-
-        |z13-{
-            [piste:difficulty] {
-                color: white;
-                width: 2pt;
-                dashes-width: none;
-            }
-            [piste:difficulty=novice] {
-                color: @color_difficulty_novice;
-                text-color: @color_difficulty_novice;
-            }
-            [piste:difficulty=easy] {
-                color: @color_difficulty_easy;
-                text-color: @color_difficulty_easy;
-            }
-            [piste:difficulty=intermediate] {
-                color: @color_difficulty_intermediate;
-                text-color: @color_difficulty_intermediate;
-            }
-            [piste:difficulty=advanced],
-            [piste:difficulty=expert],
-            [piste:difficulty=extreme] {
-                color: @color_difficulty_expert;
-                text-color: @color_difficulty_expert;
-            }
-
-            [piste:difficulty=extreme] {
-                dashes: 4, 4;
-                dashes-width: 2pt;
-            }
-            [piste:difficulty=freeride] {
-                text-color: @color_difficulty_freeride;
-                dashes-color: @color_difficulty_freeride;
-                dashes: 4, 4;
-                dashes-width: 2pt;
-            }
-
-            [aerialway] { // chair_lift, cable_car, drag_lift
-                color: black;
-                width: 1pt;
-                dashes: 2, 6;
-                dashes-width: 4pt;
-                dashes-color: black;
-            }
-        }
-
-        |z15-[aerialway] {
+    |z13-[aerialway] { // chair_lift, cable_car, drag_lift
+        color: black;
+        width: 1pt;
+        dashes: 2, 6;
+        dashes-width: 4pt;
+        dashes-color: black;
+        |z15-{
             text: eval(any(locTag('name'), tag('ref')));
             text-color: @color_aerialway_text;
             font-size: 12;
             font-stroke-width: 2pt;
             font-stroke-color: @color_label_stroke;
         }
-    @endif
+    }
 
     |z14-[man_made=cutline] {
         color: @color_ground;

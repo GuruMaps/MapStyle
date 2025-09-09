@@ -289,11 +289,13 @@ area {
         z-index:-10;
     }
 
-    // 0
+    // ~0
+    // hillshades are at level = 0, z-index = -1
     |z5-{
         |z9-[natural=bay], // - часто из заливов не вырезают острова. И они в результате тонут под водой.
         |z9-[landuse=basin],
         [natural=water], [landuse=reservoir], [waterway=riverbank] {
+            z-index: -2;
             fill-color: @color_water;
             [intermittent=yes] {
                 z-index: 1;

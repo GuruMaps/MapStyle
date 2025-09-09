@@ -123,11 +123,11 @@
 @color_track_casing: #fefefe88;
 @if Style == Outdoor
     @color_footway_dashes: #AF756A; // l: 0.1
-    @if SubStyle == Hike
-        @color_path_dashes: @color_track_dashes;
-    @else
-        @color_path_dashes: #474E85; // l: 0.1
+    @if SubStyle == Bike
+        @color_cycleway_dashes: #5765d0; // l: 0.1
+        @color_track_dashes: #474E85;
     @endif
+    @color_path_dashes: @color_track_dashes;
     @color_motorway_casing: @color_small_road_casing;
     @color_motorway: @color_small_road;
     @color_trunk_casing: @color_small_road_casing;

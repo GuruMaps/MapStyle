@@ -455,13 +455,13 @@ node,area {
     |z15-[amenity=hunting_stand] {
         icon-image: "poi_hunting_stand.svg";
         icon-tint: @color_hunting_stand;
-        details-enabled: 0;
+        details-enabled: false;
     }
 
     |z16-[man_made=water_tower] {
         icon-image: "poi_water_tower.svg";
         icon-tint: @color_hunting_stand;
-        details-enabled: 0;
+        details-enabled: false;
     }
 
     @if AllShops
@@ -771,11 +771,13 @@ node,area {
             }
         }
 
-        node|z18-{
-            [artwork_type=fountain], [amenity=fountain] {
+        area|z17-,
+        node|z18- {
+            [artwork_type=fountain], 
+            [amenity=fountain] {
                 icon-image:"poi_fountain.svg";
                 icon-tint: @color_icon_fountain;
-                details-enabled: 0;
+                details-enabled: false;
             }
         }
 
@@ -938,7 +940,7 @@ node,area {
             [amenity=parking] {
                 icon-image:"poi_parking.svg";
                 icon-tint: @color_icon_transport;
-                details-enabled: 0;
+                details-enabled: false;
                 text-priority: -3;
                 |z18-{
                     text: eval(locTag('name'));
@@ -1036,7 +1038,7 @@ node,area {
         |z17-[leisure=playground] {
             icon-image:"poi_playground.svg";
             icon-tint: @color_icon_tint;
-            details-enabled: 0;
+            details-enabled: false;
             text-priority: -1; // под kindergarten
         }
     @endif
@@ -1312,12 +1314,12 @@ node,area {
         [natural=rock] {
             icon-image: "poi_rock.svg";
             icon-tint: @color_icon_transport;
-            details-enabled: 0;
+            details-enabled: false;
         }
         [natural=stone] {
             icon-image: "poi_stone.svg";
             icon-tint: @color_icon_transport;
-            details-enabled: 0;
+            details-enabled: false;
         }
         
         [man_made=tower] {
@@ -1373,7 +1375,7 @@ node,area {
     node|z14-[power=tower] {
         icon-image: "poi_power_node.svg";
         icon-tint: @color_power_line;
-        details-enabled: 0;
+        details-enabled: false;
 
         |z16- {
             icon-scale: 1.5;
@@ -1388,7 +1390,7 @@ node,area {
     node|z15-[power=node] {
         icon-image: "poi_power_node.svg";
         icon-tint: @color_power_line;
-        details-enabled: 0;
+        details-enabled: false;
     }
 
     @if SubStyle != Car
@@ -1396,14 +1398,14 @@ node,area {
             icon-image: "poi_tree.svg";
             icon-tint: @color_icon_offices;
             text-priority: -10;
-            details-enabled: 0;
+            details-enabled: false;
         }
 
         node|z18-[amenity=bench] {
             icon-image:"poi_bench.svg";
             icon-tint: @color_icon_tint;
             text-priority: -9;
-            details-enabled: 0;
+            details-enabled: false;
         }
 
         area|z17-[landuse=cemetery],
@@ -1484,7 +1486,7 @@ node,area {
             icon-image:"poi_circle_small.svg";
             icon-tint:eval(any(colorTransform(tag('colour')), @color_icon_transport));
 
-            details-enabled: 0;
+            details-enabled: false;
             text-priority: 5; // выше чем у названий дорог
         }
     @endif
@@ -1524,7 +1526,7 @@ node,area {
             icon-image:"poi_barrier.svg";
             icon-scale: 0.75;
             icon-tint: @color_icon_tint;
-            details-enabled: 0;
+            details-enabled: false;
             text-priority: -1;
 
             [barrier=gate] {
@@ -1643,5 +1645,13 @@ node,area {
             font-stroke-color: @color_label_stroke;
             text-priority: -1;
         }
+    }
+
+    // objects with a name or wikipedia page can be opened
+    [name],
+    [phone],
+    [website],
+    [wikipedia] {
+        details-enabled: true;
     }
 }
