@@ -184,6 +184,19 @@ relation[type=route] {
         }
     }
 @endif
+
+@if SubStyle != Car
+    relation[route=subway] {
+        // Draw metro lines with their relation colour when available.
+        line|z11- {
+            layer: 6;
+            width: 2pt;
+            color: eval(any(colorTransform(relationTag('colour')), blue));
+            linecap: round;
+        }
+    }
+@endif
+
 }
 @endif
 

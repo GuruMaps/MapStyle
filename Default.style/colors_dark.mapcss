@@ -46,7 +46,7 @@
 @color_grass: #344517;
 @color_quarry: #3C3A3A;
 @color_hospital: #222202;
-@color_private: #510807;
+@color_private: #6E0708;
 @color_tunnel: #2E2E2E;
 @color_national_park: #557433;
 @color_power_line: #727272;

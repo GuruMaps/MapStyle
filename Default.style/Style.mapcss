@@ -3,34 +3,42 @@
 
 @if Theme == Dark
     @import "colors_dark.mapcss";
-    @image_noData: "noData_dark.png";
-    @image_forbidden_area: "forbidden_area_dark.png";
-    @image_wood: "wood_dark.png";
-    @image_garden: "garden_dark.png";
-    @image_scrub: "scrub_dark.png";
-    @image_vineyard: "vineyard_dark.png";
-    @image_orchard: "orchard_dark.png";
-    @image_plant_nursery: "plant_nursery_dark.png";
-    @image_allotments: "allotments_dark.png";
-    @image_quarry: "quarry_dark.png";
-    @image_dog_park: "dog_park_dark.png";
+    @image_noData: "noData_dark.svg";
+    @image_forbidden_area: "forbidden_area_dark.svg";
+    @image_wood: "wood_dark.svg";
+    @image_wood_broadleaved: "wood_broadleaved_dark.svg";
+    @image_wood_needleleaved: "wood_needleleaved_dark.svg";
+    @image_wood_mixed: "wood_mixed_dark.svg";
+    @image_wood_leafless: "wood_leafless_dark.svg";
+    @image_garden: "garden_dark.svg";
+    @image_scrub: "scrub_dark.svg";
+    @image_vineyard: "vineyard_dark.svg";
+    @image_orchard: "orchard_dark.svg";
+    @image_plant_nursery: "plant_nursery_dark.svg";
+    @image_allotments: "allotments_dark.svg";
+    @image_quarry: "quarry_dark.svg";
+    @image_dog_park: "dog_park_dark.svg";
     @intermittent_water: "intermittent_water_dark.svg";
 @else // Default colors
     @import "colors.mapcss";
-    @image_noData: "noData.png";
-    @image_forbidden_area: "forbidden_area.png";
-    @image_wood: "wood.png";
-    @image_garden: "garden.png";
-    @image_scrub: "scrub.png";
-    @image_vineyard: "vineyard.png";
-    @image_orchard: "orchard.png";
-    @image_plant_nursery: "plant_nursery.png";
-    @image_allotments: "allotments.png";
-    @image_quarry: "quarry.png";
-    @image_dog_park: "dog_park.png";
+    @image_noData: "noData.svg";
+    @image_forbidden_area: "forbidden_area.svg";
+    @image_wood: "wood.svg";
+    @image_wood_broadleaved: "wood_broadleaved.svg";
+    @image_wood_needleleaved: "wood_needleleaved.svg";
+    @image_wood_mixed: "wood_mixed.svg";
+    @image_wood_leafless: "wood_leafless.svg";
+    @image_garden: "garden.svg";
+    @image_scrub: "scrub.svg";
+    @image_vineyard: "vineyard.svg";
+    @image_orchard: "orchard.svg";
+    @image_plant_nursery: "plant_nursery.svg";
+    @image_allotments: "allotments.svg";
+    @image_quarry: "quarry.svg";
+    @image_dog_park: "dog_park.svg";
     @intermittent_water: "intermittent_water.svg";
 @endif
-@image_wetland: "wetland.png";
+@image_wetland: "wetland.svg";
 
 // canvas color
 canvas

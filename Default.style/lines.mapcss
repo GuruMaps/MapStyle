@@ -248,7 +248,7 @@ line {
         // pedestrian
             [highway=pedestrian] {
                 //                       14   15   16   17
-                width: eval( zlinear(14, 2pt, 3pt, 3pt, 4pt ) );
+                width: eval( zlinear(14, 2pt, 3pt, 3pt, max(4pt, 3m) ) );
                 color: @color_pedestrian_casing;
                 |z16- {
                     color: @color_pedestrian;
@@ -378,12 +378,12 @@ line {
             [highway=path] {
                 dashes-color: @color_path_dashes;
             }
-            // если великам по тропинке нельзя - красим в цвет track-a
-            [highway=path][bicycle=no] {
-                dashes-color: @color_track_dashes;
-            }
             // пунктир для дорог, где есть выделенная вело-полоса.
             @if SubStyle == Bike
+                // если великам по тропинке нельзя - красим в цвет track-a
+                [highway=path][bicycle=no] {
+                    dashes-color: @color_track_dashes;
+                }
                 [highway] {
                     [bicycle=designated],
                     [bicycle=yes],
@@ -494,10 +494,17 @@ line {
     @if SubStyle == Hike
         [access=private],
         [foot=no]
-    @else // SubStyle == Bike
+    @elif SubStyle == Bike
         [access=private],
         [bicycle=no],
         [vehicle=no]
+    @elif SubStyle == Car
+        [access=private],
+        [motor_vehicle=no],
+        [motorcar=no],
+        [vehicle=no]
+    @else
+        [access=private]
     @endif
 @else
         [access=private],
@@ -544,7 +551,7 @@ line {
             |z15- {
                 //                       17   18
                 width: eval( zlinear(17, 4pt, 6pt) );
-                fill-image: "railway.png";
+                fill-image: "railway.svg";
                 dashes-width: none;
                 galileo-stencil-type: none;
             }
@@ -762,6 +769,7 @@ line {
     @if SubStyle != Car
         [highway=footway],
         [highway=path],
+        [highway=pedestrian],
         [highway=cycleway],
         [highway=bridleway],
         [highway=steps] {

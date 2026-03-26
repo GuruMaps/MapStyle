@@ -25,6 +25,13 @@ line {
 // Below we use construction like [natural=wetland][wetland] 
 // to keep wetland tag value, while it's unused in Default.style. Same for other tag pairs.
 area {
+    |z5-8{
+        [boundary=administrative]{
+            [ISO3166-1:alpha2] {
+                fill-color: green;
+            }
+        }
+    }
     |z9-{
         [natural=wetland][wetland],
         [water][salt] {
