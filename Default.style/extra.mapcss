@@ -51,6 +51,11 @@ area {
 
 // To keep this text in 9th zoom level tiles
 node {
+    |z9-[highway=motorway_junction] {
+        text: eval(tag('ref'));
+        text-color: red;
+    }
+
     |z11-(
         [natural=peak],
         [natural=saddle],

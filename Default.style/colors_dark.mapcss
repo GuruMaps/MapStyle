@@ -12,7 +12,7 @@
 @color_nature_reserve: #45642330;
 @color_building_planned: #382B1D;
 @color_building: #5B4935;
-@color_landuse_residential: #39332D;
+@color_landuse_residential: #2F3032;
 @color_building_stroke: #826B4B;
 @color_landuse_commercial: #22160F;
 @color_landuse_cemetery: #31342A;
@@ -136,28 +136,27 @@
     @color_primary: @color_small_road;
     @color_secondary_casing: @color_small_road_casing;
     @color_secondary: @color_small_road;
-    @color_tertiary_casing: @color_small_road_casing;
     @color_tertiary: @color_small_road;
     @color_pedestrian: #323232;
     @color_pedestrian_casing: #545454;
 @else
-    @color_footway_dashes: #8C5A55;
+    @color_footway_dashes: #94615A;
     @color_path_dashes: @color_footway_dashes;
     @color_motorway_casing: #D85615;
     @color_motorway: #CB4400;
     @color_trunk_casing: #C65816;
     @color_trunk: #BA4600;
-    @color_primary_casing: #B55A16;
-    @color_primary: #A94800;
-    @color_secondary_casing: #A35D17;
-    @color_secondary: #984C00;
-    @color_tertiary_casing: #916118;
-    @color_tertiary: #875100;
+    @color_primary_casing: #D88115;
+    @color_primary: #CB7100;
+    @color_secondary_casing: #C69A16;
+    @color_secondary: #BA8C00;
+    @color_tertiary: @color_small_road;
     @color_pedestrian: @color_small_road;
 @endif
 
 @color_railway: #1E4810;
 @color_railway_dashes: #7F7F7F;
+@color_railway_disused: #606060AA;
 
 @color_icon_ford: #2A98EF;
 @color_text_ford: #2A98EF;
