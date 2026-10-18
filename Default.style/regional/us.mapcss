@@ -1,0 +1,23 @@
+// United States. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=US] {
+    // Route markers as on US signs (MUTCD): Interstate red and blue, US Route a white shield, state routes a white circle,
+    // an ellipse for three digits. Way refs carry the network as a prefix (I 95, US 1, CA 1); the marker shows the number
+    // of the first one. Markers keep their shape (shield-fit), so they are not tinted.
+    |z9-[highway=motorway][ref],
+    |z11-([highway=trunk][ref], [highway=primary][ref]),
+    |z12-[highway=secondary][ref],
+    |z14-[highway=tertiary][ref] {
+        shield-fit: fixed;
+        shield-color: #00000000;
+        shield-text-color: #1E1E1E;
+        shield-text: eval(any(listItem(listItem(tag('ref'), 0), 1, ' '), listItem(tag('ref'), 0)));
+        shield-image: eval(cond(length(listItem(listItem(tag('ref'), 0), 1, ' ')) == 3, "shield_us_state_3.svg", "shield_us_state_2.svg"));
+        [ref^="US "] {
+            shield-image: eval(cond(length(listItem(listItem(tag('ref'), 0), 1, ' ')) == 3, "shield_us_route_3.svg", "shield_us_route_2.svg"));
+        }
+        [ref^="I "] {
+            shield-image: eval(cond(length(listItem(listItem(tag('ref'), 0), 1, ' ')) == 3, "shield_us_interstate_3.svg", "shield_us_interstate_2.svg"));
+            shield-text-color: #FFFFFF;
+        }
+    }
+}

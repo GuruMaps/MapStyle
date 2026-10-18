@@ -19,10 +19,13 @@ relation[type=route] {
     }
 }
 
+// Waymarked colour of a route relation: the way colour of osmc:symbol, else colour
+@route_colour: any(listItem(relationTag('osmc:symbol'), 0, ":"), relationTag('colour'));
+// Width of one route band from z13; neighbouring bands touch
+@route_band_width: zlinear(13, 5pt,7pt,9pt,11pt);
+
 @if Style == Outdoor
 relation[type=route] {
-//    outline-width: 5pt;
-//    outline-color: pink;
 
 @if SubStyle == Hike
     relation[route=hiking],
@@ -48,59 +51,27 @@ relation[type=route] {
                 z-index: 3;
                 details-enabled: true;
             }
-            
-            relation[colour=yellow] {
-                color: #FFB233;
-            }
-            relation[colour=green] {
-                color: #228B22;
-            }
-            relation[colour=black] {
-                color: #3F5F5F;
-            }
-            relation[colour=brown] {
-                color: #8B4513;
-            }
-            relation[colour=blue] {
-                color: #2050FF;
-            }
-            relation[colour=red] {
-                color: #df0000;
+            relation[colour] {
+                color: eval(mapColor(@route_palette, relationTag('colour'), @color_icon_transport));
             }
         }
-        line|z13-16 {
-            outline-width: eval( zlinear(13, 5pt,7pt,9pt,11pt ));
-            outline-color: #00000000; // if there is no valid network tag, outline is sensless
-            relation[network=lwn] {
-                outline-color: #0000ff50;
-                details-enabled: true;
-            }
+        // Routes sharing a way run side by side in translucent outlines of their waymarked colours, so the way and its dashes stay visible;
+        // the network colour stands in for unmarked ones and unreadable colours
+        line|z13- {
+            per-relation: true;
+            outline-width: eval(@route_band_width);
+            offset: eval(relationSlot() * @route_band_width);
+            outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "blue"), mapColor(@route_band_palette, "blue")));
+            z-index: 1;
+            details-enabled: true;
             relation[network=rwn] {
-                outline-color: #ab28ff50;
-                details-enabled: true;
+                outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "purple"), mapColor(@route_band_palette, "purple")));
+                z-index: 2;
             }
             relation[network=iwn],
             relation[network=nwn] {
-                outline-color: #df000050;
-                details-enabled: true;
-            }
-            relation[colour=yellow] {
-                outline-color: #FFB233A0;
-            }
-            relation[colour=green] {
-                outline-color: #228B2280;
-            }
-            relation[colour=black] {
-                outline-color: #3F5F5F90;
-            }
-            relation[colour=brown] {
-                outline-color: #8B451390;
-            }
-            relation[colour=blue] {
-                outline-color: #2050FF60;
-            }
-            relation[colour=red] {
-                outline-color: #df000050;
+                outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "red"), mapColor(@route_band_palette, "red")));
+                z-index: 3;
             }
         }
     }
@@ -128,58 +99,27 @@ relation[type=route] {
                 z-index: 3;
                 details-enabled: true;
             }
-            relation[colour=yellow] {
-                color: #FFB233;
-            }
-            relation[colour=green] {
-                color: #228B22;
-            }
-            relation[colour=black] {
-                color: #3F5F5F;
-            }
-            relation[colour=brown] {
-                color: #8B4513;
-            }
-            relation[colour=blue] {
-                color: #2050FF;
-            }
-            relation[colour=red] {
-                color: #df0000;
+            relation[colour] {
+                color: eval(mapColor(@route_palette, relationTag('colour'), @color_icon_transport));
             }
         }
-        line|z13-16 {
-            outline-width: eval( zlinear(13, 5pt,7pt,9pt,11pt ));
-            outline-color: #00000000; // if there is no valid network tag, outline is sensless
-            relation[network=lcn] {
-                outline-color: #0000ff50;
-                details-enabled: true;
-            }
+        // Routes sharing a way run side by side in translucent outlines of their colours, so the way and its dashes stay visible;
+        // the network colour stands in for routes without a readable one
+        line|z13- {
+            per-relation: true;
+            outline-width: eval(@route_band_width);
+            offset: eval(relationSlot() * @route_band_width);
+            outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "blue"), mapColor(@route_band_palette, "blue")));
+            z-index: 1;
+            details-enabled: true;
             relation[network=rcn] {
-                outline-color: #ab28ff50;
-                details-enabled: true;
+                outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "purple"), mapColor(@route_band_palette, "purple")));
+                z-index: 2;
             }
             relation[network=icn],
             relation[network=ncn] {
-                outline-color: #df000050;
-                details-enabled: true;
-            }
-            relation[colour=yellow] {
-                outline-color: #FFB233A0;
-            }
-            relation[colour=green] {
-                outline-color: #228B2280;
-            }
-            relation[colour=black] {
-                outline-color: #3F5F5F90;
-            }
-            relation[colour=brown] {
-                outline-color: #8B451390;
-            }
-            relation[colour=blue] {
-                outline-color: #2050FF60;
-            }
-            relation[colour=red] {
-                outline-color: #df000050;
+                outline-color: eval(mapColor(@route_band_palette, any(@route_colour, "red"), mapColor(@route_band_palette, "red")));
+                z-index: 3;
             }
         }
     }
@@ -187,11 +127,13 @@ relation[type=route] {
 
 @if SubStyle != Car
     relation[route=subway] {
-        // Draw metro lines with their relation colour when available.
+        // Metro lines side by side in palette colours, both directions of a line drawn once
         line|z11- {
+            per-relation: true;
             layer: 6;
-            width: 2pt;
-            color: eval(any(colorTransform(relationTag('colour')), blue));
+            width: eval( zlinear(11, 2pt,2pt,2.5pt,3pt,3.5pt ));
+            offset: eval(relationSlot() * zlinear(11, 1.5pt,1.5pt,2pt,2.5pt,3pt ));
+            color: eval(mapColor(@route_palette, relationTag('colour'), @color_icon_transport));
             linecap: round;
         }
     }

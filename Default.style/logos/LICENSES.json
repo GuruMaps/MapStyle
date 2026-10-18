@@ -1,0 +1,51 @@
+{
+    "metro_kyiv.svg": {
+        "network:wikidata": "Q215871",
+        "name": "Kyiv Metro",
+        "source": "https://commons.wikimedia.org/wiki/File:Kyiv_Metro_logo_2015.svg",
+        "license": "PD-textlogo",
+        "attribution": "Kyiv Metro logo by Agents of Change (2015)",
+        "changes": "on a white disc for the map"
+    },
+    "metro_minsk.svg": {
+        "network:wikidata": "Q232164",
+        "map:country": "BY",
+        "name": "Minsk Metro",
+        "source": "https://commons.wikimedia.org/wiki/File:Minsk_metro_logo.svg",
+        "license": "PD-textlogo",
+        "attribution": "Minsk Metro logo",
+        "changes": "simplified for small sizes"
+    },
+    "metro_praha.svg": {
+        "network:wikidata": "Q190271",
+        "name": "Prague Metro",
+        "source": "https://commons.wikimedia.org/wiki/File:Metro_Prague_logo.svg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Prague Metro symbol © ROPID",
+        "attribution_url": "https://pid.cz/metro/",
+        "changes": "rounded corners and a white border for the map"
+    },
+    "metro_praha_line.svg": {
+        "network:wikidata": "Q190271",
+        "name": "Prague Metro",
+        "source": "https://commons.wikimedia.org/wiki/File:Metro_Prague_logo.svg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Prague Metro symbol © ROPID",
+        "attribution_url": "https://pid.cz/metro/",
+        "changes": "a black symbol on the line colour, as on the Legible Prague signs"
+    },
+    "metro_ubahn.svg": {
+        "map:country": ["DE", "AT"],
+        "name": "U-Bahn",
+        "license": "own"
+    },
+    "metro_warszawa.svg": {
+        "network:wikidata": "Q11777882",
+        "name": "Warsaw Metro",
+        "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Metro_logo.svg",
+        "license": "PD-textlogo",
+        "attribution": "Warsaw Metro logo by Witold Popiel (1983)"
+    }
+}

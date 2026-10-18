@@ -1,8 +1,9 @@
 [
   // объекты по географической важности
   {
+    "id": "state",
     "names": {
-      "ar": ["دولة"],
+      "ar": ["ولاية"],
       "be": ["вобласць"],
       "cs": ["stát"],
       "de": ["bundesland"],
@@ -30,6 +31,7 @@
     "index": false
   },
   {
+    "id": "city",
     "names": {
       "ar": ["مدينة"],
       "be": ["горад"],
@@ -60,25 +62,26 @@
     "index": false
   },
   {
+    "id": "town",
     "names": {
       "ar": ["بلدة"],
-      "be": ["горад"],
+      "be": ["мястэчка"],
       "cs": ["městys"],
       "de": ["Kleinstadt"],
       "en": ["town"],
-      "es": ["pueblo"],
-      "fi": ["kaupunki"],
-      "fr": ["ville"],
+      "es": ["pequeña ciudad"],
+      "fi": ["pikkukaupunki"],
+      "fr": ["petite ville"],
       "hu": ["kisváros"],
-      "it": ["paese"],
+      "it": ["cittadina"],
       "ja": ["町"],
-      "ko": ["마을"],
-      "nl": ["dorp"],
+      "ko": ["소도시"],
+      "nl": ["kleine stad"],
       "pl": ["miasteczko"],
       "pt-BR": ["cidade pequena"],
       "pt-PT": ["cidade pequena"],
-      "ru": ["город"],
-      "th": ["เมือง"],
+      "ru": ["малый город"],
+      "th": ["เมืองเล็ก"],
       "uk": ["містечко"],
       "zh": ["镇"]
     },
@@ -90,6 +93,7 @@
     "index": false
   },
   {
+    "id": "village",
     "names": {
       "ar": ["قرية"],
       "be": ["пасёлак"],
@@ -120,14 +124,15 @@
     "index": false
   },
   {
+    "id": "hamlet",
     "names": {
       "ar": ["قرية صغيرة"],
       "be": ["вёска"],
-      "cs": ["osada"],
+      "cs": ["malá osada"],
       "de": ["Weiler"],
       "en": ["hamlet"],
       "es": ["aldea"],
-      "fi": ["kylä"],
+      "fi": ["pieni kylä"],
       "fr": ["hameau"],
       "hu": ["tanya"],
       "it": ["borgo"],
@@ -135,8 +140,8 @@
       "ko": ["작은 마을"],
       "nl": ["gehucht"],
       "pl": ["przysiółek"],
-      "pt-BR": ["aldeia"],
-      "pt-PT": ["aldeia"],
+      "pt-BR": ["pequeno povoado"],
+      "pt-PT": ["pequena aldeia"],
       "ru": ["деревня"],
       "th": ["หมู่บ้านเล็ก"],
       "uk": ["селище"],
@@ -150,6 +155,7 @@
     "index": false
   },
   {
+    "id": "isolated_dwelling",
     "names": {
       "ar": ["مستوطنة"],
       "be": ["паселішча"],
@@ -158,10 +164,10 @@
       "en": ["settlement"],
       "es": ["asentamiento"],
       "fi": ["asutus"],
-      "fr": ["hameau", "petit village"],
+      "fr": ["habitation isolée", "petit village"],
       "hu": ["település"],
       "it": ["insediamento"],
-      "ja": ["集落"],
+      "ja": ["孤立した住居"],
       "ko": ["취락"],
       "nl": ["nederzetting"],
       "pl": ["osada"],
@@ -178,6 +184,7 @@
     "index": false
   },
   {
+    "id": "suburb",
     "names": {
       "ar": ["ضاحية"],
       "be": ["прадмесце"],
@@ -208,6 +215,7 @@
     "index": false
   },
   {
+    "id": "quarter",
     "names": {
       "ar": ["حي", "منطقة"],
       "be": ["квартал"],
@@ -237,6 +245,7 @@
     "index": false
   },
   {
+    "id": "country",
     "names": {
       "ar": ["دولة"],
       "be": ["краіна"],
@@ -268,8 +277,10 @@
   },
   // категории которые показываем в меню быстрого поиска
   {
+    "id": "food",
     "items": [
       {
+        "id": "restaurant",
         "names": {
           "ar": ["مطعم"],
           "be": ["рэстаран"],
@@ -296,6 +307,7 @@
         "icon": "icon_restaurant"
       },
       {
+        "id": "cafe",
         "names": {
           "ar": ["مقهى"],
           "be": ["кафэ"],
@@ -322,6 +334,7 @@
         "icon": "icon_cafe"
       },
       {
+        "id": "fast_food",
         "names": {
           "ar": ["وجبات سريعة"],
           "be": ["фастфуд"],
@@ -375,8 +388,10 @@
   },
   // ----------
   {
+    "id": "bars_and_pubs",
     "items": [
       {
+        "id": "bar",
         "names": {
           "ar": ["بار"],
           "be": ["бар"],
@@ -405,8 +420,9 @@
         "icon": "icon_bar"
       },
       {
+        "id": "pub",
         "names": {
-          "ar": ["بار", "بيرة"],
+          "ar": ["حانة", "بيرة"],
           "be": ["паб", "піва"],
           "cs": ["hospoda"],
           "de": ["Pub", "Bier"],
@@ -429,8 +445,7 @@
         },
         "kv": {
           "amenity": ["pub"]
-        },
-        "icon": "icon_pub"
+        }
       }
     ],
     "names": {
@@ -460,8 +475,10 @@
   },
   // ----------
   {
+    "id": "accommodation",
     "items": [
       {
+        "id": "hotel",
         "names": {
           "ar": ["فندق"],
           "be": ["атэль"],
@@ -487,10 +504,10 @@
         "kv": {
           "amenity": ["hotel"],
           "tourism": ["hotel"]
-        },
-        "icon": "icon_hotel"
+        }
       },
       {
+        "id": "motel",
         "names": {
           "ar": ["موتيل"],
           "be": ["матэль"],
@@ -515,10 +532,10 @@
         },
         "kv": {
           "tourism": ["motel"]
-        },
-        "icon": "icon_hotel"
+        }
       },
       {
+        "id": "hostel",
         "names": {
           "ar": ["نزل شباب"],
           "be": ["хостэл"],
@@ -543,36 +560,7 @@
         },
         "kv": {
           "tourism": ["hostel"]
-        },
-        "icon": "icon_hotel"
-      },
-      {
-        "names": {
-          "ar": ["موقع التخييم"],
-          "be": ["кемпінг"],
-          "cs": ["tábořiště"],
-          "de": ["Campingplatz"],
-          "en": ["camp site"],
-          "es": ["camping", "zona de acampada", "acampada"],
-          "fi": ["leirintäalue"],
-          "fr": ["camping"],
-          "hu": ["kemping"],
-          "it": ["campeggio"],
-          "ja": ["キャンプ場"],
-          "ko": ["캠프장"],
-          "nl": ["camping"],
-          "pl": ["kemping"],
-          "pt-BR": ["camping"],
-          "pt-PT": ["camping"],
-          "ru": ["кемпинг"],
-          "th": ["เขตที่ตั้งค่าย", "ที่ตั้งค่าย"],
-          "uk": ["кемпінг"],
-          "zh": ["露营地", "宿营地"]
-        },
-        "kv": {
-          "tourism": ["camp_site", "caravan_site"]
-        },
-        "icon": "icon_camping"
+        }
       }
     ],
     "names": {
@@ -605,8 +593,10 @@
   },
   // ----------
   {
+    "id": "sport",
     "items": [
       {
+        "id": "swimming_pool",
         "names": {
           "ar": ["حمام سباحة"],
           "be": ["басейн"],
@@ -636,8 +626,9 @@
         "icon": "icon_pool"
       },
       {
+        "id": "stadium",
         "names": {
-          "ar": ["ملعب"],
+          "ar": ["استاد"],
           "be": ["стадыён"],
           "cs": ["stadión"],
           "de": ["Stadion"],
@@ -664,8 +655,9 @@
         "icon": "icon_sport"
       },
       {
+        "id": "pitch",
         "names": {
-          "ar": ["ملعب", "ساحة اللعب"],
+          "ar": ["ساحة اللعب"],
           "be": ["спортпляцоўка"],
           "cs": ["hřiště"],
           "de": ["Sportplatz"],
@@ -684,7 +676,7 @@
           "ru": ["спортплощадка"],
           "th": ["สนาม"],
           "uk": ["спортивне поле"],
-          "zh": ["运动场", "体育场"]
+          "zh": ["运动场"]
         },
         "kv": {
           "leisure": ["pitch"]
@@ -692,6 +684,7 @@
         "icon": "icon_sport"
       },
       {
+        "id": "sports_centre",
         "names": {
           "ar": ["مركز رياضي"],
           "be": ["спартыўны цэнтр"],
@@ -719,6 +712,7 @@
         }
       },
       {
+        "id": "golf_course",
         "names": {
           "ar": ["ملعب الغولف"],
           "be": ["поле для гольфа"],
@@ -777,8 +771,10 @@
   },
   // ----------
   {
+    "id": "entertainment",
     "items": [
       {
+        "id": "theatre",
         "names": {
           "ar": ["مسرح"],
           "be": ["тэатр"],
@@ -807,6 +803,7 @@
         "icon": "icon_theater"
       },
       {
+        "id": "cinema",
         "names": {
           "ar": ["سينما"],
           "be": ["кінатэатр"],
@@ -835,6 +832,7 @@
         "icon": "icon_cinema"
       },
       {
+        "id": "nightclub",
         "names": {
           "ar": ["نادي ليلي"],
           "be": ["начны клуб"],
@@ -863,6 +861,7 @@
         "icon": "icon_disco"
       },
       {
+        "id": "museum",
         "names": {
           "ar": ["متحف"],
           "be": ["музей"],
@@ -891,6 +890,7 @@
         "icon": "icon_museum"
       },
       {
+        "id": "zoo",
         "names": {
           "ar": ["حديقة الحيوان"],
           "be": ["заапарк"],
@@ -946,8 +946,10 @@
   },
   // ----------
   {
+    "id": "sight",
     "items": [
       {
+        "id": "memorial",
         "names": {
           "ar": ["نصب تذكاري"],
           "be": ["мемарыял"],
@@ -955,14 +957,14 @@
           "de": ["Denkmal"],
           "en": ["memorial"],
           "es": ["memorial"],
-          "fi": ["muistomerkki"],
+          "fi": ["muistopaikka"],
           "fr": ["mémorial"],
-          "hu": ["emlékmű"],
+          "hu": ["emlékhely"],
           "it": ["memoriale"],
-          "ja": ["記念碑"],
+          "ja": ["追悼施設"],
           "ko": ["기념물"],
           "nl": ["gedenkteken"],
-          "pl": ["pomnik"],
+          "pl": ["miejsce pamięci"],
           "pt-BR": ["memorial"],
           "pt-PT": ["memorial"],
           "ru": ["мемориал"],
@@ -975,6 +977,7 @@
         }
       },
       {
+        "id": "monument",
         "names": {
           "ar": ["معلم أثري"],
           "be": ["помнік"],
@@ -1003,6 +1006,7 @@
         "icon": "icon_monument"
       },
       {
+        "id": "place_of_worship",
         "names": {
           "ar": ["مكان للعبادة"],
           "be": ["месца абадання"],
@@ -1031,16 +1035,17 @@
         "icon": "icon_worship"
       },
       {
+        "id": "sculpture",
         "names": {
           "ar": ["منحوتة"],
           "be": ["скульптура"],
-          "cs": ["socha"],
+          "cs": ["plastika"],
           "de": ["Skulptur"],
           "en": ["sculpture"],
           "es": ["escultura"],
           "fi": ["veistos"],
           "fr": ["sculpture"],
-          "hu": ["szobor"],
+          "hu": ["szobrászati alkotás"],
           "it": ["scultura"],
           "ja": ["彫刻"],
           "ko": ["조각"],
@@ -1058,6 +1063,7 @@
         }
       },
       {
+        "id": "statue",
         "names": {
           "ar": ["تمثال"],
           "be": ["статуя"],
@@ -1086,6 +1092,7 @@
         "icon": "icon_statue"
       },
       {
+        "id": "installation",
         "names": {
           "ar": ["تركيب فني"],
           "be": ["інсталяцыя"],
@@ -1113,6 +1120,7 @@
         }
       },
       {
+        "id": "viewpoint",
         "names": {
           "ar": ["نقطة مشاهدة"],
           "be": ["даследная пункт"],
@@ -1168,6 +1176,7 @@
   },
   // ----------
   {
+    "id": "toilets",
     "names": {
       "ar": ["حمام عام"],
       "be": ["туалет"],
@@ -1198,8 +1207,496 @@
   },
   // ----------
   {
+    "id": "tourism",
     "items": [
       {
+        "id": "camp_site",
+        "names": {
+          "ar": ["التخييم"],
+          "be": ["кэмпінг"],
+          "cs": ["kempování"],
+          "de": ["Camping"],
+          "en": ["camping"],
+          "es": ["camping"],
+          "fi": ["leirintäalue"],
+          "fr": ["camping"],
+          "hu": ["kempingezés"],
+          "it": ["campeggio"],
+          "ja": ["キャンプ"],
+          "ko": ["캠핑"],
+          "nl": ["kamperen"],
+          "pl": ["kemping"],
+          "pt-BR": ["acampamento"],
+          "pt-PT": ["acampamento"],
+          "ru": ["кемпинг"],
+          "th": ["การตั้งแคมป์"],
+          "uk": ["кемпінг"],
+          "zh": ["露营"]
+        },
+        "kv": {
+          "tourism": ["camp_site"]
+        },
+        "icon": "icon_camping"
+      },
+      {
+        "id": "caravan_site",
+        "names": {
+          "ar": ["موقع كرافان"],
+          "be": ["стаянка караванаў"],
+          "cs": ["karavanové stání"],
+          "de": ["Wohnmobilstellplatz"],
+          "en": ["caravan site"],
+          "es": ["sitio de caravanas"],
+          "fi": ["asuntovaunualue"],
+          "fr": ["aire de camping-car"],
+          "hu": ["lakókocsi hely"],
+          "it": ["area camper"],
+          "ja": ["キャラバンサイト"],
+          "ko": ["카라반 사이트"],
+          "nl": ["caravanplaats"],
+          "pl": ["pole karawaningowe"],
+          "pt-BR": ["parque de caravanas"],
+          "pt-PT": ["parque de caravanas"],
+          "ru": ["стоянка для караванов"],
+          "th": ["จุดจอดคาราวาน"],
+          "uk": ["стоянка караванів"],
+          "zh": ["房车营地"]
+        },
+        "kv": {
+          "tourism": ["caravan_site"]
+        },
+        "icon": "icon_caravan"
+      },
+      {
+        "id": "shelters_huts",
+        "items": [
+          {
+            "id": "shelter",
+            "names": {
+              "ar": ["مأوى"],
+              "be": ["прытулак"],
+              "cs": ["přístřešek"],
+              "de": ["Unterstand"],
+              "en": ["shelter"],
+              "es": ["refugio"],
+              "fi": ["suoja"],
+              "fr": ["abri"],
+              "hu": ["menedékhely"],
+              "it": ["riparo"],
+              "ja": ["シェルター"],
+              "ko": ["쉼터"],
+              "nl": ["schuilplaats"],
+              "pl": ["schronienie"],
+              "pt-BR": ["abrigo"],
+              "pt-PT": ["abrigo"],
+              "ru": ["укрытие"],
+              "th": ["ที่พักพิง"],
+              "uk": ["укриття"],
+              "zh": ["避难所"]
+            },
+            "kv": {
+              "amenity": ["shelter"]
+            },
+            "icon": "icon_shelter"
+          },
+          {
+            "id": "alpine_hut",
+            "names": {
+              "ar": ["كوخ جبلي"],
+              "be": ["альпійская хатка"],
+              "cs": ["horská chata"],
+              "de": ["Alpenhütte"],
+              "en": ["alpine hut"],
+              "es": ["refugio de montaña"],
+              "fi": ["alppimaja"],
+              "fr": ["refuge de montagne"],
+              "hu": ["hegyi menedékház"],
+              "it": ["rifugio alpino"],
+              "ja": ["山小屋"],
+              "ko": ["산악 오두막"],
+              "nl": ["berghut"],
+              "pl": ["schronisko górskie"],
+              "pt-BR": ["refúgio alpino"],
+              "pt-PT": ["abrigo de montanha"],
+              "ru": ["горная хижина"],
+              "th": ["กระท่อมบนภูเขา"],
+              "uk": ["альпійська хата"],
+              "zh": ["山间小屋"]
+            },
+            "kv": {
+              "tourism": ["alpine_hut"]
+            }
+          }
+        ],
+        "names": {
+          "ar": ["ملاجئ وأكواخ"],
+          "be": ["прытулкі і хаткі"],
+          "cs": ["přístřešky & chaty"],
+          "de": ["Unterstände & Hütten"],
+          "en": ["shelters & huts"],
+          "es": ["refugios & cabañas"],
+          "fi": ["suojat & majat"],
+          "fr": ["abris & cabanes"],
+          "hu": ["menedékhelyek & kunyhók"],
+          "it": ["ripari & bivacchi"],
+          "ja": ["シェルター＆小屋"],
+          "ko": ["쉼터 & 오두막"],
+          "nl": ["schuilplaatsen & hutten"],
+          "pl": ["schronienia & chaty"],
+          "pt-BR": ["abrigos & cabanas"],
+          "pt-PT": ["abrigos & cabanas"],
+          "ru": ["укрытия & хижины"],
+          "th": ["ที่พักพิงและกระท่อม"],
+          "uk": ["укриття & хати"],
+          "zh": ["避难所与小屋"]
+        },
+        "icon": "icon_shelter"
+      },
+      {
+        "id": "water_supply",
+        "items": [
+          {
+            "id": "drinking_water",
+            "names": {
+              "ar": ["نقطة مياه شرب"],
+              "be": ["крыніца пітной вады"],
+              "cs": ["pítko"],
+              "de": ["Trinkwasserbrunnen"],
+              "en": ["drinking fountain"],
+              "es": ["fuente de agua potable"],
+              "fi": ["juomapiste"],
+              "fr": ["fontaine d'eau potable"],
+              "hu": ["ivókút"],
+              "it": ["fontanella"],
+              "ja": ["水飲み場"],
+              "ko": ["식수대"],
+              "nl": ["drinkfontein"],
+              "pl": ["poidełko"],
+              "pt-BR": ["fonte de água potável"],
+              "pt-PT": ["fonte de água potável"],
+              "ru": ["питьевой фонтан"],
+              "th": ["น้ำพุดื่มได้"],
+              "uk": ["питний фонтан"],
+              "zh": ["饮水喷泉"]
+            },
+            "kv": {
+              "amenity": ["drinking_water"]
+            }
+          },
+          {
+            "id": "water_point",
+            "names": {
+              "ar": ["نقطة مياه"],
+              "be": ["кропка водазабеспячэння"],
+              "cs": ["vodní bod"],
+              "de": ["Wasserstelle"],
+              "en": ["water point"],
+              "es": ["punto de agua"],
+              "fi": ["vesipiste"],
+              "fr": ["point d'eau"],
+              "hu": ["vízvételi hely"],
+              "it": ["punto d'acqua"],
+              "ja": ["給水所"],
+              "ko": ["급수대"],
+              "nl": ["watertappunt"],
+              "pl": ["punkt poboru wody"],
+              "pt-BR": ["ponto de água"],
+              "pt-PT": ["ponto de água"],
+              "ru": ["водозабор"],
+              "th": ["จุดน้ำ"],
+              "uk": ["водна точка"],
+              "zh": ["供水点"]
+            },
+            "kv": {
+              "amenity": ["water_point"]
+            }
+          },
+          {
+            "id": "water_well",
+            "names": {
+              "ar": ["بئر ماء"],
+              "be": ["водны калодзеж"],
+              "cs": ["studna"],
+              "de": ["Wasserbrunnen"],
+              "en": ["water well"],
+              "es": ["pozo de agua"],
+              "fi": ["kaivo"],
+              "fr": ["puits"],
+              "hu": ["vízkút"],
+              "it": ["pozzo"],
+              "ja": ["井戸"],
+              "ko": ["우물"],
+              "nl": ["waterput"],
+              "pl": ["studnia"],
+              "pt-BR": ["poço de água"],
+              "pt-PT": ["poço de água"],
+              "ru": ["колодец"],
+              "th": ["บ่อน้ำ"],
+              "uk": ["криниця"],
+              "zh": ["水井"]
+            },
+            "kv": {
+              "man_made": ["water_well"]
+            }
+          },
+          {
+            "id": "water_tap",
+            "names": {
+              "ar": ["صنبور ماء"],
+              "be": ["вадаправодны кран"],
+              "cs": ["vodovodní kohoutek"],
+              "de": ["Wasserhahn"],
+              "en": ["water tap"],
+              "es": ["grifo de agua"],
+              "fi": ["vesihana"],
+              "fr": ["robinet d'eau"],
+              "hu": ["vízcsap"],
+              "it": ["rubinetto"],
+              "ja": ["水道栓"],
+              "ko": ["수도꼭지"],
+              "nl": ["waterkraan"],
+              "pl": ["kran z wodą"],
+              "pt-BR": ["torneira"],
+              "pt-PT": ["torneira"],
+              "ru": ["водопроводный кран"],
+              "th": ["ก๊อกน้ำ"],
+              "uk": ["водопровідний кран"],
+              "zh": ["水龙头"]
+            },
+            "kv": {
+              "man_made": ["water_tap"]
+            }
+          }
+        ],
+        "names": {
+          "ar": ["مياه الشرب"],
+          "be": ["вада"],
+          "cs": ["voda"],
+          "de": ["Trinkwasser"],
+          "en": ["drinking water"],
+          "es": ["agua potable"],
+          "fi": ["juomavesi"],
+          "fr": ["eau potable"],
+          "hu": ["víz"],
+          "it": ["acqua potabile"],
+          "ja": ["飲料水"],
+          "ko": ["식수"],
+          "nl": ["drinkwater"],
+          "pl": ["woda pitna"],
+          "pt-BR": ["água potável"],
+          "pt-PT": ["água potável"],
+          "ru": ["вода"],
+          "th": ["น้ำดื่ม"],
+          "uk": ["вода"],
+          "zh": ["饮用水"]
+        },
+        "icon": "icon_drinking_water"
+      },
+      {
+        "id": "picnic",
+        "items": [
+          {
+            "id": "picnic_site",
+            "names": {
+              "ar": ["موقع نزهة"],
+              "be": ["месца для пікніка"],
+              "cs": ["piknikové místo"],
+              "de": ["Picknickplatz"],
+              "en": ["picnic site"],
+              "es": ["área de picnic"],
+              "fi": ["piknikalue"],
+              "fr": ["aire de pique-nique"],
+              "hu": ["piknikhely"],
+              "it": ["area picnic"],
+              "ja": ["ピクニックサイト"],
+              "ko": ["피크닉 장소"],
+              "nl": ["picknickplaats"],
+              "pl": ["miejsce piknikowe"],
+              "pt-BR": ["área de piquenique"],
+              "pt-PT": ["área de piquenique"],
+              "ru": ["место для пикника"],
+              "th": ["สถานที่ปิกนิก"],
+              "uk": ["місце для пікніка"],
+              "zh": ["野餐地点"]
+            },
+            "kv": {
+              "tourism": ["picnic_site"]
+            },
+            "icon": "icon_picnic_table"
+          },
+          {
+            "id": "picnic_table",
+            "names": {
+              "ar": ["طاولة نزهة"],
+              "be": ["стол для пікніка"],
+              "cs": ["piknikový stůl"],
+              "de": ["Picknicktisch"],
+              "en": ["picnic table"],
+              "es": ["mesa de picnic"],
+              "fi": ["piknikpöytä"],
+              "fr": ["table de pique-nique"],
+              "hu": ["piknikasztal"],
+              "it": ["tavolo da picnic"],
+              "ja": ["ピクニックテーブル"],
+              "ko": ["피크닉 테이블"],
+              "nl": ["picknicktafel"],
+              "pl": ["stół piknikowy"],
+              "pt-BR": ["mesa de piquenique"],
+              "pt-PT": ["mesa de piquenique"],
+              "ru": ["пикниковый стол"],
+              "th": ["โต๊ะปิกนิก"],
+              "uk": ["пікніковий стіл"],
+              "zh": ["野餐桌"]
+            },
+            "kv": {
+              "leisure": ["picnic_table"]
+            },
+            "icon": "icon_picnic_table"
+          },
+          {
+            "id": "bbq",
+            "names": {
+              "ar": ["شواء"],
+              "be": ["барбекю"],
+              "cs": ["gril"],
+              "de": ["Grillplatz"],
+              "en": ["barbecue"],
+              "es": ["barbacoa"],
+              "fi": ["grilli"],
+              "fr": ["barbecue"],
+              "hu": ["grill"],
+              "it": ["barbecue"],
+              "ja": ["バーベキュー"],
+              "ko": ["바비큐"],
+              "nl": ["barbecue"],
+              "pl": ["grill"],
+              "pt-BR": ["churrasqueira"],
+              "pt-PT": ["churrasqueira"],
+              "ru": ["барбекю"],
+              "th": ["บาร์บีคิว"],
+              "uk": ["барбекю"],
+              "zh": ["烧烤"]
+            },
+            "kv": {
+              "amenity": ["bbq"]
+            },
+            "icon": "icon_BBQ"
+          },
+          {
+            "id": "firepit",
+            "names": {
+              "ar": ["موقد نار"],
+              "be": ["вогнішча"],
+              "cs": ["ohniště"],
+              "de": ["Feuerstelle"],
+              "en": ["firepit"],
+              "es": ["hoguera"],
+              "fi": ["nuotiopaikka"],
+              "fr": ["foyer"],
+              "hu": ["tűzrakóhely"],
+              "it": ["focolare"],
+              "ja": ["たき火場"],
+              "ko": ["화로"],
+              "nl": ["vuurplaats"],
+              "pl": ["miejsce na ognisko"],
+              "pt-BR": ["fogueira"],
+              "pt-PT": ["fogueira"],
+              "ru": ["кострище"],
+              "th": ["หลุมไฟ"],
+              "uk": ["вогнище"],
+              "zh": ["火坑"]
+            },
+            "kv": {
+              "amenity": ["firepit"]
+            },
+            "icon": "icon_firepit"
+          }
+        ],
+        "names": {
+          "ar": ["نزهة"],
+          "be": ["пікнік"],
+          "cs": ["piknik"],
+          "de": ["Picknick"],
+          "en": ["picnic"],
+          "es": ["picnic"],
+          "fi": ["piknik"],
+          "fr": ["pique-nique"],
+          "hu": ["piknik"],
+          "it": ["picnic"],
+          "ja": ["ピクニック"],
+          "ko": ["피크닉"],
+          "nl": ["picknick"],
+          "pl": ["piknik"],
+          "pt-BR": ["piquenique"],
+          "pt-PT": ["piquenique"],
+          "ru": ["пикник"],
+          "th": ["ปิกนิก"],
+          "uk": ["пікнік"],
+          "zh": ["野餐"]
+        },
+        "icon": "icon_firepit"
+      },
+      {
+        "id": "fishing",
+        "names": {
+          "ar": ["صيد السمك"],
+          "be": ["рыбалка"],
+          "cs": ["rybaření"],
+          "de": ["Angeln"],
+          "en": ["fishing"],
+          "es": ["pesca"],
+          "fi": ["kalastus"],
+          "fr": ["pêche"],
+          "hu": ["horgászat"],
+          "it": ["pesca"],
+          "ja": ["釣り"],
+          "ko": ["낚시"],
+          "nl": ["vissen"],
+          "pl": ["wędkarstwo"],
+          "pt-BR": ["pesca"],
+          "pt-PT": ["pesca"],
+          "ru": ["рыбалка"],
+          "th": ["ตกปลา"],
+          "uk": ["рибальство"],
+          "zh": ["钓鱼"]
+        },
+        "kv": {
+          "leisure": ["fishing"]
+        },
+        "icon": "icon_fishing"
+      }
+    ],
+    "names": {
+      "ar": ["سياحة"],
+      "be": ["турызм"],
+      "cs": ["turistika"],
+      "de": ["Tourismus"],
+      "en": ["tourism"],
+      "es": ["turismo"],
+      "fi": ["matkailu"],
+      "fr": ["tourisme"],
+      "hu": ["turizmus"],
+      "it": ["turismo"],
+      "ja": ["観光"],
+      "ko": ["관광"],
+      "nl": ["toerisme"],
+      "pl": ["turystyka"],
+      "pt-BR": ["turismo"],
+      "pt-PT": ["turismo"],
+      "ru": ["туризм"],
+      "th": ["การท่องเที่ยว"],
+      "uk": ["туризм"],
+      "zh": ["旅游"]
+    },
+    "icon": "icon_hiking",
+    "show": 1
+  },
+  // ----------
+  {
+    "id": "bank",
+    "items": [
+      {
+        "id": "atm",
         "names": {
           "ar": ["صراف آلي"],
           "be": ["банкамат"],
@@ -1228,6 +1725,7 @@
         "icon": "icon_ATM"
       },
       {
+        "id": "bureau_de_change",
         "names": {
           "ar": ["صرف العملات"],
           "be": ["абмен валюты"],
@@ -1255,6 +1753,7 @@
         }
       },
       {
+        "id": "bank_branch",
         "names": {
           "ar": ["فرع البنك"],
           "be": ["аддзяленне банка"],
@@ -1309,70 +1808,41 @@
   },
   // ----------
   {
-    "items": [
-      {
-        "names": {
-          "ar": ["سبا"],
-          "be": ["спа-цэнтр"],
-          "cs": ["lázně"],
-          "de": ["Spa"],
-          "en": ["spa"],
-          "es": ["spa"],
-          "fi": ["kylpylä"],
-          "fr": ["spa"],
-          "hu": ["gyógyfürdő"],
-          "it": ["spa"],
-          "ja": ["スパ"],
-          "ko": ["스파"],
-          "nl": ["spa"],
-          "pl": ["spa"],
-          "pt-BR": ["spa"],
-          "pt-PT": ["spa"],
-          "ru": ["спа-центр"],
-          "th": ["สปา"],
-          "uk": ["спа-центр"],
-          "zh": ["水療"]
-        },
-        "kv": {
-          "leisure": ["sauna"],
-          "amenity": ["sauna"],
-          "shop": ["massage"]
-        },
-        "icon": "icon_spa"
-      }
-    ],
+    "id": "post_office",
     "names": {
-      "ar": ["صالون التجميل"],
-      "be": ["салон прыгажосці"],
-      "cs": ["kosmetický salon"],
-      "de": ["Schönheitssalon"],
-      "en": ["beauty salon"],
-      "es": ["salón de belleza"],
-      "fi": ["kauneussalonki"],
-      "fr": ["salon de beauté"],
-      "hu": ["szépségszalon"],
-      "it": ["salone di bellezza"],
-      "ja": ["美容サロン"],
-      "ko": ["미용실"],
-      "nl": ["schoonheidssalon"],
-      "pl": ["salon kosmetyczny"],
-      "pt-BR": ["salão de beleza"],
-      "pt-PT": ["salão de beleza"],
-      "ru": ["салон красоты"],
-      "th": ["สล็อนความงาม"],
-      "uk": ["салон краси"],
-      "zh": ["美容院"]
+      "ar": ["مكتب بريد"],
+      "be": ["паштовае аддзяленне"],
+      "cs": ["pošta"],
+      "de": ["Postamt"],
+      "en": ["post office"],
+      "es": ["oficina de correos"],
+      "fi": ["postitoimisto"],
+      "fr": ["bureau de poste"],
+      "hu": ["posta"],
+      "it": ["ufficio postale"],
+      "ja": ["郵便局"],
+      "ko": ["우체국"],
+      "nl": ["postkantoor"],
+      "pl": ["urząd pocztowy"],
+      "pt-BR": ["agência dos correios"],
+      "pt-PT": ["estação de correios"],
+      "ru": ["почтовое отделение"],
+      "th": ["ที่ทำการไปรษณีย์"],
+      "uk": ["поштове відділення"],
+      "zh": ["邮局"]
     },
     "kv": {
-      "shop": ["hairdresser", "beauty"]
+      "amenity": ["post_office"]
     },
-    "icon": "icon_beauty_salon",
-    "show": 1
+    "icon": "icon_post_office",
+    "show": 0
   },
   // ----------
   {
+    "id": "shopping",
     "items": [
       {
+        "id": "supermarket",
         "names": {
           "ar": ["سوبرماركت"],
           "be": ["супермаркет"],
@@ -1401,6 +1871,7 @@
         "icon": "icon_supermarket"
       },
       {
+        "id": "clothes",
         "names": {
           "ar": ["ملابس"],
           "be": ["адзенне"],
@@ -1429,6 +1900,7 @@
         "icon": "icon_clothing_store"
       },
       {
+        "id": "jewelry",
         "names": {
           "ar": ["مجوهرات"],
           "be": ["ювелірны"],
@@ -1457,6 +1929,7 @@
         "icon": "icon_jewelry"
       },
       {
+        "id": "baby_goods",
         "names": {
           "ar": ["مستلزمات الأطفال"],
           "be": ["дзіцячыя тавары"],
@@ -1485,6 +1958,7 @@
         "icon": "icon_baby_goods"
       },
       {
+        "id": "doityourself",
         "names": {
           "ar": ["متجر العمل اليدوية"],
           "be": ["стройматэрыялы"],
@@ -1513,6 +1987,7 @@
         "icon": "icon_doityourself"
       },
       {
+        "id": "marketplace",
         "names": {
           "ar": ["سوق"],
           "be": ["рынак"],
@@ -1541,6 +2016,7 @@
         "icon": "icon_market"
       },
       {
+        "id": "convenience",
         "names": {
           "ar": ["متجر مريح"],
           "be": ["прадукты"],
@@ -1572,7 +2048,7 @@
     "names": {
       "ar": ["متجر"],
       "be": ["крама"],
-      "cs": ["obchod"],
+      "cs": ["nakupování"],
       "de": ["Laden"],
       "en": ["shopping"],
       "es": ["tienda"],
@@ -1599,8 +2075,10 @@
   },
   // ----------
   {
+    "id": "healthcare",
     "items": [
       {
+        "id": "pharmacy",
         "names": {
           "ar": ["صيدلية"],
           "be": ["аптэка"],
@@ -1629,6 +2107,7 @@
         "icon": "icon_pharmacy"
       },
       {
+        "id": "laboratory",
         "names": {
           "ar": ["مختبر"],
           "be": ["лабараторыя"],
@@ -1657,6 +2136,7 @@
         "icon": "icon_laboratory"
       },
       {
+        "id": "hospital",
         "names": {
           "ar": ["مستشفى"],
           "be": ["бальніца"],
@@ -1685,6 +2165,7 @@
         }
       },
       {
+        "id": "clinic",
         "names": {
           "ar": ["عيادة"],
           "be": ["мед. цэнтр"],
@@ -1712,6 +2193,7 @@
         }
       },
       {
+        "id": "dentist",
         "names": {
           "ar": ["طبيب أسنان"],
           "be": ["стаматалогія"],
@@ -1740,6 +2222,7 @@
         "icon": "icon_dentist"
       },
       {
+        "id": "veterinary",
         "names": {
           "ar": ["بيطري"],
           "be": ["ветэрынарыя"],
@@ -1768,6 +2251,7 @@
         "icon": "icon_vet"
       },
       {
+        "id": "defibrillator",
         "names": {
           "ar": ["مزيل الرجفان", "جهاز صدمات القلب", "AED"],
           "be": ["дэфібрылятар", "AED"],
@@ -1823,8 +2307,10 @@
   },
   // ----------
   {
+    "id": "public_transport",
     "items": [
       {
+        "id": "bus_stop",
         "names": {
           "ar": ["موقف حافلة"],
           "be": ["прыпынак"],
@@ -1843,7 +2329,7 @@
           "pt-BR": ["parada de ônibus"],
           "pt-PT": ["paragem de autocarro"],
           "ru": ["остановка автобуса"],
-          "th": ["ป้ายหยุดรถ"],
+          "th": ["ป้ายรถเมล์"],
           "uk": ["зупинка автобуса"],
           "zh": ["公交车站"]
         },
@@ -1854,6 +2340,7 @@
         }
       },
       {
+        "id": "tram_stop",
         "names": {
           "ar": ["موقف تراموا"],
           "be": ["трамвайны прыпынак"],
@@ -1872,7 +2359,7 @@
           "pt-BR": ["parada de bonde"],
           "pt-PT": ["paragem de elétrico"],
           "ru": ["трамвайная остановка"],
-          "th": ["ป้ายหยุดรถ"],
+          "th": ["ป้ายรถราง"],
           "uk": ["трамвайна зупинка"],
           "zh": ["电车站"]
         },
@@ -1882,6 +2369,7 @@
         }
       },
       {
+        "id": "station",
         "names": {
           "ar": ["محطة قطار"],
           "be": ["чыгуначная станцыя"],
@@ -1906,7 +2394,8 @@
         },
         "icon": "icon_railway",
         "kv": {
-          "railway": ["station"]
+          "railway": ["station"],
+          "building": ["train_station"]
         }
       }
     ],
@@ -1937,8 +2426,10 @@
   },
   // ----------
   {
+    "id": "auto",
     "items": [
       {
+        "id": "car_wash",
         "names": {
           "ar": ["غسيل سيارات"],
           "be": ["аўтамыйня"],
@@ -1966,6 +2457,7 @@
         }
       },
       {
+        "id": "car_repair",
         "names": {
           "ar": ["إصلاح السيارات"],
           "be": ["рамонт і сэрвіс"],
@@ -1994,6 +2486,7 @@
         "icon": "icon_car_service"
       },
       {
+        "id": "car_shop",
         "names": {
           "ar": ["متجر سيارات"],
           "be": ["аўтасалон"],
@@ -2022,6 +2515,7 @@
         "icon": "icon_car_sharing"
       },
       {
+        "id": "motorcycle_shop",
         "names": {
           "ar": ["متجر دراجات نارية"],
           "be": ["мотасалон"],
@@ -2049,6 +2543,7 @@
         }
       },
       {
+        "id": "car_rental",
         "names": {
           "ar": ["تأجير السيارات"],
           "be": ["аўтапракат"],
@@ -2104,19 +2599,21 @@
   },
   // ----------
   {
+    "id": "fuel",
     "items": [
       {
+        "id": "fuel_station",
         "names": {
           "ar": ["محطة وقود"],
           "be": ["аўтазапраўка"],
-          "cs": ["benzínka"],
+          "cs": ["čerpací stanice"],
           "de": ["tankstelle"],
           "en": ["filling station"],
           "es": ["gasolinera"],
           "fi": ["huoltoasema"],
           "fr": ["station service"],
           "hu": ["benzinkút"],
-          "it": ["carburante"],
+          "it": ["stazione di servizio"],
           "ja": ["ガソリンスタンド"],
           "ko": ["주유소"],
           "nl": ["tankstation"],
@@ -2134,6 +2631,7 @@
         "icon": "icon_gas_station"
       },
       {
+        "id": "charging_station",
         "names": {
           "ar": ["نقطة شحن"],
           "be": ["зарадная станцыя"],
@@ -2165,24 +2663,24 @@
     "names": {
       "ar": ["وقود"],
       "be": ["паліва"],
-      "cs": ["benzínka"],
+      "cs": ["palivo"],
       "de": ["Treibstoff"],
       "en": ["fuel"],
       "es": ["combustible"],
       "fi": ["polttoaine"],
       "fr": ["station essence"],
-      "hu": ["benzinkút"],
+      "hu": ["üzemanyag"],
       "it": ["carburante"],
-      "ja": ["ガソリンスタンド"],
-      "ko": ["주유소"],
-      "nl": ["tankstation"],
+      "ja": ["燃料"],
+      "ko": ["연료"],
+      "nl": ["brandstof"],
       "pl": ["paliwo"],
-      "pt-BR": ["posto de gasolina"],
+      "pt-BR": ["combustível"],
       "pt-PT": ["posto de combustível"],
       "ru": ["АЗС"],
-      "th": ["ปั้มน้ำมัน"],
-      "uk": ["заправка"],
-      "zh": ["加油站"]
+      "th": ["เชื้อเพลิง"],
+      "uk": ["пальне"],
+      "zh": ["燃料"]
     },
     "icon": "icon_gas_station",
     "show": 1
@@ -2190,36 +2688,7 @@
   // универсальные матчеры.
   // надо будет добавить матчеры для всех тегов, для которых мы показываем имя, чтобы невозможно было получить Unknown category
   {
-    "names": {
-      "ar": ["مياه شرب"],
-      "be": ["пітная вада"],
-      "cs": ["pití vody"],
-      "de": ["Trinkwasserstelle"],
-      "en": ["drinking water"],
-      "es": ["agua potable"],
-      "fi": ["juomavesi"],
-      "fr": ["eau potable"],
-      "hu": ["ivóvíz"],
-      "it": ["acqua potabile"],
-      "ja": ["水飲み場"],
-      "ko": ["식수"],
-      "nl": ["drinkwaterkraantje"],
-      "pl": ["woda pitna"],
-      "pt-BR": ["água potável"],
-      "pt-PT": ["água potável"],
-      "ru": ["питьевая вода"],
-      "th": ["น้ำดื่ม"],
-      "uk": ["питна вода"],
-      "zh": ["饮水处"]
-    },
-    "kv": {
-      "amenity": ["drinking_water", "water_point"],
-      "man_made": ["water_well", "water_tap"],
-      "natural": ["spring"]
-    },
-    "icon": "icon_drinking_water"
-  },
-  {
+    "id": "water_area",
     "names": {
       "ar": ["ماء"],
       "be": ["вадаём"],
@@ -2250,6 +2719,7 @@
     "index": false
   },
   {
+    "id": "road",
     "names": {
       "ar": ["طريق"],
       "be": ["дарога"],
@@ -2281,6 +2751,7 @@
   },
   // названия географических объектов
   {
+    "id": "island",
     "names": {
       "ar": ["جزيرة"],
       "be": ["выспа"],
@@ -2309,6 +2780,7 @@
     "index": false
   },
   {
+    "id": "bay",
     "names": {
       "ar": ["خليج"],
       "be": ["заліў"],
@@ -2337,6 +2809,7 @@
     "index": false
   },
   {
+    "id": "river",
     "names": {
       "ar": ["نهر"],
       "be": ["рака"],
@@ -2366,6 +2839,7 @@
   },
   // названия зданий
   {
+    "id": "school",
     "names": {
       "ar": ["مدرسة"],
       "be": ["школа"],
@@ -2396,6 +2870,7 @@
     "index": false
   },
   {
+    "id": "college",
     "names": {
       "ar": ["كلية"],
       "be": ["каледж"],
@@ -2425,6 +2900,7 @@
     "index": false
   },
   {
+    "id": "university",
     "names": {
       "ar": ["جامعة"],
       "be": ["универсітэт"],
@@ -2454,35 +2930,7 @@
     "index": false
   },
   {
-    "names": {
-      "ar": ["محطة قطار"],
-      "be": ["чыгуначная станцыя"],
-      "cs": ["vlakové nádraží"],
-      "de": ["Bahnhof"],
-      "en": ["train station"],
-      "es": ["estación de tren"],
-      "fi": ["juna-asema"],
-      "fr": ["gare ferroviaire"],
-      "hu": ["vasútállomás"],
-      "it": ["stazione ferroviaria"],
-      "ja": ["駅"],
-      "ko": ["기차역"],
-      "nl": ["treinstation"],
-      "pl": ["dworzec kolejowy"],
-      "pt-BR": ["estação de trem"],
-      "pt-PT": ["estação de comboios"],
-      "ru": ["железнодорожный вокзал"],
-      "th": ["สถานีรถไฟ"],
-      "uk": ["залізнична станція"],
-      "zh": ["火车站"]
-    },
-    "kv": {
-      "building": ["train_station"]
-    },
-    "icon": "icon_railway",
-    "index": false
-  },
-  {
+    "id": "parking",
     "names": {
       "ar": ["موقف سيارات"],
       "be": ["стаянка"],
@@ -2511,33 +2959,7 @@
     "icon": "icon_parking"
   },
   {
-      "names": {
-          "ar": ["ملجأ"],
-          "be": ["прытулак"],
-          "cs": ["přístřešek"],
-          "de": ["Unterstand"],
-          "en": ["shelter"],
-          "es": ["refugio"],
-          "fi": ["suoja"],
-          "fr": ["abri"],
-          "hu": ["menedék"],
-          "it": ["rifugio"],
-          "ja": ["避難所"],
-          "ko": ["대피소"],
-          "nl": ["schuilplaats"],
-          "pl": ["schronisko"],
-          "pt-BR": ["abrigo"],
-          "pt-PT": ["abrigo"],
-          "ru": ["укрытие"],
-          "th": ["ที่พักพิง"],
-          "uk": ["притулок"],
-          "zh": ["避难所"]
-      },
-      "kv": {
-          "amenity": ["shelter"]
-      }
-  },
-  {
+    "id": "ticket",
     "names": {
       "ar": ["محل بيع تذاكر"],
       "be": ["билетная каса"],
@@ -2566,6 +2988,7 @@
     "index": false
   },
   {
+    "id": "townhall",
     "names": {
       "ar": ["بلدية"],
       "be": ["адміністрацыя"],
@@ -2594,6 +3017,7 @@
     "index": false
   },
   {
+    "id": "embassy",
     "names": {
       "ar": ["سفارة"],
       "be": ["амбасада"],
@@ -2622,6 +3046,7 @@
     "index": false
   },
   {
+    "id": "bicycle_parking",
     "names": {
       "ar": ["موقف للدراجات"],
       "be": ["веласіпеднaя стаянка"],
@@ -2650,6 +3075,7 @@
     "index": false
   },
   {
+    "id": "bicycle_repair_station",
     "names": {
       "ar": ["محطة إصلاح الدراجات"],
       "be": ["станцыя па рамонце веласіпедаў"],
@@ -2678,6 +3104,7 @@
     "index": false
   },
   {
+    "id": "bicycle_rental",
     "names": {
       "ar": ["تأجير الدراجات"],
       "be": ["пракат веласіпедаў"],
@@ -2706,6 +3133,7 @@
     "index": false
   },
   {
+    "id": "parcel_locker",
     "names": {
       "ar": ["صندوق الطرود"],
       "be": ["пачкамат"],
@@ -2734,6 +3162,7 @@
     "index": false
   },
   {
+    "id": "arts_centre",
     "names": {
       "ar": ["مركز الفنون"],
       "be": ["арт-цэнтр"],
@@ -2762,6 +3191,7 @@
     "index": false
   },
   {
+    "id": "community_centre",
     "names": {
       "ar": ["مركز المجتمع"],
       "be": ["камунітарны цэнтр"],
@@ -2790,6 +3220,7 @@
     "index": false
   },
   {
+    "id": "parking_entrance",
     "names": {
       "ar": ["مدخل موقف السيارات"],
       "be": ["уезд на паркоўку"],
@@ -2818,6 +3249,7 @@
     "index": false
   },
   {
+    "id": "fort",
     "names": {
       "ar": ["حصن"],
       "be": ["форт"],
@@ -2847,6 +3279,7 @@
     "index": false
   },
   {
+    "id": "castle",
     "names": {
       "ar": ["قلعة"],
       "be": ["замак"],
@@ -2876,6 +3309,7 @@
     "index": false
   },
   {
+    "id": "communication",
     "names": {
       "ar": ["برج اتصالات"],
       "be": ["сувязная вежа"],
@@ -2905,14 +3339,15 @@
     "index": false
   },
   {
+    "id": "beacon",
     "names": {
-      "ar": ["منارة", "علامة ملاحية"],
-      "be": ["маяк", "сігнальны знак"],
-      "cs": ["maják", "námořní značka"],
+      "ar": ["علامة ملاحية"],
+      "be": ["сігнальны знак"],
+      "cs": ["námořní značka"],
       "de": ["Bake", "Seezeichen"],
       "en": ["beacon", "navigational aid"],
       "es": ["baliza", "señal náutica"],
-      "fi": ["majakka", "merimerkki"],
+      "fi": ["merimerkki"],
       "fr": ["balise", "amer"],
       "hu": ["jelző", "navigációs jel"],
       "it": ["segnale", "beacon"],
@@ -2922,9 +3357,9 @@
       "pl": ["boja", "znak nawigacyjny"],
       "pt-BR": ["baliza", "auxílio à navegação"],
       "pt-PT": ["baliza", "auxílio à navegação"],
-      "ru": ["маяк", "навигационный знак"],
+      "ru": ["навигационный знак"],
       "th": ["ทุ่นสัญญาณ", "เครื่องหมายเดินเรือ"],
-      "uk": ["маяк", "навігаційний знак"],
+      "uk": ["навігаційний знак"],
       "zh": ["信标", "航标"]
     },
     "kv": {
@@ -2934,6 +3369,7 @@
     "index": false
   },
   {
+    "id": "lighting",
     "names": {
       "ar": ["برج إضاءة"],
       "be": ["асвятляльная вежа"],
@@ -2943,7 +3379,7 @@
       "es": ["torre de iluminación"],
       "fi": ["valotorni"],
       "fr": ["tour d'éclairage"],
-      "hu": ["világítótorony"],
+      "hu": ["jelzőfény"],
       "it": ["torre di illuminazione"],
       "ja": ["照明塔"],
       "ko": ["조명탑"],
@@ -2963,6 +3399,7 @@
     "index": false
   },
   {
+    "id": "lighthouse",
     "names": {
       "ar": ["منارة"],
       "be": ["маяк"],
@@ -2992,6 +3429,7 @@
     "index": false
   },
   {
+    "id": "tower",
     "names": {
       "ar": ["برج"],
       "be": ["вежа"],
@@ -3021,6 +3459,7 @@
     "index": false
   },
   {
+    "id": "allotments",
     "names": {
       "ar": ["حدائق مخصصة"],
       "be": ["садовыя ўчасткі"],
@@ -3050,6 +3489,7 @@
     "index": false
   },
   {
+    "id": "park",
     "names": {
       "ar": ["حديقة"],
       "be": ["парк"],
@@ -3079,8 +3519,9 @@
     "index": false
   },
   {
+    "id": "garden",
     "names": {
-      "ar": ["حديقة"],
+      "ar": ["حديقة نباتية"],
       "be": ["сад"],
       "cs": ["zahrada"],
       "de": ["Garten"],
@@ -3108,6 +3549,7 @@
     "index": false
   },
   {
+    "id": "nature_reserve",
     "names": {
       "ar": ["محمية طبيعية"],
       "be": ["заказнік", "запаведнік"],
@@ -3137,6 +3579,7 @@
     "index": false
   },
   {
+    "id": "national_park",
     "names": {
       "ar": ["حديقة وطنية"],
       "be": ["нацыянальны парк"],
@@ -3166,6 +3609,7 @@
     "index": false
   },
   {
+    "id": "building",
     "names": {
       "ar": ["مبنى"],
       "be": ["будынак"],

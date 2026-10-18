@@ -5,46 +5,95 @@
 
 node,area {
     // Параметры текста по умолчанию, чтоб не дублировать
-    font-size: 10;
-    font-weight: bold;
+    // Names without a size of their own, POIs and the like, grow slowly from z15
+    font-size: eval(zlinear(15, 10, 10.4, 10.8, 11.1, 11.4));
+    font-weight: medium;
     font-stroke-width: 1pt;
     font-stroke-color: @color_label_stroke;
 
+    // Area names: capitals with letter spacing, lighter than settlements. 'el' drops accents
+    // from Greek capitals; other scripts follow root rules, not the device locale.
+    // Countries, regions and seas appear set tight with a thinner halo, and grow and spread out as the map zooms in
     [place=country] {
-        |z2-8 {
-            text: eval(locTag('name'));
+        // A country is named once it is about 45 pt across on the screen. polySize is the size of the country under the label
+        // in km (Web Mercator, added by the world map generator); maps without it name every country from z2
+        |z2-8[!polySize],
+        |z2-8[polySize>=1400],
+        |z3-8[polySize>=700],
+        |z4-8[polySize>=350],
+        |z5-8[polySize>=175],
+        |z6-8[polySize>=90],
+        |z7-8[polySize>=45],
+        |z8 {
+            text: eval(uppercase(locTag('name'), 'el'));
             text-color: @color_name_text;
-            font-size: 16;
+            font-size: eval(zlinear(2, 10.9, 11.6, 12.3, 13, 13.8, 14.6, 15.5));
             font-weight: normal;
-            font-stroke-width: 2pt;
+            text-letter-spacing: eval(zlinear(2, 0.05, 0.08, 0.11, 0.14, 0.17, 0.21, 0.25));
+            font-stroke-width: eval(zlinear(2, 1.5pt, 1.75pt, 2pt));
             text-priority: 10;
-            text-big-padding: true;
         }
-        |z2-4 {
-            font-size:12;
-            font-weight: normal;
-            text-big-padding: false;
+        // A country twice as big gets a visibly bigger name, 2 pt among the big ones, and is spaced and haloed like the smaller one a
+        // zoom later; small countries appear at 10-12 pt, every name grows 0.8 pt a zoom. Each size ladder ends at z8, so a bigger
+        // country also wins the label collisions
+        [polySize>=1400] {
+            font-size: eval(zlinear(2, 13, 13.8, 14.6, 15.4, 16.2, 17, 17.8));
+        }
+        [polySize>=2800] {
+            font-size: eval(zlinear(2, 15, 15.8, 16.6, 17.4, 18.2, 19, 19.8));
+            text-letter-spacing: eval(zlinear(1, 0.05, 0.08, 0.11, 0.14, 0.17, 0.21, 0.25, 0.28));
+            font-stroke-width: eval(zlinear(1, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize>=5600] {
+            font-size: eval(zlinear(2, 17, 17.8, 18.6, 19.4, 20.2, 21, 21.8));
+            text-letter-spacing: eval(zlinear(0, 0.05, 0.08, 0.11, 0.14, 0.17, 0.21, 0.25, 0.28, 0.31));
+            font-stroke-width: eval(zlinear(0, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize<1400] {
+            font-size: eval(zlinear(3, 12, 12.8, 13.6, 14.4, 15.2, 16));
+            text-letter-spacing: eval(zlinear(3, 0.05, 0.08, 0.11, 0.14, 0.17, 0.21));
+            font-stroke-width: eval(zlinear(3, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize<700] {
+            font-size: eval(zlinear(4, 11.5, 12.3, 13.1, 13.9, 14.7));
+            text-letter-spacing: eval(zlinear(4, 0.05, 0.08, 0.11, 0.14, 0.17));
+            font-stroke-width: eval(zlinear(4, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize<350] {
+            font-size: eval(zlinear(5, 11.1, 11.9, 12.7, 13.5));
+            text-letter-spacing: eval(zlinear(5, 0.05, 0.08, 0.11, 0.14));
+            font-stroke-width: eval(zlinear(5, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize<175] {
+            font-size: eval(zlinear(6, 10.7, 11.5, 12.3));
+            text-letter-spacing: eval(zlinear(6, 0.05, 0.08, 0.11));
+            font-stroke-width: eval(zlinear(6, 1.5pt, 1.75pt, 2pt));
+        }
+        [polySize<90] {
+            font-size: eval(zlinear(7, 10.3, 11.1));
+            text-letter-spacing: eval(zlinear(7, 0.05, 0.08));
+            font-stroke-width: eval(zlinear(7, 1.5pt, 1.75pt));
+        }
+        [polySize<45] {
+            font-size: 10;
+            text-letter-spacing: 0.05;
+            font-stroke-width: 1.5pt;
         }
     }
 
+    // Regions rank below cities: they are background
     [boundary=administrative] {
+        |z6-8[admin_level=3],
         |z6-8[admin_level=4] {
-            text: eval(locTag('name'));
-            text-color: @color_name_text;
-            font-size: 13;
-            font-weight: normal;
-            font-stroke-width: 2pt;
-            text-priority: 8;
+            text: eval(uppercase(locTag('name'), 'el'));
+            text-color: @color_region_text;
+            font-size: eval(zlinear(6, 10.5, 11.2, 11.9));
+            font-weight: light;
+            text-letter-spacing: eval(zlinear(6, 0.1, 0.18, 0.25));
+            font-stroke-width: eval(zlinear(6, 2.5pt, 3pt));
+            text-priority: 5;
             text-big-padding: true;
-        }
-        |z5-8[admin_level=3] {
-            text: eval(locTag('name'));
-            text-color: @color_name_text;
-            font-size: 15;
-            font-weight: normal;
-            font-stroke-width: 2pt;
-            text-priority: 8;
-            text-big-padding: true;
+            [admin_level=3] { font-size: eval(zlinear(6, 11.5, 12.2, 12.9)); }
         }
     }
 
@@ -55,45 +104,94 @@ node,area {
         |z9-{
             text: eval(locTag('name'));
             text-color: @color_label_text;
-            font-size: 12;
-            font-weight: normal;
+            // 11 at z6, 13 at z10, 14.4 at z12, then slower up to 15.9 at z16
+            font-size: eval(zlinear(6, 11, 11.5, 12, 12.5, 13.2, 13.8, 14.4, 14.9, 15.3, 15.6, 15.9));
+            font-weight: semibold;
+            font-stroke-width: 3pt;
+            // A city that is also a region is named on its boundary like on its node, without the spacing of region names
+            text-letter-spacing: 0;
             text-priority: 7;
             text-big-padding: true;
+            // A dot pins the city on country-scale maps; from z10 the name lies on the city itself
+            |z6-9 {
+                // White dot with a dark ring, smaller than the solid capital dot
+                icon-image: "poi_city_dot.svg";
+                icon-scale: 0.8;
+                icon-tint: @color_icon_capital_tint;
+                font-weight: medium;
+                text-big-padding: false;
+                [population>400000] {
+                    font-weight: semibold;
+                }
+            }
+            [population>400000] {
+                font-size: eval(zlinear(6, 12, 12.5, 13, 13.5, 14.2, 14.8, 15.4, 15.9, 16.3, 16.6, 16.9));
+            }
+            // Cities over a million follow the capital from z9; z13+ tiles carry population but not capital
+            [population>1000000] {
+                font-size: eval(zlinear(6, 12.3, 12.9, 13.4, 14, 15, 16, 17, 18, 18.3, 18.6, 18.9));
+            }
         }
     }
 
+    // Settlement rank by size and weight, all growing with the zoom: city 11-13 medium with a dot, then 13-16 semibold; town 11-14.5
+    // medium, village 10-13, hamlet 9-11.5. A class shows up quiet, grey with a halo that thickens over its first zoom, and gets its
+    // full colour one zoom later
     |z9-[place=town],
     |z11-[place=village],
     |z12-[place=hamlet] {
         text: eval(locTag('name'));
         text-color: @color_label_text;
-        font-size: 11;
-        font-stroke-width: 2px;
-        font-weight: light;
+        font-size: eval(zlinear(11, 10.3, 10.8, 11.3, 11.8, 12.3, 12.6, 12.9));
+        font-weight: normal;
+        font-stroke-width: eval(zlinear(11, 1.5pt, 2pt));
         text-priority: 6;
         text-big-padding: true;
+        [place=town] {
+            font-size: eval(zlinear(9, 11.2, 11.8, 12.4, 13, 13.5, 13.9, 14.2, 14.5));
+            font-weight: medium;
+            font-stroke-width: eval(zlinear(9, 1.5pt, 2pt));
+        }
+        [place=hamlet] {
+            font-size: eval(zlinear(12, 9.3, 9.8, 10.3, 10.8, 11.2, 11.5));
+            font-stroke-width: eval(zlinear(12, 1.5pt, 2pt));
+        }
+        |z9[place=town],
+        |z11[place=village],
+        |z12[place=hamlet] {
+            text-color: @color_label_new_text;
+        }
     }
     
     |z14-[place=isolated_dwelling],
     |z14-[place=farm] {
         text: eval(locTag('name'));
         text-color: @color_label_text;
-        font-stroke-width: 2px;
-        font-weight: light;
+        font-size: eval(zlinear(14, 8.6, 9, 9.4, 9.8, 10.1));
+        font-weight: normal;
+        font-stroke-width: eval(zlinear(14, 1.5pt, 2pt));
         text-priority: 4;
+        |z14 {
+            text-color: @color_label_new_text;
+        }
     }
 
-    |z5-12[capital=yes] {
-        [admin_level=2], [!admin_level] {
-            icon-image: "poi_circle_small.svg";
-            icon-scale: 1.2;
-            icon-tint: @color_icon_capital_tint;
+    // The capital grows with the zoom: 12 at z6, 14 at z9, 18 at z13, then slowly. A boundary's admin_level is its own level: a
+    // capital that is also a region, as Minsk or Prague, is named on its boundary like on its node
+    |z5-14[capital=yes] {
+        [admin_level=2], [!admin_level], [boundary=administrative] {
+            |z5-9 {
+                icon-image: "poi_circle_small.svg";
+                icon-scale: 1.2;
+                icon-tint: @color_icon_capital_tint;
+            }
 
             text: eval(locTag('name'));
             text-color: @color_label_text;
-            font-size: 14;
-            font-weight: normal;
-            font-stroke-width: 2pt;
+            font-size: eval(zlinear(5, 11.4, 12, 12.6, 13.3, 14, 15, 16, 17, 18, 18.3, 18.6, 18.9));
+            font-weight: semibold;
+            font-stroke-width: 3pt;
+            text-letter-spacing: 0;
 
             text-priority: 9;
             text-big-padding: false;
@@ -101,20 +199,31 @@ node,area {
     }
 
     // Названия районов
-    |z11-[place=suburb] {
-        |z11-13 {
+    |z12-[place=suburb] {
+        |z12-13 {
             text-big-padding: true;
         }
-        text: eval(locTag('name'));
+        text: eval(uppercase(locTag('name'), 'el'));
         text-color: @color_suburb_text;
         text-priority: 3;
-        font-size: 11;
+        font-size: eval(zlinear(12, 10, 10.9, 11.7, 12.3, 12.8, 13.2));
+        font-stroke-width: 1.5pt;
+        text-letter-spacing: eval(zlinear(12, 0.08, 0.1, 0.12, 0.14, 0.15, 0.16));
     }
     
     // Названия микрорайонов
     |z14-[place=quarter] {
-        text: eval(locTag('name'));
-        text-color: @color_suburb_text;
+        text: eval(uppercase(locTag('name'), 'el'));
+        text-color: @color_quarter_text;
+        text-priority: 2;
+        font-size: eval(zlinear(14, 9, 9.6, 10.1, 10.6, 11));
+        font-weight: normal;
+        font-stroke-width: 1.5pt;
+        text-letter-spacing: eval(zlinear(14, 0.06, 0.08, 0.1, 0.11, 0.12));
+    }
+
+    // City names keep their size and from z14 yield to districts, streets and POIs
+    |z14-15[place=city] {
         text-priority: 2;
     }
 
@@ -153,17 +262,25 @@ node,area {
         |z1-8[place=ocean],
         |z6-8[place=sea]
         {
-            text: eval(locTag('name'));
+            text: eval(uppercase(locTag('name'), 'el'));
             text-color: @color_water_text;
             text-priority: 5;
-            font-size: 16;
-            font-stroke-color: @color_water_stroke;
+            font-size: 13;
+            font-style: italic;
+            text-letter-spacing: 0.25;
+            font-stroke-color: @color_water;
             font-stroke-width: 3pt;
-            font-weight: lighter;
         }
 
-        |z5-8[place=ocean] {
-            font-size: 18;
+        |z1-8[place=ocean] {
+            text-letter-spacing: eval(zlinear(1, 0.12, 0.15, 0.18, 0.21, 0.24, 0.26, 0.28, 0.3));
+            font-stroke-width: eval(zlinear(1, 2pt, 2.25pt, 2.5pt, 2.75pt, 3pt));
+            font-size: eval(zlinear(1, 12, 12.7, 13.4, 14.1, 14.8, 15.5, 16.2, 16.9));
+        }
+        |z6-8[place=sea] {
+            text-letter-spacing: eval(zlinear(6, 0.12, 0.18, 0.25));
+            font-stroke-width: eval(zlinear(6, 2pt, 3pt));
+            font-size: eval(zlinear(6, 12.3, 13, 13.8));
         }
     }
 
@@ -172,9 +289,11 @@ node,area {
         [natural=bay],
         area[landuse=basin],
         [landuse=reservoir] {
+            // Halo in the water colour: a white one washes the thin italic out on blue
             text-color: @color_water_text;
-            font-stroke-color: @color_water_stroke;
+            font-stroke-color: @color_water;
             font-stroke-width: 2pt;
+            font-style: italic;
         }
     }
 
@@ -184,6 +303,7 @@ node,area {
 
     area|z13-[natural=wetland] {
         text-color: @color_wetland_text;
+        font-style: italic;
         font-stroke-color: @color_wetland_stroke;
         font-stroke-width: 1.5pt;
     }
@@ -204,6 +324,11 @@ node,area {
             text-color: @color_national_park_text;
             font-stroke-width:2pt;
             font-stroke-color: @color_wood;
+        }
+        [boundary=protected_area],
+        [boundary=national_park],
+        [leisure=nature_reserve] {
+            font-style: italic;
         }
     }
 
@@ -234,105 +359,60 @@ node,area {
             [place=islet]
         ) {
             // текст пишем для объекта на масштабе polyZoom + 5
+            // Area names rank below settlements: a big park must not hide the town inside it
+            font-weight: normal;
             
             // тут надо еще подумать. крупные объекты - можно было бы показывать на карте мира.
             // но это замедлит ее генерацию
             |z9-[polyZoom<=3] {
                 text: eval(locTag('name'));
-                text-priority: 11;
-                font-size: 9;
-                |z10-{
-                    font-size: 10;
-                }
+                text-priority: 5;
+                font-size: eval(zlinear(9, 9, 9.6, 10.2, 10.8, 11.3, 11.8, 12.2));
             }
             |z9-[polyZoom=4] {
                 text: eval(locTag('name'));
-                text-priority: 10;
-                font-size: 8;
-                |z10-{
-                    font-size: 9;
-                }
-                |z11-{
-                    font-size: 10;
-                }
+                text-priority: 4;
+                font-size: eval(zlinear(9, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z10-[polyZoom=5] {
                 text: eval(locTag('name'));
-                text-priority: 9;
-                font-size: 8;
-                |z11-{
-                    font-size: 9;
-                }
-                |z12-{
-                    font-size: 10;
-                }
+                text-priority: 3;
+                font-size: eval(zlinear(10, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z11-[polyZoom=6] {
                 text: eval(locTag('name'));
-                text-priority: 8;
-                font-size: 8;
-                |z12-{
-                    font-size: 9;
-                }
-                |z13-{
-                    font-size: 10;
-                }
+                text-priority: 2;
+                font-size: eval(zlinear(11, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z12-[polyZoom=7] {
                 text: eval(locTag('name'));
-                text-priority: 7;
-                font-size: 8;
-                |z13-{
-                    font-size: 9;
-                }
-                |z14-{
-                    font-size: 10;
-                }
+                text-priority: 1;
+                font-size: eval(zlinear(12, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z13-[polyZoom=8] {
                 text: eval(locTag('name'));
-                text-priority: 6;
-                font-size: 8;
-                |z14-{
-                    font-size: 9;
-                }
-                |z15-{
-                    font-size: 10;
-                }
+                text-priority: 0;
+                font-size: eval(zlinear(13, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z14-[polyZoom=9] {
                 text: eval(locTag('name'));
-                text-priority: 5;
-                font-size: 8;
-                |z15-{
-                    font-size: 9;
-                }
-                |z16-{
-                    font-size: 10;
-                }
+                text-priority: -1;
+                font-size: eval(zlinear(14, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z15-[polyZoom=10] {
                 text: eval(locTag('name'));
-                text-priority: 4;
-                font-size: 8;
-                |z16-{
-                    font-size: 9;
-                }
-                |z17-{
-                    font-size: 10;
-                }
+                text-priority: -2;
+                font-size: eval(zlinear(15, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
             }
             |z16-[polyZoom=11] {
                 text: eval(locTag('name'));
-                text-priority: 3;
-                font-size: 8;
-                |z17-{
-                    font-size: 9;
-                }
+                text-priority: -3;
+                font-size: eval(zlinear(16, 8, 8.6, 9.2, 9.8));
             }
             |z17-[polyZoom=12] {
                 text: eval(locTag('name'));
-                font-size: 8;
+                text-priority: -4;
+                font-size: eval(zlinear(17, 8, 8.6, 9.2, 9.8));
             }
         }
     }
@@ -341,14 +421,8 @@ node,area {
     node|z14- {
         [natural=bay] {
             text: eval(locTag('name'));
-            text-priority: 5;
-            font-size: 8;
-            |z15-{
-                font-size: 9;
-            }
-            |z16-{
-                font-size: 10;
-            }
+            text-priority: -1;
+            font-size: eval(zlinear(14, 8, 8.6, 9.2, 9.8, 10.3, 10.8, 11.2));
         }
     }
 
@@ -375,7 +449,7 @@ node,area {
             );
 
             text-color: @color_building_text;
-            font-size: 9;
+            font-size: eval(zlinear(17, 9, 9.5, 10, 10.4));
             font-stroke-width: 0.8pt;
             font-stroke-color: @color_label_stroke;
             text-priority: 1;
@@ -386,7 +460,7 @@ node,area {
         |z17-[place=city_block] {
             text: eval(locTag('name'));
             text-color: @color_building_text;
-            font-size: 10;
+            font-size: eval(zlinear(17, 10, 10.5, 11, 11.4));
             font-stroke-width: 0.8pt;
             text-priority: 2;
         }
@@ -402,7 +476,7 @@ node,area {
                                     tag('addr:housenumber') . cond( tag('addr:housename'),' (' . tag('addr:housename') . ')',''),
                                     tag('addr:housename') ) ) );
             text-color: @color_building_text;
-            font-size: 9;
+            font-size: eval(zlinear(18, 9, 9.5, 10));
             font-stroke-width: 0.8pt;
             text-priority: 1;
         }
@@ -427,13 +501,13 @@ node,area {
                 [addr:housenumber] {
                     text: eval( tag('addr:housenumber') );
                     text-color: @color_building_text;
-                    font-size: 9;
+                    font-size: eval(zlinear(18, 9, 9.5, 10));
                 }
 
                 [ref] {
                     text: eval( tag('ref') );
                     text-color: @color_entrance_text;
-                    font-size: 8;
+                    font-size: eval(zlinear(18, 8, 8.5, 9));
                 }
             }
         }
@@ -446,7 +520,7 @@ node,area {
         [man_made=groyne] {
             text: eval(locTag('name'));
             text-color: @color_building_text;
-            font-size:12;
+            font-size: eval(zlinear(16, 11.5, 12, 12.5, 12.9, 13.2));
             font-stroke-width:2pt;
             font-stroke-color: @color_ground;
         }
@@ -1458,12 +1532,19 @@ node,area {
     @endif
 
     @if Railway
+        // Metro: a dot in the line colour at z12-13, the metro symbol with the name at z14-16, only the name from z17,
+        // where the entrances carry the symbol. Regional files put the network's logo in place of the symbol.
+        |z12-[railway=station][station=subway],
         |z13-[railway=station],
         |z14-[railway=halt],
         |z16-[building=train_station] {
             icon-image:"poi_circle_small.svg";
-            icon-tint: eval(any(colorTransform(tag('colour')), @color_icon_transport));
+            icon-tint: eval(mapColor(@route_palette, tag('colour'), @color_icon_transport));
             text-priority: 6; // выше чем у названий дорог
+            // an interchange station has no single line colour
+            |z12-13[station=subway][!colour] {
+                icon-image:"poi_circle_interchange.svg";
+            }
 
             |z14-{
                 icon-image:"poi_railway.svg";
@@ -1471,6 +1552,9 @@ node,area {
                     icon-image:"poi_subway.svg";
                     text-priority: 7;
                 }
+            }
+            |z17-[station=subway] {
+                icon-image: none;
             }
 
             |z14-[railway=station][station=subway],
@@ -1482,12 +1566,16 @@ node,area {
             }
         }
 
-        node|z15-[railway=subway_entrance] {
+        // Metro entrances: a dot in the line colour at z16, the metro symbol from z17
+        node|z16-[railway=subway_entrance] {
             icon-image:"poi_circle_small.svg";
-            icon-tint:eval(any(colorTransform(tag('colour')), @color_icon_transport));
+            icon-tint: eval(mapColor(@route_palette, tag('colour'), @color_icon_transport));
 
             details-enabled: false;
             text-priority: 5; // выше чем у названий дорог
+            |z17- {
+                icon-image:"poi_subway.svg";
+            }
         }
     @endif
 
@@ -1578,15 +1666,13 @@ node,area {
             |z13-{
                 text: eval(cond(locTag('name'), cond(tag('ele'), locTag('name').' ' . formatElevation(tag('ele')), locTag('name')), formatElevation(tag('ele'))));
                 text-color: @color_text_peak;
+                font-size: eval(zlinear(13, 10, 11, 12, 12.4, 12.8, 13.1));
                 [natural=volcano] {
                     text-color: @color_text_volcano;
                 }
                 [mountain_pass] {
                     text: eval( cond( locTag('name'), cond( tag('ele'), locTag('name') . ' ' . formatElevation(tag('ele')) , locTag('name') ), formatElevation(tag('ele')) ) . cond( tag('rtsa_scale'), ' (' . tag('rtsa_scale') . ')', '') );
                 }
-            }
-            |z15- {
-                font-size: 12pt;
             }
         }
         |z14-[natural=spring] {
@@ -1640,11 +1726,31 @@ node,area {
         [landuse=winter_sports] {
             text:eval(locTag('name'));
             text-color: @color_difficulty_expert;
-            font-size:11;
+            font-size: eval(zlinear(13, 11, 11.5, 12, 12.4, 12.8, 13.1, 13.4));
             font-stroke-width:2pt;
             font-stroke-color: @color_label_stroke;
             text-priority: -1;
         }
+    }
+
+    // From z16 a POI whose icon does not fit shows a dot in its icon colour: food and drink, shops, tourism, health
+    |z16-(
+        [shop],
+        [tourism],
+        [healthcare],
+        [amenity=restaurant],
+        [amenity=cafe],
+        [amenity=fast_food],
+        [amenity=bar],
+        [amenity=pub],
+        [amenity=ice_cream],
+        [amenity=pharmacy],
+        [amenity=hospital],
+        [amenity=clinic],
+        [amenity=doctors],
+        [amenity=dentist]
+    ) {
+        icon-fallback: "poi_circle_small.svg";
     }
 
     // objects with a name or wikipedia page can be opened

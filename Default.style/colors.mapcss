@@ -30,7 +30,7 @@
 @color_scrub: #C8D7AB;
 @color_orchard: #BBD66E; // l: -0.095
 @color_allotments: #C8E0BE;
-@color_allotments_text: #649F4C;
+@color_allotments_text: #3A731E;
 @color_playground: #B9E6C0;
 @color_stadium: #9EC7BC;
 @color_sports_centre: #DFFCE2;
@@ -54,16 +54,19 @@
 @color_ferry_route: #3A8FD4;
 
 @color_label_text: #21211F;
-@color_name_text: #2E2D2B;
-@color_suburb_text: #7A7C7E; // l: 0.1
-@color_national_park_text: #567634;
-@color_building_text: #937D65;
-@color_entrance_text: #977f65;
+@color_label_new_text: #55575B; // settlements on the zoom they appear
+@color_name_text: #48424F;
+@color_region_text: #6A6372;
+@color_suburb_text: #4A4C50;
+@color_quarter_text: #636567;
+@color_national_park_text: #3F5F22;
+@color_building_text: #77614A;
+@color_entrance_text: #776147;
 @color_public_transport_text: #383835;
 @color_private_access_text: #8b100e;
 @color_label_stroke: #FFFFFFEE;
 
-@color_water_text: #1E5A8C;
+@color_water_text: #0F4F80;
 @color_water_stroke: #FFFFFFB3;
 @color_aerialway_text: #000;
 @color_shop_text: #5B3A05;
@@ -78,26 +81,27 @@
 @color_difficulty_expert: #000;
 @color_difficulty_freeride: #FFA500;
 
+// POI text keeps the icon hue, dark enough for 4.5:1 contrast on @color_ground
 @color_icon_offices: #80C880; // same
-@color_text_offices: #3E8F3E; // @color_icon_offices
+@color_text_offices: #217524; // @color_icon_offices
 @color_icon_stores: #64B5F6; // same
-@color_text_stores: #2286C3; // @color_icon_stores
+@color_text_stores: #036BA1; // @color_icon_stores
 @color_icon_tourism: #4DB6AC; // same
 @color_text_tourism: #2C6D67; // @color_icon_tourism
 @color_icon_food: #FFA726; // same
-@color_text_food: #EF6C00; // @color_icon_food
+@color_text_food: #A74901; // @color_icon_food
 @color_icon_activity: #FF8A65; // same
-@color_text_activity: #C75B39; // @color_icon_activity
+@color_text_activity: #AE4421; // @color_icon_activity
 @color_icon_health: #E57373; // same
-@color_text_health: #af4448; // @color_icon_health
+@color_text_health: #AC4145; // @color_icon_health
 @color_icon_transport: #90A4AE; // same
 @color_icon_transport_private: #90A4AEA0; // same
-@color_text_transport: #62757f; // @color_icon_transport
+@color_text_transport: #556872; // @color_icon_transport
 
 @color_icon_hotels: #9575CD; // same
 @color_text_hotels: #65499c; // @color_icon_hotels
 @color_icon_beauty: #F48FB1; // same
-@color_text_beauty: #BF5F82; // @color_icon_beauty
+@color_text_beauty: #A34669; // @color_icon_beauty
 
 @color_icon_tint: #866E54; // same
 @color_text_tint: #6D5640;
@@ -112,6 +116,8 @@
 // roads of all kinds
 @color_small_road: #FEFEFE; // l: 0.4
 @color_small_road_casing: #CCC; // l: 0.1
+@color_pedestrian: #CCC;
+@color_pedestrian_casing: #AAA;
 @color_bridge: #A4A8AB; // l: 0.1
 @color_railroad_tunnel: #A4A8ABAA; // l: 0.1
 @color_cycleway_dashes: #6876e1; // l: 0.1
@@ -137,8 +143,6 @@
     @color_secondary_casing: @color_small_road_casing;
     @color_secondary: @color_small_road;
     @color_tertiary: @color_small_road;
-    @color_pedestrian: #CCC;
-    @color_pedestrian_casing: #AAA;
 @else
     @color_footway_dashes: #B8908A; // l: 0.1
     @color_path_dashes: @color_footway_dashes;
@@ -151,7 +155,6 @@
     @color_secondary_casing: #EC6; // l: 0.1
     @color_secondary: #FD7; // l: 0.1
     @color_tertiary: @color_small_road;
-    @color_pedestrian: @color_small_road;
 @endif
 
 @color_railway: #E6F8E0; // l: 0.1
@@ -159,7 +162,21 @@
 @color_railway_disused: #B8B8B8AA; // l: 0.1
 
 @color_icon_ford: #0f7cd4;
-@color_text_ford: #0f7cd4;
+@color_text_ford: #0267B4;
 @color_icon_fountain: @color_icon_ford;
 
 @color_rock: #a8a8a8;
+
+// Road number shields in road sign colours: the tint colours shield.svg, the engine picks white or dark text for contrast
+@color_shield_motorway: #C1121C; // RAL 3020 traffic red
+@color_shield_eroad: #308446; // RAL 6024 traffic green
+@color_shield_road: #005387; // RAL 5017 traffic blue
+
+// Route palette for mapColor(): OSM colour names of route relations, other colours snap to the nearest entry.
+// The same Material hues as the POI icons, a step stronger so lines read on the map.
+@route_palette: "red #E53935, orange #FB8C00, yellow #FBC02D, green #43A047, blue #1E88E5, purple #8E24AA, violet #8E24AA, brown #8D6E63, grey #90A4AE, gray #90A4AE, black #546E7A, white #B0BEC5, pink #EC407A";
+// Translucent bands of hiking and bicycle routes under the ways: the same hues, light ones more opaque so all read alike
+@route_band_palette: "red #E5393570, orange #FB8C0080, yellow #FBC02DA0, green #43A04799, blue #1E88E570, purple #8E24AA60, violet #8E24AA60, brown #8D6E6390, grey #90A4AE90, gray #90A4AE90, black #546E7A90, white #B0BEC5A0, pink #EC407A70";
+@color_shield_yellow: #F7B500; // RAL 1023 traffic yellow: German Bundesstraße, Polish voivodeship roads
+@color_shield_yellow_text: #1E1E1E;
+@color_shield_white: #FEFEFE; // white plates: Belarusian local roads, German roads without number plates

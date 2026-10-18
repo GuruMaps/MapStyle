@@ -54,8 +54,11 @@
 @color_ferry_route: #2A80C4;
 
 @color_label_text: #E0DFDD;
-@color_name_text: #D3D2D0;
-@color_suburb_text: #9A9C9E;
+@color_label_new_text: #A9AAAC;
+@color_name_text: #CFC9D6;
+@color_region_text: #ABA4B3;
+@color_suburb_text: #B0B2B4;
+@color_quarter_text: #9A9C9E;
 @color_national_park_text: #ABCA88;
 @color_building_text: #99836B;
 @color_entrance_text: #998167;
@@ -63,7 +66,7 @@
 @color_private_access_text: #F07573;
 @color_label_stroke: #000000EE;
 
-@color_water_text: #72AFE0;
+@color_water_text: #88C5F7;
 @color_water_stroke: #000000B3;
 @color_aerialway_text: #FFFFFF;
 @color_shop_text: #F9D8A3;
@@ -95,7 +98,7 @@
 @color_text_transport: @color_icon_transport;
 
 @color_icon_hotels: #9575CD;
-@color_text_hotels: @color_icon_hotels;
+@color_text_hotels: #9777CF;
 @color_icon_beauty: #F48FB1;
 @color_text_beauty: @color_icon_beauty;
 
@@ -112,6 +115,8 @@
 // roads of all kinds
 @color_small_road: #666666;
 @color_small_road_casing: #4C4C4C;
+@color_pedestrian: #323232;
+@color_pedestrian_casing: #545454;
 @color_bridge: #6C7175;
 @color_railroad_tunnel: #6C7175AA;
 @color_cycleway_dashes: #2638C1;
@@ -137,8 +142,6 @@
     @color_secondary_casing: @color_small_road_casing;
     @color_secondary: @color_small_road;
     @color_tertiary: @color_small_road;
-    @color_pedestrian: #323232;
-    @color_pedestrian_casing: #545454;
 @else
     @color_footway_dashes: #94615A;
     @color_path_dashes: @color_footway_dashes;
@@ -151,7 +154,6 @@
     @color_secondary_casing: #C69A16;
     @color_secondary: #BA8C00;
     @color_tertiary: @color_small_road;
-    @color_pedestrian: @color_small_road;
 @endif
 
 @color_railway: #1E4810;
@@ -163,3 +165,17 @@
 @color_icon_fountain: @color_icon_ford;
 
 @color_rock: #565656;
+
+// Road number shields in road sign colours: the tint colours shield.svg, the engine picks white or dark text for contrast
+@color_shield_motorway: #C1121C; // RAL 3020 traffic red
+@color_shield_eroad: #308446; // RAL 6024 traffic green
+@color_shield_road: #005387; // RAL 5017 traffic blue
+
+// Route palette for mapColor(): OSM colour names of route relations, other colours snap to the nearest entry.
+// The same Material hues as the POI icons, a step stronger so lines read on the map.
+@route_palette: "red #EF5350, orange #FFA726, yellow #FFD54F, green #66BB6A, blue #42A5F5, purple #AB47BC, violet #AB47BC, brown #A1887F, grey #A7AFB4, gray #A7AFB4, black #78909C, white #ECEFF1, pink #F06292";
+// Translucent bands of hiking and bicycle routes under the ways: the same hues, light ones more opaque so all read alike
+@route_band_palette: "red #EF535070, orange #FFA72670, yellow #FFD54F80, green #66BB6A80, blue #42A5F570, purple #AB47BC70, violet #AB47BC70, brown #A1887F90, grey #A7AFB490, gray #A7AFB490, black #78909C90, white #ECEFF180, pink #F0629270";
+@color_shield_yellow: #F7B500; // RAL 1023 traffic yellow: German Bundesstraße, Polish voivodeship roads
+@color_shield_yellow_text: #1E1E1E;
+@color_shield_white: #FEFEFE; // white plates: Belarusian local roads, German roads without number plates

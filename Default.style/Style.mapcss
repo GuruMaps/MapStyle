@@ -58,5 +58,14 @@ canvas
 @import "points.mapcss";
 @import "relations.mapcss";
 
+// Regional rules: road number colours and metro entrances of one country, tested with map:country
+@import "regional/at.mapcss";
+@import "regional/by.mapcss";
+@import "regional/cz.mapcss";
+@import "regional/de.mapcss";
+@import "regional/pl.mapcss";
+@import "regional/ua.mapcss";
+@import "regional/us.mapcss";
+
 // requested data invisible in the default style
 @import "extra.mapcss";

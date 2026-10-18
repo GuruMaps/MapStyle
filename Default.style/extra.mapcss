@@ -9,6 +9,14 @@ line {
             color: black;
         }
     }
+    // Keep minor roads in z9-band tiles for custom styles (drawn from z12 there).
+    |z12-{
+        [highway=unclassified],
+        [highway=track] {
+            width: 1px;
+            color: black;
+        }
+    }
     |z13-{
         [highway][surface] {
             width: 1px;
