@@ -1,0 +1,48 @@
+// Italy. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=IT] {
+    // Road numbers as on Italian signs (Codice della Strada): autostrade white on green (A1, A14), superstrade, strade
+    // statali, regionali and provinciali white on blue as in lines.mapcss (SS1, SR2, SP3)
+    |z9-[highway=motorway][ref] {
+        shield-color: @color_shield_eroad;
+    }
+    // strade comunali on a white plate; refs have no space: SC1, SC30
+    |z11-([highway=trunk], [highway=primary]),
+    |z12-[highway=secondary],
+    |z14-[highway=tertiary] {
+        [ref^=SC] {
+            shield-image: "shield_plate.svg";
+            shield-color: @color_shield_white;
+        }
+    }
+    // Metro: the white M of the Italian metro logo at z14-16 and on the entrances from z17 (points.mapcss). The country
+    // selects every network, as for the U-Bahn in de.mapcss; licence in logos/LICENSES.json.
+    // The M and the dots before it are in the colour of the line as tagged, not snapped to @route_palette, which has no
+    // dark blue or lilac for Milan M4 and M5. An interchange has no single colour: its M takes the dark grey "black" of
+    // the palette and it keeps its dot.
+    // Dots: stations at z12-13, entrances at z16
+    |z12-13[railway=station][station=subway][colour],
+    node|z16[railway=subway_entrance][colour] {
+        icon-tint: eval(tag('colour'));
+    }
+    |z14-16[railway=station][station=subway],
+    node|z17-[railway=subway_entrance] {
+        icon-image: "logos/metro_italia_line.svg";
+        icon-tint: eval(mapColor(@route_palette, "black"));
+        [colour] {
+            icon-tint: eval(tag('colour'));
+        }
+    }
+    // The metro lines of the Outdoor styles (relations.mapcss) in the same tagged colour; without one they keep theirs
+    @if Style == Outdoor
+        @if SubStyle != Car
+            relation[type=route] {
+                relation[route=subway][colour] {
+                    line|z11- {
+                        per-relation: true;
+                        color: eval(relationTag('colour'));
+                    }
+                }
+            }
+        @endif
+    @endif
+}

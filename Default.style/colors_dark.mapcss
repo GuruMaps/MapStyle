@@ -178,4 +178,4 @@
 @route_band_palette: "red #EF535070, orange #FFA72670, yellow #FFD54F80, green #66BB6A80, blue #42A5F570, purple #AB47BC70, violet #AB47BC70, brown #A1887F90, grey #A7AFB490, gray #A7AFB490, black #78909C90, white #ECEFF180, pink #F0629270";
 @color_shield_yellow: #F7B500; // RAL 1023 traffic yellow: German Bundesstraße, Polish voivodeship roads
 @color_shield_yellow_text: #1E1E1E;
-@color_shield_white: #FEFEFE; // white plates: Belarusian local roads, German roads without number plates
+@color_shield_white: #FEFEFE; // white plates: Belarusian and Italian local roads, German roads without number plates
