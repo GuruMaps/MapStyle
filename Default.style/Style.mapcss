@@ -63,6 +63,7 @@ canvas
 @import "regional/by.mapcss";
 @import "regional/cz.mapcss";
 @import "regional/de.mapcss";
+@import "regional/it.mapcss";
 @import "regional/pl.mapcss";
 @import "regional/ua.mapcss";
 @import "regional/us.mapcss";

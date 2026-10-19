@@ -1,4 +1,12 @@
 {
+    "metro_italia_line.svg": {
+        "map:country": "IT",
+        "name": "Metropolitana",
+        "source": "https://commons.wikimedia.org/wiki/File:Logo_Metropolitane_Italia.svg",
+        "license": "PD-textlogo",
+        "attribution": "Logo of the metros in Italy, SVG by Ricordisamoa, original PNG by Arbalete",
+        "changes": "the white M on the line colour, rounded corners and a white border for the map"
+    },
     "metro_kyiv.svg": {
         "network:wikidata": "Q215871",
         "name": "Kyiv Metro",
