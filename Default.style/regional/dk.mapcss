@@ -1,0 +1,13 @@
+// Denmark. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=DK] {
+    // Road numbers as on Danish signs: primary routes (1-99) black on yellow, secondary routes (100-999) black on a white
+    // plate; E-roads green
+    |z9-[highway=motorway],
+    |z11-([highway=trunk], [highway=primary]) {
+        shield-color: @color_shield_yellow;
+    }
+    |z12-[highway=secondary] {
+        shield-image: "shield_plate.svg";
+        shield-color: @color_shield_white;
+    }
+}

@@ -168,15 +168,21 @@
 @color_rock: #a8a8a8;
 
 // Road number shields in road sign colours: the tint colours shield.svg, the engine picks white or dark text for contrast
-@color_shield_motorway: #C1121C; // RAL 3020 traffic red
-@color_shield_eroad: #308446; // RAL 6024 traffic green
-@color_shield_road: #005387; // RAL 5017 traffic blue
+@color_shield_red: #C1121C; // RAL 3020 traffic red
+@color_shield_green: #308446; // RAL 6024 traffic green
+@color_shield_blue: #005387; // RAL 5017 traffic blue
+@color_shield_yellow: #F7B500; // RAL 1023 traffic yellow
+@color_shield_yellow_text: #1E1E1E;
+@color_shield_white: #FEFEFE; // white plates (shield_plate.svg)
+@color_shield_orange: #EE8A00; // Turkish otoyol
+@color_shield_white_text: #FFFFFF;
+@color_shield_gold_text: #FFC000; // Cyprus
+@color_shield_uk_green: #00703C; // British and Irish primary routes: yellow numbers on green
+@color_shield_uk_yellow: #FFD200;
+@color_shield_plate_blue_text: #005387; // blue numbers on a white plate (Turkish provincial roads)
 
 // Route palette for mapColor(): OSM colour names of route relations, other colours snap to the nearest entry.
 // The same Material hues as the POI icons, a step stronger so lines read on the map.
-@route_palette: "red #E53935, orange #FB8C00, yellow #FBC02D, green #43A047, blue #1E88E5, purple #8E24AA, violet #8E24AA, brown #8D6E63, grey #90A4AE, gray #90A4AE, black #546E7A, white #B0BEC5, pink #EC407A";
+@route_palette: "red:#E53935, orange:#FB8C00, yellow:#FBC02D, green:#43A047, blue:#1E88E5, purple:#8E24AA, violet:#8E24AA, brown:#8D6E63, grey:#90A4AE, gray:#90A4AE, black:#546E7A, white:#B0BEC5, pink:#EC407A";
 // Translucent bands of hiking and bicycle routes under the ways: the same hues, light ones more opaque so all read alike
-@route_band_palette: "red #E5393570, orange #FB8C0080, yellow #FBC02DA0, green #43A04799, blue #1E88E570, purple #8E24AA60, violet #8E24AA60, brown #8D6E6390, grey #90A4AE90, gray #90A4AE90, black #546E7A90, white #B0BEC5A0, pink #EC407A70";
-@color_shield_yellow: #F7B500; // RAL 1023 traffic yellow: German Bundesstraße, Polish voivodeship roads
-@color_shield_yellow_text: #1E1E1E;
-@color_shield_white: #FEFEFE; // white plates: Belarusian local roads, German roads without number plates
+@route_band_palette: "red:#E5393570, orange:#FB8C0080, yellow:#FBC02DA0, green:#43A04799, blue:#1E88E570, purple:#8E24AA60, violet:#8E24AA60, brown:#8D6E6390, grey:#90A4AE90, gray:#90A4AE90, black:#546E7A90, white:#B0BEC5A0, pink:#EC407A70";

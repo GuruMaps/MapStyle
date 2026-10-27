@@ -1,0 +1,14 @@
+// Slovenia. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=SI] {
+    // Road numbers as on Slovenian signs: motorways (A) white on green, expressways (H) white on blue, main and regional roads
+    // black on yellow
+    |z11-([highway=trunk], [highway=primary]) {
+        shield-color: @color_shield_yellow;
+    }
+    |z9-[highway=motorway],
+    |z11-([highway=trunk], [highway=primary]) {
+        [ref^=H] {
+            shield-color: @color_shield_blue;
+        }
+    }
+}

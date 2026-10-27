@@ -1,0 +1,17 @@
+// Belgium. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=BE] {
+    // Road numbers as on Belgian signs: motorways are signed by their E number (green), A and R numbers are black on a white
+    // plate, N roads white on blue
+    |z9-[highway=motorway] {
+        shield-image: "shield_plate.svg";
+        shield-color: @color_shield_white;
+        [int_ref] {
+            shield-image: "shield.svg";
+            shield-text: eval(listItem(tag('int_ref'), 0));
+            shield-color: @color_shield_green;
+        }
+    }
+    |z12-[highway=secondary][ref^=N] {
+        shield-color: @color_shield_blue;
+    }
+}

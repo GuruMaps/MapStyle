@@ -1,0 +1,12 @@
+// Norway. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=NO] {
+    // Road numbers as on Norwegian signs: European and national roads (riksvei) white on green, county roads (fylkesvei)
+    // black on a white plate
+    |z11-([highway=trunk], [highway=primary]) {
+        shield-color: @color_shield_green;
+    }
+    |z12-[highway=secondary] {
+        shield-image: "shield_plate.svg";
+        shield-color: @color_shield_white;
+    }
+}

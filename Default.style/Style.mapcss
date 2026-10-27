@@ -6,10 +6,7 @@
     @image_noData: "noData_dark.svg";
     @image_forbidden_area: "forbidden_area_dark.svg";
     @image_wood: "wood_dark.svg";
-    @image_wood_broadleaved: "wood_broadleaved_dark.svg";
-    @image_wood_needleleaved: "wood_needleleaved_dark.svg";
-    @image_wood_mixed: "wood_mixed_dark.svg";
-    @image_wood_leafless: "wood_leafless_dark.svg";
+    @image_wood_by_leaf_type: "broadleaved:wood_broadleaved_dark.svg, needleleaved:wood_needleleaved_dark.svg, mixed:wood_mixed_dark.svg, leafless:wood_leafless_dark.svg";
     @image_garden: "garden_dark.svg";
     @image_scrub: "scrub_dark.svg";
     @image_vineyard: "vineyard_dark.svg";
@@ -24,10 +21,7 @@
     @image_noData: "noData.svg";
     @image_forbidden_area: "forbidden_area.svg";
     @image_wood: "wood.svg";
-    @image_wood_broadleaved: "wood_broadleaved.svg";
-    @image_wood_needleleaved: "wood_needleleaved.svg";
-    @image_wood_mixed: "wood_mixed.svg";
-    @image_wood_leafless: "wood_leafless.svg";
+    @image_wood_by_leaf_type: "broadleaved:wood_broadleaved.svg, needleleaved:wood_needleleaved.svg, mixed:wood_mixed.svg, leafless:wood_leafless.svg";
     @image_garden: "garden.svg";
     @image_scrub: "scrub.svg";
     @image_vineyard: "vineyard.svg";
@@ -59,13 +53,45 @@ canvas
 @import "relations.mapcss";
 
 // Regional rules: road number colours and metro entrances of one country, tested with map:country
+@import "regional/al.mapcss";
 @import "regional/at.mapcss";
+@import "regional/be.mapcss";
 @import "regional/by.mapcss";
+@import "regional/ch.mapcss";
+@import "regional/cy.mapcss";
 @import "regional/cz.mapcss";
 @import "regional/de.mapcss";
+@import "regional/dk.mapcss";
+@import "regional/ee.mapcss";
+@import "regional/es.mapcss";
+@import "regional/fi.mapcss";
+@import "regional/fr.mapcss";
+@import "regional/gb.mapcss";
+@import "regional/hr.mapcss";
+@import "regional/hu.mapcss";
+@import "regional/ie.mapcss";
+@import "regional/is.mapcss";
+@import "regional/it.mapcss";
+@import "regional/lt.mapcss";
+@import "regional/lu.mapcss";
+@import "regional/lv.mapcss";
+@import "regional/md.mapcss";
+@import "regional/nl.mapcss";
+@import "regional/no.mapcss";
 @import "regional/pl.mapcss";
+@import "regional/pt.mapcss";
+@import "regional/ro.mapcss";
+@import "regional/rs.mapcss";
+@import "regional/se.mapcss";
+@import "regional/si.mapcss";
+@import "regional/sk.mapcss";
+@import "regional/tr.mapcss";
 @import "regional/ua.mapcss";
 @import "regional/us.mapcss";
+// after the countries: E-road numbers stay green everywhere
+@import "regional/e-roads.mapcss";
+// after the countries: named roads show their name, not a shield
+@import "regional/named-roads.mapcss";
 
 // requested data invisible in the default style
 @import "extra.mapcss";

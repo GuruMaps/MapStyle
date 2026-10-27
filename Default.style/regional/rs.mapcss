@@ -1,0 +1,10 @@
+// Serbia. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=RS] {
+    // Road numbers as on Serbian signs: motorways and class IA roads (A) white on green, class IB and II roads black on yellow
+    |z11-([highway=trunk], [highway=primary]) {
+        shield-color: @color_shield_yellow;
+        [ref^=A], [ref^=А] {
+            shield-color: @color_shield_green;
+        }
+    }
+}

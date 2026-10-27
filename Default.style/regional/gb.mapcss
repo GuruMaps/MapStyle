@@ -1,0 +1,20 @@
+// United Kingdom. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=GB] {
+    // Road numbers as on British signs: motorways white on blue, primary routes (OSM trunk) yellow on green, other A roads
+    // and B roads black on a white plate. E-road numbers are not signed, so the z8 shield shows the national number too.
+    |z8([highway=motorway][int_ref], [highway=trunk][int_ref]) {
+        shield-text: eval(any(listItem(tag('ref'), 0), listItem(tag('int_ref'), 0)));
+    }
+    |z8-[highway=motorway] {
+        shield-color: @color_shield_blue;
+    }
+    |z8-[highway=trunk] {
+        shield-color: @color_shield_uk_green;
+        shield-text-color: @color_shield_uk_yellow;
+    }
+    |z11-[highway=primary],
+    |z12-[highway=secondary] {
+        shield-image: "shield_plate.svg";
+        shield-color: @color_shield_white;
+    }
+}

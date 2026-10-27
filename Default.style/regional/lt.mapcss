@@ -1,0 +1,10 @@
+// Lithuania. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=LT] {
+    // Road numbers as on Lithuanian signs: main roads (A) white on red; E-roads green
+    |z9-[highway=motorway],
+    |z11-([highway=trunk], [highway=primary]) {
+        [ref^=A] {
+            shield-color: @color_shield_red;
+        }
+    }
+}

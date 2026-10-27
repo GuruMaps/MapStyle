@@ -1,0 +1,11 @@
+// E-road numbers are white on green in every country: imported after the country rules. A way without a national number
+// shows its E number, and Nordic refs carry the E number first (E 6).
+|z9-[highway=motorway],
+|z11-([highway=trunk], [highway=primary]),
+|z12-[highway=secondary] {
+    [!ref], [ref^="E "] {
+        shield-image: "shield.svg";
+        shield-color: @color_shield_green;
+        shield-text-color: @color_shield_white_text;
+    }
+}

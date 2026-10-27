@@ -1,0 +1,12 @@
+// Sweden. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=SE] {
+    // Road numbers as on Swedish signs: national and county roads (riksväg, länsväg 100-499) white on blue, E-roads green;
+    // county roads from 500 are not signed
+    |z9-[highway=motorway],
+    |z12-[highway=secondary] {
+        shield-color: @color_shield_blue;
+    }
+    |z14-[highway=tertiary] {
+        shield-text: none;
+    }
+}

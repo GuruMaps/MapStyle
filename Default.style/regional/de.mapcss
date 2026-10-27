@@ -1,9 +1,9 @@
 // Germany. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
 [map:country=DE] {
     // Road numbers as on German signs: Autobahn white on blue (Zeichen 405), Bundesstraße black on yellow with a black
-    // edge (Zeichen 401). A motorway with only an E-road number keeps the green shield of lines.mapcss.
+    // edge (Zeichen 401). A motorway with only an E-road number keeps the green shield of e-roads.mapcss.
     |z9-[highway=motorway][ref] {
-        shield-color: @color_shield_road;
+        shield-color: @color_shield_blue;
     }
     |z11-([highway=trunk], [highway=primary]),
     |z12-[highway=secondary],
@@ -15,7 +15,7 @@
         }
         [highway=trunk][ref^="A "] {
             shield-image: "shield.svg";
-            shield-color: @color_shield_road;
+            shield-color: @color_shield_blue;
         }
         // with the space: Bavarian Kreisstraßen carry the district plate code, e.g. BA 12 in Bamberg
         [ref^="B "] {

@@ -1,0 +1,12 @@
+// Hungary. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=HU] {
+    // Road numbers as on Hungarian signs: motorways (M) white on blue, main roads white on green
+    |z11-([highway=trunk], [highway=primary]),
+    |z12-[highway=secondary] {
+        shield-color: @color_shield_green;
+    }
+    |z9-[highway=motorway],
+    |z11-[highway=trunk][ref^=M] {
+        shield-color: @color_shield_blue;
+    }
+}

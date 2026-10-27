@@ -801,14 +801,16 @@ line {
 
     /******************** Line names *************************/
 
-    // Road number shields, next to the road name from z13. Colours follow road signs: motorways red,
-    // E-roads green, other roads blue. Zooms follow Mapy.cz: E-roads from z8, motorways from z9,
-    // main roads from z11, secondary from z12, tertiary from z14.
+    // Road number shields, next to the road name from z13. Colours are those most countries sign: motorways green,
+    // main roads blue, secondary roads yellow, lower roads a white plate; regional/ recolours other countries and
+    // keeps E-roads green. Zooms follow Mapy.cz: E-roads from z8, motorways from z9, main roads from z11, secondary
+    // from z12, tertiary from z14.
     |z8([highway=motorway][int_ref], [highway=trunk][int_ref]) {
         shield-image: "shield.svg";
         shield-text: eval(listItem(tag('int_ref'), 0));
-        shield-color: @color_shield_eroad;
+        shield-color: @color_shield_green;
         text-priority: 4;
+        shield-priority: -20;
     }
     |z9-[highway=motorway],
     |z11-(
@@ -819,11 +821,24 @@ line {
     |z14-[highway=tertiary] {
         shield-image: "shield.svg";
         shield-text: eval(any(listItem(tag('ref'), 0), listItem(tag('int_ref'), 0)));
-        shield-color: @color_shield_road;
+        shield-color: @color_shield_blue;
         text-priority: 4;
-        [highway=motorway] { shield-color: @color_shield_motorway; }
-        // without a national number the shield shows the E-road number
-        [!ref] { shield-color: @color_shield_eroad; }
+        // shields are placed after every name and POI, the main roads first
+        [highway=motorway] {
+            shield-color: @color_shield_green;
+            shield-priority: -20;
+        }
+        [highway=trunk] { shield-priority: -21; }
+        [highway=primary] { shield-priority: -22; }
+        [highway=secondary] {
+            shield-color: @color_shield_yellow;
+            shield-priority: -23;
+        }
+        [highway=tertiary] {
+            shield-image: "shield_plate.svg";
+            shield-color: @color_shield_white;
+            shield-priority: -24;
+        }
     }
     
     // highway names

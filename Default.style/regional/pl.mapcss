@@ -1,9 +1,9 @@
 // Poland. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
 [map:country=PL] {
     // Road numbers as on Polish signs: national roads (DK), expressways and motorways red, voivodeship roads (DW) yellow
+    |z9-[highway=motorway],
     |z11-([highway=trunk], [highway=primary]) {
-        shield-color: @color_shield_motorway;
-        [!ref] { shield-color: @color_shield_eroad; }
+        shield-color: @color_shield_red;
     }
     |z12-[highway=secondary] {
         shield-color: @color_shield_yellow;
@@ -11,7 +11,7 @@
     }
     // county and commune numbers (2903D, 120613D) are not signposted
     |z14-[highway=tertiary] {
-        shield-image: none;
+        shield-text: none;
     }
     // Warsaw metro: the station at z14-16 and the entrances from z17 (points.mapcss) carry the Warsaw Metro logo.
     // network:wikidata comes from the metro lines (sql/5_generate_regions.sql); licence in logos/LICENSES.json

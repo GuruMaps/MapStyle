@@ -1,0 +1,8 @@
+// Croatia. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=HR] {
+    // Road numbers as on Croatian signs: motorways white on green, state roads (D) white on blue, county roads (Ž) black on
+    // yellow, as in lines.mapcss; local road numbers are not signed
+    |z14-[highway=tertiary] {
+        shield-text: none;
+    }
+}

@@ -1,0 +1,7 @@
+// Albania. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=AL] {
+    // Road numbers as on Albanian signs: motorways white on green, national and district roads white on blue
+    |z12-[highway=secondary] {
+        shield-color: @color_shield_blue;
+    }
+}

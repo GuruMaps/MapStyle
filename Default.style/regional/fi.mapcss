@@ -1,0 +1,20 @@
+// Finland. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
+[map:country=FI] {
+    // Road numbers as on Finnish signs, one OSM class each: valtatie (trunk) white on red, kantatie (primary) black on
+    // yellow, seututie (secondary) black on a white plate, yhdystie (tertiary) white on blue; E-roads green
+    |z9-[highway=motorway],
+    |z11-[highway=trunk] {
+        shield-color: @color_shield_red;
+    }
+    |z11-[highway=primary] {
+        shield-color: @color_shield_yellow;
+    }
+    |z12-[highway=secondary] {
+        shield-image: "shield_plate.svg";
+        shield-color: @color_shield_white;
+    }
+    |z14-[highway=tertiary] {
+        shield-image: "shield.svg";
+        shield-color: @color_shield_blue;
+    }
+}

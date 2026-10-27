@@ -573,27 +573,12 @@ node,area {
     @endif
 
     @if Food
+        @food_icons: "fast_food:poi_fast_food.svg, cafe:poi_cafe.svg, restaurant:poi_restaurant.svg";
         |z15-{
-            [amenity=fast_food] {
-                icon-image:"poi_fast_food.svg";
-                icon-tint: @color_icon_food;
-                |z17-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_food;
-                }
-            }
-
-            [amenity=cafe] {
-                icon-image:"poi_cafe.svg";
-                icon-tint: @color_icon_food;
-                |z17-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_food;
-                }
-            }
-
+            [amenity=fast_food],
+            [amenity=cafe],
             [amenity=restaurant] {
-                icon-image:"poi_restaurant.svg";
+                icon-image: eval(mapValue(@food_icons, tag('amenity')));
                 icon-tint: @color_icon_food;
                 |z17-{
                     text: eval(locTag('name'));
@@ -815,29 +800,10 @@ node,area {
             }
         }
 
+        @worship_icons: "christian:poi_worship_christian.svg, muslim:poi_worship_muslim.svg, buddhist:poi_worship_buddhist.svg, shinto:poi_worship_shinto.svg, jewish:poi_worship_jewish.svg";
         |z16-[amenity=place_of_worship] {
-            icon-image:"poi_worship.svg";
+            icon-image: eval(mapValue(@worship_icons, tag('religion'), "poi_worship.svg"));
             icon-tint: @color_icon_tourism;
-
-            [religion=christian] {
-              icon-image:"poi_worship_christian.svg";
-            }
-
-            [religion=muslim] {
-              icon-image:"poi_worship_muslim.svg";
-            }
-
-            [religion=buddhist] {
-              icon-image:"poi_worship_buddhist.svg";
-            }
-
-            [religion=shinto] {
-              icon-image:"poi_worship_shinto.svg";
-            }
-
-            [religion=jewish] {
-              icon-image:"poi_worship_jewish.svg";
-            }
 
             |z17- {
                 text: eval(locTag('name'));
@@ -885,36 +851,10 @@ node,area {
         // node|z16-[tourism=attraction], не применяем, потому что это просто маркер для туристических объектов с другими тегами.
         // Можно давать буст в поиске или иконку больше делать - но менять иконку не надо.
         |z16-{
+            @information_icons: "guidepost:poi_guidepost.svg, map:poi_info_map.svg, board:poi_info_board.svg";
             [tourism=information],
             [shop=ticket] {
-                icon-image:"poi_info.svg";
-                icon-tint: @color_icon_tourism;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_tourism;
-                }
-            }
-
-            [tourism=information][information=guidepost] {
-                icon-image:"poi_guidepost.svg";
-                icon-tint: @color_icon_tourism;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_tourism;
-                }
-            }
-
-            [tourism=information][information=map] {
-                icon-image:"poi_info_map.svg";
-                icon-tint: @color_icon_tourism;
-                |z18-{
-                    text: eval(locTag('name'));
-                    text-color: @color_text_tourism;
-                }
-            }
-
-            [tourism=information][information=board] {
-                icon-image:"poi_info_board.svg";
+                icon-image: eval(mapValue(@information_icons, tag('information'), "poi_info.svg"));
                 icon-tint: @color_icon_tourism;
                 |z18-{
                     text: eval(locTag('name'));
@@ -1177,89 +1117,36 @@ node,area {
         }
 
         // small shops
+        @shop_icons: "alcohol:poi_beverages.svg, beverages:poi_beverages.svg, convenience:poi_store.svg, butcher:poi_butcher.svg, bakery:poi_bakery.svg, mall:poi_mall.svg, shoes:poi_mall.svg, department_store:poi_mall.svg, boutique:poi_mall.svg, clothes:poi_clothing_store.svg, baby_goods:poi_baby_goods.svg, jewelry:poi_jewelry.svg, florist:poi_florist.svg, garden_centre:poi_florist.svg, bathroom_furnishing:poi_furniture.svg, garden_furniture:poi_furniture.svg, bed:poi_furniture.svg, furniture:poi_furniture.svg, books:poi_book.svg, mobile_phone:poi_mobile_phone.svg";
         |z17-{
-            [shop=alcohol],
-            [shop=beverages] {
-                icon-image:"poi_beverages.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=convenience] {
-                icon-image:"poi_store.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=butcher]{
-                icon-image:"poi_butcher.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=bakery]{
-                icon-image:"poi_bakery.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
+            // A market is the place as a whole; a shop tag on it says what is sold, so the shop icon comes after and wins
             [amenity=marketplace] {
                 icon-image:"poi_market.svg";
                 icon-tint: @color_icon_stores;
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
             }
+            [shop=alcohol],
+            [shop=beverages],
+            [shop=convenience],
+            [shop=butcher],
+            [shop=bakery],
             [shop=mall],
             [shop=shoes],
             [shop=department_store],
-            [shop=boutique] {
-                icon-image:"poi_mall.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=clothes] {
-                icon-image:"poi_clothing_store.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=baby_goods] {
-                icon-image:"poi_baby_goods.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=jewelry] {
-                icon-image:"poi_jewelry.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
+            [shop=boutique],
+            [shop=clothes],
+            [shop=baby_goods],
+            [shop=jewelry],
             [shop=florist],
-            [shop=garden_centre] {
-                icon-image:"poi_florist.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
+            [shop=garden_centre],
             [shop=bathroom_furnishing],
             [shop=garden_furniture],
             [shop=bed],
-            [shop=furniture] {
-                icon-image:"poi_furniture.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
-            [shop=books] {
-                icon-image:"poi_book.svg";
-                icon-tint: @color_icon_stores;
-                text: eval(locTag('name'));
-                text-color: @color_text_stores;
-            }
+            [shop=furniture],
+            [shop=books],
             [shop=mobile_phone] {
-                icon-image:"poi_mobile_phone.svg";
+                icon-image: eval(mapValue(@shop_icons, tag('shop')));
                 icon-tint: @color_icon_stores;
                 text: eval(locTag('name'));
                 text-color: @color_text_stores;
@@ -1610,25 +1497,14 @@ node,area {
     }
 
     node{
+        @barrier_icons: "gate:poi_gate.svg, entrance:poi_barrier_entrance.svg, toll_booth:poi_barrier_toll_booth.svg, lift_gate:poi_lift_gate.svg";
         |z17-[barrier] {
-            icon-image:"poi_barrier.svg";
+            icon-image: eval(mapValue(@barrier_icons, tag('barrier'), "poi_barrier.svg"));
             icon-scale: 0.75;
             icon-tint: @color_icon_tint;
             details-enabled: false;
             text-priority: -1;
 
-            [barrier=gate] {
-                icon-image:"poi_gate.svg";
-            }
-            [barrier=entrance] {
-                icon-image:"poi_barrier_entrance.svg";
-            }
-            [barrier=toll_booth] {
-                icon-image:"poi_barrier_toll_booth.svg";
-            }
-            [barrier=lift_gate] {
-                icon-image:"poi_lift_gate.svg";
-            }
             [barrier=bollard] {
                 icon-image: "poi_circle_small.svg";
                 icon-scale: 0.65;
@@ -1700,24 +1576,16 @@ node,area {
             }
         }
 @if SubStyle == Bike
+        @bicycle_icons: "bicycle_parking:poi_bike_parking.svg, bicycle_rental:poi_bike_rental.svg, bicycle_repair_station:poi_bike_service.svg";
         |z16-(
             [amenity=bicycle_parking],
             [amenity=bicycle_rental],
             [amenity=bicycle_repair_station]
         ) {
+            icon-image: eval(mapValue(@bicycle_icons, tag('amenity')));
             icon-tint: @color_icon_transport;
             text: eval(cond(locTag('name'), cond(tag('ref'), locTag('name') . ' ' . tag('ref'), locTag('name')), tag('ref')));
             text-color: @color_text_transport;
-
-            [amenity=bicycle_parking] {
-                icon-image: "poi_bike_parking.svg";
-            }
-            [amenity=bicycle_rental] {
-                icon-image: "poi_bike_rental.svg";
-            }
-            [amenity=bicycle_repair_station] {
-                icon-image: "poi_bike_service.svg";
-            }
         }
 @endif
     }

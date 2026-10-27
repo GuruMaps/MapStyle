@@ -1,9 +1,12 @@
 // Austria. map:country is the country of the map tile (the generator stores it per tile, objects across a border carry their own).
 [map:country=AT] {
     // Road numbers as on Austrian direction signs: Autobahn, Schnellstraße and B roads white on blue (A1, S6, B1),
-    // E-roads green as in lines.mapcss
+    // E-roads green (e-roads.mapcss)
     |z9-[highway=motorway][ref] {
-        shield-color: @color_shield_road;
+        shield-color: @color_shield_blue;
+    }
+    |z12-[highway=secondary][ref^="B "] {
+        shield-color: @color_shield_blue;
     }
     // Vienna U-Bahn, the only metro in Austria: the white U on Wiener Linien blue at z14-16 and on the entrances from z17
     // (points.mapcss)

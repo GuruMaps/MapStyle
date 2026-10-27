@@ -1,0 +1,6 @@
+// Named roads show their name, not a shield: city streets have names, roads between places mostly do not. Imported after
+// the country rules, which may set the shield text.
+|z12-([highway=primary][name], [highway=secondary][name], [highway=tertiary][name]),
+|z13-[highway=trunk][name] {
+    shield-text: none;
+}
